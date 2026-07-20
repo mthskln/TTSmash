@@ -115,7 +115,7 @@ const TRANSLATIONS = {
     settings_footer: "Settings, match history and photos are saved automatically.",
     settings_danger_zone: 'Danger zone', settings_delete_all: 'Delete all data',
     settings_delete_all_desc: 'Removes all matches, stats, photos, friends and settings from this device. This cannot be undone.',
-    settings_delete_confirm: 'Are you sure? Tap again to confirm',
+    settings_delete_confirm: 'Are you sure? Tap again to confirm', settings_delete_account_label: 'Delete my account', settings_delete_account_desc: 'Permanently removes your online profile (username, photo, city, country) and signs you out. This cannot be undone.', settings_delete_account_confirm: 'Are you sure? Tap again to permanently delete',
     stats_title: 'Statistics', stats_h2h: 'Head-to-head comparison', stats_ranking: 'Ranking', stats_empty: 'No matches played yet.',
     stats_wins_chart: 'Wins per player (top 10)', stats_points_chart: 'Points scored (top 10)', chart_won: 'Won', chart_lost: 'Lost', chart_for: 'For', chart_against: 'Against',
     stats_scope_all: 'All',
@@ -187,7 +187,7 @@ const TRANSLATIONS = {
     settings_footer: "Les réglages, l'historique des matchs et les photos sont sauvegardés automatiquement.",
     settings_danger_zone: 'Zone de danger', settings_delete_all: 'Supprimer toutes les données',
     settings_delete_all_desc: 'Supprime tous les matchs, statistiques, photos, amis et réglages de cet appareil. Cette action est irréversible.',
-    settings_delete_confirm: 'Êtes-vous sûr\u00A0? Touchez à nouveau pour confirmer',
+    settings_delete_confirm: 'Êtes-vous sûr\u00A0? Touchez à nouveau pour confirmer', settings_delete_account_label: 'Supprimer mon compte', settings_delete_account_desc: 'Supprime définitivement votre profil en ligne (nom, photo, ville, pays) et vous déconnecte. Action irréversible.', settings_delete_account_confirm: 'Êtes-vous sûr\u00A0? Touchez à nouveau pour supprimer définitivement',
     stats_title: 'Statistiques', stats_h2h: 'Comparaison face-à-face', stats_ranking: 'Classement', stats_empty: 'Aucun match joué pour le moment.',
     stats_wins_chart: 'Victoires par joueur (top 10)', stats_points_chart: 'Points marqués (top 10)', chart_won: 'Gagnés', chart_lost: 'Perdus', chart_for: 'Pour', chart_against: 'Contre',
     stats_scope_all: 'Tout',
@@ -259,7 +259,7 @@ const TRANSLATIONS = {
     settings_footer: "Instellingen, wedstrijdgeschiedenis en foto's worden automatisch bewaard.",
     settings_danger_zone: 'Gevarenzone', settings_delete_all: 'Wis alle gegevens',
     settings_delete_all_desc: "Verwijdert alle wedstrijden, statistieken, foto's, vrienden en instellingen van dit toestel. Dit kan niet ongedaan gemaakt worden.",
-    settings_delete_confirm: 'Weet je het zeker? Tik opnieuw om te bevestigen',
+    settings_delete_confirm: 'Weet je het zeker? Tik opnieuw om te bevestigen', settings_delete_account_label: 'Verwijder mijn account', settings_delete_account_desc: 'Verwijdert je online profiel (gebruikersnaam, foto, stad, land) definitief en logt je uit. Dit kan niet ongedaan gemaakt worden.', settings_delete_account_confirm: 'Weet je het zeker? Tik opnieuw om definitief te verwijderen',
     stats_title: 'Statistieken', stats_h2h: 'Head-to-head vergelijking', stats_ranking: 'Ranglijst', stats_empty: 'Nog geen wedstrijden gespeeld.',
     stats_wins_chart: 'Overwinningen per speler (top 10)', stats_points_chart: 'Gescoorde punten (top 10)', chart_won: 'Gewonnen', chart_lost: 'Verloren', chart_for: 'Voor', chart_against: 'Tegen',
     stats_scope_all: 'Totaal',
@@ -331,7 +331,7 @@ const TRANSLATIONS = {
     settings_footer: 'Настройки, история матчей и фото сохраняются автоматически.',
     settings_danger_zone: 'Опасная зона', settings_delete_all: 'Удалить все данные',
     settings_delete_all_desc: 'Удаляет все матчи, статистику, фото, друзей и настройки с этого устройства. Это действие необратимо.',
-    settings_delete_confirm: 'Вы уверены? Нажмите ещё раз для подтверждения',
+    settings_delete_confirm: 'Вы уверены? Нажмите ещё раз для подтверждения', settings_delete_account_label: 'Удалить мой аккаунт', settings_delete_account_desc: 'Безвозвратно удаляет ваш онлайн-профиль (имя, фото, город, страна) и выполняет выход. Это действие необратимо.', settings_delete_account_confirm: 'Вы уверены? Нажмите ещё раз, чтобы удалить безвозвратно',
     stats_title: 'Статистика', stats_h2h: 'Сравнение один на один', stats_ranking: 'Рейтинг', stats_empty: 'Матчей пока нет.',
     stats_wins_chart: 'Победы по игрокам (топ-10)', stats_points_chart: 'Набранные очки (топ-10)', chart_won: 'Победы', chart_lost: 'Поражения', chart_for: 'За', chart_against: 'Против',
     stats_scope_all: 'Все',
@@ -403,7 +403,7 @@ const TRANSLATIONS = {
     settings_footer: '设置、比赛记录和照片会自动保存。',
     settings_danger_zone: '危险区域', settings_delete_all: '删除所有数据',
     settings_delete_all_desc: '将删除此设备上的所有比赛、统计数据、照片、好友和设置。此操作无法撤销。',
-    settings_delete_confirm: '确定吗？再次点击以确认',
+    settings_delete_confirm: '确定吗？再次点击以确认', settings_delete_account_label: '删除我的账户', settings_delete_account_desc: '将永久删除你的在线个人资料（用户名、照片、城市、国家）并退出登录。此操作无法撤销。', settings_delete_account_confirm: '确定吗？再次点击以永久删除',
     stats_title: '统计', stats_h2h: '对战对比', stats_ranking: '排行榜', stats_empty: '暂无比赛记录。',
     stats_wins_chart: '各选手胜场（前10）', stats_points_chart: '得分统计（前10）', chart_won: '胜', chart_lost: '负', chart_for: '得分', chart_against: '失分',
     stats_scope_all: '全部',
@@ -475,7 +475,7 @@ const TRANSLATIONS = {
     settings_footer: 'Los ajustes, el historial de partidos y las fotos se guardan automáticamente.',
     settings_danger_zone: 'Zona de peligro', settings_delete_all: 'Eliminar todos los datos',
     settings_delete_all_desc: 'Elimina todos los partidos, estadísticas, fotos, amigos y ajustes de este dispositivo. Esta acción no se puede deshacer.',
-    settings_delete_confirm: '¿Estás seguro? Toca de nuevo para confirmar',
+    settings_delete_confirm: '¿Estás seguro? Toca de nuevo para confirmar', settings_delete_account_label: 'Eliminar mi cuenta', settings_delete_account_desc: 'Elimina permanentemente tu perfil en línea (nombre de usuario, foto, ciudad, país) y cierra tu sesión. Esta acción no se puede deshacer.', settings_delete_account_confirm: '¿Estás seguro? Toca de nuevo para eliminar permanentemente',
     stats_title: 'Estadísticas', stats_h2h: 'Comparación cara a cara', stats_ranking: 'Clasificación', stats_empty: 'Aún no se han jugado partidos.',
     stats_wins_chart: 'Victorias por jugador (top 10)', stats_points_chart: 'Puntos anotados (top 10)', chart_won: 'Ganados', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'En contra',
     stats_scope_all: 'Todo',
@@ -547,7 +547,7 @@ const TRANSLATIONS = {
     settings_footer: 'As definições, o histórico de partidas e as fotos são guardados automaticamente.',
     settings_danger_zone: 'Zona de perigo', settings_delete_all: 'Eliminar todos os dados',
     settings_delete_all_desc: 'Remove todas as partidas, estatísticas, fotos, amigos e definições deste dispositivo. Esta ação não pode ser desfeita.',
-    settings_delete_confirm: 'Tens a certeza? Toca novamente para confirmar',
+    settings_delete_confirm: 'Tens a certeza? Toca novamente para confirmar', settings_delete_account_label: 'Eliminar a minha conta', settings_delete_account_desc: 'Remove permanentemente o teu perfil online (nome de utilizador, foto, cidade, país) e termina a tua sessão. Esta ação não pode ser desfeita.', settings_delete_account_confirm: 'Tens a certeza? Toca novamente para eliminar permanentemente',
     stats_title: 'Estatísticas', stats_h2h: 'Comparação direta', stats_ranking: 'Classificação', stats_empty: 'Ainda não há partidas jogadas.',
     stats_wins_chart: 'Vitórias por jogador (top 10)', stats_points_chart: 'Pontos marcados (top 10)', chart_won: 'Vencidos', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'Contra',
     stats_scope_all: 'Tudo',
@@ -619,7 +619,7 @@ const TRANSLATIONS = {
     settings_footer: '設定、対戦履歴、写真は自動的に保存されます。',
     settings_danger_zone: '危険ゾーン', settings_delete_all: 'すべてのデータを削除',
     settings_delete_all_desc: 'この端末のすべての試合、統計、写真、フレンド、設定を削除します。この操作は元に戻せません。',
-    settings_delete_confirm: '本当によろしいですか？もう一度タップして確定',
+    settings_delete_confirm: '本当によろしいですか？もう一度タップして確定', settings_delete_account_label: 'アカウントを削除', settings_delete_account_desc: 'オンラインプロフィール（ユーザー名、写真、市区町村、国）を完全に削除し、ログアウトします。この操作は元に戻せません。', settings_delete_account_confirm: '本当によろしいですか？もう一度タップして完全に削除',
     stats_title: '統計', stats_h2h: '対戦成績比較', stats_ranking: 'ランキング', stats_empty: 'まだ試合がありません。',
     stats_wins_chart: '選手別勝利数（上位10名）', stats_points_chart: '獲得ポイント（上位10名）', chart_won: '勝ち', chart_lost: '負け', chart_for: '得点', chart_against: '失点',
     stats_scope_all: 'すべて',
@@ -691,7 +691,7 @@ const TRANSLATIONS = {
     settings_footer: '설정, 경기 기록, 사진은 자동으로 저장됩니다.',
     settings_danger_zone: '위험 구역', settings_delete_all: '모든 데이터 삭제',
     settings_delete_all_desc: '이 기기의 모든 경기, 통계, 사진, 친구, 설정을 삭제합니다. 이 작업은 되돌릴 수 없습니다.',
-    settings_delete_confirm: '정말 삭제하시겠습니까? 다시 탭하여 확인',
+    settings_delete_confirm: '정말 삭제하시겠습니까? 다시 탭하여 확인', settings_delete_account_label: '계정 삭제', settings_delete_account_desc: '온라인 프로필(사용자 이름, 사진, 도시, 국가)을 영구적으로 삭제하고 로그아웃합니다. 이 작업은 되돌릴 수 없습니다.', settings_delete_account_confirm: '정말 삭제하시겠습니까? 다시 탭하여 영구 삭제',
     stats_title: '통계', stats_h2h: '상대 전적 비교', stats_ranking: '순위', stats_empty: '아직 진행된 경기가 없습니다.',
     stats_wins_chart: '선수별 승수 (상위 10명)', stats_points_chart: '득점 현황 (상위 10명)', chart_won: '승', chart_lost: '패', chart_for: '득점', chart_against: '실점',
     stats_scope_all: '전체',
@@ -2339,15 +2339,23 @@ function Home({ matchLog }) {
 }
 
 /* ============================= SETTINGS ============================= */
-function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
+function SettingsScreen({ setView, settings, updateSettings, resetAllData, session, setProfile }) {
   const { t } = useT();
   const [confirming, setConfirming] = useState(false);
+  const [confirmingAccount, setConfirmingAccount] = useState(false);
+  const [deletingAccount, setDeletingAccount] = useState(false);
 
   useEffect(() => {
     if (!confirming) return;
     const timer = setTimeout(() => setConfirming(false), 5000);
     return () => clearTimeout(timer);
   }, [confirming]);
+
+  useEffect(() => {
+    if (!confirmingAccount) return;
+    const timer = setTimeout(() => setConfirmingAccount(false), 5000);
+    return () => clearTimeout(timer);
+  }, [confirmingAccount]);
 
   function handleDeleteClick() {
     if (confirming) {
@@ -2356,6 +2364,17 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
     } else {
       setConfirming(true);
     }
+  }
+
+  async function handleDeleteAccountClick() {
+    if (!confirmingAccount) { setConfirmingAccount(true); return; }
+    setConfirmingAccount(false);
+    setDeletingAccount(true);
+    try {
+      await supabase.from('profiles').delete().eq('id', session.user.id);
+    } catch (e) { /* best effort */ }
+    setProfile(null);
+    await supabase.auth.signOut();
   }
 
   return (
@@ -2422,6 +2441,23 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
             }}
           >
             {confirming ? t('settings_delete_confirm') : t('settings_delete_all')}
+          </button>
+        </Panel>
+
+        <Panel style={{ borderColor: C.red, marginTop: 8 }}>
+          <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.red }}>{t('settings_delete_account_label')}</div>
+          <div className="tt-body text-xs mb-3" style={{ color: C.dim }}>{t('settings_delete_account_desc')}</div>
+          <button
+            onClick={handleDeleteAccountClick}
+            disabled={deletingAccount}
+            className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold transition-colors disabled:opacity-50"
+            style={{
+              background: confirmingAccount ? C.red : 'transparent',
+              color: confirmingAccount ? '#fff' : C.red,
+              border: `1px solid ${C.red}`,
+            }}
+          >
+            {confirmingAccount ? t('settings_delete_account_confirm') : t('settings_delete_account_label')}
           </button>
         </Panel>
       </div>
@@ -3650,7 +3686,7 @@ export default function App() {
     content = <div className="tt-body text-center py-20" style={{ color: C.dim }}>{t('loading_text')}</div>;
   } else if (view === 'home') content = <Home matchLog={matchLog} />;
   else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={matchLog} session={session} profile={profile} setProfile={setProfile} />;
-  else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} />;
+  else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} session={session} setProfile={setProfile} />;
   else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} />;
   else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} />;
