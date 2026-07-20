@@ -122,7 +122,26 @@ const COUNTRY_CODES = [
   ['GB', 'United Kingdom'], ['US', 'United States'], ['UY', 'Uruguay'], ['VE', 'Venezuela'], ['VN', 'Vietnam'],
 ].sort((a, b) => a[1].localeCompare(b[1]));
 
-const AVATAR_PRESETS = ['#0B6E4F', '#12A876', '#F2A93B', '#E2313D', '#2A6F97', '#8E44AD', '#D35400', '#16A085'];
+const AVATAR_CHARACTERS = [
+  { emoji: '\uD83C\uDFF4\u200D\u2620\uFE0F', color: '#374151' }, // pirate
+  { emoji: '\uD83E\uDD20', color: '#D97706' }, // cowboy
+  { emoji: '\uD83E\uDD81', color: '#B45309' }, // lion
+  { emoji: '\uD83E\uDD77', color: '#1F2937' }, // ninja
+  { emoji: '\uD83E\uDDD9', color: '#6D28D9' }, // wizard
+  { emoji: '\uD83E\uDDB8', color: '#DC2626' }, // superhero
+  { emoji: '\uD83D\uDC2F', color: '#EA580C' }, // tiger
+  { emoji: '\uD83E\uDD8A', color: '#C2410C' }, // fox
+  { emoji: '\uD83D\uDC3A', color: '#4B5563' }, // wolf
+  { emoji: '\uD83D\uDC3C', color: '#111827' }, // panda
+  { emoji: '\uD83D\uDC35', color: '#92400E' }, // monkey
+  { emoji: '\uD83E\uDD16', color: '#0891B2' }, // robot
+  { emoji: '\uD83D\uDC7D', color: '#16A34A' }, // alien
+  { emoji: '\uD83E\uDD84', color: '#DB2777' }, // unicorn
+  { emoji: '\uD83D\uDC7B', color: '#6B7280' }, // ghost
+  { emoji: '\uD83E\uDD88', color: '#0E7490' }, // shark
+  { emoji: '\uD83E\uDD89', color: '#78350F' }, // owl
+  { emoji: '\uD83D\uDC28', color: '#4B5563' }, // koala
+];
 
 const TRANSLATIONS = {
   en: {
@@ -1411,11 +1430,15 @@ function BestOfPicker({ options, value, onChange }) {
 
 function Avatar({ name, photo, size = 40 }) {
   const isPreset = typeof photo === 'string' && photo.startsWith('preset:');
-  const presetColor = isPreset ? photo.slice(7) : null;
+  const presetParts = isPreset ? photo.split(':') : null; // ['preset', color, emoji?]
+  const presetColor = isPreset ? presetParts[1] : null;
+  const presetEmoji = isPreset ? presetParts[2] : null;
   return (
     <div className="rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden" style={{ width: size, height: size, background: isPreset ? presetColor : C.panel2 }}>
       {photo && !isPreset ? (
         <img src={photo} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      ) : isPreset && presetEmoji ? (
+        <span style={{ fontSize: size * 0.55, lineHeight: 1 }}>{presetEmoji}</span>
       ) : (
         <span className="tt-display" style={{ color: isPreset ? '#fff' : C.dim, fontSize: size * 0.42 }}>{(name || '?').charAt(0).toUpperCase()}</span>
       )}
@@ -2855,6 +2878,7 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
   const [cityInput, setCityInput] = useState(profile ? profile.city || '' : '');
   const [countryInput, setCountryInput] = useState(profile ? profile.country || '' : '');
   const [confirmingAccount, setConfirmingAccount] = useState(false);
+  const [showAvatarPicker, setShowAvatarPicker] = useState(false);
   const [deletingAccount, setDeletingAccount] = useState(false);
 
   useEffect(() => {
@@ -2966,21 +2990,33 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
         <GhostButton onClick={() => fileRef.current && fileRef.current.click()} style={{ width: '100%', textAlign: 'center' }}>
           <span className="flex items-center justify-center gap-2"><Camera size={15} /> {profile && profile.avatar_url ? t('player_photo_change') : t('player_photo_upload')}</span>
         </GhostButton>
-        <div className="tt-body text-xs font-semibold mt-3 mb-2" style={{ color: C.dim }}>{t('profile_avatar_presets_label')}</div>
-        <div className="flex gap-2 flex-wrap">
-          {AVATAR_PRESETS.map(color => (
-            <button
-              key={color}
-              onClick={() => saveField({ avatar_url: `preset:${color}` })}
-              className="rounded-full flex-shrink-0"
-              style={{
-                width: 36, height: 36, background: color,
-                border: profile && profile.avatar_url === `preset:${color}` ? `2px solid ${C.text}` : '2px solid transparent',
-              }}
-              aria-label={color}
-            />
-          ))}
-        </div>
+        <GhostButton onClick={() => setShowAvatarPicker(s => !s)} style={{ width: '100%', textAlign: 'center', marginTop: 8 }}>
+          <span className="flex items-center justify-center gap-2">
+            <User size={15} /> {t('profile_avatar_presets_label')}
+            <ChevronDown size={14} style={{ transform: showAvatarPicker ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+          </span>
+        </GhostButton>
+        {showAvatarPicker && (
+          <div className="grid grid-cols-6 gap-2 mt-3">
+            {AVATAR_CHARACTERS.map(({ emoji, color }) => {
+              const value = `preset:${color}:${emoji}`;
+              const selected = profile && profile.avatar_url === value;
+              return (
+                <button
+                  key={emoji}
+                  onClick={() => { saveField({ avatar_url: value }); setShowAvatarPicker(false); }}
+                  className="rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{
+                    width: 44, height: 44, background: color,
+                    border: selected ? `2px solid ${C.text}` : '2px solid transparent',
+                  }}
+                >
+                  <span style={{ fontSize: 22, lineHeight: 1 }}>{emoji}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
       </Panel>
 
       {me ? (
