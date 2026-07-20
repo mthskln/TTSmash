@@ -98,6 +98,32 @@ const LANGUAGES = [
   { code: 'ko', label: '한국어', short: 'KO', flag: '\uD83C\uDDF0\uD83C\uDDF7' },
 ];
 
+function flagEmoji(iso2) {
+  return iso2.toUpperCase().replace(/./g, ch => String.fromCodePoint(127397 + ch.charCodeAt(0)));
+}
+
+const COUNTRY_CODES = [
+  ['AF', 'Afghanistan'], ['AL', 'Albania'], ['DZ', 'Algeria'], ['AR', 'Argentina'], ['AM', 'Armenia'],
+  ['AU', 'Australia'], ['AT', 'Austria'], ['AZ', 'Azerbaijan'], ['BE', 'Belgium'], ['BA', 'Bosnia and Herzegovina'],
+  ['BR', 'Brazil'], ['BG', 'Bulgaria'], ['KH', 'Cambodia'], ['CA', 'Canada'], ['CL', 'Chile'],
+  ['CN', 'China'], ['CO', 'Colombia'], ['HR', 'Croatia'], ['CU', 'Cuba'], ['CY', 'Cyprus'],
+  ['CZ', 'Czech Republic'], ['DK', 'Denmark'], ['EG', 'Egypt'], ['EE', 'Estonia'], ['FI', 'Finland'],
+  ['FR', 'France'], ['GE', 'Georgia'], ['DE', 'Germany'], ['GH', 'Ghana'], ['GR', 'Greece'],
+  ['HK', 'Hong Kong'], ['HU', 'Hungary'], ['IS', 'Iceland'], ['IN', 'India'], ['ID', 'Indonesia'],
+  ['IE', 'Ireland'], ['IL', 'Israel'], ['IT', 'Italy'], ['JP', 'Japan'], ['KZ', 'Kazakhstan'],
+  ['KE', 'Kenya'], ['KR', 'South Korea'], ['LV', 'Latvia'], ['LB', 'Lebanon'], ['LT', 'Lithuania'],
+  ['LU', 'Luxembourg'], ['MY', 'Malaysia'], ['MT', 'Malta'], ['MX', 'Mexico'], ['MA', 'Morocco'],
+  ['NL', 'Netherlands'], ['NZ', 'New Zealand'], ['NG', 'Nigeria'], ['NO', 'Norway'], ['PK', 'Pakistan'],
+  ['PA', 'Panama'], ['PY', 'Paraguay'], ['PE', 'Peru'], ['PH', 'Philippines'], ['PL', 'Poland'],
+  ['PT', 'Portugal'], ['QA', 'Qatar'], ['RO', 'Romania'], ['RU', 'Russia'], ['SA', 'Saudi Arabia'],
+  ['RS', 'Serbia'], ['SG', 'Singapore'], ['SK', 'Slovakia'], ['SI', 'Slovenia'], ['ZA', 'South Africa'],
+  ['ES', 'Spain'], ['LK', 'Sri Lanka'], ['SE', 'Sweden'], ['CH', 'Switzerland'], ['TW', 'Taiwan'],
+  ['TH', 'Thailand'], ['TN', 'Tunisia'], ['TR', 'Turkey'], ['UA', 'Ukraine'], ['AE', 'United Arab Emirates'],
+  ['GB', 'United Kingdom'], ['US', 'United States'], ['UY', 'Uruguay'], ['VE', 'Venezuela'], ['VN', 'Vietnam'],
+].sort((a, b) => a[1].localeCompare(b[1]));
+
+const AVATAR_PRESETS = ['#0B6E4F', '#12A876', '#F2A93B', '#E2313D', '#2A6F97', '#8E44AD', '#D35400', '#16A085'];
+
 const TRANSLATIONS = {
   en: {
     nav_home: 'Home', nav_freeplay: 'Free play', nav_competition: 'Competition', nav_tournament: 'Tournament', nav_stats: 'Stats', nav_settings: 'Settings',
@@ -120,7 +146,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Wins per player (top 10)', stats_points_chart: 'Points scored (top 10)', chart_won: 'Won', chart_lost: 'Lost', chart_for: 'For', chart_against: 'Against',
     stats_scope_all: 'All',
     nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.',
-    nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Your country',
+    nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar',
     profile_no_stats: 'No matches found under this name yet. Play a match as "{name}" to see stats here.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Coming soon \u2014 earn badges by playing matches!',
     badge_points: '{n} points scored', badge_matches: '{n} matches played', badge_streak: '{n}-match win streak',
@@ -192,7 +218,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Victoires par joueur (top 10)', stats_points_chart: 'Points marqués (top 10)', chart_won: 'Gagnés', chart_lost: 'Perdus', chart_for: 'Pour', chart_against: 'Contre',
     stats_scope_all: 'Tout',
     nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.',
-    nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Votre pays',
+    nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar',
     profile_no_stats: 'Aucun match trouvé sous ce nom pour le moment. Jouez un match en tant que « {name} » pour voir vos statistiques ici.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Bientôt disponible \u2014 gagnez des badges en jouant des matchs\u00A0!',
     badge_points: '{n} points marqués', badge_matches: '{n} matchs joués', badge_streak: 'Série de {n} victoires',
@@ -264,7 +290,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Overwinningen per speler (top 10)', stats_points_chart: 'Gescoorde punten (top 10)', chart_won: 'Gewonnen', chart_lost: 'Verloren', chart_for: 'Voor', chart_against: 'Tegen',
     stats_scope_all: 'Totaal',
     nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.',
-    nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Jouw land',
+    nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar',
     profile_no_stats: 'Nog geen wedstrijden gevonden onder deze naam. Speel een wedstrijd als "{name}" om hier statistieken te zien.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Binnenkort beschikbaar \u2014 verdien badges door wedstrijden te spelen!',
     badge_points: '{n} punten gescoord', badge_matches: '{n} wedstrijden gespeeld', badge_streak: '{n} overwinningen op rij',
@@ -336,7 +362,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Победы по игрокам (топ-10)', stats_points_chart: 'Набранные очки (топ-10)', chart_won: 'Победы', chart_lost: 'Поражения', chart_for: 'За', chart_against: 'Против',
     stats_scope_all: 'Все',
     nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.',
-    nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Ваша страна',
+    nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар',
     profile_no_stats: 'Матчи под этим именем пока не найдены. Сыграйте матч под именем «{name}», чтобы увидеть статистику здесь.',
     profile_badges_title: 'Значки', profile_badges_empty: 'Скоро появится \u2014 зарабатывайте значки, играя матчи!',
     badge_points: '{n} набранных очков', badge_matches: '{n} сыгранных матчей', badge_streak: 'Серия из {n} побед',
@@ -408,7 +434,7 @@ const TRANSLATIONS = {
     stats_wins_chart: '各选手胜场（前10）', stats_points_chart: '得分统计（前10）', chart_won: '胜', chart_lost: '负', chart_for: '得分', chart_against: '失分',
     stats_scope_all: '全部',
     nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。',
-    nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '你的国家',
+    nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像',
     profile_no_stats: '尚未找到该名字下的比赛记录。以"{name}"的身份参加一场比赛即可在此查看统计数据。',
     profile_badges_title: '徽章', profile_badges_empty: '即将推出 \u2014 通过参加比赛获得徽章！',
     badge_points: '累计得分 {n} 分', badge_matches: '已进行 {n} 场比赛', badge_streak: '连胜 {n} 场',
@@ -480,7 +506,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Victorias por jugador (top 10)', stats_points_chart: 'Puntos anotados (top 10)', chart_won: 'Ganados', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'En contra',
     stats_scope_all: 'Todo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.',
-    nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Tu país',
+    nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar',
     profile_no_stats: 'Aún no se han encontrado partidos con este nombre. Juega un partido como "{name}" para ver tus estadísticas aquí.',
     profile_badges_title: 'Insignias', profile_badges_empty: '¡Próximamente! Gana insignias jugando partidos.',
     badge_points: '{n} puntos anotados', badge_matches: '{n} partidos jugados', badge_streak: 'Racha de {n} victorias',
@@ -552,7 +578,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Vitórias por jogador (top 10)', stats_points_chart: 'Pontos marcados (top 10)', chart_won: 'Vencidos', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'Contra',
     stats_scope_all: 'Tudo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.',
-    nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'O teu país',
+    nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar',
     profile_no_stats: 'Ainda não foram encontradas partidas com este nome. Joga uma partida como "{name}" para veres as estatísticas aqui.',
     profile_badges_title: 'Emblemas', profile_badges_empty: 'Em breve \u2014 ganha emblemas ao jogar partidas!',
     badge_points: '{n} pontos marcados', badge_matches: '{n} partidas jogadas', badge_streak: 'Sequência de {n} vitórias',
@@ -624,7 +650,7 @@ const TRANSLATIONS = {
     stats_wins_chart: '選手別勝利数（上位10名）', stats_points_chart: '獲得ポイント（上位10名）', chart_won: '勝ち', chart_lost: '負け', chart_for: '得点', chart_against: '失点',
     stats_scope_all: 'すべて',
     nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。',
-    nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: 'あなたの国',
+    nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ',
     profile_no_stats: 'この名前での試合がまだ見つかりません。「{name}」としてプレーすると、ここに統計が表示されます。',
     profile_badges_title: 'バッジ', profile_badges_empty: '近日公開予定 \u2014 試合をプレーしてバッジを獲得しよう！',
     badge_points: '{n}ポイント獲得', badge_matches: '{n}試合出場', badge_streak: '{n}連勝',
@@ -696,7 +722,7 @@ const TRANSLATIONS = {
     stats_wins_chart: '선수별 승수 (상위 10명)', stats_points_chart: '득점 현황 (상위 10명)', chart_won: '승', chart_lost: '패', chart_for: '득점', chart_against: '실점',
     stats_scope_all: '전체',
     nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.',
-    nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '당신의 국가',
+    nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택',
     profile_no_stats: '이 이름으로 진행된 경기가 아직 없습니다. "{name}"으로 경기를 플레이하면 여기에 통계가 표시됩니다.',
     profile_badges_title: '배지', profile_badges_empty: '곧 공개 예정 \u2014 경기를 플레이하고 배지를 획득하세요!',
     badge_points: '{n}점 획득', badge_matches: '{n}경기 출전', badge_streak: '{n}연승',
@@ -1384,12 +1410,14 @@ function BestOfPicker({ options, value, onChange }) {
 }
 
 function Avatar({ name, photo, size = 40 }) {
+  const isPreset = typeof photo === 'string' && photo.startsWith('preset:');
+  const presetColor = isPreset ? photo.slice(7) : null;
   return (
-    <div className="rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden" style={{ width: size, height: size, background: C.panel2 }}>
-      {photo ? (
+    <div className="rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden" style={{ width: size, height: size, background: isPreset ? presetColor : C.panel2 }}>
+      {photo && !isPreset ? (
         <img src={photo} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       ) : (
-        <span className="tt-display" style={{ color: C.dim, fontSize: size * 0.42 }}>{(name || '?').charAt(0).toUpperCase()}</span>
+        <span className="tt-display" style={{ color: isPreset ? '#fff' : C.dim, fontSize: size * 0.42 }}>{(name || '?').charAt(0).toUpperCase()}</span>
       )}
     </div>
   );
@@ -2919,20 +2947,40 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
           </div>
           <div>
             <div className="tt-body text-xs font-semibold mb-1" style={{ color: C.dim }}>{t('profile_country_label')}</div>
-            <input
+            <select
               value={countryInput}
-              onChange={e => setCountryInput(e.target.value)}
-              onBlur={() => saveField({ country: countryInput.trim() })}
-              placeholder={t('profile_country_placeholder')}
+              onChange={e => { setCountryInput(e.target.value); saveField({ country: e.target.value }); }}
               className="tt-body w-full px-3 py-2 rounded-lg outline-none"
-              style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
-            />
+              style={{ background: C.panel2, border: `1px solid ${C.line}`, color: countryInput ? C.text : C.dim }}
+            >
+              <option value="" style={{ color: C.dim }}>{t('profile_country_placeholder')}</option>
+              {COUNTRY_CODES.map(([iso, name]) => (
+                <option key={iso} value={name} style={{ color: C.text, background: C.panel2 }}>
+                  {flagEmoji(iso)} {name}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <input ref={fileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFile} />
         <GhostButton onClick={() => fileRef.current && fileRef.current.click()} style={{ width: '100%', textAlign: 'center' }}>
           <span className="flex items-center justify-center gap-2"><Camera size={15} /> {profile && profile.avatar_url ? t('player_photo_change') : t('player_photo_upload')}</span>
         </GhostButton>
+        <div className="tt-body text-xs font-semibold mt-3 mb-2" style={{ color: C.dim }}>{t('profile_avatar_presets_label')}</div>
+        <div className="flex gap-2 flex-wrap">
+          {AVATAR_PRESETS.map(color => (
+            <button
+              key={color}
+              onClick={() => saveField({ avatar_url: `preset:${color}` })}
+              className="rounded-full flex-shrink-0"
+              style={{
+                width: 36, height: 36, background: color,
+                border: profile && profile.avatar_url === `preset:${color}` ? `2px solid ${C.text}` : '2px solid transparent',
+              }}
+              aria-label={color}
+            />
+          ))}
+        </div>
       </Panel>
 
       {me ? (
