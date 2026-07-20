@@ -179,7 +179,7 @@ const TRANSLATIONS = {
     badge_perfect_return: 'Perfect return', badge_perfect_return_desc: 'Won every point on return in one match', badge_first_win: 'First win',
     streak_current: 'Current streak', streak_best: 'Best streak',
     player_stats_line: '{played} matches \u2022 {pct}% won', player_photo_change: 'Change photo', player_photo_upload: 'Upload photo',
-    player_won: 'Won', player_lost: 'Lost', player_sets_label: 'Sets for-against', player_points_label: 'Points for-against',
+    player_won: 'Won', player_lost: 'Lost', player_sets_label: 'Sets for-against', player_points_label: 'Points for-against', player_career_points_label: 'Career points',
     player_recent: 'Recent matches', player_none: 'No matches yet.', player_not_found: 'No data found.', vs_label: 'vs {name}',
     h2h_title: 'Head-to-head', h2h_need_two: 'At least 2 players with matches are needed.', h2h_pick_two: 'Pick two different players.',
     h2h_count: '{n} head-to-head match(es)', h2h_sets: 'sets', h2h_points: 'points', h2h_history: 'Match history', h2h_none: 'No matches between them yet.', h2h_wins: '{name} wins {a}-{b}',
@@ -252,7 +252,7 @@ const TRANSLATIONS = {
     badge_perfect_return: 'Retour parfait', badge_perfect_return_desc: 'Tous les points gagnés au retour en un match', badge_first_win: 'Première victoire',
     streak_current: 'Série en cours', streak_best: 'Meilleure série',
     player_stats_line: '{played} matchs \u2022 {pct}% de victoires', player_photo_change: 'Changer la photo', player_photo_upload: 'Ajouter une photo',
-    player_won: 'Victoires', player_lost: 'Défaites', player_sets_label: 'Sets pour-contre', player_points_label: 'Points pour-contre',
+    player_won: 'Victoires', player_lost: 'Défaites', player_sets_label: 'Sets pour-contre', player_points_label: 'Points pour-contre', player_career_points_label: 'Points en carrière',
     player_recent: 'Matchs récents', player_none: 'Aucun match pour le moment.', player_not_found: 'Aucune donnée trouvée.', vs_label: 'vs {name}',
     h2h_title: 'Face-à-face', h2h_need_two: 'Il faut au moins 2 joueurs ayant joué des matchs.', h2h_pick_two: 'Choisissez deux joueurs différents.',
     h2h_count: '{n} match(s) l\u2019un contre l\u2019autre', h2h_sets: 'sets', h2h_points: 'points', h2h_history: 'Historique des matchs', h2h_none: 'Aucun duel entre eux pour le moment.', h2h_wins: '{name} gagne {a}-{b}',
@@ -325,7 +325,7 @@ const TRANSLATIONS = {
     badge_perfect_return: 'Perfecte return', badge_perfect_return_desc: 'Elk punt gewonnen bij return in één wedstrijd', badge_first_win: 'Eerste overwinning',
     streak_current: 'Huidige reeks', streak_best: 'Beste reeks',
     player_stats_line: '{played} wedstrijden \u2022 {pct}% gewonnen', player_photo_change: 'Foto wijzigen', player_photo_upload: 'Foto uploaden',
-    player_won: 'Gewonnen', player_lost: 'Verloren', player_sets_label: 'Sets voor-tegen', player_points_label: 'Punten voor-tegen',
+    player_won: 'Gewonnen', player_lost: 'Verloren', player_sets_label: 'Sets voor-tegen', player_points_label: 'Punten voor-tegen', player_career_points_label: 'Totaal gescoorde punten',
     player_recent: 'Recente wedstrijden', player_none: 'Nog geen wedstrijden.', player_not_found: 'Geen gegevens gevonden.', vs_label: 'vs {name}',
     h2h_title: 'Head-to-head', h2h_need_two: 'Er zijn minstens 2 spelers met wedstrijden nodig.', h2h_pick_two: 'Kies twee verschillende spelers.',
     h2h_count: '{n} onderlinge wedstrijd(en)', h2h_sets: 'sets', h2h_points: 'punten', h2h_history: 'Wedstrijdgeschiedenis', h2h_none: 'Nog geen onderlinge duels.', h2h_wins: '{name} wint {a}-{b}',
@@ -398,7 +398,7 @@ const TRANSLATIONS = {
     badge_perfect_return: 'Идеальный приём', badge_perfect_return_desc: 'Выиграны все очки на приёме в одном матче', badge_first_win: 'Первая победа',
     streak_current: 'Текущая серия', streak_best: 'Лучшая серия',
     player_stats_line: '{played} матчей \u2022 {pct}% побед', player_photo_change: 'Изменить фото', player_photo_upload: 'Загрузить фото',
-    player_won: 'Победы', player_lost: 'Поражения', player_sets_label: 'Сеты за-против', player_points_label: 'Очки за-против',
+    player_won: 'Победы', player_lost: 'Поражения', player_sets_label: 'Сеты за-против', player_points_label: 'Очки за-против', player_career_points_label: 'Очки за карьеру',
     player_recent: 'Последние матчи', player_none: 'Матчей пока нет.', player_not_found: 'Данные не найдены.', vs_label: 'vs {name}',
     h2h_title: 'Один на один', h2h_need_two: 'Нужно как минимум 2 игрока с матчами.', h2h_pick_two: 'Выберите двух разных игроков.',
     h2h_count: '{n} личных встреч', h2h_sets: 'сеты', h2h_points: 'очки', h2h_history: 'История встреч', h2h_none: 'Личных встреч пока не было.', h2h_wins: '{name} побеждает {a}-{b}',
@@ -471,7 +471,7 @@ const TRANSLATIONS = {
     badge_perfect_return: '完美接发球', badge_perfect_return_desc: '在一场比赛中，接发球的每一分都赢了', badge_first_win: '首场胜利',
     streak_current: '当前连胜', streak_best: '最佳连胜',
     player_stats_line: '{played} 场比赛 \u2022 胜率 {pct}%', player_photo_change: '更换照片', player_photo_upload: '上传照片',
-    player_won: '胜场', player_lost: '负场', player_sets_label: '局数（胜-负）', player_points_label: '得分（得-失）',
+    player_won: '胜场', player_lost: '负场', player_sets_label: '局数（胜-负）', player_points_label: '得分（得-失）', player_career_points_label: '生涯总得分',
     player_recent: '近期比赛', player_none: '暂无比赛。', player_not_found: '未找到数据。', vs_label: '对阵 {name}',
     h2h_title: '对战记录', h2h_need_two: '至少需要2名有比赛记录的选手。', h2h_pick_two: '请选择两名不同的选手。',
     h2h_count: '共 {n} 场交手记录', h2h_sets: '局', h2h_points: '分', h2h_history: '交手历史', h2h_none: '两人尚无交手记录。', h2h_wins: '{name} 以 {a}-{b} 获胜',
@@ -544,7 +544,7 @@ const TRANSLATIONS = {
     badge_perfect_return: 'Resto perfecto', badge_perfect_return_desc: 'Ganó todos los puntos al resto en un partido', badge_first_win: 'Primera victoria',
     streak_current: 'Racha actual', streak_best: 'Mejor racha',
     player_stats_line: '{played} partidos \u2022 {pct}% ganados', player_photo_change: 'Cambiar foto', player_photo_upload: 'Subir foto',
-    player_won: 'Ganados', player_lost: 'Perdidos', player_sets_label: 'Sets a favor-en contra', player_points_label: 'Puntos a favor-en contra',
+    player_won: 'Ganados', player_lost: 'Perdidos', player_sets_label: 'Sets a favor-en contra', player_points_label: 'Puntos a favor-en contra', player_career_points_label: 'Puntos de carrera',
     player_recent: 'Partidos recientes', player_none: 'Aún no hay partidos.', player_not_found: 'No se encontraron datos.', vs_label: 'vs {name}',
     h2h_title: 'Cara a cara', h2h_need_two: 'Se necesitan al menos 2 jugadores con partidos.', h2h_pick_two: 'Elige dos jugadores distintos.',
     h2h_count: '{n} partido(s) entre ambos', h2h_sets: 'sets', h2h_points: 'puntos', h2h_history: 'Historial de partidos', h2h_none: 'Aún no hay duelos entre ellos.', h2h_wins: '{name} gana {a}-{b}',
@@ -617,7 +617,7 @@ const TRANSLATIONS = {
     badge_perfect_return: 'Receção perfeita', badge_perfect_return_desc: 'Ganhou todos os pontos na receção numa partida', badge_first_win: 'Primeira vitória',
     streak_current: 'Sequência atual', streak_best: 'Melhor sequência',
     player_stats_line: '{played} partidas \u2022 {pct}% vencidas', player_photo_change: 'Alterar foto', player_photo_upload: 'Carregar foto',
-    player_won: 'Vencidas', player_lost: 'Perdidas', player_sets_label: 'Sets a favor-contra', player_points_label: 'Pontos a favor-contra',
+    player_won: 'Vencidas', player_lost: 'Perdidas', player_sets_label: 'Sets a favor-contra', player_points_label: 'Pontos a favor-contra', player_career_points_label: 'Pontos de carreira',
     player_recent: 'Partidas recentes', player_none: 'Ainda não há partidas.', player_not_found: 'Nenhum dado encontrado.', vs_label: 'vs {name}',
     h2h_title: 'Confronto direto', h2h_need_two: 'São necessários pelo menos 2 jogadores com partidas.', h2h_pick_two: 'Escolha dois jogadores diferentes.',
     h2h_count: '{n} confronto(s) direto(s)', h2h_sets: 'sets', h2h_points: 'pontos', h2h_history: 'Histórico de partidas', h2h_none: 'Ainda não há confrontos entre eles.', h2h_wins: '{name} vence {a}-{b}',
@@ -690,7 +690,7 @@ const TRANSLATIONS = {
     badge_perfect_return: '完璧なレシーブ', badge_perfect_return_desc: '1試合でレシーブのポイントをすべて獲得', badge_first_win: '初勝利',
     streak_current: '現在の連勝', streak_best: '最高連勝',
     player_stats_line: '{played}試合 \u2022 勝率{pct}%', player_photo_change: '写真を変更', player_photo_upload: '写真をアップロード',
-    player_won: '勝ち', player_lost: '負け', player_sets_label: 'セット（勝ち-負け）', player_points_label: 'ポイント（獲得-失点）',
+    player_won: '勝ち', player_lost: '負け', player_sets_label: 'セット（勝ち-負け）', player_points_label: 'ポイント（獲得-失点）', player_career_points_label: '通算獲得ポイント',
     player_recent: '最近の試合', player_none: 'まだ試合がありません。', player_not_found: 'データが見つかりません。', vs_label: '対 {name}',
     h2h_title: '直接対決', h2h_need_two: '試合履歴のある選手が2名以上必要です。', h2h_pick_two: '異なる選手を2名選んでください。',
     h2h_count: '対戦成績：{n}試合', h2h_sets: 'セット', h2h_points: 'ポイント', h2h_history: '対戦履歴', h2h_none: 'まだ対戦記録がありません。', h2h_wins: '{name}が{a}-{b}で勝利',
@@ -763,7 +763,7 @@ const TRANSLATIONS = {
     badge_perfect_return: '완벽한 리시브', badge_perfect_return_desc: '한 경기에서 리시브로 얻은 포인트를 모두 획득', badge_first_win: '첫 승리',
     streak_current: '현재 연승', streak_best: '최고 연승',
     player_stats_line: '{played}경기 \u2022 승률 {pct}%', player_photo_change: '사진 변경', player_photo_upload: '사진 업로드',
-    player_won: '승', player_lost: '패', player_sets_label: '세트 (득-실)', player_points_label: '포인트 (득-실)',
+    player_won: '승', player_lost: '패', player_sets_label: '세트 (득-실)', player_points_label: '포인트 (득-실)', player_career_points_label: '통산 획득 포인트',
     player_recent: '최근 경기', player_none: '아직 경기가 없습니다.', player_not_found: '데이터를 찾을 수 없습니다.', vs_label: 'vs {name}',
     h2h_title: '상대 전적', h2h_need_two: '경기 기록이 있는 선수가 최소 2명 필요합니다.', h2h_pick_two: '서로 다른 두 선수를 선택하세요.',
     h2h_count: '상대 전적 {n}경기', h2h_sets: '세트', h2h_points: '포인트', h2h_history: '경기 기록', h2h_none: '아직 두 선수 간 경기가 없습니다.', h2h_wins: '{name} {a}-{b}로 승리',
@@ -2822,6 +2822,10 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
           <div className="tt-display text-3xl" style={{ color: C.text }}>{streaks.best}</div>
           <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_best')}</div>
         </Panel>
+        <Panel style={{ textAlign: 'center' }}>
+          <div className="tt-display text-3xl" style={{ color: C.greenLight }}>{me.pointsFor}</div>
+          <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
+        </Panel>
       </div>
 
       {hasServeData && (
@@ -3370,6 +3374,10 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
               <div className="text-center">
                 <div className="tt-display text-xl" style={{ color: C.text }}>{streaks.best}</div>
                 <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_best')}</div>
+              </div>
+              <div className="text-center">
+                <div className="tt-display text-xl" style={{ color: C.greenLight }}>{me.pointsFor}</div>
+                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
               </div>
             </div>
           </Panel>
