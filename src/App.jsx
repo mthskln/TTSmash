@@ -164,7 +164,7 @@ const TRANSLATIONS = {
     stats_title: 'Statistics', stats_h2h: 'Head-to-head comparison', stats_ranking: 'Ranking', stats_empty: 'No matches played yet.',
     stats_wins_chart: 'Wins per player (top 10)', stats_points_chart: 'Points scored (top 10)', chart_won: 'Won', chart_lost: 'Lost', chart_for: 'For', chart_against: 'Against',
     stats_scope_all: 'All',
-    nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.',
+    nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.', friend_requests_title: 'Friend requests', friend_request_sent: 'Request sent', friend_request_pending_you: 'Wants to be friends', friends_already: 'Friends', btn_accept: 'Accept', btn_decline: 'Decline', friends_none_yet: 'No friends yet', btn_challenge: 'Challenge',
     nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar',
     profile_no_stats: 'No matches found under this name yet. Play a match as "{name}" to see stats here.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Coming soon \u2014 earn badges by playing matches!',
@@ -236,7 +236,7 @@ const TRANSLATIONS = {
     stats_title: 'Statistiques', stats_h2h: 'Comparaison face-à-face', stats_ranking: 'Classement', stats_empty: 'Aucun match joué pour le moment.',
     stats_wins_chart: 'Victoires par joueur (top 10)', stats_points_chart: 'Points marqués (top 10)', chart_won: 'Gagnés', chart_lost: 'Perdus', chart_for: 'Pour', chart_against: 'Contre',
     stats_scope_all: 'Tout',
-    nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.',
+    nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.', friend_requests_title: "Demandes d'amis", friend_request_sent: 'Demande envoyée', friend_request_pending_you: 'Veut être ami(e)', friends_already: 'Amis', btn_accept: 'Accepter', btn_decline: 'Refuser', friends_none_yet: "Pas encore d'amis", btn_challenge: 'Défier',
     nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar',
     profile_no_stats: 'Aucun match trouvé sous ce nom pour le moment. Jouez un match en tant que « {name} » pour voir vos statistiques ici.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Bientôt disponible \u2014 gagnez des badges en jouant des matchs\u00A0!',
@@ -308,7 +308,7 @@ const TRANSLATIONS = {
     stats_title: 'Statistieken', stats_h2h: 'Head-to-head vergelijking', stats_ranking: 'Ranglijst', stats_empty: 'Nog geen wedstrijden gespeeld.',
     stats_wins_chart: 'Overwinningen per speler (top 10)', stats_points_chart: 'Gescoorde punten (top 10)', chart_won: 'Gewonnen', chart_lost: 'Verloren', chart_for: 'Voor', chart_against: 'Tegen',
     stats_scope_all: 'Totaal',
-    nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.',
+    nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.', friend_requests_title: 'Vriendverzoeken', friend_request_sent: 'Verzoek verzonden', friend_request_pending_you: 'Wil bevriend worden', friends_already: 'Bevriend', btn_accept: 'Aanvaarden', btn_decline: 'Weigeren', friends_none_yet: 'Nog geen vrienden', btn_challenge: 'Uitdagen',
     nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar',
     profile_no_stats: 'Nog geen wedstrijden gevonden onder deze naam. Speel een wedstrijd als "{name}" om hier statistieken te zien.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Binnenkort beschikbaar \u2014 verdien badges door wedstrijden te spelen!',
@@ -380,7 +380,7 @@ const TRANSLATIONS = {
     stats_title: 'Статистика', stats_h2h: 'Сравнение один на один', stats_ranking: 'Рейтинг', stats_empty: 'Матчей пока нет.',
     stats_wins_chart: 'Победы по игрокам (топ-10)', stats_points_chart: 'Набранные очки (топ-10)', chart_won: 'Победы', chart_lost: 'Поражения', chart_for: 'За', chart_against: 'Против',
     stats_scope_all: 'Все',
-    nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.',
+    nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.', friend_requests_title: 'Заявки в друзья', friend_request_sent: 'Заявка отправлена', friend_request_pending_you: 'Хочет дружить', friends_already: 'Друзья', btn_accept: 'Принять', btn_decline: 'Отклонить', friends_none_yet: 'Пока нет друзей', btn_challenge: 'Бросить вызов',
     nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар',
     profile_no_stats: 'Матчи под этим именем пока не найдены. Сыграйте матч под именем «{name}», чтобы увидеть статистику здесь.',
     profile_badges_title: 'Значки', profile_badges_empty: 'Скоро появится \u2014 зарабатывайте значки, играя матчи!',
@@ -452,7 +452,7 @@ const TRANSLATIONS = {
     stats_title: '统计', stats_h2h: '对战对比', stats_ranking: '排行榜', stats_empty: '暂无比赛记录。',
     stats_wins_chart: '各选手胜场（前10）', stats_points_chart: '得分统计（前10）', chart_won: '胜', chart_lost: '负', chart_for: '得分', chart_against: '失分',
     stats_scope_all: '全部',
-    nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。',
+    nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。', friend_requests_title: '好友请求', friend_request_sent: '请求已发送', friend_request_pending_you: '想加你为好友', friends_already: '好友', btn_accept: '接受', btn_decline: '拒绝', friends_none_yet: '还没有好友', btn_challenge: '挑战',
     nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像',
     profile_no_stats: '尚未找到该名字下的比赛记录。以"{name}"的身份参加一场比赛即可在此查看统计数据。',
     profile_badges_title: '徽章', profile_badges_empty: '即将推出 \u2014 通过参加比赛获得徽章！',
@@ -524,7 +524,7 @@ const TRANSLATIONS = {
     stats_title: 'Estadísticas', stats_h2h: 'Comparación cara a cara', stats_ranking: 'Clasificación', stats_empty: 'Aún no se han jugado partidos.',
     stats_wins_chart: 'Victorias por jugador (top 10)', stats_points_chart: 'Puntos anotados (top 10)', chart_won: 'Ganados', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'En contra',
     stats_scope_all: 'Todo',
-    nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.',
+    nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.', friend_requests_title: 'Solicitudes de amistad', friend_request_sent: 'Solicitud enviada', friend_request_pending_you: 'Quiere ser tu amigo', friends_already: 'Amigos', btn_accept: 'Aceptar', btn_decline: 'Rechazar', friends_none_yet: 'Aún no tienes amigos', btn_challenge: 'Desafiar',
     nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar',
     profile_no_stats: 'Aún no se han encontrado partidos con este nombre. Juega un partido como "{name}" para ver tus estadísticas aquí.',
     profile_badges_title: 'Insignias', profile_badges_empty: '¡Próximamente! Gana insignias jugando partidos.',
@@ -596,7 +596,7 @@ const TRANSLATIONS = {
     stats_title: 'Estatísticas', stats_h2h: 'Comparação direta', stats_ranking: 'Classificação', stats_empty: 'Ainda não há partidas jogadas.',
     stats_wins_chart: 'Vitórias por jogador (top 10)', stats_points_chart: 'Pontos marcados (top 10)', chart_won: 'Vencidos', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'Contra',
     stats_scope_all: 'Tudo',
-    nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.',
+    nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.', friend_requests_title: 'Pedidos de amizade', friend_request_sent: 'Pedido enviado', friend_request_pending_you: 'Quer ser teu amigo', friends_already: 'Amigos', btn_accept: 'Aceitar', btn_decline: 'Recusar', friends_none_yet: 'Ainda não tens amigos', btn_challenge: 'Desafiar',
     nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar',
     profile_no_stats: 'Ainda não foram encontradas partidas com este nome. Joga uma partida como "{name}" para veres as estatísticas aqui.',
     profile_badges_title: 'Emblemas', profile_badges_empty: 'Em breve \u2014 ganha emblemas ao jogar partidas!',
@@ -668,7 +668,7 @@ const TRANSLATIONS = {
     stats_title: '統計', stats_h2h: '対戦成績比較', stats_ranking: 'ランキング', stats_empty: 'まだ試合がありません。',
     stats_wins_chart: '選手別勝利数（上位10名）', stats_points_chart: '獲得ポイント（上位10名）', chart_won: '勝ち', chart_lost: '負け', chart_for: '得点', chart_against: '失点',
     stats_scope_all: 'すべて',
-    nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。',
+    nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。', friend_requests_title: 'フレンド申請', friend_request_sent: '申請を送信しました', friend_request_pending_you: 'フレンドになりたがっています', friends_already: 'フレンド', btn_accept: '承認', btn_decline: '拒否', friends_none_yet: 'まだフレンドがいません', btn_challenge: '対戦を挑む',
     nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ',
     profile_no_stats: 'この名前での試合がまだ見つかりません。「{name}」としてプレーすると、ここに統計が表示されます。',
     profile_badges_title: 'バッジ', profile_badges_empty: '近日公開予定 \u2014 試合をプレーしてバッジを獲得しよう！',
@@ -740,7 +740,7 @@ const TRANSLATIONS = {
     stats_title: '통계', stats_h2h: '상대 전적 비교', stats_ranking: '순위', stats_empty: '아직 진행된 경기가 없습니다.',
     stats_wins_chart: '선수별 승수 (상위 10명)', stats_points_chart: '득점 현황 (상위 10명)', chart_won: '승', chart_lost: '패', chart_for: '득점', chart_against: '실점',
     stats_scope_all: '전체',
-    nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.',
+    nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.', friend_requests_title: '친구 요청', friend_request_sent: '요청을 보냈습니다', friend_request_pending_you: '친구가 되고 싶어합니다', friends_already: '친구', btn_accept: '수락', btn_decline: '거절', friends_none_yet: '아직 친구가 없습니다', btn_challenge: '도전하기',
     nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택',
     profile_no_stats: '이 이름으로 진행된 경기가 아직 없습니다. "{name}"으로 경기를 플레이하면 여기에 통계가 표시됩니다.',
     profile_badges_title: '배지', profile_badges_empty: '곧 공개 예정 \u2014 경기를 플레이하고 배지를 획득하세요!',
@@ -2572,7 +2572,7 @@ function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, fri
 }
 
 /* ============================= PLAYER DETAIL ============================= */
-function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friends, toggleFriend }) {
+function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friends, toggleFriend, onChallenge }) {
   const { t } = useT();
   const stats = aggregateStats(matchLog);
   const me = stats.find(s => s.name === playerName);
@@ -2595,7 +2595,12 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
   if (!me) return (
     <div>
       <BackBar title={playerName} onBack={() => setView('leaderboard')} />
-      <Panel><div className="tt-body text-sm" style={{ color: C.dim }}>{t('player_not_found')}</div></Panel>
+      <Panel style={{ marginBottom: 16 }}>
+        <div className="tt-body text-sm mb-3" style={{ color: C.dim }}>{t('player_not_found')}</div>
+        <PrimaryButton onClick={() => onChallenge(playerName)} style={{ width: '100%' }}>
+          <span className="flex items-center justify-center gap-2"><Swords size={15} /> {t('btn_challenge')}</span>
+        </PrimaryButton>
+      </Panel>
     </div>
   );
 
@@ -2625,6 +2630,9 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
             <Star size={18} color={friends.includes(playerName) ? '#241503' : C.dim} fill={friends.includes(playerName) ? '#241503' : 'none'} />
           </button>
         </div>
+        <PrimaryButton onClick={() => onChallenge(playerName)} style={{ width: '100%', marginBottom: 8 }}>
+          <span className="flex items-center justify-center gap-2"><Swords size={15} /> {t('btn_challenge')}</span>
+        </PrimaryButton>
         <input ref={fileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFile} />
         <GhostButton onClick={() => fileRef.current && fileRef.current.click()} style={{ width: '100%', textAlign: 'center' }}>
           <span className="flex items-center justify-center gap-2"><Camera size={15} /> {photos[playerName] ? t('player_photo_change') : t('player_photo_upload')}</span>
@@ -2799,28 +2807,82 @@ function HeadToHead({ setView, matchLog, photos, setPhotos }) {
 }
 
 /* ============================= FRIENDS ============================= */
-function FriendsScreen({ setView, matchLog, friends, toggleFriend, photos, setPhotos, onSelectPlayer, profile }) {
+function FriendsScreen({ setView, session, onSelectPlayer }) {
   const { t } = useT();
+  const myId = session.user.id;
   const [query, setQuery] = useState('');
-  const myNameLower = (profile && profile.username ? profile.username : '').trim().toLowerCase();
-  const stats = aggregateStats(matchLog).filter(s => s.name.toLowerCase() !== myNameLower);
-  const names = stats.map(s => s.name);
-  usePhotos(names, photos, setPhotos);
+  const [searchResults, setSearchResults] = useState([]);
+  const [searching, setSearching] = useState(false);
+  const [relationships, setRelationships] = useState([]);
+  const [profilesById, setProfilesById] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  async function loadRelationships() {
+    try {
+      const { data } = await supabase
+        .from('friendships')
+        .select('*')
+        .or(`requester_id.eq.${myId},addressee_id.eq.${myId}`);
+      const rels = data || [];
+      setRelationships(rels);
+      const otherIds = Array.from(new Set(rels.map(r => (r.requester_id === myId ? r.addressee_id : r.requester_id))));
+      if (otherIds.length) {
+        const { data: profs } = await supabase.from('profiles').select('*').in('id', otherIds);
+        const map = {};
+        (profs || []).forEach(p => { map[p.id] = p; });
+        setProfilesById(map);
+      }
+    } catch (e) { /* best effort */ }
+    setLoading(false);
+  }
+
+  useEffect(() => { loadRelationships(); }, []);
 
   useEffect(() => {
-    if (!myNameLower) return;
-    const selfEntry = friends.find(n => n.toLowerCase() === myNameLower);
-    if (selfEntry) toggleFriend(selfEntry);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [myNameLower]);
+    const q = query.trim();
+    if (!q) { setSearchResults([]); return; }
+    setSearching(true);
+    const timer = setTimeout(async () => {
+      try {
+        const { data } = await supabase
+          .from('profiles')
+          .select('*')
+          .ilike('username', `%${q}%`)
+          .neq('id', myId)
+          .limit(20);
+        setSearchResults(data || []);
+      } catch (e) { setSearchResults([]); }
+      setSearching(false);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [query, myId]);
 
-  const q = query.trim().toLowerCase();
-  const filtered = q ? stats.filter(s => s.name.toLowerCase().includes(q)) : stats;
-  const sorted = [...filtered].sort((a, b) => {
-    const af = friends.includes(a.name), bf = friends.includes(b.name);
-    if (af !== bf) return af ? -1 : 1;
-    return b.w - a.w;
-  });
+  function relationshipWith(otherId) {
+    return relationships.find(r => r.requester_id === otherId || r.addressee_id === otherId);
+  }
+
+  async function sendRequest(otherId) {
+    try {
+      await supabase.from('friendships').insert({ requester_id: myId, addressee_id: otherId, status: 'pending' });
+    } catch (e) { /* best effort */ }
+    loadRelationships();
+  }
+
+  async function respondRequest(rel, accept) {
+    try {
+      if (accept) await supabase.from('friendships').update({ status: 'accepted' }).eq('id', rel.id);
+      else await supabase.from('friendships').delete().eq('id', rel.id);
+    } catch (e) { /* best effort */ }
+    loadRelationships();
+  }
+
+  async function removeFriend(rel) {
+    try { await supabase.from('friendships').delete().eq('id', rel.id); } catch (e) { /* best effort */ }
+    loadRelationships();
+  }
+
+  const incoming = relationships.filter(r => r.status === 'pending' && r.addressee_id === myId);
+  const accepted = relationships.filter(r => r.status === 'accepted');
 
   return (
     <div>
@@ -2836,29 +2898,92 @@ function FriendsScreen({ setView, matchLog, friends, toggleFriend, photos, setPh
         />
       </Panel>
 
-      {sorted.length === 0 ? (
-        <Panel><div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('friends_no_results')}</div></Panel>
+      {query.trim() && (
+        <Panel style={{ marginBottom: 16 }}>
+          {searching ? (
+            <div className="tt-body text-sm text-center" style={{ color: C.dim }}>...</div>
+          ) : searchResults.length === 0 ? (
+            <div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('friends_no_results')}</div>
+          ) : (
+            <div className="flex flex-col gap-2">
+              {searchResults.map(p => {
+                const rel = relationshipWith(p.id);
+                return (
+                  <div key={p.id} className="flex items-center gap-3">
+                    <button onClick={() => onSelectPlayer(p.username)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
+                      <Avatar name={p.username} photo={p.avatar_url} size={40} />
+                      <div className="tt-body text-sm font-semibold truncate" style={{ color: C.text }}>{p.username}</div>
+                    </button>
+                    {!rel && (
+                      <button onClick={() => sendRequest(p.id)} className="tt-body text-xs px-3 py-2 rounded-lg flex-shrink-0" style={{ background: C.greenLight, color: '#04140D' }}>
+                        {t('btn_add_friend')}
+                      </button>
+                    )}
+                    {rel && rel.status === 'pending' && rel.requester_id === myId && (
+                      <span className="tt-body text-xs flex-shrink-0" style={{ color: C.dim }}>{t('friend_request_sent')}</span>
+                    )}
+                    {rel && rel.status === 'pending' && rel.addressee_id === myId && (
+                      <span className="tt-body text-xs flex-shrink-0" style={{ color: C.amber }}>{t('friend_request_pending_you')}</span>
+                    )}
+                    {rel && rel.status === 'accepted' && (
+                      <span className="tt-body text-xs flex items-center gap-1 flex-shrink-0" style={{ color: C.dim }}>
+                        <Star size={12} color={C.amber} fill={C.amber} /> {t('friends_already')}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </Panel>
+      )}
+
+      {incoming.length > 0 && (
+        <Panel style={{ marginBottom: 16 }}>
+          <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('friend_requests_title')}</div>
+          <div className="flex flex-col gap-2">
+            {incoming.map(rel => {
+              const p = profilesById[rel.requester_id];
+              if (!p) return null;
+              return (
+                <div key={rel.id} className="flex items-center gap-3">
+                  <Avatar name={p.username} photo={p.avatar_url} size={40} />
+                  <div className="tt-body text-sm font-semibold flex-1 min-w-0 truncate" style={{ color: C.text }}>{p.username}</div>
+                  <button onClick={() => respondRequest(rel, true)} className="p-2 rounded-lg flex-shrink-0" style={{ background: C.greenLight }}>
+                    <Check size={16} color="#04140D" />
+                  </button>
+                  <button onClick={() => respondRequest(rel, false)} className="p-2 rounded-lg flex-shrink-0" style={{ background: C.panel2 }}>
+                    <X size={16} color={C.dim} />
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </Panel>
+      )}
+
+      <div className="tt-body text-sm font-semibold mb-2 px-1" style={{ color: C.dim }}>{t('nav_friends')}</div>
+      {!loading && accepted.length === 0 ? (
+        <Panel><div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('friends_none_yet')}</div></Panel>
       ) : (
         <div className="flex flex-col gap-2">
-          {sorted.map(row => {
-            const isFriend = friends.includes(row.name);
-            const winPct = row.played > 0 ? Math.round((row.w / row.played) * 100) : 0;
+          {accepted.map(rel => {
+            const otherId = rel.requester_id === myId ? rel.addressee_id : rel.requester_id;
+            const p = profilesById[otherId];
+            if (!p) return null;
             return (
-              <div key={row.name} className="rounded-xl p-2.5 flex items-center gap-3" style={{ background: C.panel, border: `1px solid ${C.line}` }}>
-                <button onClick={() => onSelectPlayer(row.name)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
-                  <Avatar name={row.name} photo={photos[row.name]} size={40} />
+              <div key={rel.id} className="rounded-xl p-2.5 flex items-center gap-3" style={{ background: C.panel, border: `1px solid ${C.line}` }}>
+                <button onClick={() => onSelectPlayer(p.username)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
+                  <Avatar name={p.username} photo={p.avatar_url} size={40} />
                   <div className="min-w-0">
-                    <div className="tt-body text-sm font-semibold truncate" style={{ color: C.text }}>{row.name}</div>
-                    <div className="tt-body text-xs truncate" style={{ color: C.dim }}>{t('player_stats_line', { played: row.played, pct: winPct })}</div>
+                    <div className="tt-body text-sm font-semibold truncate" style={{ color: C.text }}>{p.username}</div>
+                    {(p.city || p.country) && (
+                      <div className="tt-body text-xs truncate" style={{ color: C.dim }}>{[p.city, p.country].filter(Boolean).join(', ')}</div>
+                    )}
                   </div>
                 </button>
-                <button
-                  onClick={() => toggleFriend(row.name)}
-                  className="p-2 rounded-lg flex-shrink-0"
-                  style={{ background: isFriend ? C.amber : C.panel2 }}
-                  title={isFriend ? t('btn_remove_friend') : t('btn_add_friend')}
-                >
-                  <Star size={16} color={isFriend ? '#241503' : C.dim} fill={isFriend ? '#241503' : 'none'} />
+                <button onClick={() => removeFriend(rel)} className="p-2 rounded-lg flex-shrink-0" style={{ background: C.panel2 }} title={t('btn_remove_friend')}>
+                  <Star size={16} color={C.amber} fill={C.amber} />
                 </button>
               </div>
             );
@@ -3729,6 +3854,11 @@ export default function App() {
     setView('player-detail');
   }
 
+  function challengePlayer(opponentName) {
+    setFpState(s => ({ ...s, mode: 'enkel', names: [profile && profile.username ? profile.username : '', opponentName] }));
+    setView('freeplay-setup');
+  }
+
   function toggleFriend(name) {
     setFriendsState(prev => {
       const updated = prev.includes(name) ? prev.filter(n => n !== name) : [...prev, name];
@@ -3775,9 +3905,9 @@ export default function App() {
   else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={matchLog} session={session} profile={profile} setProfile={setProfile} />;
   else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} />;
   else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} />;
-  else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} />;
+  else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} />;
-  else if (view === 'friends') content = <FriendsScreen setView={setView} matchLog={matchLog} friends={friends} toggleFriend={toggleFriend} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} profile={profile} />;
+  else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} />;
   else if (view === 'competition-setup') content = <CompetitionSetup setView={setView} onStart={startCompetition} />;
