@@ -95,6 +95,7 @@ const TRANSLATIONS = {
     nav_home: 'Home', nav_freeplay: 'Free play', nav_competition: 'Competition', nav_tournament: 'Tournament', nav_stats: 'Stats', nav_settings: 'Settings',
     home_title: 'Table Tennis Scoreboard', home_subtitle: 'Pick a game mode on the left to get started',
     auth_subtitle: 'Track your matches, compete with friends', auth_google: 'Sign in with Google', auth_facebook: 'Sign in with Facebook', auth_guest: 'Continue as guest',
+    settings_logout: 'Log out',
     news_badge: 'LIVE RESULTS',
     settings_title: 'Settings', settings_toss_label: 'Coin toss for serve', settings_toss_desc: 'Flip a coin before each match to decide who serves first.',
     settings_voice_label: 'Voice control for points', settings_voice_desc: "Say a player's name, or 'left'/'right', to award a point while playing.",
@@ -166,6 +167,7 @@ const TRANSLATIONS = {
     nav_home: 'Accueil', nav_freeplay: 'Partie libre', nav_competition: 'Compétition', nav_tournament: 'Tournoi', nav_stats: 'Stats', nav_settings: 'Réglages',
     home_title: 'Tableau de score tennis de table', home_subtitle: 'Choisissez un mode de jeu à gauche pour commencer',
     auth_subtitle: 'Suis tes matchs, défie tes amis', auth_google: 'Se connecter avec Google', auth_facebook: 'Se connecter avec Facebook', auth_guest: 'Continuer en tant qu\'invité',
+    settings_logout: 'Se déconnecter',
     news_badge: 'RÉSULTATS EN DIRECT',
     settings_title: 'Réglages', settings_toss_label: 'Tirage au sort pour le service', settings_toss_desc: 'Tirer à pile ou face avant chaque match pour savoir qui sert en premier.',
     settings_voice_label: 'Reconnaissance vocale des points', settings_voice_desc: "Dites le nom d'un joueur, ou « gauche »/« droite », pour attribuer un point en jouant.",
@@ -237,6 +239,7 @@ const TRANSLATIONS = {
     nav_home: 'Home', nav_freeplay: 'Vrij spel', nav_competition: 'Competitie', nav_tournament: 'Toernooi', nav_stats: 'Stats', nav_settings: 'Instelling',
     home_title: 'Tafeltennis Scorebord', home_subtitle: 'Kies links een spelvorm om te beginnen',
     auth_subtitle: 'Houd je wedstrijden bij, daag vrienden uit', auth_google: 'Inloggen met Google', auth_facebook: 'Inloggen met Facebook', auth_guest: 'Verder als gast',
+    settings_logout: 'Uitloggen',
     news_badge: 'LIVE UITSLAGEN',
     settings_title: 'Instellingen', settings_toss_label: 'Muntworp voor opslag', settings_toss_desc: 'Voor elke wedstrijd eerst een coinflip om te bepalen wie mag serveren.',
     settings_voice_label: 'Spraakherkenning voor punten', settings_voice_desc: "Zeg een naam, of 'links'/'rechts', om tijdens het spelen een punt toe te kennen.",
@@ -308,6 +311,7 @@ const TRANSLATIONS = {
     nav_home: 'Главная', nav_freeplay: 'Свободная игра', nav_competition: 'Лига', nav_tournament: 'Турнир', nav_stats: 'Стат.', nav_settings: 'Настройки',
     home_title: 'Табло настольного тенниса', home_subtitle: 'Выберите режим игры слева, чтобы начать',
     auth_subtitle: 'Отслеживай матчи, соревнуйся с друзьями', auth_google: 'Войти через Google', auth_facebook: 'Войти через Facebook', auth_guest: 'Продолжить как гость',
+    settings_logout: 'Выйти из аккаунта',
     news_badge: 'ПОСЛЕДНИЕ РЕЗУЛЬТАТЫ',
     settings_title: 'Настройки', settings_toss_label: 'Жребий на подачу', settings_toss_desc: 'Перед каждым матчем подбрасывать монету, чтобы решить, кто подаёт первым.',
     settings_voice_label: 'Голосовое управление очками', settings_voice_desc: 'Произнесите имя игрока или «слева»/«справа», чтобы засчитать очко во время игры.',
@@ -379,6 +383,7 @@ const TRANSLATIONS = {
     nav_home: '首页', nav_freeplay: '自由对战', nav_competition: '联赛', nav_tournament: '锦标赛', nav_stats: '统计', nav_settings: '设置',
     home_title: '乒乓球计分板', home_subtitle: '在左侧选择一种玩法开始',
     auth_subtitle: '记录比赛，与好友一较高下', auth_google: '使用 Google 登录', auth_facebook: '使用 Facebook 登录', auth_guest: '以访客身份继续',
+    settings_logout: '退出登录',
     news_badge: '最新战报',
     settings_title: '设置', settings_toss_label: '掷硬币决定发球', settings_toss_desc: '每场比赛开始前掷硬币，决定谁先发球。',
     settings_voice_label: '语音记分', settings_voice_desc: '说出选手姓名，或说"左"/"右"，即可在比赛中记一分。',
@@ -450,6 +455,7 @@ const TRANSLATIONS = {
     nav_home: 'Inicio', nav_freeplay: 'Juego libre', nav_competition: 'Liga', nav_tournament: 'Torneo', nav_stats: 'Stats', nav_settings: 'Ajustes',
     home_title: 'Marcador de Tenis de Mesa', home_subtitle: 'Elige un modo de juego a la izquierda para empezar',
     auth_subtitle: 'Registra tus partidos, compite con amigos', auth_google: 'Iniciar sesión con Google', auth_facebook: 'Iniciar sesión con Facebook', auth_guest: 'Continuar como invitado',
+    settings_logout: 'Cerrar sesión',
     news_badge: 'ÚLTIMOS RESULTADOS',
     settings_title: 'Ajustes', settings_toss_label: 'Sorteo para el saque', settings_toss_desc: 'Lanzar una moneda antes de cada partido para decidir quién saca primero.',
     settings_voice_label: 'Control por voz de los puntos', settings_voice_desc: 'Di el nombre de un jugador, o "izquierda"/"derecha", para anotar un punto mientras juegas.',
@@ -521,6 +527,7 @@ const TRANSLATIONS = {
     nav_home: 'Início', nav_freeplay: 'Jogo livre', nav_competition: 'Liga', nav_tournament: 'Torneio', nav_stats: 'Stats', nav_settings: 'Definições',
     home_title: 'Marcador de Ténis de Mesa', home_subtitle: 'Escolha um modo de jogo à esquerda para começar',
     auth_subtitle: 'Regista as tuas partidas, compete com amigos', auth_google: 'Iniciar sessão com Google', auth_facebook: 'Iniciar sessão com Facebook', auth_guest: 'Continuar como convidado',
+    settings_logout: 'Terminar sessão',
     news_badge: 'ÚLTIMOS RESULTADOS',
     settings_title: 'Definições', settings_toss_label: 'Sorteio para o serviço', settings_toss_desc: 'Lançar uma moeda antes de cada jogo para decidir quem serve primeiro.',
     settings_voice_label: 'Controlo por voz dos pontos', settings_voice_desc: 'Diga o nome de um jogador, ou "esquerda"/"direita", para marcar um ponto durante o jogo.',
@@ -592,6 +599,7 @@ const TRANSLATIONS = {
     nav_home: 'ホーム', nav_freeplay: 'フリープレイ', nav_competition: 'リーグ戦', nav_tournament: 'トーナメント', nav_stats: '統計', nav_settings: '設定',
     home_title: '卓球スコアボード', home_subtitle: '左側からプレイ形式を選んで始めましょう',
     auth_subtitle: '試合を記録し、友達と競おう', auth_google: 'Googleでログイン', auth_facebook: 'Facebookでログイン', auth_guest: 'ゲストとして続ける',
+    settings_logout: 'ログアウト',
     news_badge: '最新結果',
     settings_title: '設定', settings_toss_label: 'サーブ権のコイントス', settings_toss_desc: '各試合の前にコインを投げて、誰が先にサーブするか決めます。',
     settings_voice_label: '得点の音声認識', settings_voice_desc: 'プレー中に選手の名前、または「左」「右」と言うと得点が入ります。',
@@ -663,6 +671,7 @@ const TRANSLATIONS = {
     nav_home: '홈', nav_freeplay: '자유 경기', nav_competition: '리그', nav_tournament: '토너먼트', nav_stats: '통계', nav_settings: '설정',
     home_title: '탁구 스코어보드', home_subtitle: '왼쪽에서 경기 방식을 선택해 시작하세요',
     auth_subtitle: '경기를 기록하고 친구와 경쟁하세요', auth_google: 'Google로 로그인', auth_facebook: 'Facebook으로 로그인', auth_guest: '게스트로 계속하기',
+    settings_logout: '로그아웃',
     news_badge: '최신 경기 결과',
     settings_title: '설정', settings_toss_label: '서브권 동전 던지기', settings_toss_desc: '매 경기 전 동전을 던져 누가 먼저 서브할지 정합니다.',
     settings_voice_label: '음성으로 득점 기록', settings_voice_desc: '경기 중 선수 이름 또는 "왼쪽"/"오른쪽"이라고 말하면 득점이 기록됩니다.',
@@ -2216,6 +2225,18 @@ function AuthScreen() {
   const [loading, setLoading] = useState(null); // null | 'google' | 'facebook' | 'guest'
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    // Supabase appends error details to the URL hash when an OAuth redirect fails
+    // (e.g. mismatched credentials) — surface that instead of failing silently.
+    const hash = window.location.hash ? window.location.hash.substring(1) : '';
+    const params = new URLSearchParams(hash || window.location.search);
+    const errDesc = params.get('error_description') || params.get('error');
+    if (errDesc) {
+      setError(decodeURIComponent(errDesc).replace(/\+/g, ' '));
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, []);
+
   async function signInWithProvider(provider) {
     setLoading(provider);
     setError('');
@@ -2355,6 +2376,16 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
         <div className="tt-body text-xs px-1" style={{ color: C.dim }}>
           {t('settings_footer')}
         </div>
+
+        <Panel style={{ marginTop: 8 }}>
+          <button
+            onClick={() => supabase.auth.signOut()}
+            className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold"
+            style={{ background: 'transparent', color: C.text, border: `1px solid ${C.line}` }}
+          >
+            {t('settings_logout')}
+          </button>
+        </Panel>
 
         <Panel style={{ borderColor: C.red, marginTop: 8 }}>
           <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.red }}>{t('settings_danger_zone')}</div>
