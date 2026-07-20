@@ -112,7 +112,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Wins per player (top 10)', stats_points_chart: 'Points scored (top 10)', chart_won: 'Won', chart_lost: 'Lost', chart_for: 'For', chart_against: 'Against',
     stats_scope_all: 'All',
     nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.',
-    nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name',
+    nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Your country',
     profile_no_stats: 'No matches found under this name yet. Play a match as "{name}" to see stats here.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Coming soon \u2014 earn badges by playing matches!',
     badge_points: '{n} points scored', badge_matches: '{n} matches played', badge_streak: '{n}-match win streak',
@@ -184,7 +184,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Victoires par joueur (top 10)', stats_points_chart: 'Points marqués (top 10)', chart_won: 'Gagnés', chart_lost: 'Perdus', chart_for: 'Pour', chart_against: 'Contre',
     stats_scope_all: 'Tout',
     nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.',
-    nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom',
+    nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Votre pays',
     profile_no_stats: 'Aucun match trouvé sous ce nom pour le moment. Jouez un match en tant que « {name} » pour voir vos statistiques ici.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Bientôt disponible \u2014 gagnez des badges en jouant des matchs\u00A0!',
     badge_points: '{n} points marqués', badge_matches: '{n} matchs joués', badge_streak: 'Série de {n} victoires',
@@ -256,7 +256,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Overwinningen per speler (top 10)', stats_points_chart: 'Gescoorde punten (top 10)', chart_won: 'Gewonnen', chart_lost: 'Verloren', chart_for: 'Voor', chart_against: 'Tegen',
     stats_scope_all: 'Totaal',
     nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.',
-    nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam',
+    nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Jouw land',
     profile_no_stats: 'Nog geen wedstrijden gevonden onder deze naam. Speel een wedstrijd als "{name}" om hier statistieken te zien.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Binnenkort beschikbaar \u2014 verdien badges door wedstrijden te spelen!',
     badge_points: '{n} punten gescoord', badge_matches: '{n} wedstrijden gespeeld', badge_streak: '{n} overwinningen op rij',
@@ -328,7 +328,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Победы по игрокам (топ-10)', stats_points_chart: 'Набранные очки (топ-10)', chart_won: 'Победы', chart_lost: 'Поражения', chart_for: 'За', chart_against: 'Против',
     stats_scope_all: 'Все',
     nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.',
-    nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя',
+    nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Ваша страна',
     profile_no_stats: 'Матчи под этим именем пока не найдены. Сыграйте матч под именем «{name}», чтобы увидеть статистику здесь.',
     profile_badges_title: 'Значки', profile_badges_empty: 'Скоро появится \u2014 зарабатывайте значки, играя матчи!',
     badge_points: '{n} набранных очков', badge_matches: '{n} сыгранных матчей', badge_streak: 'Серия из {n} побед',
@@ -400,7 +400,7 @@ const TRANSLATIONS = {
     stats_wins_chart: '各选手胜场（前10）', stats_points_chart: '得分统计（前10）', chart_won: '胜', chart_lost: '负', chart_for: '得分', chart_against: '失分',
     stats_scope_all: '全部',
     nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。',
-    nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字',
+    nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '你的国家',
     profile_no_stats: '尚未找到该名字下的比赛记录。以"{name}"的身份参加一场比赛即可在此查看统计数据。',
     profile_badges_title: '徽章', profile_badges_empty: '即将推出 \u2014 通过参加比赛获得徽章！',
     badge_points: '累计得分 {n} 分', badge_matches: '已进行 {n} 场比赛', badge_streak: '连胜 {n} 场',
@@ -472,7 +472,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Victorias por jugador (top 10)', stats_points_chart: 'Puntos anotados (top 10)', chart_won: 'Ganados', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'En contra',
     stats_scope_all: 'Todo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.',
-    nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre',
+    nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Tu país',
     profile_no_stats: 'Aún no se han encontrado partidos con este nombre. Juega un partido como "{name}" para ver tus estadísticas aquí.',
     profile_badges_title: 'Insignias', profile_badges_empty: '¡Próximamente! Gana insignias jugando partidos.',
     badge_points: '{n} puntos anotados', badge_matches: '{n} partidos jugados', badge_streak: 'Racha de {n} victorias',
@@ -544,7 +544,7 @@ const TRANSLATIONS = {
     stats_wins_chart: 'Vitórias por jogador (top 10)', stats_points_chart: 'Pontos marcados (top 10)', chart_won: 'Vencidos', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'Contra',
     stats_scope_all: 'Tudo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.',
-    nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome',
+    nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'O teu país',
     profile_no_stats: 'Ainda não foram encontradas partidas com este nome. Joga uma partida como "{name}" para veres as estatísticas aqui.',
     profile_badges_title: 'Emblemas', profile_badges_empty: 'Em breve \u2014 ganha emblemas ao jogar partidas!',
     badge_points: '{n} pontos marcados', badge_matches: '{n} partidas jogadas', badge_streak: 'Sequência de {n} vitórias',
@@ -616,7 +616,7 @@ const TRANSLATIONS = {
     stats_wins_chart: '選手別勝利数（上位10名）', stats_points_chart: '獲得ポイント（上位10名）', chart_won: '勝ち', chart_lost: '負け', chart_for: '得点', chart_against: '失点',
     stats_scope_all: 'すべて',
     nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。',
-    nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前',
+    nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: 'あなたの国',
     profile_no_stats: 'この名前での試合がまだ見つかりません。「{name}」としてプレーすると、ここに統計が表示されます。',
     profile_badges_title: 'バッジ', profile_badges_empty: '近日公開予定 \u2014 試合をプレーしてバッジを獲得しよう！',
     badge_points: '{n}ポイント獲得', badge_matches: '{n}試合出場', badge_streak: '{n}連勝',
@@ -688,7 +688,7 @@ const TRANSLATIONS = {
     stats_wins_chart: '선수별 승수 (상위 10명)', stats_points_chart: '득점 현황 (상위 10명)', chart_won: '승', chart_lost: '패', chart_for: '득점', chart_against: '실점',
     stats_scope_all: '전체',
     nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.',
-    nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름',
+    nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '당신의 국가',
     profile_no_stats: '이 이름으로 진행된 경기가 아직 없습니다. "{name}"으로 경기를 플레이하면 여기에 통계가 표시됩니다.',
     profile_badges_title: '배지', profile_badges_empty: '곧 공개 예정 \u2014 경기를 플레이하고 배지를 획득하세요!',
     badge_points: '{n}점 획득', badge_matches: '{n}경기 출전', badge_streak: '{n}연승',
@@ -2745,10 +2745,10 @@ function HeadToHead({ setView, matchLog, photos, setPhotos }) {
 }
 
 /* ============================= FRIENDS ============================= */
-function FriendsScreen({ setView, matchLog, friends, toggleFriend, photos, setPhotos, onSelectPlayer, myName }) {
+function FriendsScreen({ setView, matchLog, friends, toggleFriend, photos, setPhotos, onSelectPlayer, profile }) {
   const { t } = useT();
   const [query, setQuery] = useState('');
-  const myNameLower = (myName || '').trim().toLowerCase();
+  const myNameLower = (profile && profile.username ? profile.username : '').trim().toLowerCase();
   const stats = aggregateStats(matchLog).filter(s => s.name.toLowerCase() !== myNameLower);
   const names = stats.map(s => s.name);
   usePhotos(names, photos, setPhotos);
@@ -2816,35 +2816,41 @@ function FriendsScreen({ setView, matchLog, friends, toggleFriend, photos, setPh
 }
 
 /* ============================= MY PROFILE ============================= */
-function MyProfile({ setView, matchLog, myName, setMyName, myPhoto, setMyPhoto }) {
+function MyProfile({ setView, matchLog, session, profile, setProfile }) {
   const { t } = useT();
   const fileRef = useRef(null);
-  const [nameInput, setNameInput] = useState(myName || '');
+  const userId = session.user.id;
+  const [usernameInput, setUsernameInput] = useState(profile ? profile.username || '' : '');
+  const [cityInput, setCityInput] = useState(profile ? profile.city || '' : '');
+  const [countryInput, setCountryInput] = useState(profile ? profile.country || '' : '');
 
-  useEffect(() => { setNameInput(myName || ''); }, [myName]);
+  useEffect(() => {
+    setUsernameInput(profile ? profile.username || '' : '');
+    setCityInput(profile ? profile.city || '' : '');
+    setCountryInput(profile ? profile.country || '' : '');
+  }, [profile]);
+
+  async function saveField(fields) {
+    setProfile(p => ({ ...(p || {}), ...fields }));
+    try { await supabase.from('profiles').update(fields).eq('id', userId); } catch (e) { /* best effort */ }
+  }
 
   async function handleFile(e) {
     const file = e.target.files && e.target.files[0];
     if (!file) return;
     try {
       const dataUrl = await resizeImage(file, 240);
-      setMyPhoto(dataUrl);
-      await window.storage.set('myProfilePhoto', dataUrl, false);
+      await saveField({ avatar_url: dataUrl });
     } catch (err) { /* ignore failed upload */ }
   }
 
-  function commitName() {
-    const trimmed = nameInput.trim();
-    setMyName(trimmed);
-    window.storage.set('myProfileName', trimmed, false).catch(() => {});
-  }
-
+  const myUsername = profile ? (profile.username || '') : '';
   const stats = aggregateStats(matchLog);
-  const me = myName ? stats.find(s => s.name.toLowerCase() === myName.trim().toLowerCase()) : null;
+  const me = myUsername ? stats.find(s => s.name.toLowerCase() === myUsername.trim().toLowerCase()) : null;
   const winPct = me && me.played > 0 ? Math.round((me.w / me.played) * 100) : 0;
-  const serve = myName ? aggregateServeStats(matchLog, me ? me.name : myName) : { servePts: 0, returnPts: 0 };
+  const serve = myUsername ? aggregateServeStats(matchLog, me ? me.name : myUsername) : { servePts: 0, returnPts: 0 };
   const hasServeData = serve.servePts + serve.returnPts > 0;
-  const streaks = myName ? computeStreaks(matchLog, me ? me.name : myName) : { current: 0, best: 0 };
+  const streaks = myUsername ? computeStreaks(matchLog, me ? me.name : myUsername) : { current: 0, best: 0 };
   function pct(won, total) { return total > 0 ? Math.round((won / total) * 100) : 0; }
 
   return (
@@ -2853,14 +2859,38 @@ function MyProfile({ setView, matchLog, myName, setMyName, myPhoto, setMyPhoto }
 
       <Panel style={{ marginBottom: 16 }}>
         <div className="flex items-center gap-4 mb-4">
-          <Avatar name={myName || '?'} photo={myPhoto} size={72} />
+          <Avatar name={myUsername || '?'} photo={profile ? profile.avatar_url : null} size={72} />
           <div className="flex-1 min-w-0">
             <div className="tt-body text-xs font-semibold mb-1" style={{ color: C.dim }}>{t('profile_username_label')}</div>
             <input
-              value={nameInput}
-              onChange={e => setNameInput(e.target.value)}
-              onBlur={commitName}
+              value={usernameInput}
+              onChange={e => setUsernameInput(e.target.value)}
+              onBlur={() => saveField({ username: usernameInput.trim() })}
               placeholder={t('profile_username_placeholder')}
+              className="tt-body w-full px-3 py-2 rounded-lg outline-none"
+              style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-2 mb-4">
+          <div>
+            <div className="tt-body text-xs font-semibold mb-1" style={{ color: C.dim }}>{t('profile_city_label')}</div>
+            <input
+              value={cityInput}
+              onChange={e => setCityInput(e.target.value)}
+              onBlur={() => saveField({ city: cityInput.trim() })}
+              placeholder={t('profile_city_placeholder')}
+              className="tt-body w-full px-3 py-2 rounded-lg outline-none"
+              style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
+            />
+          </div>
+          <div>
+            <div className="tt-body text-xs font-semibold mb-1" style={{ color: C.dim }}>{t('profile_country_label')}</div>
+            <input
+              value={countryInput}
+              onChange={e => setCountryInput(e.target.value)}
+              onBlur={() => saveField({ country: countryInput.trim() })}
+              placeholder={t('profile_country_placeholder')}
               className="tt-body w-full px-3 py-2 rounded-lg outline-none"
               style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
             />
@@ -2868,7 +2898,7 @@ function MyProfile({ setView, matchLog, myName, setMyName, myPhoto, setMyPhoto }
         </div>
         <input ref={fileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFile} />
         <GhostButton onClick={() => fileRef.current && fileRef.current.click()} style={{ width: '100%', textAlign: 'center' }}>
-          <span className="flex items-center justify-center gap-2"><Camera size={15} /> {myPhoto ? t('player_photo_change') : t('player_photo_upload')}</span>
+          <span className="flex items-center justify-center gap-2"><Camera size={15} /> {profile && profile.avatar_url ? t('player_photo_change') : t('player_photo_upload')}</span>
         </GhostButton>
       </Panel>
 
@@ -2925,7 +2955,7 @@ function MyProfile({ setView, matchLog, myName, setMyName, myPhoto, setMyPhoto }
       ) : (
         <Panel style={{ marginBottom: 16 }}>
           <div className="tt-body text-sm text-center" style={{ color: C.dim }}>
-            {t('profile_no_stats', { name: myName || t('profile_username_placeholder') })}
+            {t('profile_no_stats', { name: myUsername || t('profile_username_placeholder') })}
           </div>
         </Panel>
       )}
@@ -2934,8 +2964,8 @@ function MyProfile({ setView, matchLog, myName, setMyName, myPhoto, setMyPhoto }
         <div className="tt-body text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: C.dim }}>
           <Award size={16} color={C.dim} /> {t('profile_badges_title')}
         </div>
-        {myName && myName.trim() ? (
-          <BadgesGrid badges={computeBadges(matchLog, me ? me.name : myName.trim(), t)} />
+        {myUsername && myUsername.trim() ? (
+          <BadgesGrid badges={computeBadges(matchLog, me ? me.name : myUsername.trim(), t)} />
         ) : (
           <div className="rounded-xl p-4 text-center" style={{ background: C.panel2, border: `1px dashed ${C.line}` }}>
             <Award size={26} color={C.dim} className="mx-auto mb-2" />
@@ -3447,8 +3477,7 @@ export default function App() {
   const [lang, setLangState] = useState('nl');
   const [competition, setCompetitionState] = useState(null);
   const [friends, setFriendsState] = useState([]);
-  const [myName, setMyNameState] = useState('');
-  const [myPhoto, setMyPhotoState] = useState(null);
+  const [profile, setProfile] = useState(null);
   const [session, setSession] = useState(undefined); // undefined = still checking, null = logged out, object = logged in
 
   useEffect(() => {
@@ -3460,19 +3489,22 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!session || !session.user) return;
+    if (!session || !session.user) { setProfile(null); return; }
     const user = session.user;
     (async () => {
       try {
-        const { data: existing } = await supabase.from('profiles').select('id').eq('id', user.id).maybeSingle();
-        if (!existing) {
+        const { data: existing } = await supabase.from('profiles').select('*').eq('id', user.id).maybeSingle();
+        if (existing) {
+          setProfile(existing);
+        } else {
           const meta = user.user_metadata || {};
           const suggestedName = meta.full_name || meta.name || (user.email ? user.email.split('@')[0] : 'Speler');
-          await supabase.from('profiles').insert({
+          const { data: created } = await supabase.from('profiles').insert({
             id: user.id,
             username: suggestedName,
             avatar_url: meta.avatar_url || meta.picture || null,
-          });
+          }).select().single();
+          setProfile(created || null);
         }
       } catch (e) { /* profile creation best-effort */ }
     })();
@@ -3504,14 +3536,6 @@ export default function App() {
         const f = await window.storage.get('friends', false);
         if (!cancelled && f && f.value) setFriendsState(JSON.parse(f.value));
       } catch (e) { /* no friends yet */ }
-      try {
-        const n = await window.storage.get('myProfileName', false);
-        if (!cancelled && n && n.value) setMyNameState(n.value);
-      } catch (e) { /* no profile name yet */ }
-      try {
-        const p = await window.storage.get('myProfilePhoto', false);
-        if (!cancelled && p && p.value) setMyPhotoState(p.value);
-      } catch (e) { /* no profile photo yet */ }
       if (!cancelled) setLoaded(true);
     })();
     return () => { cancelled = true; };
@@ -3568,15 +3592,6 @@ export default function App() {
     });
   }
 
-  function setMyName(name) {
-    setMyNameState(name);
-    window.storage.set('myProfileName', name, false).catch(() => {});
-  }
-
-  function setMyPhoto(dataUrl) {
-    setMyPhotoState(dataUrl);
-    window.storage.set('myProfilePhoto', dataUrl, false).catch(() => {});
-  }
 
   async function resetAllData() {
     try {
@@ -3588,8 +3603,6 @@ export default function App() {
     setMatchLog([]);
     setPhotos({});
     setFriendsState([]);
-    setMyNameState('');
-    setMyPhotoState(null);
     setCompetitionState(null);
     setLangState('nl');
     setView('home');
@@ -3614,12 +3627,12 @@ export default function App() {
   if (!loaded) {
     content = <div className="tt-body text-center py-20" style={{ color: C.dim }}>{t('loading_text')}</div>;
   } else if (view === 'home') content = <Home matchLog={matchLog} />;
-  else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={matchLog} myName={myName} setMyName={setMyName} myPhoto={myPhoto} setMyPhoto={setMyPhoto} />;
+  else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={matchLog} session={session} profile={profile} setProfile={setProfile} />;
   else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} />;
   else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} />;
   else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} />;
-  else if (view === 'friends') content = <FriendsScreen setView={setView} matchLog={matchLog} friends={friends} toggleFriend={toggleFriend} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} myName={myName} />;
+  else if (view === 'friends') content = <FriendsScreen setView={setView} matchLog={matchLog} friends={friends} toggleFriend={toggleFriend} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} profile={profile} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} />;
   else if (view === 'competition-setup') content = <CompetitionSetup setView={setView} onStart={startCompetition} />;
