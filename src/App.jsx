@@ -2339,23 +2339,15 @@ function Home({ matchLog }) {
 }
 
 /* ============================= SETTINGS ============================= */
-function SettingsScreen({ setView, settings, updateSettings, resetAllData, session, setProfile }) {
+function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
   const { t } = useT();
   const [confirming, setConfirming] = useState(false);
-  const [confirmingAccount, setConfirmingAccount] = useState(false);
-  const [deletingAccount, setDeletingAccount] = useState(false);
 
   useEffect(() => {
     if (!confirming) return;
     const timer = setTimeout(() => setConfirming(false), 5000);
     return () => clearTimeout(timer);
   }, [confirming]);
-
-  useEffect(() => {
-    if (!confirmingAccount) return;
-    const timer = setTimeout(() => setConfirmingAccount(false), 5000);
-    return () => clearTimeout(timer);
-  }, [confirmingAccount]);
 
   function handleDeleteClick() {
     if (confirming) {
@@ -2364,17 +2356,6 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData, sessi
     } else {
       setConfirming(true);
     }
-  }
-
-  async function handleDeleteAccountClick() {
-    if (!confirmingAccount) { setConfirmingAccount(true); return; }
-    setConfirmingAccount(false);
-    setDeletingAccount(true);
-    try {
-      await supabase.from('profiles').delete().eq('id', session.user.id);
-    } catch (e) { /* best effort */ }
-    setProfile(null);
-    await supabase.auth.signOut();
   }
 
   return (
@@ -2409,25 +2390,6 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData, sessi
           {t('settings_footer')}
         </div>
 
-        <Panel style={{ marginTop: 8 }}>
-          <button
-            onClick={() => {
-              try {
-                Object.keys(window.localStorage).forEach(k => {
-                  if (k.includes('code-verifier') || k.includes('code_verifier')) {
-                    window.localStorage.removeItem(k);
-                  }
-                });
-              } catch (e) { /* ignore */ }
-              supabase.auth.signOut();
-            }}
-            className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold"
-            style={{ background: 'transparent', color: C.text, border: `1px solid ${C.line}` }}
-          >
-            {t('settings_logout')}
-          </button>
-        </Panel>
-
         <Panel style={{ borderColor: C.red, marginTop: 8 }}>
           <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.red }}>{t('settings_danger_zone')}</div>
           <div className="tt-body text-xs mb-3" style={{ color: C.dim }}>{t('settings_delete_all_desc')}</div>
@@ -2441,23 +2403,6 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData, sessi
             }}
           >
             {confirming ? t('settings_delete_confirm') : t('settings_delete_all')}
-          </button>
-        </Panel>
-
-        <Panel style={{ borderColor: C.red, marginTop: 8 }}>
-          <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.red }}>{t('settings_delete_account_label')}</div>
-          <div className="tt-body text-xs mb-3" style={{ color: C.dim }}>{t('settings_delete_account_desc')}</div>
-          <button
-            onClick={handleDeleteAccountClick}
-            disabled={deletingAccount}
-            className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold transition-colors disabled:opacity-50"
-            style={{
-              background: confirmingAccount ? C.red : 'transparent',
-              color: confirmingAccount ? '#fff' : C.red,
-              border: `1px solid ${C.red}`,
-            }}
-          >
-            {confirmingAccount ? t('settings_delete_account_confirm') : t('settings_delete_account_label')}
           </button>
         </Panel>
       </div>
@@ -2881,12 +2826,42 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
   const [usernameInput, setUsernameInput] = useState(profile ? profile.username || '' : '');
   const [cityInput, setCityInput] = useState(profile ? profile.city || '' : '');
   const [countryInput, setCountryInput] = useState(profile ? profile.country || '' : '');
+  const [confirmingAccount, setConfirmingAccount] = useState(false);
+  const [deletingAccount, setDeletingAccount] = useState(false);
 
   useEffect(() => {
     setUsernameInput(profile ? profile.username || '' : '');
     setCityInput(profile ? profile.city || '' : '');
     setCountryInput(profile ? profile.country || '' : '');
   }, [profile]);
+
+  useEffect(() => {
+    if (!confirmingAccount) return;
+    const timer = setTimeout(() => setConfirmingAccount(false), 5000);
+    return () => clearTimeout(timer);
+  }, [confirmingAccount]);
+
+  function handleLogout() {
+    try {
+      Object.keys(window.localStorage).forEach(k => {
+        if (k.includes('code-verifier') || k.includes('code_verifier')) {
+          window.localStorage.removeItem(k);
+        }
+      });
+    } catch (e) { /* ignore */ }
+    supabase.auth.signOut();
+  }
+
+  async function handleDeleteAccountClick() {
+    if (!confirmingAccount) { setConfirmingAccount(true); return; }
+    setConfirmingAccount(false);
+    setDeletingAccount(true);
+    try {
+      await supabase.from('profiles').delete().eq('id', userId);
+    } catch (e) { /* best effort */ }
+    setProfile(null);
+    await supabase.auth.signOut();
+  }
 
   async function saveField(fields) {
     setProfile(p => ({ ...(p || {}), ...fields }));
@@ -3030,6 +3005,33 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
             <div className="tt-body text-xs" style={{ color: C.dim }}>{t('profile_badges_empty')}</div>
           </div>
         )}
+      </Panel>
+
+      <Panel style={{ marginTop: 16 }}>
+        <button
+          onClick={handleLogout}
+          className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold"
+          style={{ background: 'transparent', color: C.text, border: `1px solid ${C.line}` }}
+        >
+          {t('settings_logout')}
+        </button>
+      </Panel>
+
+      <Panel style={{ borderColor: C.red, marginTop: 8 }}>
+        <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.red }}>{t('settings_delete_account_label')}</div>
+        <div className="tt-body text-xs mb-3" style={{ color: C.dim }}>{t('settings_delete_account_desc')}</div>
+        <button
+          onClick={handleDeleteAccountClick}
+          disabled={deletingAccount}
+          className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold transition-colors disabled:opacity-50"
+          style={{
+            background: confirmingAccount ? C.red : 'transparent',
+            color: confirmingAccount ? '#fff' : C.red,
+            border: `1px solid ${C.red}`,
+          }}
+        >
+          {confirmingAccount ? t('settings_delete_account_confirm') : t('settings_delete_account_label')}
+        </button>
       </Panel>
     </div>
   );
@@ -3540,8 +3542,9 @@ export default function App() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, newSession) => {
+    const { data: listener } = supabase.auth.onAuthStateChange((event, newSession) => {
       setSession(newSession);
+      if (event === 'SIGNED_IN') setView('myprofile');
     });
     return () => listener.subscription.unsubscribe();
   }, []);
@@ -3686,7 +3689,7 @@ export default function App() {
     content = <div className="tt-body text-center py-20" style={{ color: C.dim }}>{t('loading_text')}</div>;
   } else if (view === 'home') content = <Home matchLog={matchLog} />;
   else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={matchLog} session={session} profile={profile} setProfile={setProfile} />;
-  else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} session={session} setProfile={setProfile} />;
+  else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} />;
   else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} />;
   else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} />;
