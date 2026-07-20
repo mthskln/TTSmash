@@ -3003,6 +3003,7 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
   const [cityInput, setCityInput] = useState(profile ? profile.city || '' : '');
   const [countryInput, setCountryInput] = useState(profile ? profile.country || '' : '');
   const [confirmingAccount, setConfirmingAccount] = useState(false);
+  const [saveError, setSaveError] = useState('');
   const [showAvatarPicker, setShowAvatarPicker] = useState(false);
   const [deletingAccount, setDeletingAccount] = useState(false);
 
@@ -3042,7 +3043,13 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
 
   async function saveField(fields) {
     setProfile(p => ({ ...(p || {}), ...fields }));
-    try { await supabase.from('profiles').update(fields).eq('id', userId); } catch (e) { /* best effort */ }
+    setSaveError('');
+    try {
+      const { error } = await supabase.from('profiles').update(fields).eq('id', userId);
+      if (error) setSaveError(error.message);
+    } catch (e) {
+      setSaveError(e && e.message ? e.message : 'Save failed');
+    }
   }
 
   async function handleFile(e) {
@@ -3066,6 +3073,11 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
   return (
     <div>
       <BackBar title={t('nav_profile')} onBack={() => setView('home')} />
+      {saveError && (
+        <Panel style={{ borderColor: C.red, marginBottom: 16 }}>
+          <div className="tt-body text-xs" style={{ color: C.red }}>{saveError}</div>
+        </Panel>
+      )}
 
       <Panel style={{ marginBottom: 16 }}>
         <div className="flex items-center gap-4 mb-4">
@@ -3748,6 +3760,7 @@ export default function App() {
   const [friends, setFriendsState] = useState([]);
   const [profile, setProfile] = useState(null);
   const [session, setSession] = useState(undefined); // undefined = still checking, null = logged out, object = logged in
+  const loadedProfileIdRef = useRef(null);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
@@ -3759,18 +3772,21 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!session || !session.user) { setProfile(null); return; }
+    const uid = session && session.user ? session.user.id : null;
+    if (!uid) { setProfile(null); loadedProfileIdRef.current = null; return; }
+    if (loadedProfileIdRef.current === uid) return; // already loaded for this user — don't refetch and clobber unsaved edits
+    loadedProfileIdRef.current = uid;
     const user = session.user;
     (async () => {
       try {
-        const { data: existing } = await supabase.from('profiles').select('*').eq('id', user.id).maybeSingle();
+        const { data: existing } = await supabase.from('profiles').select('*').eq('id', uid).maybeSingle();
         if (existing) {
           setProfile(existing);
         } else {
           const meta = user.user_metadata || {};
           const suggestedName = meta.full_name || meta.name || (user.email ? user.email.split('@')[0] : 'Speler');
           const { data: created } = await supabase.from('profiles').insert({
-            id: user.id,
+            id: uid,
             username: suggestedName,
             avatar_url: meta.avatar_url || meta.picture || null,
           }).select().single();
