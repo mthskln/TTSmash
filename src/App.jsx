@@ -2240,6 +2240,15 @@ function AuthScreen() {
   async function signInWithProvider(provider) {
     setLoading(provider);
     setError('');
+    // Clear any leftover PKCE verifier from a previous (possibly interrupted) attempt,
+    // so switching between providers always starts from a clean slate.
+    try {
+      Object.keys(window.localStorage).forEach(k => {
+        if (k.includes('code-verifier') || k.includes('code_verifier')) {
+          window.localStorage.removeItem(k);
+        }
+      });
+    } catch (e) { /* ignore */ }
     const { error } = await supabase.auth.signInWithOAuth({
       provider,
       options: { redirectTo: window.location.origin },
@@ -2379,7 +2388,16 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
 
         <Panel style={{ marginTop: 8 }}>
           <button
-            onClick={() => supabase.auth.signOut()}
+            onClick={() => {
+              try {
+                Object.keys(window.localStorage).forEach(k => {
+                  if (k.includes('code-verifier') || k.includes('code_verifier')) {
+                    window.localStorage.removeItem(k);
+                  }
+                });
+              } catch (e) { /* ignore */ }
+              supabase.auth.signOut();
+            }}
             className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold"
             style={{ background: 'transparent', color: C.text, border: `1px solid ${C.line}` }}
           >
