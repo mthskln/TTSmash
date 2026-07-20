@@ -3009,6 +3009,81 @@ function HeadToHead({ setView, matchLog, photos, setPhotos }) {
 }
 
 /* ============================= FRIENDS ============================= */
+function PlayerPicker({ value, onChange, placeholder, friendsList, myProfileId }) {
+  const { t } = useT();
+  const [query, setQuery] = useState(value && value.name ? value.name : '');
+  const [results, setResults] = useState([]);
+  const [searching, setSearching] = useState(false);
+  const [focused, setFocused] = useState(false);
+
+  useEffect(() => {
+    const q = query.trim();
+    if (!q) { setResults([]); return; }
+    setSearching(true);
+    const timer = setTimeout(async () => {
+      try {
+        const { data } = await supabase
+          .from('profiles')
+          .select('id, username, avatar_url')
+          .ilike('username', `%${q}%`)
+          .neq('id', myProfileId || '')
+          .limit(8);
+        setResults(data || []);
+      } catch (e) { setResults([]); }
+      setSearching(false);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [query, myProfileId]);
+
+  function selectProfile(p) {
+    setQuery(p.username);
+    setResults([]);
+    setFocused(false);
+    onChange({ profileId: p.id, name: p.username, avatar_url: p.avatar_url });
+  }
+
+  function handleTextChange(v) {
+    setQuery(v);
+    onChange({ profileId: null, name: v });
+  }
+
+  const shownFriends = friendsList.filter(f => !query.trim() || f.username.toLowerCase().includes(query.trim().toLowerCase()));
+
+  return (
+    <div className="relative">
+      <input
+        value={query}
+        onChange={e => handleTextChange(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setTimeout(() => setFocused(false), 150)}
+        placeholder={placeholder}
+        className="tt-body w-full px-3 py-2 rounded-lg outline-none"
+        style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
+      />
+      {focused && !query.trim() && shownFriends.length > 0 && (
+        <div className="flex gap-2 flex-wrap mt-2">
+          {shownFriends.map(f => (
+            <button key={f.id} onMouseDown={() => selectProfile(f)} className="flex items-center gap-1.5 px-2 py-1 rounded-full flex-shrink-0" style={{ background: C.panel2, border: `1px solid ${C.line}` }}>
+              <Avatar name={f.username} photo={f.avatar_url} size={20} />
+              <span className="tt-body text-xs" style={{ color: C.text }}>{f.username}</span>
+            </button>
+          ))}
+        </div>
+      )}
+      {focused && query.trim() && results.length > 0 && (
+        <div className="absolute z-10 w-full mt-1 rounded-lg overflow-hidden" style={{ background: C.panel2, border: `1px solid ${C.line}` }}>
+          {results.map(p => (
+            <button key={p.id} onMouseDown={() => selectProfile(p)} className="w-full flex items-center gap-2 px-3 py-2 text-left" style={{ borderBottom: `1px solid ${C.line}` }}>
+              <Avatar name={p.username} photo={p.avatar_url} size={24} />
+              <span className="tt-body text-sm" style={{ color: C.text }}>{p.username}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function FriendsScreen({ setView, session, onSelectPlayer }) {
   const { t } = useT();
   const myId = session.user.id;
@@ -3493,9 +3568,31 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
 }
 
 /* ============================= FREE PLAY ============================= */
-function FreePlaySetup({ setView, state, setState }) {
+function FreePlaySetup({ setView, state, setState, session }) {
   const { t } = useT();
   const { mode, bestOf, names } = state;
+  const [participants, setParticipants] = useState([null, null]);
+  const [friendsList, setFriendsList] = useState([]);
+  const myProfileId = session && session.user ? session.user.id : null;
+
+  useEffect(() => {
+    if (!myProfileId) return;
+    (async () => {
+      try {
+        const { data: rels } = await supabase
+          .from('friendships')
+          .select('*')
+          .eq('status', 'accepted')
+          .or(`requester_id.eq.${myProfileId},addressee_id.eq.${myProfileId}`);
+        const otherIds = (rels || []).map(r => (r.requester_id === myProfileId ? r.addressee_id : r.requester_id));
+        if (otherIds.length) {
+          const { data: profs } = await supabase.from('profiles').select('id, username, avatar_url').in('id', otherIds);
+          setFriendsList(profs || []);
+        }
+      } catch (e) { /* best effort */ }
+    })();
+  }, [myProfileId]);
+
   const setMode = m => setState(s => ({
     ...s, mode: m,
     names: s.names.map(() => m === 'dubbel' ? { p1: '', p2: '' } : ''),
@@ -3504,8 +3601,20 @@ function FreePlaySetup({ setView, state, setState }) {
   const setNames = fn => setState(s => ({ ...s, names: typeof fn === 'function' ? fn(s.names) : fn }));
 
   function start() {
-    const { finalNames, pairMap } = finalizeNames(names, mode, t);
-    setState(s => ({ ...s, names: finalNames, pairMap }));
+    if (mode === 'enkel') {
+      const finalNames = [
+        (participants[0] && participants[0].name.trim()) || t('placeholder_player', { n: 1 }),
+        (participants[1] && participants[1].name.trim()) || t('placeholder_player', { n: 2 }),
+      ];
+      const participantIds = [
+        participants[0] ? participants[0].profileId : null,
+        participants[1] ? participants[1].profileId : null,
+      ];
+      setState(s => ({ ...s, names: finalNames, pairMap: null, participantIds }));
+    } else {
+      const { finalNames, pairMap } = finalizeNames(names, mode, t);
+      setState(s => ({ ...s, names: finalNames, pairMap, participantIds: [null, null] }));
+    }
     setView('freeplay-play');
   }
 
@@ -3523,7 +3632,14 @@ function FreePlaySetup({ setView, state, setState }) {
         </Panel>
         <Panel>
           <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{mode === 'dubbel' ? t('teams_label') : t('players_label')}</div>
-          <NameList names={names} setNames={setNames} mode={mode} t={t} />
+          {mode === 'enkel' ? (
+            <div className="flex flex-col gap-3">
+              <PlayerPicker value={participants[0]} onChange={p => setParticipants(prev => [p, prev[1]])} placeholder={t('placeholder_player', { n: 1 })} friendsList={friendsList} myProfileId={myProfileId} />
+              <PlayerPicker value={participants[1]} onChange={p => setParticipants(prev => [prev[0], p])} placeholder={t('placeholder_player', { n: 2 })} friendsList={friendsList} myProfileId={myProfileId} />
+            </div>
+          ) : (
+            <NameList names={names} setNames={setNames} mode={mode} t={t} />
+          )}
         </Panel>
         <PrimaryButton onClick={start}>{t('start_match')}</PrimaryButton>
       </div>
@@ -3531,9 +3647,9 @@ function FreePlaySetup({ setView, state, setState }) {
   );
 }
 
-function FreePlayPlay({ setView, state, settings, recordMatch }) {
+function FreePlayPlay({ setView, state, settings, recordMatch, session }) {
   const { t, lang } = useT();
-  const { bestOf, names, mode, pairMap } = state;
+  const { bestOf, names, mode, pairMap, participantIds } = state;
   const [result, setResult] = useState(null);
   const [showShare, setShowShare] = useState(false);
 
@@ -3552,6 +3668,28 @@ function FreePlayPlay({ setView, state, settings, recordMatch }) {
       ...prepareReportData({ setsA: r.score.setsA, setsB: r.score.setsB, sets: r.score.sets, bestOf, durationMs: r.durationMs }),
       pointLog: r.score.pointLog || [],
     });
+    if (participantIds && participantIds[0] && participantIds[1] && session && session.user) {
+      (async () => {
+        try {
+          await supabase.from('matches').insert({
+            kind: 'freeplay',
+            mode,
+            team_a_ids: [participantIds[0]],
+            team_b_ids: [participantIds[1]],
+            sets_a: r.score.setsA,
+            sets_b: r.score.setsB,
+            total_points_a: totalPointsA,
+            total_points_b: totalPointsB,
+            winner_team: r.winner,
+            best_of: bestOf,
+            sets_detail: r.score.sets,
+            point_log: r.score.pointLog || [],
+            duration_ms: r.durationMs,
+            created_by: session.user.id,
+          });
+        } catch (e) { /* best effort — online sync is additive, local record above already saved */ }
+      })();
+    }
     setResult(r);
   }
 
@@ -4158,8 +4296,8 @@ export default function App() {
   else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} />;
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
-  else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} />;
-  else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} />;
+  else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} />;
+  else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} session={session} />;
   else if (view === 'competition-setup') content = <CompetitionSetup setView={setView} onStart={startCompetition} />;
   else if (view === 'competition-play') content = competition
     ? <CompetitionPlay setView={setView} competition={competition} setCompetition={setCompetition} settings={settings} recordMatch={recordMatch} />
