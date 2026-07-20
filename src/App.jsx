@@ -1915,34 +1915,34 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
   const [flipping, setFlipping] = useState(false);
   const [tossWinnerSide, setTossWinnerSide] = useState(null);
   const [sideChoice, setSideChoice] = useState(false);
-  const [flipped180, setFlipped180] = useState(false);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  const fullscreenSupported = typeof document !== 'undefined' && !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
 
   useEffect(() => {
-    function onFsChange() {
-      setIsFullscreen(!!(document.fullscreenElement || document.webkitFullscreenElement));
+    function goFullscreen() {
+      try {
+        const el = document.documentElement;
+        if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+          if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
+          else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+        }
+      } catch (e) { /* fullscreen unavailable on this device/browser */ }
     }
-    document.addEventListener('fullscreenchange', onFsChange);
-    document.addEventListener('webkitfullscreenchange', onFsChange);
-    return () => {
-      document.removeEventListener('fullscreenchange', onFsChange);
-      document.removeEventListener('webkitfullscreenchange', onFsChange);
-    };
+    function exitFullscreenIfActive() {
+      try {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          if (document.exitFullscreen) document.exitFullscreen();
+          else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        }
+      } catch (e) { /* ignore */ }
+    }
+    const mq = window.matchMedia('(orientation: landscape)');
+    function handleOrientationChange(e) {
+      if (e.matches) goFullscreen();
+      else exitFullscreenIfActive();
+    }
+    if (mq.matches) goFullscreen();
+    mq.addEventListener('change', handleOrientationChange);
+    return () => mq.removeEventListener('change', handleOrientationChange);
   }, []);
-
-  function toggleFullscreen() {
-    try {
-      const el = document.documentElement;
-      if (document.fullscreenElement || document.webkitFullscreenElement) {
-        if (document.exitFullscreen) document.exitFullscreen();
-        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-      } else {
-        if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
-        else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-      }
-    } catch (e) { /* fullscreen unavailable on this device/browser */ }
-  }
 
   useEffect(() => () => {
     try {
@@ -2216,7 +2216,7 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)' }}>
       <div
         className="w-full max-w-md landscape:max-w-2xl rounded-2xl p-5"
-        style={{ background: C.bg, border: `1px solid ${C.line}`, maxHeight: '95vh', overflowY: 'auto', transform: flipped180 ? 'rotate(180deg)' : 'none', transition: 'transform 0.4s ease' }}
+        style={{ background: C.bg, border: `1px solid ${C.line}`, maxHeight: '95vh', overflowY: 'auto' }}
       >
         <div className="flex justify-between items-center mb-2">
           <span className="tt-body text-xs flex items-center gap-1" style={{ color: C.dim }}>
@@ -2225,17 +2225,7 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
         </div>
         <div className="flex justify-between items-center mb-4">
           <span className="tt-body text-xs uppercase tracking-wide" style={{ color: C.dim }}>{t('sb_bestof', { bestOf, need })}</span>
-          <div className="flex gap-2">
-            {fullscreenSupported && (
-              <button onClick={toggleFullscreen} className="p-1 rounded-lg" style={{ background: C.panel2 }}>
-                {isFullscreen ? <Minimize size={16} color={C.text} /> : <Maximize size={16} color={C.text} />}
-              </button>
-            )}
-            <button onClick={() => setFlipped180(f => !f)} className="p-1 rounded-lg" style={{ background: C.panel2 }}>
-              <RotateCw size={16} color={C.text} />
-            </button>
-            <button onClick={onCancel} className="p-1 rounded-lg" style={{ background: C.panel2 }}><X size={16} color={C.text} /></button>
-          </div>
+          <button onClick={onCancel} className="p-1 rounded-lg" style={{ background: C.panel2 }}><X size={16} color={C.text} /></button>
         </div>
 
         <div className="flex gap-1.5 mb-4 flex-wrap justify-center">
@@ -2292,7 +2282,15 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
             ) : match.sets.length > 0 && (
               <div className="tt-body text-xs text-center mb-2" style={{ color: C.amber }}>{t('sides_swapped')}</div>
             )}
-            <div className="flex justify-between items-center flex-wrap gap-2 mt-2">
+            <button
+              onClick={undo}
+              disabled={history.length === 0}
+              className="tt-body w-full py-3 rounded-xl flex items-center justify-center gap-2 font-semibold disabled:opacity-30 mt-2"
+              style={{ background: C.panel2, color: C.text, border: `1px solid ${C.line}` }}
+            >
+              <RotateCcw size={17} /> {t('btn_undo')}
+            </button>
+            <div className="flex justify-center mt-2">
               <button
                 onClick={() => setMatch(m => {
                   if (isDoubles) {
@@ -2302,12 +2300,9 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
                   return { ...m, serverOverride: 1 - srv };
                 })}
                 className="tt-body text-xs px-3 py-2 rounded-lg"
-                style={{ background: C.panel2, color: C.dim }}
+                style={{ background: 'transparent', color: C.dim }}
               >
                 {t('swap_serve')}
-              </button>
-              <button onClick={undo} disabled={history.length === 0} className="tt-body text-xs px-3 py-2 rounded-lg flex items-center gap-1 disabled:opacity-30" style={{ background: C.panel2, color: C.dim }}>
-                <RotateCcw size={13} /> {t('btn_undo')}
               </button>
             </div>
 
