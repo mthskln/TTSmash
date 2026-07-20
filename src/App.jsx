@@ -158,6 +158,7 @@ const TRANSLATIONS = {
     settings_title: 'Settings', settings_toss_label: 'Coin toss for serve', settings_toss_desc: 'Flip a coin before each match to decide who serves first.',
     settings_voice_label: 'Voice control for points', settings_voice_desc: "Say a player's name, or 'left'/'right', to award a point while playing.",
     settings_break_label: 'Break between sets', settings_break_desc: 'Show a 1-minute countdown between sets (can always be skipped).',
+    settings_point_sound_label: 'Point sound', settings_point_sound_desc: 'Play a short sound when a point is scored.',
     settings_announce_label: 'Voice score announcements', settings_announce_desc: "Hear the score spoken aloud after every point. Volume follows your device's volume buttons.",
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: 'And the set', score_announce_match_suffix: 'And the match',
@@ -231,6 +232,7 @@ const TRANSLATIONS = {
     settings_title: 'Réglages', settings_toss_label: 'Tirage au sort pour le service', settings_toss_desc: 'Tirer à pile ou face avant chaque match pour savoir qui sert en premier.',
     settings_voice_label: 'Reconnaissance vocale des points', settings_voice_desc: "Dites le nom d'un joueur, ou « gauche »/« droite », pour attribuer un point en jouant.",
     settings_break_label: 'Pause entre les sets', settings_break_desc: 'Afficher un compte à rebours d\u20191 minute entre les sets (toujours possible à passer).',
+    settings_point_sound_label: 'Son de point', settings_point_sound_desc: 'Joue un bref son à chaque point marqué.',
     settings_announce_label: 'Annonce vocale du score', settings_announce_desc: 'Entendez le score annoncé à voix haute après chaque point. Le volume suit les boutons de votre appareil.',
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: 'Et le set', score_announce_match_suffix: 'Et le match',
@@ -304,6 +306,7 @@ const TRANSLATIONS = {
     settings_title: 'Instellingen', settings_toss_label: 'Muntworp voor opslag', settings_toss_desc: 'Voor elke wedstrijd eerst een coinflip om te bepalen wie mag serveren.',
     settings_voice_label: 'Spraakherkenning voor punten', settings_voice_desc: "Zeg een naam, of 'links'/'rechts', om tijdens het spelen een punt toe te kennen.",
     settings_break_label: 'Pauze tussen sets', settings_break_desc: 'Toon een aftellende pauze van 1 minuut tussen sets (altijd overslaanbaar).',
+    settings_point_sound_label: 'Puntgeluid', settings_point_sound_desc: 'Speel een kort geluidje af bij elk gescoord punt.',
     settings_announce_label: 'Gesproken tussenstand', settings_announce_desc: 'Hoor de stand hardop na elk punt. Volume volgt de volumeknoppen van je toestel.',
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: 'En de set', score_announce_match_suffix: 'En de match',
@@ -377,6 +380,7 @@ const TRANSLATIONS = {
     settings_title: 'Настройки', settings_toss_label: 'Жребий на подачу', settings_toss_desc: 'Перед каждым матчем подбрасывать монету, чтобы решить, кто подаёт первым.',
     settings_voice_label: 'Голосовое управление очками', settings_voice_desc: 'Произнесите имя игрока или «слева»/«справа», чтобы засчитать очко во время игры.',
     settings_break_label: 'Перерыв между сетами', settings_break_desc: 'Показывать минутный отсчёт между сетами (всегда можно пропустить).',
+    settings_point_sound_label: 'Звук очка', settings_point_sound_desc: 'Воспроизводить короткий звук при каждом очке.',
     settings_announce_label: 'Голосовое объявление счёта', settings_announce_desc: 'Слышите счёт вслух после каждого очка. Громкость регулируется кнопками устройства.',
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: 'И сет', score_announce_match_suffix: 'И матч',
@@ -450,6 +454,7 @@ const TRANSLATIONS = {
     settings_title: '设置', settings_toss_label: '掷硬币决定发球', settings_toss_desc: '每场比赛开始前掷硬币，决定谁先发球。',
     settings_voice_label: '语音记分', settings_voice_desc: '说出选手姓名，或说"左"/"右"，即可在比赛中记一分。',
     settings_break_label: '局间休息', settings_break_desc: '在每局之间显示1分钟倒计时（随时可跳过）。',
+    settings_point_sound_label: '得分音效', settings_point_sound_desc: '每次得分时播放一个简短的音效。',
     settings_announce_label: '语音播报比分', settings_announce_desc: '每得一分后语音播报比分。音量由设备的音量键控制。',
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: '本局', score_announce_match_suffix: '本场比赛',
@@ -523,6 +528,7 @@ const TRANSLATIONS = {
     settings_title: 'Ajustes', settings_toss_label: 'Sorteo para el saque', settings_toss_desc: 'Lanzar una moneda antes de cada partido para decidir quién saca primero.',
     settings_voice_label: 'Control por voz de los puntos', settings_voice_desc: 'Di el nombre de un jugador, o "izquierda"/"derecha", para anotar un punto mientras juegas.',
     settings_break_label: 'Descanso entre sets', settings_break_desc: 'Mostrar una cuenta atrás de 1 minuto entre sets (siempre se puede omitir).',
+    settings_point_sound_label: 'Sonido de punto', settings_point_sound_desc: 'Reproduce un breve sonido al marcar un punto.',
     settings_announce_label: 'Anuncio de voz del marcador', settings_announce_desc: 'Escucha el marcador en voz alta después de cada punto. El volumen sigue los botones de tu dispositivo.',
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: 'Y el set', score_announce_match_suffix: 'Y el partido',
@@ -596,6 +602,7 @@ const TRANSLATIONS = {
     settings_title: 'Definições', settings_toss_label: 'Sorteio para o serviço', settings_toss_desc: 'Lançar uma moeda antes de cada jogo para decidir quem serve primeiro.',
     settings_voice_label: 'Controlo por voz dos pontos', settings_voice_desc: 'Diga o nome de um jogador, ou "esquerda"/"direita", para marcar um ponto durante o jogo.',
     settings_break_label: 'Intervalo entre sets', settings_break_desc: 'Mostrar uma contagem decrescente de 1 minuto entre sets (pode ser sempre ignorada).',
+    settings_point_sound_label: 'Som de ponto', settings_point_sound_desc: 'Reproduz um som curto a cada ponto marcado.',
     settings_announce_label: 'Anúncio de voz do placar', settings_announce_desc: 'Ouve o placar em voz alta após cada ponto. O volume segue os botões do teu dispositivo.',
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: 'E o set', score_announce_match_suffix: 'E o jogo',
@@ -669,6 +676,7 @@ const TRANSLATIONS = {
     settings_title: '設定', settings_toss_label: 'サーブ権のコイントス', settings_toss_desc: '各試合の前にコインを投げて、誰が先にサーブするか決めます。',
     settings_voice_label: '得点の音声認識', settings_voice_desc: 'プレー中に選手の名前、または「左」「右」と言うと得点が入ります。',
     settings_break_label: 'セット間の休憩', settings_break_desc: 'セットの間に1分間のカウントダウンを表示します（いつでもスキップ可能）。',
+    settings_point_sound_label: '得点音', settings_point_sound_desc: '得点するたびに短い音を再生します。',
     settings_announce_label: '音声でのスコア読み上げ', settings_announce_desc: '得点ごとにスコアを音声で読み上げます。音量は端末の音量ボタンに従います。',
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: 'このセット', score_announce_match_suffix: 'この試合',
@@ -742,6 +750,7 @@ const TRANSLATIONS = {
     settings_title: '설정', settings_toss_label: '서브권 동전 던지기', settings_toss_desc: '매 경기 전 동전을 던져 누가 먼저 서브할지 정합니다.',
     settings_voice_label: '음성으로 득점 기록', settings_voice_desc: '경기 중 선수 이름 또는 "왼쪽"/"오른쪽"이라고 말하면 득점이 기록됩니다.',
     settings_break_label: '세트 간 휴식', settings_break_desc: '세트 사이에 1분 카운트다운을 표시합니다 (언제든 건너뛸 수 있음).',
+    settings_point_sound_label: '득점 사운드', settings_point_sound_desc: '득점할 때마다 짧은 소리를 재생합니다.',
     settings_announce_label: '음성 점수 안내', settings_announce_desc: '매 득점 후 점수를 음성으로 안내합니다. 음량은 기기의 음량 버튼을 따릅니다.',
     score_announce_template: '{a}, {b}',
     score_announce_set_suffix: '이 세트', score_announce_match_suffix: '이 경기',
@@ -1235,6 +1244,30 @@ function getPlayerTitle(earnedBadgeCount, totalPossible, playerName, lang, losin
   const pools = PLAYER_TITLES[lang] || PLAYER_TITLES.en;
   const pool = pools[tierIdx];
   return pool[hashString(playerName || '') % pool.length];
+}
+
+let sharedAudioCtx = null;
+function playPointSound() {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    if (!sharedAudioCtx) sharedAudioCtx = new AudioContextClass();
+    const ctx = sharedAudioCtx;
+    if (ctx.state === 'suspended') ctx.resume();
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(1100, now);
+    osc.frequency.exponentialRampToValueAtTime(350, now + 0.07);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.35, now + 0.005);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.1);
+  } catch (e) { /* audio unavailable */ }
 }
 
 function formatClock(totalSec) {
@@ -1876,7 +1909,7 @@ function usePhotos(names, photos, setPhotos) {
 /* ============================= SCOREBOARD ENGINE ============================= */
 function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', pairA = null, pairB = null, onComplete, onCancel }) {
   const { t, lang } = useT();
-  const { coinToss = false, voice = false, setBreaks: breaksEnabled = true } = settings;
+  const { coinToss = false, voice = false, setBreaks: breaksEnabled = true, pointSound = true } = settings;
   const isDoubles = mode === 'dubbel' && pairA && pairB && pairA.length === 2 && pairB.length === 2;
   const [phase, setPhase] = useState('setup');
   const [flipping, setFlipping] = useState(false);
@@ -1965,6 +1998,7 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
 
   function addPoint(side) {
     if (matchOverRef.current) return;
+    if (pointSound) playPointSound();
     const serverAtPoint = srv;
     setHistory(h => [...h, match]);
     setMatch(prev => {
@@ -2226,7 +2260,12 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
                   const serving = srv === (col.side === 'a' ? 0 : 1);
                   const servingIndividual = serving && isDoubles ? currentServerName() : null;
                   return (
-                    <div key={col.side} className="text-center py-1">
+                    <button
+                      key={col.side}
+                      onClick={() => addPoint(col.side)}
+                      className="text-center py-1 rounded-xl active:scale-[0.98] transition-transform w-full"
+                      style={{ WebkitTapHighlightColor: 'transparent', background: 'transparent', border: 'none' }}
+                    >
                       <div className="flex items-center justify-center gap-1.5 mb-1" style={{ minHeight: 30 }}>
                         {serving && <PaddleIcon color={col.side === 'a' ? C.red : C.paddleBlack} size={24} flip={col.side === 'b'} />}
                         <span className="tt-body text-sm font-semibold truncate" style={{ color: '#fff' }}>{col.name}</span>
@@ -2235,13 +2274,13 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
                         <div className="tt-body text-xs mb-1" style={{ color: 'rgba(255,255,255,0.8)' }}>{t('serving_label', { name: servingIndividual })}</div>
                       )}
                       <div className="tt-display text-6xl landscape:text-8xl mb-3" style={{ color: '#fff' }}>{col.val}</div>
-                      <div className="flex gap-2 justify-center">
-                        <button onClick={() => addPoint(col.side)} className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.35)' }}>
+                      <div className="flex gap-2 justify-center pointer-events-none">
+                        <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.35)' }}>
                           <Plus size={18} color="#fff" />
-                        </button>
+                        </div>
                       </div>
                       <div className="tt-body text-xs mt-2" style={{ color: 'rgba(255,255,255,0.75)' }}>{t('sets_prefix')}: {col.side === 'a' ? setsA : setsB}</div>
-                    </div>
+                    </button>
                   );
                 })}
               </div>
@@ -2588,6 +2627,14 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
             desc={t('settings_break_desc')}
             value={settings.setBreaks}
             onChange={v => updateSettings({ setBreaks: v })}
+          />
+        </Panel>
+        <Panel>
+          <ToggleRow
+            label={t('settings_point_sound_label')}
+            desc={t('settings_point_sound_desc')}
+            value={settings.pointSound}
+            onChange={v => updateSettings({ pointSound: v })}
           />
         </Panel>
         <div className="tt-body text-xs px-1" style={{ color: C.dim }}>
@@ -3943,7 +3990,7 @@ function TournamentPlay({ setView, state, setState, settings, recordMatch }) {
 export default function App() {
   const [view, setView] = useState('home');
   const [loaded, setLoaded] = useState(false);
-  const [settings, setSettings] = useState({ coinToss: false, voice: false, setBreaks: true });
+  const [settings, setSettings] = useState({ coinToss: false, voice: false, setBreaks: true, pointSound: true });
   const [matchLog, setMatchLog] = useState([]);
   const [photos, setPhotos] = useState({});
   const [selectedPlayer, setSelectedPlayer] = useState(null);
@@ -4082,7 +4129,7 @@ export default function App() {
       const keys = (listing && listing.keys) || [];
       await Promise.all(keys.map(k => window.storage.delete(k, false).catch(() => {})));
     } catch (e) { /* best effort wipe */ }
-    setSettings({ coinToss: false, voice: false, setBreaks: true });
+    setSettings({ coinToss: false, voice: false, setBreaks: true, pointSound: true });
     setMatchLog([]);
     setPhotos({});
     setFriendsState([]);
