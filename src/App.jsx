@@ -76,7 +76,15 @@ const fontImport = `
 `;
 
 /* Plays once per app load (not on every re-visit to Home) */
-let heroIntroPlayed = false;
+function shouldPlayHeroIntro() {
+  try {
+    if (window.sessionStorage.getItem('heroIntroPlayed')) return false;
+    window.sessionStorage.setItem('heroIntroPlayed', '1');
+    return true;
+  } catch (e) {
+    return true; // sessionStorage unavailable — just play it, no harm done
+  }
+}
 /* ============================= I18N ============================= */
 const LANGUAGES = [
   { code: 'en', label: 'English', short: 'EN', flag: '\uD83C\uDDEC\uD83C\uDDE7' },
@@ -2303,11 +2311,7 @@ function AuthScreen() {
 /* ============================= HOME ============================= */
 function Home({ matchLog }) {
   const { t } = useT();
-  const [playIntro] = useState(() => {
-    if (heroIntroPlayed) return false;
-    heroIntroPlayed = true;
-    return true;
-  });
+  const [playIntro] = useState(() => shouldPlayHeroIntro());
   return (
     <div className="relative w-full" style={{ height: '100%', minHeight: '100vh', overflow: 'hidden' }}>
       <img
