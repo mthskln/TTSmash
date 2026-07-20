@@ -179,7 +179,7 @@ const TRANSLATIONS = {
     badge_perfect_return: 'Perfect return', badge_perfect_return_desc: 'Won every point on return in one match', badge_first_win: 'First win',
     streak_current: 'Current streak', streak_best: 'Best streak',
     player_stats_line: '{played} matches \u2022 {pct}% won', player_photo_change: 'Change photo', player_photo_upload: 'Upload photo',
-    player_won: 'Won', player_lost: 'Lost', player_sets_label: 'Sets for-against', player_points_label: 'Points for-against', player_career_points_label: 'Career points',
+    player_won: 'Won', player_lost: 'Lost', player_sets_label: 'Sets for-against', player_points_label: 'Points for-against', player_career_points_label: 'Total career points',
     player_recent: 'Recent matches', player_none: 'No matches yet.', player_not_found: 'No data found.', vs_label: 'vs {name}',
     h2h_title: 'Head-to-head', h2h_need_two: 'At least 2 players with matches are needed.', h2h_pick_two: 'Pick two different players.',
     h2h_count: '{n} head-to-head match(es)', h2h_sets: 'sets', h2h_points: 'points', h2h_history: 'Match history', h2h_none: 'No matches between them yet.', h2h_wins: '{name} wins {a}-{b}',
@@ -2822,7 +2822,7 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
           <div className="tt-display text-3xl" style={{ color: C.text }}>{streaks.best}</div>
           <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_best')}</div>
         </Panel>
-        <Panel style={{ textAlign: 'center' }}>
+        <Panel style={{ textAlign: 'center', gridColumn: 'span 2' }}>
           <div className="tt-display text-3xl" style={{ color: C.greenLight }}>{me.pointsFor}</div>
           <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
         </Panel>
@@ -3375,7 +3375,7 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
                 <div className="tt-display text-xl" style={{ color: C.text }}>{streaks.best}</div>
                 <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_best')}</div>
               </div>
-              <div className="text-center">
+              <div className="text-center col-span-2">
                 <div className="tt-display text-xl" style={{ color: C.greenLight }}>{me.pointsFor}</div>
                 <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
               </div>
