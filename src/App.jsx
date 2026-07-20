@@ -1037,7 +1037,6 @@ const POINTS_MILESTONES = [[500, 'common'], [1000, 'common'], [2000, 'uncommon']
 const MATCHES_MILESTONES = [[50, 'common'], [100, 'common'], [200, 'uncommon'], [500, 'rare'], [1000, 'epic']];
 const STREAK_MILESTONES = [[3, 'common'], [5, 'uncommon'], [10, 'rare'], [20, 'epic']];
 const TOTAL_POSSIBLE_BADGES = POINTS_MILESTONES.length + MATCHES_MILESTONES.length + STREAK_MILESTONES.length + 3; // + first-win, perfect-serve, perfect-return
-const TOTAL_POSSIBLE_BADGES = POINTS_MILESTONES.length + MATCHES_MILESTONES.length + STREAK_MILESTONES.length + 3; // + first-win, perfect-serve, perfect-return
 
 function computeStreaks(matchLog, playerName) {
   const myMatches = matchLog
