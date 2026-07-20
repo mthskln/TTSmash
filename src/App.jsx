@@ -185,7 +185,7 @@ const TRANSLATIONS = {
     h2h_title: 'Head-to-head', h2h_need_two: 'At least 2 players with matches are needed.', h2h_pick_two: 'Pick two different players.',
     h2h_count: '{n} head-to-head match(es)', h2h_sets: 'sets', h2h_points: 'points', h2h_history: 'Match history', h2h_none: 'No matches between them yet.', h2h_wins: '{name} wins {a}-{b}',
     mode_label: 'Game type', mode_singles: 'Singles', mode_doubles: 'Doubles', sets_count_label: 'Number of sets',
-    players_label: 'Players', teams_label: 'Teams', placeholder_player: 'Player {n}', placeholder_team: 'Team {n} (e.g. John & Pete)', count_suffix: 'players/teams (max 20)',
+    players_label: 'Players', teams_label: 'Teams', team_label: 'Team {n}', placeholder_player: 'Player {n}', placeholder_team: 'Team {n} (e.g. John & Pete)', count_suffix: 'players/teams (max 20)',
     start_match: 'Start match', start_competition: 'Start competition ({n} matches)', start_tournament: 'Draw bracket & start tournament',
     result_title: 'Result', result_win: '{name} wins!', result_sets: 'Sets: {a} - {b}', btn_share: 'Share result', btn_replay: 'Play again', btn_new_settings: 'New settings', btn_home_menu: 'Main menu',
     freeplay_title: 'Free play',
@@ -259,7 +259,7 @@ const TRANSLATIONS = {
     h2h_title: 'Face-à-face', h2h_need_two: 'Il faut au moins 2 joueurs ayant joué des matchs.', h2h_pick_two: 'Choisissez deux joueurs différents.',
     h2h_count: '{n} match(s) l\u2019un contre l\u2019autre', h2h_sets: 'sets', h2h_points: 'points', h2h_history: 'Historique des matchs', h2h_none: 'Aucun duel entre eux pour le moment.', h2h_wins: '{name} gagne {a}-{b}',
     mode_label: 'Type de jeu', mode_singles: 'Simple', mode_doubles: 'Double', sets_count_label: 'Nombre de sets',
-    players_label: 'Joueurs', teams_label: 'Équipes', placeholder_player: 'Joueur {n}', placeholder_team: 'Équipe {n} (ex. Jean & Pierre)', count_suffix: 'joueurs/équipes (max 20)',
+    players_label: 'Joueurs', teams_label: 'Équipes', team_label: 'Équipe {n}', placeholder_player: 'Joueur {n}', placeholder_team: 'Équipe {n} (ex. Jean & Pierre)', count_suffix: 'joueurs/équipes (max 20)',
     start_match: 'Démarrer le match', start_competition: 'Démarrer la compétition ({n} matchs)', start_tournament: 'Tirer le tableau et démarrer le tournoi',
     result_title: 'Résultat', result_win: '{name} gagne !', result_sets: 'Sets : {a} - {b}', btn_share: 'Partager le résultat', btn_replay: 'Rejouer', btn_new_settings: 'Nouveaux réglages', btn_home_menu: 'Menu principal',
     freeplay_title: 'Partie libre',
@@ -333,7 +333,7 @@ const TRANSLATIONS = {
     h2h_title: 'Head-to-head', h2h_need_two: 'Er zijn minstens 2 spelers met wedstrijden nodig.', h2h_pick_two: 'Kies twee verschillende spelers.',
     h2h_count: '{n} onderlinge wedstrijd(en)', h2h_sets: 'sets', h2h_points: 'punten', h2h_history: 'Wedstrijdgeschiedenis', h2h_none: 'Nog geen onderlinge duels.', h2h_wins: '{name} wint {a}-{b}',
     mode_label: 'Spelvorm', mode_singles: 'Enkelspel', mode_doubles: 'Dubbelspel', sets_count_label: 'Aantal sets',
-    players_label: 'Spelers', teams_label: 'Teams', placeholder_player: 'Speler {n}', placeholder_team: 'Team {n} (bv. Jan & Piet)', count_suffix: 'spelers/teams (max 20)',
+    players_label: 'Spelers', teams_label: 'Teams', team_label: 'Team {n}', placeholder_player: 'Speler {n}', placeholder_team: 'Team {n} (bv. Jan & Piet)', count_suffix: 'spelers/teams (max 20)',
     start_match: 'Start wedstrijd', start_competition: 'Start competitie ({n} wedstrijden)', start_tournament: 'Loot schema & start toernooi',
     result_title: 'Resultaat', result_win: '{name} wint!', result_sets: 'Sets: {a} - {b}', btn_share: 'Deel resultaat', btn_replay: 'Opnieuw spelen', btn_new_settings: 'Nieuwe instellingen', btn_home_menu: 'Hoofdmenu',
     freeplay_title: 'Vrij spel',
@@ -407,7 +407,7 @@ const TRANSLATIONS = {
     h2h_title: 'Один на один', h2h_need_two: 'Нужно как минимум 2 игрока с матчами.', h2h_pick_two: 'Выберите двух разных игроков.',
     h2h_count: '{n} личных встреч', h2h_sets: 'сеты', h2h_points: 'очки', h2h_history: 'История встреч', h2h_none: 'Личных встреч пока не было.', h2h_wins: '{name} побеждает {a}-{b}',
     mode_label: 'Тип игры', mode_singles: 'Одиночный разряд', mode_doubles: 'Парный разряд', sets_count_label: 'Количество сетов',
-    players_label: 'Игроки', teams_label: 'Команды', placeholder_player: 'Игрок {n}', placeholder_team: 'Команда {n} (напр. Иван и Пётр)', count_suffix: 'игроков/команд (макс. 20)',
+    players_label: 'Игроки', teams_label: 'Команды', team_label: 'Команда {n}', placeholder_player: 'Игрок {n}', placeholder_team: 'Команда {n} (напр. Иван и Пётр)', count_suffix: 'игроков/команд (макс. 20)',
     start_match: 'Начать матч', start_competition: 'Начать лигу ({n} матчей)', start_tournament: 'Составить сетку и начать турнир',
     result_title: 'Результат', result_win: '{name} побеждает!', result_sets: 'Сеты: {a} - {b}', btn_share: 'Поделиться результатом', btn_replay: 'Сыграть снова', btn_new_settings: 'Новые настройки', btn_home_menu: 'Главное меню',
     freeplay_title: 'Свободная игра',
@@ -481,7 +481,7 @@ const TRANSLATIONS = {
     h2h_title: '对战记录', h2h_need_two: '至少需要2名有比赛记录的选手。', h2h_pick_two: '请选择两名不同的选手。',
     h2h_count: '共 {n} 场交手记录', h2h_sets: '局', h2h_points: '分', h2h_history: '交手历史', h2h_none: '两人尚无交手记录。', h2h_wins: '{name} 以 {a}-{b} 获胜',
     mode_label: '比赛类型', mode_singles: '单打', mode_doubles: '双打', sets_count_label: '局数',
-    players_label: '选手', teams_label: '队伍', placeholder_player: '选手 {n}', placeholder_team: '队伍 {n}（如：张三 & 李四）', count_suffix: '名选手/队伍（最多20）',
+    players_label: '选手', teams_label: '队伍', team_label: '队伍 {n}', placeholder_player: '选手 {n}', placeholder_team: '队伍 {n}（如：张三 & 李四）', count_suffix: '名选手/队伍（最多20）',
     start_match: '开始比赛', start_competition: '开始联赛（{n} 场比赛）', start_tournament: '抽签并开始锦标赛',
     result_title: '结果', result_win: '{name} 获胜！', result_sets: '局比分：{a} - {b}', btn_share: '分享结果', btn_replay: '再来一局', btn_new_settings: '新设置', btn_home_menu: '主菜单',
     freeplay_title: '自由对战',
@@ -555,7 +555,7 @@ const TRANSLATIONS = {
     h2h_title: 'Cara a cara', h2h_need_two: 'Se necesitan al menos 2 jugadores con partidos.', h2h_pick_two: 'Elige dos jugadores distintos.',
     h2h_count: '{n} partido(s) entre ambos', h2h_sets: 'sets', h2h_points: 'puntos', h2h_history: 'Historial de partidos', h2h_none: 'Aún no hay duelos entre ellos.', h2h_wins: '{name} gana {a}-{b}',
     mode_label: 'Tipo de juego', mode_singles: 'Individual', mode_doubles: 'Dobles', sets_count_label: 'Número de sets',
-    players_label: 'Jugadores', teams_label: 'Equipos', placeholder_player: 'Jugador {n}', placeholder_team: 'Equipo {n} (ej. Juan & Pedro)', count_suffix: 'jugadores/equipos (máx. 20)',
+    players_label: 'Jugadores', teams_label: 'Equipos', team_label: 'Equipo {n}', placeholder_player: 'Jugador {n}', placeholder_team: 'Equipo {n} (ej. Juan & Pedro)', count_suffix: 'jugadores/equipos (máx. 20)',
     start_match: 'Iniciar partido', start_competition: 'Iniciar liga ({n} partidos)', start_tournament: 'Sortear cuadro e iniciar torneo',
     result_title: 'Resultado', result_win: '¡{name} gana!', result_sets: 'Sets: {a} - {b}', btn_share: 'Compartir resultado', btn_replay: 'Jugar de nuevo', btn_new_settings: 'Nuevos ajustes', btn_home_menu: 'Menú principal',
     freeplay_title: 'Juego libre',
@@ -629,7 +629,7 @@ const TRANSLATIONS = {
     h2h_title: 'Confronto direto', h2h_need_two: 'São necessários pelo menos 2 jogadores com partidas.', h2h_pick_two: 'Escolha dois jogadores diferentes.',
     h2h_count: '{n} confronto(s) direto(s)', h2h_sets: 'sets', h2h_points: 'pontos', h2h_history: 'Histórico de partidas', h2h_none: 'Ainda não há confrontos entre eles.', h2h_wins: '{name} vence {a}-{b}',
     mode_label: 'Tipo de jogo', mode_singles: 'Individual', mode_doubles: 'Duplas', sets_count_label: 'Número de sets',
-    players_label: 'Jogadores', teams_label: 'Equipas', placeholder_player: 'Jogador {n}', placeholder_team: 'Equipa {n} (ex. João & Pedro)', count_suffix: 'jogadores/equipas (máx. 20)',
+    players_label: 'Jogadores', teams_label: 'Equipas', team_label: 'Equipa {n}', placeholder_player: 'Jogador {n}', placeholder_team: 'Equipa {n} (ex. João & Pedro)', count_suffix: 'jogadores/equipas (máx. 20)',
     start_match: 'Iniciar partida', start_competition: 'Iniciar liga ({n} partidas)', start_tournament: 'Sortear quadro e iniciar torneio',
     result_title: 'Resultado', result_win: '{name} vence!', result_sets: 'Sets: {a} - {b}', btn_share: 'Partilhar resultado', btn_replay: 'Jogar novamente', btn_new_settings: 'Novas definições', btn_home_menu: 'Menu principal',
     freeplay_title: 'Jogo livre',
@@ -703,7 +703,7 @@ const TRANSLATIONS = {
     h2h_title: '直接対決', h2h_need_two: '試合履歴のある選手が2名以上必要です。', h2h_pick_two: '異なる選手を2名選んでください。',
     h2h_count: '対戦成績：{n}試合', h2h_sets: 'セット', h2h_points: 'ポイント', h2h_history: '対戦履歴', h2h_none: 'まだ対戦記録がありません。', h2h_wins: '{name}が{a}-{b}で勝利',
     mode_label: 'プレー形式', mode_singles: 'シングルス', mode_doubles: 'ダブルス', sets_count_label: 'セット数',
-    players_label: '選手', teams_label: 'チーム', placeholder_player: '選手{n}', placeholder_team: 'チーム{n}（例：田中 & 佐藤）', count_suffix: '名の選手/チーム（最大20）',
+    players_label: '選手', teams_label: 'チーム', team_label: 'チーム{n}', placeholder_player: '選手{n}', placeholder_team: 'チーム{n}（例：田中 & 佐藤）', count_suffix: '名の選手/チーム（最大20）',
     start_match: '試合開始', start_competition: 'リーグ戦開始（{n}試合）', start_tournament: '組み合わせ抽選してトーナメント開始',
     result_title: '結果', result_win: '{name}の勝利！', result_sets: 'セット：{a} - {b}', btn_share: '結果をシェア', btn_replay: 'もう一度プレイ', btn_new_settings: '新しい設定', btn_home_menu: 'メインメニュー',
     freeplay_title: 'フリープレイ',
@@ -777,7 +777,7 @@ const TRANSLATIONS = {
     h2h_title: '상대 전적', h2h_need_two: '경기 기록이 있는 선수가 최소 2명 필요합니다.', h2h_pick_two: '서로 다른 두 선수를 선택하세요.',
     h2h_count: '상대 전적 {n}경기', h2h_sets: '세트', h2h_points: '포인트', h2h_history: '경기 기록', h2h_none: '아직 두 선수 간 경기가 없습니다.', h2h_wins: '{name} {a}-{b}로 승리',
     mode_label: '경기 방식', mode_singles: '단식', mode_doubles: '복식', sets_count_label: '세트 수',
-    players_label: '선수', teams_label: '팀', placeholder_player: '선수 {n}', placeholder_team: '팀 {n} (예: 민수 & 철수)', count_suffix: '명의 선수/팀 (최대 20)',
+    players_label: '선수', teams_label: '팀', team_label: '팀 {n}', placeholder_player: '선수 {n}', placeholder_team: '팀 {n} (예: 민수 & 철수)', count_suffix: '명의 선수/팀 (최대 20)',
     start_match: '경기 시작', start_competition: '리그 시작 ({n}경기)', start_tournament: '대진표 추첨 후 토너먼트 시작',
     result_title: '결과', result_win: '{name} 승리!', result_sets: '세트: {a} - {b}', btn_share: '결과 공유', btn_replay: '다시 하기', btn_new_settings: '새 설정', btn_home_menu: '메인 메뉴',
     freeplay_title: '자유 경기',
@@ -3572,6 +3572,7 @@ function FreePlaySetup({ setView, state, setState, session }) {
   const { t } = useT();
   const { mode, bestOf, names } = state;
   const [participants, setParticipants] = useState([null, null]);
+  const [teamParticipants, setTeamParticipants] = useState([[null, null], [null, null]]);
   const [friendsList, setFriendsList] = useState([]);
   const myProfileId = session && session.user ? session.user.id : null;
 
@@ -3593,12 +3594,16 @@ function FreePlaySetup({ setView, state, setState, session }) {
     })();
   }, [myProfileId]);
 
-  const setMode = m => setState(s => ({
-    ...s, mode: m,
-    names: s.names.map(() => m === 'dubbel' ? { p1: '', p2: '' } : ''),
-  }));
+  function setTeamSlot(teamIdx, slotIdx, p) {
+    setTeamParticipants(prev => {
+      const next = prev.map(team => team.slice());
+      next[teamIdx][slotIdx] = p;
+      return next;
+    });
+  }
+
+  const setMode = m => setState(s => ({ ...s, mode: m }));
   const setBestOf = b => setState(s => ({ ...s, bestOf: b }));
-  const setNames = fn => setState(s => ({ ...s, names: typeof fn === 'function' ? fn(s.names) : fn }));
 
   function start() {
     if (mode === 'enkel') {
@@ -3606,14 +3611,25 @@ function FreePlaySetup({ setView, state, setState, session }) {
         (participants[0] && participants[0].name.trim()) || t('placeholder_player', { n: 1 }),
         (participants[1] && participants[1].name.trim()) || t('placeholder_player', { n: 2 }),
       ];
-      const participantIds = [
-        participants[0] ? participants[0].profileId : null,
-        participants[1] ? participants[1].profileId : null,
-      ];
+      const participantIds = {
+        teamA: [participants[0] ? participants[0].profileId : null],
+        teamB: [participants[1] ? participants[1].profileId : null],
+      };
       setState(s => ({ ...s, names: finalNames, pairMap: null, participantIds }));
     } else {
-      const { finalNames, pairMap } = finalizeNames(names, mode, t);
-      setState(s => ({ ...s, names: finalNames, pairMap, participantIds: [null, null] }));
+      const teamInfo = teamParticipants.map((team, i) => {
+        const p1 = (team[0] && team[0].name.trim()) || t('placeholder_player', { n: i * 2 + 1 });
+        const p2 = (team[1] && team[1].name.trim()) || t('placeholder_player', { n: i * 2 + 2 });
+        return { display: `${p1} & ${p2}`, p1, p2 };
+      });
+      const finalNames = teamInfo.map(ti => ti.display);
+      const pairMap = {};
+      teamInfo.forEach(ti => { pairMap[ti.display] = [ti.p1, ti.p2]; });
+      const participantIds = {
+        teamA: teamParticipants[0].map(p => (p ? p.profileId : null)),
+        teamB: teamParticipants[1].map(p => (p ? p.profileId : null)),
+      };
+      setState(s => ({ ...s, names: finalNames, pairMap, participantIds }));
     }
     setView('freeplay-play');
   }
@@ -3638,7 +3654,27 @@ function FreePlaySetup({ setView, state, setState, session }) {
               <PlayerPicker value={participants[1]} onChange={p => setParticipants(prev => [prev[0], p])} placeholder={t('placeholder_player', { n: 2 })} friendsList={friendsList} myProfileId={myProfileId} />
             </div>
           ) : (
-            <NameList names={names} setNames={setNames} mode={mode} t={t} />
+            <div className="flex flex-col gap-4">
+              {[0, 1].map(teamIdx => (
+                <div key={teamIdx} className="flex flex-col gap-2">
+                  <div className="tt-body text-xs font-semibold" style={{ color: C.dim }}>{t('team_label', { n: teamIdx + 1 })}</div>
+                  <PlayerPicker
+                    value={teamParticipants[teamIdx][0]}
+                    onChange={p => setTeamSlot(teamIdx, 0, p)}
+                    placeholder={t('placeholder_player', { n: teamIdx * 2 + 1 })}
+                    friendsList={friendsList}
+                    myProfileId={myProfileId}
+                  />
+                  <PlayerPicker
+                    value={teamParticipants[teamIdx][1]}
+                    onChange={p => setTeamSlot(teamIdx, 1, p)}
+                    placeholder={t('placeholder_player', { n: teamIdx * 2 + 2 })}
+                    friendsList={friendsList}
+                    myProfileId={myProfileId}
+                  />
+                </div>
+              ))}
+            </div>
           )}
         </Panel>
         <PrimaryButton onClick={start}>{t('start_match')}</PrimaryButton>
@@ -3668,14 +3704,17 @@ function FreePlayPlay({ setView, state, settings, recordMatch, session }) {
       ...prepareReportData({ setsA: r.score.setsA, setsB: r.score.setsB, sets: r.score.sets, bestOf, durationMs: r.durationMs }),
       pointLog: r.score.pointLog || [],
     });
-    if (participantIds && participantIds[0] && participantIds[1] && session && session.user) {
+    const teamAIds = participantIds ? participantIds.teamA : [];
+    const teamBIds = participantIds ? participantIds.teamB : [];
+    const bothTeamsLinked = teamAIds.length > 0 && teamBIds.length > 0 && teamAIds.every(Boolean) && teamBIds.every(Boolean);
+    if (bothTeamsLinked && session && session.user) {
       (async () => {
         try {
           await supabase.from('matches').insert({
             kind: 'freeplay',
             mode,
-            team_a_ids: [participantIds[0]],
-            team_b_ids: [participantIds[1]],
+            team_a_ids: teamAIds,
+            team_b_ids: teamBIds,
             sets_a: r.score.setsA,
             sets_b: r.score.setsB,
             total_points_a: totalPointsA,
