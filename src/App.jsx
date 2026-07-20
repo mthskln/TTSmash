@@ -102,6 +102,11 @@ function flagEmoji(iso2) {
   return iso2.toUpperCase().replace(/./g, ch => String.fromCodePoint(127397 + ch.charCodeAt(0)));
 }
 
+function countryFlagByName(name) {
+  const entry = COUNTRY_CODES.find(([, n]) => n === name);
+  return entry ? flagEmoji(entry[0]) : '';
+}
+
 const COUNTRY_CODES = [
   ['AF', 'Afghanistan'], ['AL', 'Albania'], ['DZ', 'Algeria'], ['AR', 'Argentina'], ['AM', 'Armenia'],
   ['AU', 'Australia'], ['AT', 'Austria'], ['AZ', 'Azerbaijan'], ['BE', 'Belgium'], ['BA', 'Bosnia and Herzegovina'],
@@ -166,6 +171,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'All',
     nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.', friend_requests_title: 'Friend requests', friend_request_sent: 'Request sent', friend_request_pending_you: 'Wants to be friends', friends_already: 'Friends', btn_accept: 'Accept', btn_decline: 'Decline', friends_none_yet: 'No friends yet', btn_challenge: 'Challenge',
     nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar', profile_edit_button: 'Edit profile', profile_save_button: 'Save profile',
+    title_newcomer: 'Newcomer', title_rising_star: 'Rising Star',
     profile_no_stats: 'No matches found under this name yet. Play a match as "{name}" to see stats here.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Coming soon \u2014 earn badges by playing matches!',
     badge_points: '{n} points scored', badge_matches: '{n} matches played', badge_streak: '{n}-match win streak',
@@ -238,6 +244,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Tout',
     nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.', friend_requests_title: "Demandes d'amis", friend_request_sent: 'Demande envoyée', friend_request_pending_you: 'Veut être ami(e)', friends_already: 'Amis', btn_accept: 'Accepter', btn_decline: 'Refuser', friends_none_yet: "Pas encore d'amis", btn_challenge: 'Défier',
     nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar', profile_edit_button: 'Modifier le profil', profile_save_button: 'Enregistrer le profil',
+    title_newcomer: 'Nouveau venu', title_rising_star: 'Étoile montante',
     profile_no_stats: 'Aucun match trouvé sous ce nom pour le moment. Jouez un match en tant que « {name} » pour voir vos statistiques ici.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Bientôt disponible \u2014 gagnez des badges en jouant des matchs\u00A0!',
     badge_points: '{n} points marqués', badge_matches: '{n} matchs joués', badge_streak: 'Série de {n} victoires',
@@ -310,6 +317,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Totaal',
     nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.', friend_requests_title: 'Vriendverzoeken', friend_request_sent: 'Verzoek verzonden', friend_request_pending_you: 'Wil bevriend worden', friends_already: 'Bevriend', btn_accept: 'Aanvaarden', btn_decline: 'Weigeren', friends_none_yet: 'Nog geen vrienden', btn_challenge: 'Uitdagen',
     nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar', profile_edit_button: 'Profiel bewerken', profile_save_button: 'Profiel opslaan',
+    title_newcomer: 'Nieuwkomer', title_rising_star: 'Rijzende ster',
     profile_no_stats: 'Nog geen wedstrijden gevonden onder deze naam. Speel een wedstrijd als "{name}" om hier statistieken te zien.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Binnenkort beschikbaar \u2014 verdien badges door wedstrijden te spelen!',
     badge_points: '{n} punten gescoord', badge_matches: '{n} wedstrijden gespeeld', badge_streak: '{n} overwinningen op rij',
@@ -382,6 +390,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Все',
     nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.', friend_requests_title: 'Заявки в друзья', friend_request_sent: 'Заявка отправлена', friend_request_pending_you: 'Хочет дружить', friends_already: 'Друзья', btn_accept: 'Принять', btn_decline: 'Отклонить', friends_none_yet: 'Пока нет друзей', btn_challenge: 'Бросить вызов',
     nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар', profile_edit_button: 'Редактировать профиль', profile_save_button: 'Сохранить профиль',
+    title_newcomer: 'Новичок', title_rising_star: 'Восходящая звезда',
     profile_no_stats: 'Матчи под этим именем пока не найдены. Сыграйте матч под именем «{name}», чтобы увидеть статистику здесь.',
     profile_badges_title: 'Значки', profile_badges_empty: 'Скоро появится \u2014 зарабатывайте значки, играя матчи!',
     badge_points: '{n} набранных очков', badge_matches: '{n} сыгранных матчей', badge_streak: 'Серия из {n} побед',
@@ -454,6 +463,7 @@ const TRANSLATIONS = {
     stats_scope_all: '全部',
     nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。', friend_requests_title: '好友请求', friend_request_sent: '请求已发送', friend_request_pending_you: '想加你为好友', friends_already: '好友', btn_accept: '接受', btn_decline: '拒绝', friends_none_yet: '还没有好友', btn_challenge: '挑战',
     nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像', profile_edit_button: '编辑资料', profile_save_button: '保存资料',
+    title_newcomer: '新人', title_rising_star: '新星',
     profile_no_stats: '尚未找到该名字下的比赛记录。以"{name}"的身份参加一场比赛即可在此查看统计数据。',
     profile_badges_title: '徽章', profile_badges_empty: '即将推出 \u2014 通过参加比赛获得徽章！',
     badge_points: '累计得分 {n} 分', badge_matches: '已进行 {n} 场比赛', badge_streak: '连胜 {n} 场',
@@ -526,6 +536,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Todo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.', friend_requests_title: 'Solicitudes de amistad', friend_request_sent: 'Solicitud enviada', friend_request_pending_you: 'Quiere ser tu amigo', friends_already: 'Amigos', btn_accept: 'Aceptar', btn_decline: 'Rechazar', friends_none_yet: 'Aún no tienes amigos', btn_challenge: 'Desafiar',
     nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
+    title_newcomer: 'Recién llegado', title_rising_star: 'Estrella en ascenso',
     profile_no_stats: 'Aún no se han encontrado partidos con este nombre. Juega un partido como "{name}" para ver tus estadísticas aquí.',
     profile_badges_title: 'Insignias', profile_badges_empty: '¡Próximamente! Gana insignias jugando partidos.',
     badge_points: '{n} puntos anotados', badge_matches: '{n} partidos jugados', badge_streak: 'Racha de {n} victorias',
@@ -598,6 +609,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Tudo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.', friend_requests_title: 'Pedidos de amizade', friend_request_sent: 'Pedido enviado', friend_request_pending_you: 'Quer ser teu amigo', friends_already: 'Amigos', btn_accept: 'Aceitar', btn_decline: 'Recusar', friends_none_yet: 'Ainda não tens amigos', btn_challenge: 'Desafiar',
     nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
+    title_newcomer: 'Recém-chegado', title_rising_star: 'Estrela em ascensão',
     profile_no_stats: 'Ainda não foram encontradas partidas com este nome. Joga uma partida como "{name}" para veres as estatísticas aqui.',
     profile_badges_title: 'Emblemas', profile_badges_empty: 'Em breve \u2014 ganha emblemas ao jogar partidas!',
     badge_points: '{n} pontos marcados', badge_matches: '{n} partidas jogadas', badge_streak: 'Sequência de {n} vitórias',
@@ -670,6 +682,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'すべて',
     nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。', friend_requests_title: 'フレンド申請', friend_request_sent: '申請を送信しました', friend_request_pending_you: 'フレンドになりたがっています', friends_already: 'フレンド', btn_accept: '承認', btn_decline: '拒否', friends_none_yet: 'まだフレンドがいません', btn_challenge: '対戦を挑む',
     nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ', profile_edit_button: 'プロフィールを編集', profile_save_button: 'プロフィールを保存',
+    title_newcomer: '新人', title_rising_star: '新星',
     profile_no_stats: 'この名前での試合がまだ見つかりません。「{name}」としてプレーすると、ここに統計が表示されます。',
     profile_badges_title: 'バッジ', profile_badges_empty: '近日公開予定 \u2014 試合をプレーしてバッジを獲得しよう！',
     badge_points: '{n}ポイント獲得', badge_matches: '{n}試合出場', badge_streak: '{n}連勝',
@@ -742,6 +755,7 @@ const TRANSLATIONS = {
     stats_scope_all: '전체',
     nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.', friend_requests_title: '친구 요청', friend_request_sent: '요청을 보냈습니다', friend_request_pending_you: '친구가 되고 싶어합니다', friends_already: '친구', btn_accept: '수락', btn_decline: '거절', friends_none_yet: '아직 친구가 없습니다', btn_challenge: '도전하기',
     nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택', profile_edit_button: '프로필 편집', profile_save_button: '프로필 저장',
+    title_newcomer: '신입', title_rising_star: '떠오르는 스타',
     profile_no_stats: '이 이름으로 진행된 경기가 아직 없습니다. "{name}"으로 경기를 플레이하면 여기에 통계가 표시됩니다.',
     profile_badges_title: '배지', profile_badges_empty: '곧 공개 예정 \u2014 경기를 플레이하고 배지를 획득하세요!',
     badge_points: '{n}점 획득', badge_matches: '{n}경기 출전', badge_streak: '{n}연승',
@@ -1022,18 +1036,20 @@ const TIER_STYLE = {
 const POINTS_MILESTONES = [[500, 'common'], [1000, 'common'], [2000, 'uncommon'], [5000, 'rare'], [10000, 'epic']];
 const MATCHES_MILESTONES = [[50, 'common'], [100, 'common'], [200, 'uncommon'], [500, 'rare'], [1000, 'epic']];
 const STREAK_MILESTONES = [[3, 'common'], [5, 'uncommon'], [10, 'rare'], [20, 'epic']];
+const TOTAL_POSSIBLE_BADGES = POINTS_MILESTONES.length + MATCHES_MILESTONES.length + STREAK_MILESTONES.length + 3; // + first-win, perfect-serve, perfect-return
+const TOTAL_POSSIBLE_BADGES = POINTS_MILESTONES.length + MATCHES_MILESTONES.length + STREAK_MILESTONES.length + 3; // + first-win, perfect-serve, perfect-return
 
 function computeStreaks(matchLog, playerName) {
   const myMatches = matchLog
     .filter(m => m.nameA === playerName || m.nameB === playerName)
     .slice()
     .sort((a, b) => a.timestamp - b.timestamp);
-  let best = 0, current = 0;
+  let best = 0, current = 0, losing = 0;
   myMatches.forEach(m => {
-    if (m.winner === playerName) { current++; best = Math.max(best, current); }
-    else { current = 0; }
+    if (m.winner === playerName) { current++; best = Math.max(best, current); losing = 0; }
+    else { current = 0; losing++; }
   });
-  return { current, best };
+  return { current, best, losing };
 }
 
 function computePerfectMatchFlags(matchLog, playerName) {
@@ -1082,6 +1098,144 @@ function computeBadges(matchLog, playerName, t) {
     { id: 'perfect-serve', tier: 'rare', icon: Target, label: t('badge_perfect_serve'), desc: t('badge_perfect_serve_desc'), earned: perfectServe, current: perfectServe ? 1 : 0, goal: 1 },
     { id: 'perfect-return', tier: 'rare', icon: Shield, label: t('badge_perfect_return'), desc: t('badge_perfect_return_desc'), earned: perfectReturn, current: perfectReturn ? 1 : 0, goal: 1 },
   ];
+}
+
+const PLAYER_TITLES = {
+  en: [
+    ['Table Rookie', 'Paddle Amateur', 'Net Newbie', 'Rally Recruit'],
+    ['Spin Apprentice', 'Forehand Fighter', 'Smash Cadet', 'Rising Rally Star'],
+    ['Topspin Guru', 'Backhand Bandit', 'Ace Hunter', 'Table Tactician'],
+    ['Smash King', 'Ankle Breaker', 'Paddle Prodigy', 'Rally Raider'],
+    ['Table Titan', 'Deuce Destroyer', 'Net Ninja', 'Tournament Terror'],
+    ['Champ Champ', 'End Boss', 'Tournament Legend', 'Table Tennis Deity'],
+  ],
+  fr: [
+    ['Rookie de la Table', 'Amateur de Raquette', 'Débutant du Filet', 'Recrue du Rallye'],
+    ['Apprenti du Lift', 'Combattant Coup Droit', 'Cadet du Smash', 'Étoile Montante du Rallye'],
+    ['Gourou du Topspin', 'Bandit du Revers', "Chasseur d'Ace", 'Tacticien de la Table'],
+    ['Roi du Smash', 'Briseur de Chevilles', 'Prodige de la Raquette', 'Pillard du Rallye'],
+    ['Titan de la Table', "Destructeur de l'Égalité", 'Ninja du Filet', 'Terreur du Tournoi'],
+    ['Champ des Champs', 'Boss Final', 'Légende du Tournoi', 'Divinité du Tennis de Table'],
+  ],
+  nl: [
+    ['Tafel Rookie', 'Racket Amateur', 'Net Newbie', 'Rally Rekruut'],
+    ['Spin Leerling', 'Forehand Fighter', 'Smash Cadet', 'Rijzende Rally Ster'],
+    ['Topspin Guru', 'Backhand Bandiet', 'Ace Jager', 'Tafel Tacticus'],
+    ['Smash King', 'Ankle Breaker', 'Racket Wonderkind', 'Rally Rover'],
+    ['Tafel Titaan', 'Deuce Vernietiger', 'Net Ninja', 'Toernooi Terreur'],
+    ['Champ Champ', 'End Boss', 'Toernooi Legende', 'Tafeltennis Godheid'],
+  ],
+  ru: [
+    ['Новичок Стола', 'Любитель Ракетки', 'Новичок у Сетки', 'Рекрут Розыгрыша'],
+    ['Ученик Кручёного', 'Боец Форхенда', 'Кадет Смеша', 'Восходящая Звезда Розыгрыша'],
+    ['Гуру Топспина', 'Бандит Бэкхенда', 'Охотник за Эйсами', 'Тактик Стола'],
+    ['Король Смеша', 'Ломатель Лодыжек', 'Вундеркинд Ракетки', 'Налётчик Розыгрыша'],
+    ['Титан Стола', 'Разрушитель Дьюса', 'Ниндзя у Сетки', 'Гроза Турнира'],
+    ['Чемпион Чемпионов', 'Последний Босс', 'Легенда Турнира', 'Божество Настольного Тенниса'],
+  ],
+  zh: [
+    ['球桌新手', '球拍业余选手', '球网新人', '对局新兵'],
+    ['弧圈学徒', '正手战士', '扣杀学员', '崛起之星'],
+    ['弧圈大师', '反手大盗', '发球猎人', '球桌战术家'],
+    ['扣杀之王', '断腿高手', '球拍天才', '对局掠夺者'],
+    ['球桌泰坦', '平分终结者', '球网忍者', '赛场恐怖分子'],
+    ['冠军中的冠军', '最终Boss', '赛事传奇', '乒乓球之神'],
+  ],
+  es: [
+    ['Novato de la Mesa', 'Amateur de la Raqueta', 'Novato de la Red', 'Recluta del Rally'],
+    ['Aprendiz del Efecto', 'Luchador de Derecha', 'Cadete del Remate', 'Estrella Emergente del Rally'],
+    ['Gurú del Topspin', 'Bandido del Revés', 'Cazador de Aces', 'Táctico de la Mesa'],
+    ['Rey del Remate', 'Rompe Tobillos', 'Prodigio de la Raqueta', 'Saqueador del Rally'],
+    ['Titán de la Mesa', 'Destructor de Iguales', 'Ninja de la Red', 'Terror del Torneo'],
+    ['Campeón de Campeones', 'Jefe Final', 'Leyenda del Torneo', 'Deidad del Tenis de Mesa'],
+  ],
+  pt: [
+    ['Novato da Mesa', 'Amador da Raquete', 'Novato da Rede', 'Recruta da Jogada'],
+    ['Aprendiz do Efeito', 'Lutador de Direita', 'Cadete do Smash', 'Estrela em Ascensão da Jogada'],
+    ['Guru do Topspin', 'Bandido do Backhand', 'Caçador de Aces', 'Tático da Mesa'],
+    ['Rei do Smash', 'Quebra-Tornozelos', 'Prodígio da Raquete', 'Saqueador da Jogada'],
+    ['Titã da Mesa', 'Destruidor do Empate', 'Ninja da Rede', 'Terror do Torneio'],
+    ['Campeão dos Campeões', 'Chefão Final', 'Lenda do Torneio', 'Divindade do Ténis de Mesa'],
+  ],
+  ja: [
+    ['テーブル初心者', 'ラケットアマチュア', 'ネット新人', 'ラリー新兵'],
+    ['スピン見習い', 'フォアハンドファイター', 'スマッシュ候補生', '新星ラリースター'],
+    ['トップスピンの達人', 'バックハンドの盗賊', 'エースハンター', 'テーブル戦術家'],
+    ['スマッシュキング', 'アンクルブレイカー', 'ラケットの天才', 'ラリーの略奪者'],
+    ['テーブルタイタン', 'デュース破壊者', 'ネットニンジャ', 'トーナメントの脅威'],
+    ['チャンプ・オブ・チャンプ', 'ラスボス', 'トーナメントの伝説', '卓球の神'],
+  ],
+  ko: [
+    ['테이블 루키', '라켓 아마추어', '네트 신입', '랠리 신병'],
+    ['스핀 견습생', '포핸드 파이터', '스매시 후보생', '떠오르는 랠리 스타'],
+    ['탑스핀 구루', '백핸드 밴딧', '에이스 헌터', '테이블 전략가'],
+    ['스매시 킹', '앵클 브레이커', '라켓 신동', '랠리 약탈자'],
+    ['테이블 타이탄', '듀스 파괴자', '네트 닌자', '토너먼트의 공포'],
+    ['챔프 챔프', '엔드 보스', '토너먼트 레전드', '탁구의 신'],
+  ],
+};
+
+const LOSING_STREAK_TITLES = {
+  en: [
+    ['Net Cord Magnet', 'Rally Donor', 'Human Warm-Up', 'Comeback Pending'],
+    ['Professional Loser', 'Table Tennis Piñata', 'The Sparring Partner', 'Serving Practice Dummy'],
+  ],
+  fr: [
+    ['Aimant à Filet', 'Donneur de Rallye', 'Échauffement Humain', 'Retour en Préparation'],
+    ['Perdant Professionnel', 'Piñata du Tennis de Table', "Le Partenaire d'Entraînement", 'Mannequin de Service'],
+  ],
+  nl: [
+    ['Netrand Magneet', 'Rally Donor', 'Menselijke Warming-up', 'Comeback in de Maak'],
+    ['Professionele Verliezer', 'Tafeltennis Pinata', 'De Sparringpartner', 'Opslag-Oefenpop'],
+  ],
+  ru: [
+    ['Магнит для Сетки', 'Донор Розыгрыша', 'Живая Разминка', 'Камбэк на Подходе'],
+    ['Профессиональный Неудачник', 'Пиньята Настольного Тенниса', 'Спарринг-партнёр', 'Манекен для Подачи'],
+  ],
+  zh: [
+    ['球网磁铁', '回合捐赠者', '人肉热身', '即将逆转'],
+    ['职业输家', '乒乓球皮纳塔', '陪练搭档', '发球练习假人'],
+  ],
+  es: [
+    ['Imán de la Red', 'Donante de Rally', 'Calentamiento Humano', 'Remontada Pendiente'],
+    ['Perdedor Profesional', 'Piñata del Tenis de Mesa', 'El Compañero de Sparring', 'Maniquí de Práctica de Saque'],
+  ],
+  pt: [
+    ['Íman da Rede', 'Doador de Jogadas', 'Aquecimento Humano', 'Reviravolta Pendente'],
+    ['Perdedor Profissional', 'Pinhata do Ténis de Mesa', 'O Parceiro de Treino', 'Boneco de Prática de Serviço'],
+  ],
+  ja: [
+    ['ネット際マグネット', 'ラリー献上者', '人間ウォームアップ', 'カムバック待ち'],
+    ['プロの負け犬', '卓球ピニャータ', 'スパーリングパートナー', 'サーブ練習用ダミー'],
+  ],
+  ko: [
+    ['네트 자석', '랠리 기부자', '인간 워밍업', '컴백 대기중'],
+    ['프로 패배자', '탁구 피냐타', '스파링 파트너', '서브 연습용 인형'],
+  ],
+};
+
+function hashString(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) hash = (hash * 31 + str.charCodeAt(i)) | 0;
+  return Math.abs(hash);
+}
+
+function getPlayerTitle(earnedBadgeCount, totalPossible, playerName, lang, losingStreak = 0) {
+  const losingPools = LOSING_STREAK_TITLES[lang] || LOSING_STREAK_TITLES.en;
+  if (losingStreak >= 5) {
+    const pool = losingPools[1];
+    return pool[hashString(playerName || '') % pool.length];
+  }
+  if (losingStreak >= 3) {
+    const pool = losingPools[0];
+    return pool[hashString(playerName || '') % pool.length];
+  }
+  if (earnedBadgeCount <= 0) return null;
+  const pct = totalPossible > 0 ? earnedBadgeCount / totalPossible : 0;
+  const tierIdx = pct >= 0.9 ? 5 : pct >= 0.75 ? 4 : pct >= 0.6 ? 3 : pct >= 0.4 ? 2 : pct >= 0.2 ? 1 : 0;
+  const pools = PLAYER_TITLES[lang] || PLAYER_TITLES.en;
+  const pool = pools[tierIdx];
+  return pool[hashString(playerName || '') % pool.length];
 }
 
 function formatClock(totalSec) {
@@ -2573,7 +2727,7 @@ function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, fri
 
 /* ============================= PLAYER DETAIL ============================= */
 function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friends, toggleFriend, onChallenge }) {
-  const { t } = useT();
+  const { t, lang } = useT();
   const stats = aggregateStats(matchLog);
   const me = stats.find(s => s.name === playerName);
   const myMatches = matchLog.filter(m => m.nameA === playerName || m.nameB === playerName);
@@ -2608,6 +2762,8 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
   const serve = aggregateServeStats(matchLog, playerName);
   const hasServeData = serve.servePts + serve.returnPts > 0;
   const streaks = computeStreaks(matchLog, playerName);
+  const playerBadges = computeBadges(matchLog, playerName, t);
+  const playerTitle = getPlayerTitle(playerBadges.filter(b => b.earned).length, TOTAL_POSSIBLE_BADGES, playerName, lang, streaks.losing);
   function pct(won, total) { return total > 0 ? Math.round((won / total) * 100) : 0; }
 
   return (
@@ -2619,6 +2775,7 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
           <Avatar name={playerName} photo={photos[playerName]} size={64} />
           <div className="flex-1 min-w-0">
             <div className="tt-display text-2xl truncate" style={{ color: C.text }}>{playerName}</div>
+            {playerTitle && <div className="tt-body text-xs font-semibold mb-0.5" style={{ color: C.amber }}>{playerTitle}</div>}
             <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_stats_line', { played: me.played, pct: winPct })}</div>
           </div>
           <button
@@ -2688,7 +2845,7 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
         <div className="tt-body text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: C.dim }}>
           <Award size={16} color={C.dim} /> {t('profile_badges_title')}
         </div>
-        <BadgesGrid badges={computeBadges(matchLog, playerName, t)} />
+        <BadgesGrid badges={playerBadges} />
       </Panel>
 
       <div className="tt-body text-sm font-semibold mb-2" style={{ color: C.dim }}>{t('player_recent')}</div>
@@ -2978,7 +3135,7 @@ function FriendsScreen({ setView, session, onSelectPlayer }) {
                   <div className="min-w-0">
                     <div className="tt-body text-sm font-semibold truncate" style={{ color: C.text }}>{p.username}</div>
                     {(p.city || p.country) && (
-                      <div className="tt-body text-xs truncate" style={{ color: C.dim }}>{[p.city, p.country].filter(Boolean).join(', ')}</div>
+                      <div className="tt-body text-xs truncate" style={{ color: C.dim }}>{[p.city, p.country ? `${countryFlagByName(p.country)} ${p.country}` : null].filter(Boolean).join(', ')}</div>
                     )}
                   </div>
                 </button>
@@ -2996,7 +3153,7 @@ function FriendsScreen({ setView, session, onSelectPlayer }) {
 
 /* ============================= MY PROFILE ============================= */
 function MyProfile({ setView, matchLog, session, profile, setProfile }) {
-  const { t } = useT();
+  const { t, lang } = useT();
   const fileRef = useRef(null);
   const userId = session.user.id;
   const [usernameInput, setUsernameInput] = useState(profile ? profile.username || '' : '');
@@ -3068,7 +3225,9 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
   const winPct = me && me.played > 0 ? Math.round((me.w / me.played) * 100) : 0;
   const serve = myUsername ? aggregateServeStats(matchLog, me ? me.name : myUsername) : { servePts: 0, returnPts: 0 };
   const hasServeData = serve.servePts + serve.returnPts > 0;
-  const streaks = myUsername ? computeStreaks(matchLog, me ? me.name : myUsername) : { current: 0, best: 0 };
+  const streaks = myUsername ? computeStreaks(matchLog, me ? me.name : myUsername) : { current: 0, best: 0, losing: 0 };
+  const myBadges = myUsername && myUsername.trim() ? computeBadges(matchLog, me ? me.name : myUsername.trim(), t) : [];
+  const myTitle = getPlayerTitle(myBadges.filter(b => b.earned).length, TOTAL_POSSIBLE_BADGES, myUsername, lang, streaks.losing);
   function pct(won, total) { return total > 0 ? Math.round((won / total) * 100) : 0; }
 
   return (
@@ -3087,9 +3246,10 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
               <Avatar name={myUsername || '?'} photo={profile ? profile.avatar_url : null} size={72} />
               <div className="flex-1 min-w-0">
                 <div className="tt-display text-2xl truncate" style={{ color: C.text }}>{myUsername || t('profile_username_placeholder')}</div>
+                {myTitle && <div className="tt-body text-xs font-semibold" style={{ color: C.amber }}>{myTitle}</div>}
                 {(profile && (profile.city || profile.country)) && (
                   <div className="tt-body text-sm truncate" style={{ color: C.dim }}>
-                    {[profile.city, profile.country].filter(Boolean).join(', ')}
+                    {[profile.city, profile.country ? `${countryFlagByName(profile.country)} ${profile.country}` : null].filter(Boolean).join(', ')}
                   </div>
                 )}
               </div>
@@ -3244,7 +3404,7 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
           <Award size={16} color={C.dim} /> {t('profile_badges_title')}
         </div>
         {myUsername && myUsername.trim() ? (
-          <BadgesGrid badges={computeBadges(matchLog, me ? me.name : myUsername.trim(), t)} />
+          <BadgesGrid badges={myBadges} />
         ) : (
           <div className="rounded-xl p-4 text-center" style={{ background: C.panel2, border: `1px dashed ${C.line}` }}>
             <Award size={26} color={C.dim} className="mx-auto mb-2" />
