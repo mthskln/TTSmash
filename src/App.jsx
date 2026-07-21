@@ -2138,9 +2138,9 @@ function ChallengesPanel({ matchLog, scope, playerName, memberNames, session, cl
 function CrossedPaddlesIcon({ size = 19, color = 'currentColor' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeLinecap="round" strokeLinejoin="round">
-      <ellipse cx="13" cy="9.5" rx="6" ry="7" transform="rotate(-20 13 9.5)" strokeWidth="2" />
-      <line x1="8" y1="15.5" x2="5.5" y2="19.5" strokeWidth="3.4" />
-      <circle cx="19.5" cy="18" r="1.5" fill={color} stroke="none" />
+      <rect x="7.5" y="2.5" width="11" height="13" rx="5" strokeWidth="2" />
+      <line x1="9" y1="14" x2="6" y2="19.5" strokeWidth="3.4" />
+      <circle cx="19" cy="19" r="1.5" fill={color} stroke="none" />
     </svg>
   );
 }
