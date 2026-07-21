@@ -174,6 +174,7 @@ const TRANSLATIONS = {
     nav_groups: 'Groups', groups_create_button: 'Create group', groups_search_placeholder: 'Search for a group...', group_name_placeholder: 'Group name', group_description_placeholder: 'Description (optional)', groups_empty: "You're not in any group yet.", group_join_button: 'Join', group_joined_label: 'Member', group_members_title: 'Members', group_leaderboard_title: 'Group leaderboard', group_leave_button: 'Leave group', group_no_results: 'No groups found.',
     group_request_sent: 'Request sent', group_pending_requests_title: 'Join requests', btn_approve: 'Approve', group_remove_member: 'Remove', groups_nearby_title: 'Nearby groups',
     group_invite_section_title: 'Invite someone', group_invites_title: 'Group invitations',
+    event_name_placeholder: 'Event name', event_link_group_label: 'Link to a group (optional)', event_no_group_option: 'No group', event_create_button: 'Create event', event_code_label: 'Join code', event_share_hint: 'Share this code so others can join', event_participants_title: 'Participants', event_close_registration: 'Close registration', event_status_open: 'Registration open', event_status_closed: 'Registration closed', event_join_button: 'Join event', event_join_code_placeholder: 'Enter join code', event_join_via_code_title: 'Have a code?', event_leave_button: 'Leave event', event_not_found: 'No event found with that code.', event_already_joined: 'Joined',
     nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar', profile_edit_button: 'Edit profile', profile_save_button: 'Save profile',
     title_newcomer: 'Newcomer', title_rising_star: 'Rising Star',
     profile_no_stats: 'No matches found under this name yet. Play a match as "{name}" to see stats here.',
@@ -252,6 +253,7 @@ const TRANSLATIONS = {
     nav_groups: 'Groupes', groups_create_button: 'Créer un groupe', groups_search_placeholder: 'Rechercher un groupe...', group_name_placeholder: 'Nom du groupe', group_description_placeholder: 'Description (facultatif)', groups_empty: "Vous ne faites partie d'aucun groupe pour l'instant.", group_join_button: 'Rejoindre', group_joined_label: 'Membre', group_members_title: 'Membres', group_leaderboard_title: 'Classement du groupe', group_leave_button: 'Quitter le groupe', group_no_results: 'Aucun groupe trouvé.',
     group_request_sent: 'Demande envoyée', group_pending_requests_title: "Demandes d'adhésion", btn_approve: 'Approuver', group_remove_member: 'Retirer', groups_nearby_title: 'Groupes à proximité',
     group_invite_section_title: 'Inviter quelqu\u2019un', group_invites_title: 'Invitations de groupe',
+    event_name_placeholder: "Nom de l'événement", event_link_group_label: 'Lier à un groupe (facultatif)', event_no_group_option: 'Aucun groupe', event_create_button: 'Créer un événement', event_code_label: 'Code de participation', event_share_hint: 'Partagez ce code pour que d\u2019autres puissent rejoindre', event_participants_title: 'Participants', event_close_registration: 'Clôturer les inscriptions', event_status_open: 'Inscriptions ouvertes', event_status_closed: 'Inscriptions clôturées', event_join_button: "Rejoindre l'événement", event_join_code_placeholder: 'Entrez le code', event_join_via_code_title: 'Vous avez un code\u00A0?', event_leave_button: "Quitter l'événement", event_not_found: 'Aucun événement trouvé avec ce code.', event_already_joined: 'Inscrit',
     nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar', profile_edit_button: 'Modifier le profil', profile_save_button: 'Enregistrer le profil',
     title_newcomer: 'Nouveau venu', title_rising_star: 'Étoile montante',
     profile_no_stats: 'Aucun match trouvé sous ce nom pour le moment. Jouez un match en tant que « {name} » pour voir vos statistiques ici.',
@@ -330,6 +332,7 @@ const TRANSLATIONS = {
     nav_groups: 'Groepen', groups_create_button: 'Groep aanmaken', groups_search_placeholder: 'Zoek een groep...', group_name_placeholder: 'Naam van de groep', group_description_placeholder: 'Beschrijving (optioneel)', groups_empty: 'Je zit nog in geen enkele groep.', group_join_button: 'Aansluiten', group_joined_label: 'Lid', group_members_title: 'Leden', group_leaderboard_title: 'Groepsranglijst', group_leave_button: 'Groep verlaten', group_no_results: 'Geen groepen gevonden.',
     group_request_sent: 'Aanvraag verstuurd', group_pending_requests_title: 'Aanvragen', btn_approve: 'Goedkeuren', group_remove_member: 'Verwijderen', groups_nearby_title: 'Groepen in de buurt',
     group_invite_section_title: 'Nodig iemand uit', group_invites_title: 'Groepsuitnodigingen',
+    event_name_placeholder: 'Naam van het evenement', event_link_group_label: 'Koppel aan een groep (optioneel)', event_no_group_option: 'Geen groep', event_create_button: 'Evenement aanmaken', event_code_label: 'Deelcode', event_share_hint: 'Deel deze code zodat anderen kunnen aansluiten', event_participants_title: 'Deelnemers', event_close_registration: 'Inschrijvingen sluiten', event_status_open: 'Inschrijvingen open', event_status_closed: 'Inschrijvingen gesloten', event_join_button: 'Evenement joinen', event_join_code_placeholder: 'Voer deelcode in', event_join_via_code_title: 'Heb je een code?', event_leave_button: 'Evenement verlaten', event_not_found: 'Geen evenement gevonden met die code.', event_already_joined: 'Aangesloten',
     nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar', profile_edit_button: 'Profiel bewerken', profile_save_button: 'Profiel opslaan',
     title_newcomer: 'Nieuwkomer', title_rising_star: 'Rijzende ster',
     profile_no_stats: 'Nog geen wedstrijden gevonden onder deze naam. Speel een wedstrijd als "{name}" om hier statistieken te zien.',
@@ -408,6 +411,7 @@ const TRANSLATIONS = {
     nav_groups: 'Группы', groups_create_button: 'Создать группу', groups_search_placeholder: 'Поиск группы...', group_name_placeholder: 'Название группы', group_description_placeholder: 'Описание (необязательно)', groups_empty: 'Вы пока не состоите ни в одной группе.', group_join_button: 'Присоединиться', group_joined_label: 'Участник', group_members_title: 'Участники', group_leaderboard_title: 'Рейтинг группы', group_leave_button: 'Покинуть группу', group_no_results: 'Группы не найдены.',
     group_request_sent: 'Заявка отправлена', group_pending_requests_title: 'Заявки на вступление', btn_approve: 'Одобрить', group_remove_member: 'Удалить', groups_nearby_title: 'Группы поблизости',
     group_invite_section_title: 'Пригласить кого-то', group_invites_title: 'Приглашения в группы',
+    event_name_placeholder: 'Название мероприятия', event_link_group_label: 'Привязать к группе (необязательно)', event_no_group_option: 'Без группы', event_create_button: 'Создать мероприятие', event_code_label: 'Код для участия', event_share_hint: 'Поделитесь этим кодом, чтобы другие могли присоединиться', event_participants_title: 'Участники', event_close_registration: 'Закрыть регистрацию', event_status_open: 'Регистрация открыта', event_status_closed: 'Регистрация закрыта', event_join_button: 'Присоединиться', event_join_code_placeholder: 'Введите код', event_join_via_code_title: 'Есть код?', event_leave_button: 'Покинуть мероприятие', event_not_found: 'Мероприятие с таким кодом не найдено.', event_already_joined: 'Участвуете',
     nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар', profile_edit_button: 'Редактировать профиль', profile_save_button: 'Сохранить профиль',
     title_newcomer: 'Новичок', title_rising_star: 'Восходящая звезда',
     profile_no_stats: 'Матчи под этим именем пока не найдены. Сыграйте матч под именем «{name}», чтобы увидеть статистику здесь.',
@@ -486,6 +490,7 @@ const TRANSLATIONS = {
     nav_groups: '群组', groups_create_button: '创建群组', groups_search_placeholder: '搜索群组...', group_name_placeholder: '群组名称', group_description_placeholder: '描述（可选）', groups_empty: '你还没有加入任何群组。', group_join_button: '加入', group_joined_label: '成员', group_members_title: '成员', group_leaderboard_title: '群组排行榜', group_leave_button: '退出群组', group_no_results: '未找到群组。',
     group_request_sent: '请求已发送', group_pending_requests_title: '加入请求', btn_approve: '批准', group_remove_member: '移除', groups_nearby_title: '附近的群组',
     group_invite_section_title: '邀请某人', group_invites_title: '群组邀请',
+    event_name_placeholder: '活动名称', event_link_group_label: '关联群组（可选）', event_no_group_option: '无群组', event_create_button: '创建活动', event_code_label: '加入码', event_share_hint: '分享此代码以便他人加入', event_participants_title: '参与者', event_close_registration: '关闭报名', event_status_open: '报名开放中', event_status_closed: '报名已关闭', event_join_button: '加入活动', event_join_code_placeholder: '输入加入码', event_join_via_code_title: '有邀请码吗？', event_leave_button: '退出活动', event_not_found: '未找到该代码对应的活动。', event_already_joined: '已加入',
     nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像', profile_edit_button: '编辑资料', profile_save_button: '保存资料',
     title_newcomer: '新人', title_rising_star: '新星',
     profile_no_stats: '尚未找到该名字下的比赛记录。以"{name}"的身份参加一场比赛即可在此查看统计数据。',
@@ -564,6 +569,7 @@ const TRANSLATIONS = {
     nav_groups: 'Grupos', groups_create_button: 'Crear grupo', groups_search_placeholder: 'Buscar un grupo...', group_name_placeholder: 'Nombre del grupo', group_description_placeholder: 'Descripción (opcional)', groups_empty: 'Todavía no perteneces a ningún grupo.', group_join_button: 'Unirse', group_joined_label: 'Miembro', group_members_title: 'Miembros', group_leaderboard_title: 'Clasificación del grupo', group_leave_button: 'Abandonar grupo', group_no_results: 'No se encontraron grupos.',
     group_request_sent: 'Solicitud enviada', group_pending_requests_title: 'Solicitudes de ingreso', btn_approve: 'Aprobar', group_remove_member: 'Eliminar', groups_nearby_title: 'Grupos cercanos',
     group_invite_section_title: 'Invitar a alguien', group_invites_title: 'Invitaciones a grupos',
+    event_name_placeholder: 'Nombre del evento', event_link_group_label: 'Vincular a un grupo (opcional)', event_no_group_option: 'Sin grupo', event_create_button: 'Crear evento', event_code_label: 'Código de acceso', event_share_hint: 'Comparte este código para que otros puedan unirse', event_participants_title: 'Participantes', event_close_registration: 'Cerrar inscripciones', event_status_open: 'Inscripciones abiertas', event_status_closed: 'Inscripciones cerradas', event_join_button: 'Unirse al evento', event_join_code_placeholder: 'Introduce el código', event_join_via_code_title: '¿Tienes un código?', event_leave_button: 'Abandonar evento', event_not_found: 'No se encontró ningún evento con ese código.', event_already_joined: 'Inscrito',
     nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
     title_newcomer: 'Recién llegado', title_rising_star: 'Estrella en ascenso',
     profile_no_stats: 'Aún no se han encontrado partidos con este nombre. Juega un partido como "{name}" para ver tus estadísticas aquí.',
@@ -642,6 +648,7 @@ const TRANSLATIONS = {
     nav_groups: 'Grupos', groups_create_button: 'Criar grupo', groups_search_placeholder: 'Pesquisar um grupo...', group_name_placeholder: 'Nome do grupo', group_description_placeholder: 'Descrição (opcional)', groups_empty: 'Ainda não pertences a nenhum grupo.', group_join_button: 'Aderir', group_joined_label: 'Membro', group_members_title: 'Membros', group_leaderboard_title: 'Classificação do grupo', group_leave_button: 'Sair do grupo', group_no_results: 'Nenhum grupo encontrado.',
     group_request_sent: 'Pedido enviado', group_pending_requests_title: 'Pedidos de adesão', btn_approve: 'Aprovar', group_remove_member: 'Remover', groups_nearby_title: 'Grupos próximos',
     group_invite_section_title: 'Convidar alguém', group_invites_title: 'Convites de grupo',
+    event_name_placeholder: 'Nome do evento', event_link_group_label: 'Associar a um grupo (opcional)', event_no_group_option: 'Sem grupo', event_create_button: 'Criar evento', event_code_label: 'Código de acesso', event_share_hint: 'Partilha este código para que outros possam aderir', event_participants_title: 'Participantes', event_close_registration: 'Encerrar inscrições', event_status_open: 'Inscrições abertas', event_status_closed: 'Inscrições encerradas', event_join_button: 'Aderir ao evento', event_join_code_placeholder: 'Introduz o código', event_join_via_code_title: 'Tens um código?', event_leave_button: 'Sair do evento', event_not_found: 'Nenhum evento encontrado com esse código.', event_already_joined: 'Inscrito',
     nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
     title_newcomer: 'Recém-chegado', title_rising_star: 'Estrela em ascensão',
     profile_no_stats: 'Ainda não foram encontradas partidas com este nome. Joga uma partida como "{name}" para veres as estatísticas aqui.',
@@ -720,6 +727,7 @@ const TRANSLATIONS = {
     nav_groups: 'グループ', groups_create_button: 'グループを作成', groups_search_placeholder: 'グループを検索...', group_name_placeholder: 'グループ名', group_description_placeholder: '説明（任意）', groups_empty: 'まだどのグループにも参加していません。', group_join_button: '参加する', group_joined_label: 'メンバー', group_members_title: 'メンバー', group_leaderboard_title: 'グループランキング', group_leave_button: 'グループを退出', group_no_results: 'グループが見つかりません。',
     group_request_sent: '申請を送信しました', group_pending_requests_title: '参加リクエスト', btn_approve: '承認', group_remove_member: '削除', groups_nearby_title: '近くのグループ',
     group_invite_section_title: '誰かを招待', group_invites_title: 'グループ招待',
+    event_name_placeholder: 'イベント名', event_link_group_label: 'グループに紐付け（任意）', event_no_group_option: 'グループなし', event_create_button: 'イベントを作成', event_code_label: '参加コード', event_share_hint: 'このコードを共有すると参加できます', event_participants_title: '参加者', event_close_registration: '参加受付を締め切る', event_status_open: '参加受付中', event_status_closed: '参加受付終了', event_join_button: 'イベントに参加', event_join_code_placeholder: 'コードを入力', event_join_via_code_title: 'コードをお持ちですか？', event_leave_button: 'イベントを退出', event_not_found: 'そのコードのイベントが見つかりません。', event_already_joined: '参加済み',
     nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ', profile_edit_button: 'プロフィールを編集', profile_save_button: 'プロフィールを保存',
     title_newcomer: '新人', title_rising_star: '新星',
     profile_no_stats: 'この名前での試合がまだ見つかりません。「{name}」としてプレーすると、ここに統計が表示されます。',
@@ -798,6 +806,7 @@ const TRANSLATIONS = {
     nav_groups: '그룹', groups_create_button: '그룹 만들기', groups_search_placeholder: '그룹 검색...', group_name_placeholder: '그룹 이름', group_description_placeholder: '설명 (선택 사항)', groups_empty: '아직 가입한 그룹이 없습니다.', group_join_button: '가입하기', group_joined_label: '멤버', group_members_title: '멤버', group_leaderboard_title: '그룹 순위', group_leave_button: '그룹 나가기', group_no_results: '그룹을 찾을 수 없습니다.',
     group_request_sent: '요청을 보냈습니다', group_pending_requests_title: '가입 요청', btn_approve: '승인', group_remove_member: '삭제', groups_nearby_title: '주변 그룹',
     group_invite_section_title: '누군가 초대하기', group_invites_title: '그룹 초대',
+    event_name_placeholder: '이벤트 이름', event_link_group_label: '그룹에 연결 (선택 사항)', event_no_group_option: '그룹 없음', event_create_button: '이벤트 만들기', event_code_label: '참가 코드', event_share_hint: '이 코드를 공유하면 다른 사람이 참여할 수 있습니다', event_participants_title: '참가자', event_close_registration: '등록 마감', event_status_open: '등록 진행 중', event_status_closed: '등록 마감됨', event_join_button: '이벤트 참가', event_join_code_placeholder: '코드 입력', event_join_via_code_title: '코드가 있으신가요?', event_leave_button: '이벤트 나가기', event_not_found: '해당 코드로 이벤트를 찾을 수 없습니다.', event_already_joined: '참가함',
     nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택', profile_edit_button: '프로필 편집', profile_save_button: '프로필 저장',
     title_newcomer: '신입', title_rising_star: '떠오르는 스타',
     profile_no_stats: '이 이름으로 진행된 경기가 아직 없습니다. "{name}"으로 경기를 플레이하면 여기에 통계가 표시됩니다.',
@@ -1668,6 +1677,13 @@ function ParticipantList({ participants, setParticipants, mode, friendsList, myP
       ))}
     </div>
   );
+}
+
+function generateJoinCode() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no O/0/I/1 to avoid confusion
+  let code = '';
+  for (let i = 0; i < 4; i++) code += chars[Math.floor(Math.random() * chars.length)];
+  return `TT-${code}`;
 }
 
 function useFriendsList(myProfileId) {
@@ -3235,6 +3251,260 @@ function PlayerPicker({ value, onChange, placeholder, friendsList, myProfileId }
   );
 }
 
+function EventHubScreen({ setView, session, initialKind, onOpenEvent, presetClubId, presetClubName }) {
+  const { t } = useT();
+  const myId = session && session.user ? session.user.id : null;
+  const [tab, setTab] = useState('create');
+  const [kind, setKind] = useState(initialKind || 'competition');
+  const [name, setName] = useState('');
+  const [mode, setMode] = useState('enkel');
+  const [bestOf, setBestOf] = useState(5);
+  const [cadence, setCadence] = useState('weekly');
+  const [myGroups, setMyGroups] = useState([]);
+  const [clubId, setClubId] = useState(presetClubId || '');
+  const [creating, setCreating] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [joinCode, setJoinCode] = useState('');
+  const [joining, setJoining] = useState(false);
+
+  useEffect(() => {
+    if (!myId || presetClubId) return;
+    (async () => {
+      try {
+        const { data } = await supabase
+          .from('club_members')
+          .select('clubs(id, name)')
+          .eq('user_id', myId)
+          .eq('status', 'approved');
+        setMyGroups((data || []).filter(r => r.clubs).map(r => r.clubs));
+      } catch (e) { /* best effort */ }
+    })();
+  }, [myId, presetClubId]);
+
+  async function createEvent() {
+    const trimmedName = name.trim();
+    if (!trimmedName || creating) return;
+    setCreating(true);
+    setErrorMsg('');
+    let attempt = 0;
+    while (attempt < 5) {
+      const code = generateJoinCode();
+      try {
+        const { data, error } = await supabase.from('events').insert({
+          kind, name: trimmedName, mode, best_of: bestOf,
+          cadence: kind === 'competition' ? cadence : null,
+          club_id: clubId || null,
+          created_by: myId,
+          join_code: code,
+        }).select().single();
+        if (!error && data) {
+          await supabase.from('event_participants').insert({ event_id: data.id, user_id: myId, status: 'registered' });
+          onOpenEvent(data.id);
+          setCreating(false);
+          return;
+        }
+        if (error && error.code !== '23505') { setErrorMsg(error.message); break; } // 23505 = unique violation, retry with new code
+      } catch (e) { setErrorMsg(e && e.message ? e.message : 'Failed to create event'); break; }
+      attempt++;
+    }
+    setCreating(false);
+  }
+
+  async function joinByCode() {
+    const code = joinCode.trim().toUpperCase();
+    if (!code || joining) return;
+    setJoining(true);
+    setErrorMsg('');
+    try {
+      const { data: event } = await supabase.from('events').select('id, status').eq('join_code', code).maybeSingle();
+      if (!event) { setErrorMsg(t('event_not_found')); setJoining(false); return; }
+      if (event.status === 'open') {
+        try { await supabase.from('event_participants').insert({ event_id: event.id, user_id: myId, status: 'registered' }); }
+        catch (e) { /* already joined, ignore */ }
+      }
+      onOpenEvent(event.id);
+    } catch (e) { setErrorMsg(t('event_not_found')); }
+    setJoining(false);
+  }
+
+  return (
+    <div>
+      <BackBar title={kind === 'competition' ? t('nav_competition') : t('nav_tournament')} onBack={() => setView('home')} />
+      {!presetClubId && (
+        <Panel style={{ marginBottom: 16 }}>
+          <SegButton options={[{ value: 'create', label: t('groups_create_button').split(' ')[0] }, { value: 'join', label: t('event_join_via_code_title') }]} value={tab} onChange={setTab} />
+        </Panel>
+      )}
+
+      {tab === 'create' ? (
+        <div className="flex flex-col gap-4">
+          <Panel>
+            <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('mode_label')}</div>
+            <SegButton options={[{ value: 'competition', label: t('nav_competition') }, { value: 'tournament', label: t('nav_tournament') }]} value={kind} onChange={setKind} />
+          </Panel>
+          <Panel>
+            <input value={name} onChange={e => setName(e.target.value)} placeholder={t('event_name_placeholder')} className="tt-body w-full px-3 py-2 rounded-lg outline-none" style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }} />
+          </Panel>
+          <Panel>
+            <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('mode_label')}</div>
+            <SegButton options={[{ value: 'enkel', label: t('mode_singles') }, { value: 'dubbel', label: t('mode_doubles') }]} value={mode} onChange={setMode} />
+          </Panel>
+          {kind === 'competition' && (
+            <Panel>
+              <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('cadence_label')}</div>
+              <SegButton options={[{ value: 'weekly', label: t('cadence_weekly') }, { value: 'monthly', label: t('cadence_monthly') }]} value={cadence} onChange={setCadence} />
+            </Panel>
+          )}
+          <Panel>
+            <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('sets_count_label')}</div>
+            <BestOfPicker options={[3, 5, 7]} value={bestOf} onChange={setBestOf} />
+          </Panel>
+          {presetClubId ? (
+            <Panel>
+              <div className="tt-body text-sm mb-1 font-semibold" style={{ color: C.dim }}>{t('event_link_group_label')}</div>
+              <div className="tt-body text-sm" style={{ color: C.text }}>{presetClubName}</div>
+            </Panel>
+          ) : myGroups.length > 0 && (
+            <Panel>
+              <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('event_link_group_label')}</div>
+              <select
+                value={clubId}
+                onChange={e => setClubId(e.target.value)}
+                className="tt-body w-full px-3 py-2 rounded-lg outline-none"
+                style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
+              >
+                <option value="">{t('event_no_group_option')}</option>
+                {myGroups.map(g => <option key={g.id} value={g.id}>{g.name}</option>)}
+              </select>
+            </Panel>
+          )}
+          {errorMsg && <div className="tt-body text-xs" style={{ color: C.red }}>{errorMsg}</div>}
+          <PrimaryButton onClick={createEvent} disabled={creating || !name.trim()}>{t('event_create_button')}</PrimaryButton>
+        </div>
+      ) : (
+        <div className="flex flex-col gap-4">
+          <Panel>
+            <input
+              value={joinCode}
+              onChange={e => setJoinCode(e.target.value)}
+              placeholder={t('event_join_code_placeholder')}
+              className="tt-body w-full px-3 py-2 rounded-lg outline-none text-center"
+              style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text, letterSpacing: 2 }}
+            />
+          </Panel>
+          {errorMsg && <div className="tt-body text-xs text-center" style={{ color: C.red }}>{errorMsg}</div>}
+          <PrimaryButton onClick={joinByCode} disabled={joining || !joinCode.trim()}>{t('event_join_button')}</PrimaryButton>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function EventLobbyScreen({ setView, eventId, session }) {
+  const { t } = useT();
+  const myId = session && session.user ? session.user.id : null;
+  const [event, setEvent] = useState(null);
+  const [participants, setParticipants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  async function loadEvent() {
+    try {
+      const { data: ev } = await supabase.from('events').select('*').eq('id', eventId).maybeSingle();
+      setEvent(ev || null);
+      const { data: rows } = await supabase
+        .from('event_participants')
+        .select('user_id, status, profiles(id, username, avatar_url)')
+        .eq('event_id', eventId);
+      setParticipants((rows || []).filter(r => r.profiles && r.status === 'registered').map(r => r.profiles));
+    } catch (e) { /* best effort */ }
+    setLoading(false);
+  }
+
+  useEffect(() => { if (eventId) loadEvent(); }, [eventId]);
+
+  const isCreator = event && event.created_by === myId;
+  const amParticipant = participants.some(p => p.id === myId);
+
+  async function joinEvent() {
+    try {
+      await supabase.from('event_participants').insert({ event_id: eventId, user_id: myId, status: 'registered' });
+      await loadEvent();
+    } catch (e) { /* best effort */ }
+  }
+
+  async function leaveEvent() {
+    try {
+      await supabase.from('event_participants').delete().eq('event_id', eventId).eq('user_id', myId);
+      await loadEvent();
+    } catch (e) { /* best effort */ }
+  }
+
+  async function closeRegistration() {
+    try {
+      await supabase.from('events').update({ status: 'closed' }).eq('id', eventId);
+      await loadEvent();
+    } catch (e) { /* best effort */ }
+  }
+
+  function copyCode() {
+    if (!event) return;
+    try {
+      navigator.clipboard.writeText(event.join_code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (e) { /* ignore */ }
+  }
+
+  if (loading) return <div><BackBar title="" onBack={() => setView('home')} /></div>;
+  if (!event) return <div><BackBar title="" onBack={() => setView('home')} /><Panel><div className="tt-body text-sm" style={{ color: C.dim }}>{t('event_not_found')}</div></Panel></div>;
+
+  return (
+    <div>
+      <BackBar title={event.name} onBack={() => setView('home')} />
+
+      <Panel style={{ marginBottom: 16, textAlign: 'center' }}>
+        <div className="tt-body text-xs font-semibold mb-1" style={{ color: C.dim }}>{t('event_code_label')}</div>
+        <button onClick={copyCode} className="tt-display text-3xl tracking-widest" style={{ color: C.amber }}>{event.join_code}</button>
+        <div className="tt-body text-xs mt-1" style={{ color: C.dim }}>{copied ? '✓' : t('event_share_hint')}</div>
+      </Panel>
+
+      <Panel style={{ marginBottom: 16 }}>
+        <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.dim }}>
+          {event.status === 'open' ? t('event_status_open') : t('event_status_closed')}
+        </div>
+        <div className="tt-body text-xs" style={{ color: C.dim }}>
+          {(event.kind === 'competition' ? t('nav_competition') : t('nav_tournament'))} · {event.mode === 'dubbel' ? t('mode_doubles') : t('mode_singles')}
+        </div>
+      </Panel>
+
+      <Panel style={{ marginBottom: 16 }}>
+        <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('event_participants_title')} ({participants.length})</div>
+        <div className="flex flex-wrap gap-3">
+          {participants.map(p => (
+            <div key={p.id} className="flex flex-col items-center gap-1" style={{ width: 64 }}>
+              <Avatar name={p.username} photo={p.avatar_url} size={48} />
+              <span className="tt-body text-xs truncate" style={{ color: C.text, maxWidth: 64 }}>{p.username}</span>
+            </div>
+          ))}
+        </div>
+      </Panel>
+
+      {event.status === 'open' && !isCreator && (
+        amParticipant ? (
+          <GhostButton onClick={leaveEvent} style={{ width: '100%', textAlign: 'center', color: C.red }}>{t('event_leave_button')}</GhostButton>
+        ) : (
+          <PrimaryButton onClick={joinEvent} style={{ width: '100%' }}>{t('event_join_button')}</PrimaryButton>
+        )
+      )}
+
+      {event.status === 'open' && isCreator && (
+        <PrimaryButton onClick={closeRegistration} style={{ width: '100%' }}>{t('event_close_registration')}</PrimaryButton>
+      )}
+    </div>
+  );
+}
+
 function GroupsScreen({ setView, session, onSelectGroup, profile }) {
   const { t } = useT();
   const myId = session && session.user ? session.user.id : null;
@@ -3473,7 +3743,7 @@ function GroupsScreen({ setView, session, onSelectGroup, profile }) {
   );
 }
 
-function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onSelectPlayer }) {
+function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onSelectPlayer, onCreateEvent }) {
   const { t } = useT();
   const myId = session && session.user ? session.user.id : null;
   const [group, setGroup] = useState(null);
@@ -3558,6 +3828,10 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
           <div className="tt-body text-sm" style={{ color: C.dim }}>{group.description}</div>
         </Panel>
       )}
+
+      <GhostButton onClick={() => onCreateEvent(groupId, group ? group.name : groupName)} style={{ width: '100%', textAlign: 'center', marginBottom: 16 }}>
+        <span className="flex items-center justify-center gap-2"><Plus size={15} /> {t('event_create_button')}</span>
+      </GhostButton>
 
       {isAdmin && (
         <Panel style={{ marginBottom: 16 }}>
@@ -4859,6 +5133,9 @@ export default function App() {
   const [selectedPlayerProfileId, setSelectedPlayerProfileId] = useState(null);
   const [selectedGroupId, setSelectedGroupId] = useState(null);
   const [selectedGroupName, setSelectedGroupName] = useState('');
+  const [selectedEventId, setSelectedEventId] = useState(null);
+  const [eventHubKind, setEventHubKind] = useState('competition');
+  const [eventPresetClub, setEventPresetClub] = useState(null);
   const [lang, setLangState] = useState('nl');
   const [competition, setCompetitionState] = useState(null);
   const [friends, setFriendsState] = useState([]);
@@ -5040,6 +5317,16 @@ export default function App() {
     setView('group-detail');
   }
 
+  function openEvent(id) {
+    setSelectedEventId(id);
+    setView('event-lobby');
+  }
+
+  function openEventCreateForGroup(id, name) {
+    setEventPresetClub({ id, name });
+    setView('group-event-create');
+  }
+
   function challengePlayer(opponentName, opponentProfileId) {
     const me = profile ? { profileId: profile.id, name: profile.username || '' } : null;
     const opponent = { profileId: opponentProfileId || null, name: opponentName };
@@ -5096,16 +5383,18 @@ export default function App() {
   else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} playerProfileId={selectedPlayerProfileId} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} profile={profile} />;
   else if (view === 'groups') content = <GroupsScreen setView={setView} session={session} onSelectGroup={selectGroup} profile={profile} />;
-  else if (view === 'group-detail') content = <GroupDetailScreen setView={setView} groupId={selectedGroupId} groupName={selectedGroupName} session={session} matchLog={combinedMatchLog} onSelectPlayer={selectPlayer} />;
+  else if (view === 'group-detail') content = <GroupDetailScreen setView={setView} groupId={selectedGroupId} groupName={selectedGroupName} session={session} matchLog={combinedMatchLog} onSelectPlayer={selectPlayer} onCreateEvent={openEventCreateForGroup} />;
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} settings={settings} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} session={session} />;
-  else if (view === 'competition-setup') content = <CompetitionSetup setView={setView} onStart={startCompetition} session={session} />;
+  else if (view === 'competition-setup') content = <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
   else if (view === 'competition-play') content = competition
     ? <CompetitionPlay setView={setView} competition={competition} setCompetition={setCompetition} settings={settings} recordMatch={recordMatch} session={session} />
-    : <CompetitionSetup setView={setView} onStart={startCompetition} session={session} />;
-  else if (view === 'tournament-setup') content = <TournamentSetup setView={setView} state={tState} setState={setTState} session={session} />;
+    : <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
+  else if (view === 'tournament-setup') content = <EventHubScreen setView={setView} session={session} initialKind="tournament" onOpenEvent={openEvent} />;
   else if (view === 'tournament-play') content = <TournamentPlay setView={setView} state={tState} setState={setTState} settings={settings} recordMatch={recordMatch} session={session} />;
+  else if (view === 'event-lobby') content = <EventLobbyScreen setView={setView} eventId={selectedEventId} session={session} />;
+  else if (view === 'group-event-create') content = <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} presetClubId={eventPresetClub && eventPresetClub.id} presetClubName={eventPresetClub && eventPresetClub.name} />;
 
   return (
     <LangContext.Provider value={langCtxValue}>
