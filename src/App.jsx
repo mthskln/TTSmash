@@ -172,6 +172,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'All',
     nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.', friend_requests_title: 'Friend requests', friend_request_sent: 'Request sent', friend_request_pending_you: 'Wants to be friends', friends_already: 'Friends', btn_accept: 'Accept', btn_decline: 'Decline', friends_none_yet: 'No friends yet', btn_challenge: 'Challenge',
     nav_groups: 'Groups', groups_create_button: 'Create group', groups_search_placeholder: 'Search for a group...', group_name_placeholder: 'Group name', group_description_placeholder: 'Description (optional)', groups_empty: "You're not in any group yet.", group_join_button: 'Join', group_joined_label: 'Member', group_members_title: 'Members', group_leaderboard_title: 'Group leaderboard', group_leave_button: 'Leave group', group_no_results: 'No groups found.',
+    group_events_title: 'Group events',
     group_request_sent: 'Request sent', group_pending_requests_title: 'Join requests', btn_approve: 'Approve', group_remove_member: 'Remove', groups_nearby_title: 'Nearby groups',
     group_invite_section_title: 'Invite someone', group_invites_title: 'Group invitations',
     event_name_placeholder: 'Event name', event_link_group_label: 'Link to a group (optional)', event_no_group_option: 'No group', event_create_button: 'Create event', event_code_label: 'Join code', event_share_hint: 'Share this code so others can join', event_participants_title: 'Participants', event_close_registration: 'Close registration', event_status_open: 'Registration open', event_status_closed: 'Registration closed', event_join_button: 'Join event', event_join_code_placeholder: 'Enter join code', event_join_via_code_title: 'Have a code?', event_leave_button: 'Leave event', event_not_found: 'No event found with that code.', event_already_joined: 'Joined',
@@ -252,6 +253,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Tout',
     nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.', friend_requests_title: "Demandes d'amis", friend_request_sent: 'Demande envoyée', friend_request_pending_you: 'Veut être ami(e)', friends_already: 'Amis', btn_accept: 'Accepter', btn_decline: 'Refuser', friends_none_yet: "Pas encore d'amis", btn_challenge: 'Défier',
     nav_groups: 'Groupes', groups_create_button: 'Créer un groupe', groups_search_placeholder: 'Rechercher un groupe...', group_name_placeholder: 'Nom du groupe', group_description_placeholder: 'Description (facultatif)', groups_empty: "Vous ne faites partie d'aucun groupe pour l'instant.", group_join_button: 'Rejoindre', group_joined_label: 'Membre', group_members_title: 'Membres', group_leaderboard_title: 'Classement du groupe', group_leave_button: 'Quitter le groupe', group_no_results: 'Aucun groupe trouvé.',
+    group_events_title: 'Événements du groupe',
     group_request_sent: 'Demande envoyée', group_pending_requests_title: "Demandes d'adhésion", btn_approve: 'Approuver', group_remove_member: 'Retirer', groups_nearby_title: 'Groupes à proximité',
     group_invite_section_title: 'Inviter quelqu\u2019un', group_invites_title: 'Invitations de groupe',
     event_name_placeholder: "Nom de l'événement", event_link_group_label: 'Lier à un groupe (facultatif)', event_no_group_option: 'Aucun groupe', event_create_button: 'Créer un événement', event_code_label: 'Code de participation', event_share_hint: 'Partagez ce code pour que d\u2019autres puissent rejoindre', event_participants_title: 'Participants', event_close_registration: 'Clôturer les inscriptions', event_status_open: 'Inscriptions ouvertes', event_status_closed: 'Inscriptions clôturées', event_join_button: "Rejoindre l'événement", event_join_code_placeholder: 'Entrez le code', event_join_via_code_title: 'Vous avez un code\u00A0?', event_leave_button: "Quitter l'événement", event_not_found: 'Aucun événement trouvé avec ce code.', event_already_joined: 'Inscrit',
@@ -332,6 +334,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Totaal',
     nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.', friend_requests_title: 'Vriendverzoeken', friend_request_sent: 'Verzoek verzonden', friend_request_pending_you: 'Wil bevriend worden', friends_already: 'Bevriend', btn_accept: 'Aanvaarden', btn_decline: 'Weigeren', friends_none_yet: 'Nog geen vrienden', btn_challenge: 'Uitdagen',
     nav_groups: 'Groepen', groups_create_button: 'Groep aanmaken', groups_search_placeholder: 'Zoek een groep...', group_name_placeholder: 'Naam van de groep', group_description_placeholder: 'Beschrijving (optioneel)', groups_empty: 'Je zit nog in geen enkele groep.', group_join_button: 'Aansluiten', group_joined_label: 'Lid', group_members_title: 'Leden', group_leaderboard_title: 'Groepsranglijst', group_leave_button: 'Groep verlaten', group_no_results: 'Geen groepen gevonden.',
+    group_events_title: 'Groepsevenementen',
     group_request_sent: 'Aanvraag verstuurd', group_pending_requests_title: 'Aanvragen', btn_approve: 'Goedkeuren', group_remove_member: 'Verwijderen', groups_nearby_title: 'Groepen in de buurt',
     group_invite_section_title: 'Nodig iemand uit', group_invites_title: 'Groepsuitnodigingen',
     event_name_placeholder: 'Naam van het evenement', event_link_group_label: 'Koppel aan een groep (optioneel)', event_no_group_option: 'Geen groep', event_create_button: 'Evenement aanmaken', event_code_label: 'Deelcode', event_share_hint: 'Deel deze code zodat anderen kunnen aansluiten', event_participants_title: 'Deelnemers', event_close_registration: 'Inschrijvingen sluiten', event_status_open: 'Inschrijvingen open', event_status_closed: 'Inschrijvingen gesloten', event_join_button: 'Evenement joinen', event_join_code_placeholder: 'Voer deelcode in', event_join_via_code_title: 'Heb je een code?', event_leave_button: 'Evenement verlaten', event_not_found: 'Geen evenement gevonden met die code.', event_already_joined: 'Aangesloten',
@@ -412,6 +415,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Все',
     nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.', friend_requests_title: 'Заявки в друзья', friend_request_sent: 'Заявка отправлена', friend_request_pending_you: 'Хочет дружить', friends_already: 'Друзья', btn_accept: 'Принять', btn_decline: 'Отклонить', friends_none_yet: 'Пока нет друзей', btn_challenge: 'Бросить вызов',
     nav_groups: 'Группы', groups_create_button: 'Создать группу', groups_search_placeholder: 'Поиск группы...', group_name_placeholder: 'Название группы', group_description_placeholder: 'Описание (необязательно)', groups_empty: 'Вы пока не состоите ни в одной группе.', group_join_button: 'Присоединиться', group_joined_label: 'Участник', group_members_title: 'Участники', group_leaderboard_title: 'Рейтинг группы', group_leave_button: 'Покинуть группу', group_no_results: 'Группы не найдены.',
+    group_events_title: 'События группы',
     group_request_sent: 'Заявка отправлена', group_pending_requests_title: 'Заявки на вступление', btn_approve: 'Одобрить', group_remove_member: 'Удалить', groups_nearby_title: 'Группы поблизости',
     group_invite_section_title: 'Пригласить кого-то', group_invites_title: 'Приглашения в группы',
     event_name_placeholder: 'Название мероприятия', event_link_group_label: 'Привязать к группе (необязательно)', event_no_group_option: 'Без группы', event_create_button: 'Создать мероприятие', event_code_label: 'Код для участия', event_share_hint: 'Поделитесь этим кодом, чтобы другие могли присоединиться', event_participants_title: 'Участники', event_close_registration: 'Закрыть регистрацию', event_status_open: 'Регистрация открыта', event_status_closed: 'Регистрация закрыта', event_join_button: 'Присоединиться', event_join_code_placeholder: 'Введите код', event_join_via_code_title: 'Есть код?', event_leave_button: 'Покинуть мероприятие', event_not_found: 'Мероприятие с таким кодом не найдено.', event_already_joined: 'Участвуете',
@@ -492,6 +496,7 @@ const TRANSLATIONS = {
     stats_scope_all: '全部',
     nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。', friend_requests_title: '好友请求', friend_request_sent: '请求已发送', friend_request_pending_you: '想加你为好友', friends_already: '好友', btn_accept: '接受', btn_decline: '拒绝', friends_none_yet: '还没有好友', btn_challenge: '挑战',
     nav_groups: '群组', groups_create_button: '创建群组', groups_search_placeholder: '搜索群组...', group_name_placeholder: '群组名称', group_description_placeholder: '描述（可选）', groups_empty: '你还没有加入任何群组。', group_join_button: '加入', group_joined_label: '成员', group_members_title: '成员', group_leaderboard_title: '群组排行榜', group_leave_button: '退出群组', group_no_results: '未找到群组。',
+    group_events_title: '群组活动',
     group_request_sent: '请求已发送', group_pending_requests_title: '加入请求', btn_approve: '批准', group_remove_member: '移除', groups_nearby_title: '附近的群组',
     group_invite_section_title: '邀请某人', group_invites_title: '群组邀请',
     event_name_placeholder: '活动名称', event_link_group_label: '关联群组（可选）', event_no_group_option: '无群组', event_create_button: '创建活动', event_code_label: '加入码', event_share_hint: '分享此代码以便他人加入', event_participants_title: '参与者', event_close_registration: '关闭报名', event_status_open: '报名开放中', event_status_closed: '报名已关闭', event_join_button: '加入活动', event_join_code_placeholder: '输入加入码', event_join_via_code_title: '有邀请码吗？', event_leave_button: '退出活动', event_not_found: '未找到该代码对应的活动。', event_already_joined: '已加入',
@@ -572,6 +577,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Todo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.', friend_requests_title: 'Solicitudes de amistad', friend_request_sent: 'Solicitud enviada', friend_request_pending_you: 'Quiere ser tu amigo', friends_already: 'Amigos', btn_accept: 'Aceptar', btn_decline: 'Rechazar', friends_none_yet: 'Aún no tienes amigos', btn_challenge: 'Desafiar',
     nav_groups: 'Grupos', groups_create_button: 'Crear grupo', groups_search_placeholder: 'Buscar un grupo...', group_name_placeholder: 'Nombre del grupo', group_description_placeholder: 'Descripción (opcional)', groups_empty: 'Todavía no perteneces a ningún grupo.', group_join_button: 'Unirse', group_joined_label: 'Miembro', group_members_title: 'Miembros', group_leaderboard_title: 'Clasificación del grupo', group_leave_button: 'Abandonar grupo', group_no_results: 'No se encontraron grupos.',
+    group_events_title: 'Eventos del grupo',
     group_request_sent: 'Solicitud enviada', group_pending_requests_title: 'Solicitudes de ingreso', btn_approve: 'Aprobar', group_remove_member: 'Eliminar', groups_nearby_title: 'Grupos cercanos',
     group_invite_section_title: 'Invitar a alguien', group_invites_title: 'Invitaciones a grupos',
     event_name_placeholder: 'Nombre del evento', event_link_group_label: 'Vincular a un grupo (opcional)', event_no_group_option: 'Sin grupo', event_create_button: 'Crear evento', event_code_label: 'Código de acceso', event_share_hint: 'Comparte este código para que otros puedan unirse', event_participants_title: 'Participantes', event_close_registration: 'Cerrar inscripciones', event_status_open: 'Inscripciones abiertas', event_status_closed: 'Inscripciones cerradas', event_join_button: 'Unirse al evento', event_join_code_placeholder: 'Introduce el código', event_join_via_code_title: '¿Tienes un código?', event_leave_button: 'Abandonar evento', event_not_found: 'No se encontró ningún evento con ese código.', event_already_joined: 'Inscrito',
@@ -652,6 +658,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'Tudo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.', friend_requests_title: 'Pedidos de amizade', friend_request_sent: 'Pedido enviado', friend_request_pending_you: 'Quer ser teu amigo', friends_already: 'Amigos', btn_accept: 'Aceitar', btn_decline: 'Recusar', friends_none_yet: 'Ainda não tens amigos', btn_challenge: 'Desafiar',
     nav_groups: 'Grupos', groups_create_button: 'Criar grupo', groups_search_placeholder: 'Pesquisar um grupo...', group_name_placeholder: 'Nome do grupo', group_description_placeholder: 'Descrição (opcional)', groups_empty: 'Ainda não pertences a nenhum grupo.', group_join_button: 'Aderir', group_joined_label: 'Membro', group_members_title: 'Membros', group_leaderboard_title: 'Classificação do grupo', group_leave_button: 'Sair do grupo', group_no_results: 'Nenhum grupo encontrado.',
+    group_events_title: 'Eventos do grupo',
     group_request_sent: 'Pedido enviado', group_pending_requests_title: 'Pedidos de adesão', btn_approve: 'Aprovar', group_remove_member: 'Remover', groups_nearby_title: 'Grupos próximos',
     group_invite_section_title: 'Convidar alguém', group_invites_title: 'Convites de grupo',
     event_name_placeholder: 'Nome do evento', event_link_group_label: 'Associar a um grupo (opcional)', event_no_group_option: 'Sem grupo', event_create_button: 'Criar evento', event_code_label: 'Código de acesso', event_share_hint: 'Partilha este código para que outros possam aderir', event_participants_title: 'Participantes', event_close_registration: 'Encerrar inscrições', event_status_open: 'Inscrições abertas', event_status_closed: 'Inscrições encerradas', event_join_button: 'Aderir ao evento', event_join_code_placeholder: 'Introduz o código', event_join_via_code_title: 'Tens um código?', event_leave_button: 'Sair do evento', event_not_found: 'Nenhum evento encontrado com esse código.', event_already_joined: 'Inscrito',
@@ -732,6 +739,7 @@ const TRANSLATIONS = {
     stats_scope_all: 'すべて',
     nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。', friend_requests_title: 'フレンド申請', friend_request_sent: '申請を送信しました', friend_request_pending_you: 'フレンドになりたがっています', friends_already: 'フレンド', btn_accept: '承認', btn_decline: '拒否', friends_none_yet: 'まだフレンドがいません', btn_challenge: '対戦を挑む',
     nav_groups: 'グループ', groups_create_button: 'グループを作成', groups_search_placeholder: 'グループを検索...', group_name_placeholder: 'グループ名', group_description_placeholder: '説明（任意）', groups_empty: 'まだどのグループにも参加していません。', group_join_button: '参加する', group_joined_label: 'メンバー', group_members_title: 'メンバー', group_leaderboard_title: 'グループランキング', group_leave_button: 'グループを退出', group_no_results: 'グループが見つかりません。',
+    group_events_title: 'グループのイベント',
     group_request_sent: '申請を送信しました', group_pending_requests_title: '参加リクエスト', btn_approve: '承認', group_remove_member: '削除', groups_nearby_title: '近くのグループ',
     group_invite_section_title: '誰かを招待', group_invites_title: 'グループ招待',
     event_name_placeholder: 'イベント名', event_link_group_label: 'グループに紐付け（任意）', event_no_group_option: 'グループなし', event_create_button: 'イベントを作成', event_code_label: '参加コード', event_share_hint: 'このコードを共有すると参加できます', event_participants_title: '参加者', event_close_registration: '参加受付を締め切る', event_status_open: '参加受付中', event_status_closed: '参加受付終了', event_join_button: 'イベントに参加', event_join_code_placeholder: 'コードを入力', event_join_via_code_title: 'コードをお持ちですか？', event_leave_button: 'イベントを退出', event_not_found: 'そのコードのイベントが見つかりません。', event_already_joined: '参加済み',
@@ -812,6 +820,7 @@ const TRANSLATIONS = {
     stats_scope_all: '전체',
     nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.', friend_requests_title: '친구 요청', friend_request_sent: '요청을 보냈습니다', friend_request_pending_you: '친구가 되고 싶어합니다', friends_already: '친구', btn_accept: '수락', btn_decline: '거절', friends_none_yet: '아직 친구가 없습니다', btn_challenge: '도전하기',
     nav_groups: '그룹', groups_create_button: '그룹 만들기', groups_search_placeholder: '그룹 검색...', group_name_placeholder: '그룹 이름', group_description_placeholder: '설명 (선택 사항)', groups_empty: '아직 가입한 그룹이 없습니다.', group_join_button: '가입하기', group_joined_label: '멤버', group_members_title: '멤버', group_leaderboard_title: '그룹 순위', group_leave_button: '그룹 나가기', group_no_results: '그룹을 찾을 수 없습니다.',
+    group_events_title: '그룹 이벤트',
     group_request_sent: '요청을 보냈습니다', group_pending_requests_title: '가입 요청', btn_approve: '승인', group_remove_member: '삭제', groups_nearby_title: '주변 그룹',
     group_invite_section_title: '누군가 초대하기', group_invites_title: '그룹 초대',
     event_name_placeholder: '이벤트 이름', event_link_group_label: '그룹에 연결 (선택 사항)', event_no_group_option: '그룹 없음', event_create_button: '이벤트 만들기', event_code_label: '참가 코드', event_share_hint: '이 코드를 공유하면 다른 사람이 참여할 수 있습니다', event_participants_title: '참가자', event_close_registration: '등록 마감', event_status_open: '등록 진행 중', event_status_closed: '등록 마감됨', event_join_button: '이벤트 참가', event_join_code_placeholder: '코드 입력', event_join_via_code_title: '코드가 있으신가요?', event_leave_button: '이벤트 나가기', event_not_found: '해당 코드로 이벤트를 찾을 수 없습니다.', event_already_joined: '참가함',
@@ -3553,11 +3562,16 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
   const [participants, setParticipants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
+  const [groupName, setGroupName] = useState('');
 
   async function loadEvent() {
     try {
       const { data: ev } = await supabase.from('events').select('*').eq('id', eventId).maybeSingle();
       setEvent(ev || null);
+      if (ev && ev.club_id) {
+        const { data: club } = await supabase.from('clubs').select('name').eq('id', ev.club_id).maybeSingle();
+        setGroupName(club ? club.name : '');
+      }
       const { data: rows } = await supabase
         .from('event_participants')
         .select('user_id, status, profiles(id, username, avatar_url)')
@@ -3616,6 +3630,23 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
     } catch (e) { /* ignore */ }
   }
 
+  async function shareCode() {
+    if (!event) return;
+    const shareUrl = `${window.location.origin}/?join=${event.join_code}`;
+    const shareText = groupName
+      ? `${groupName}: ${event.name} \u2014 ${t('event_code_label')}: ${event.join_code}`
+      : `${event.name} \u2014 ${t('event_code_label')}: ${event.join_code}`;
+    if (navigator.share) {
+      try { await navigator.share({ title: event.name, text: shareText, url: shareUrl }); } catch (e) { /* user cancelled */ }
+    } else {
+      try {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
+      } catch (e) { /* ignore */ }
+    }
+  }
+
   if (loading) return <div><BackBar title="" onBack={() => setView('home')} /></div>;
   if (!event) return <div><BackBar title="" onBack={() => setView('home')} /><Panel><div className="tt-body text-sm" style={{ color: C.dim }}>{t('event_not_found')}</div></Panel></div>;
 
@@ -3626,7 +3657,10 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
       <Panel style={{ marginBottom: 16, textAlign: 'center' }}>
         <div className="tt-body text-xs font-semibold mb-1" style={{ color: C.dim }}>{t('event_code_label')}</div>
         <button onClick={copyCode} className="tt-display text-3xl tracking-widest" style={{ color: C.amber }}>{event.join_code}</button>
-        <div className="tt-body text-xs mt-1" style={{ color: C.dim }}>{copied ? '✓' : t('event_share_hint')}</div>
+        <div className="tt-body text-xs mt-1 mb-3" style={{ color: C.dim }}>{copied ? '✓' : t('event_share_hint')}</div>
+        <GhostButton onClick={shareCode} style={{ width: '100%', textAlign: 'center' }}>
+          <span className="flex items-center justify-center gap-2"><Share2 size={15} /> {t('btn_share_small')}</span>
+        </GhostButton>
       </Panel>
 
       <Panel style={{ marginBottom: 16 }}>
@@ -3909,7 +3943,7 @@ function GroupsScreen({ setView, session, onSelectGroup, profile }) {
   );
 }
 
-function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onSelectPlayer, onCreateEvent }) {
+function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onSelectPlayer, onCreateEvent, onOpenEvent }) {
   const { t } = useT();
   const myId = session && session.user ? session.user.id : null;
   const [group, setGroup] = useState(null);
@@ -3918,6 +3952,7 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
   const [myRole, setMyRole] = useState(null);
   const [loading, setLoading] = useState(true);
   const [invitePick, setInvitePick] = useState(null);
+  const [groupEvents, setGroupEvents] = useState([]);
   const friendsListForInvite = useFriendsList(myId);
 
   async function sendInvite(target) {
@@ -3942,6 +3977,12 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
       setPendingRequests(all.filter(r => r.status === 'pending').map(r => ({ ...r.profiles, memberRowUserId: r.user_id })));
       const mine = all.find(r => r.user_id === myId);
       setMyRole(mine ? mine.role : null);
+      const { data: events } = await supabase
+        .from('events')
+        .select('id, name, kind, status')
+        .eq('club_id', groupId)
+        .order('created_at', { ascending: false });
+      setGroupEvents(events || []);
     } catch (e) { /* best effort */ }
     setLoading(false);
   }
@@ -3998,6 +4039,28 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
       <GhostButton onClick={() => onCreateEvent(groupId, group ? group.name : groupName)} style={{ width: '100%', textAlign: 'center', marginBottom: 16 }}>
         <span className="flex items-center justify-center gap-2"><Plus size={15} /> {t('event_create_button')}</span>
       </GhostButton>
+
+      {groupEvents.length > 0 && (
+        <Panel style={{ marginBottom: 16 }}>
+          <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('group_events_title')}</div>
+          <div className="flex flex-col gap-2">
+            {groupEvents.map(ev => (
+              <button
+                key={ev.id}
+                onClick={() => onOpenEvent(ev.id)}
+                className="w-full flex items-center gap-3 p-2.5 rounded-xl text-left"
+                style={{ background: C.panel2, border: `1px solid ${C.line}` }}
+              >
+                {ev.kind === 'tournament' ? <Trophy size={16} color={C.amber} /> : <Users size={16} color={C.amber} />}
+                <div className="tt-body text-sm font-semibold flex-1 min-w-0 truncate" style={{ color: C.text }}>{ev.name}</div>
+                <span className="tt-body text-xs flex-shrink-0" style={{ color: C.dim }}>
+                  {ev.status === 'open' ? t('event_status_open') : t('event_status_closed')}
+                </span>
+              </button>
+            ))}
+          </div>
+        </Panel>
+      )}
 
       {isAdmin && (
         <Panel style={{ marginBottom: 16 }}>
@@ -5403,6 +5466,27 @@ export default function App() {
 
   const combinedMatchLog = useMemo(() => [...matchLog, ...onlineMatches], [matchLog, onlineMatches]);
 
+  useEffect(() => {
+    const uid = session && session.user ? session.user.id : null;
+    if (!uid) return;
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('join');
+    if (!code) return;
+    window.history.replaceState(null, '', window.location.pathname);
+    (async () => {
+      try {
+        const { data: ev } = await supabase.from('events').select('id, status').eq('join_code', code.toUpperCase()).maybeSingle();
+        if (!ev) return;
+        if (ev.status === 'open') {
+          try { await supabase.from('event_participants').insert({ event_id: ev.id, user_id: uid, status: 'registered' }); }
+          catch (e) { /* already joined, ignore */ }
+        }
+        setSelectedEventId(ev.id);
+        setView('event-lobby');
+      } catch (e) { /* best effort */ }
+    })();
+  }, [session]);
+
   const [fpState, setFpState] = useState({ mode: 'enkel', bestOf: 5, names: ['', ''] });
   const [tState, setTState] = useState({ mode: 'enkel', count: 8, names: Array(8).fill(''), rounds: null });
 
@@ -5550,7 +5634,7 @@ export default function App() {
   else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} playerProfileId={selectedPlayerProfileId} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} profile={profile} />;
   else if (view === 'groups') content = <GroupsScreen setView={setView} session={session} onSelectGroup={selectGroup} profile={profile} />;
-  else if (view === 'group-detail') content = <GroupDetailScreen setView={setView} groupId={selectedGroupId} groupName={selectedGroupName} session={session} matchLog={combinedMatchLog} onSelectPlayer={selectPlayer} onCreateEvent={openEventCreateForGroup} />;
+  else if (view === 'group-detail') content = <GroupDetailScreen setView={setView} groupId={selectedGroupId} groupName={selectedGroupName} session={session} matchLog={combinedMatchLog} onSelectPlayer={selectPlayer} onCreateEvent={openEventCreateForGroup} onOpenEvent={openEvent} />;
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} settings={settings} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} session={session} />;
