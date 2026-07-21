@@ -150,7 +150,7 @@ const AVATAR_CHARACTERS = [
 
 const TRANSLATIONS = {
   en: {
-    nav_home: 'Home', nav_freeplay: 'Free play', nav_competition: 'Competition', nav_tournament: 'Tournament', nav_stats: 'Stats', nav_settings: 'Settings',
+    nav_home: 'Home', nav_freeplay: 'Quick match', nav_competition: 'Competition', nav_tournament: 'Tournament', nav_stats: 'Stats', nav_settings: 'Settings',
     home_title: 'Table Tennis Scoreboard', home_subtitle: 'Pick a game mode on the left to get started',
     auth_subtitle: 'Track your matches, compete with friends', auth_google: 'Sign in with Google', auth_facebook: 'Sign in with Facebook', auth_guest: 'Continue as guest',
     settings_logout: 'Log out',
@@ -186,9 +186,10 @@ const TRANSLATIONS = {
     h2h_count: '{n} head-to-head match(es)', h2h_sets: 'sets', h2h_points: 'points', h2h_history: 'Match history', h2h_none: 'No matches between them yet.', h2h_wins: '{name} wins {a}-{b}',
     mode_label: 'Game type', mode_singles: 'Singles', mode_doubles: 'Doubles', sets_count_label: 'Number of sets',
     players_label: 'Players', teams_label: 'Teams', team_label: 'Team {n}', placeholder_player: 'Player {n}', placeholder_team: 'Team {n} (e.g. John & Pete)', count_suffix: 'players/teams (max 20)',
+    picker_hint: 'Pick a friend or search a name to track stats, or just type a name for a quick game without an account.',
     start_match: 'Start match', start_competition: 'Start competition ({n} matches)', start_tournament: 'Draw bracket & start tournament',
     result_title: 'Result', result_win: '{name} wins!', result_sets: 'Sets: {a} - {b}', btn_share: 'Share result', btn_replay: 'Play again', btn_new_settings: 'New settings', btn_home_menu: 'Main menu',
-    freeplay_title: 'Free play',
+    freeplay_title: 'Quick match',
     competition_title: 'Competition', competition_sets_note: 'Applies to all matches in the competition.', competition_participants_label: 'Participants',
     competition_standing: 'Standing ({played}/{total} played)', competition_matches_label: 'Matches', badge_play: 'Play', competition_champion: '{name} is champion!',
     competition_champion_sub: 'Competition finished with {w} wins', btn_share_small: 'Share',
@@ -224,7 +225,7 @@ const TRANSLATIONS = {
     report_template: '{opener}, {winner} defeated {loser} {score} in sets ({setsDetail}) during {context}.{extra} The match lasted {duration}.',
   },
   fr: {
-    nav_home: 'Accueil', nav_freeplay: 'Partie libre', nav_competition: 'Compétition', nav_tournament: 'Tournoi', nav_stats: 'Stats', nav_settings: 'Réglages',
+    nav_home: 'Accueil', nav_freeplay: 'Match rapide', nav_competition: 'Compétition', nav_tournament: 'Tournoi', nav_stats: 'Stats', nav_settings: 'Réglages',
     home_title: 'Tableau de score tennis de table', home_subtitle: 'Choisissez un mode de jeu à gauche pour commencer',
     auth_subtitle: 'Suis tes matchs, défie tes amis', auth_google: 'Se connecter avec Google', auth_facebook: 'Se connecter avec Facebook', auth_guest: 'Continuer en tant qu\'invité',
     settings_logout: 'Se déconnecter',
@@ -260,9 +261,10 @@ const TRANSLATIONS = {
     h2h_count: '{n} match(s) l\u2019un contre l\u2019autre', h2h_sets: 'sets', h2h_points: 'points', h2h_history: 'Historique des matchs', h2h_none: 'Aucun duel entre eux pour le moment.', h2h_wins: '{name} gagne {a}-{b}',
     mode_label: 'Type de jeu', mode_singles: 'Simple', mode_doubles: 'Double', sets_count_label: 'Nombre de sets',
     players_label: 'Joueurs', teams_label: 'Équipes', team_label: 'Équipe {n}', placeholder_player: 'Joueur {n}', placeholder_team: 'Équipe {n} (ex. Jean & Pierre)', count_suffix: 'joueurs/équipes (max 20)',
+    picker_hint: "Choisissez un ami ou recherchez un nom pour suivre les statistiques, ou tapez simplement un nom pour une partie rapide sans compte.",
     start_match: 'Démarrer le match', start_competition: 'Démarrer la compétition ({n} matchs)', start_tournament: 'Tirer le tableau et démarrer le tournoi',
     result_title: 'Résultat', result_win: '{name} gagne !', result_sets: 'Sets : {a} - {b}', btn_share: 'Partager le résultat', btn_replay: 'Rejouer', btn_new_settings: 'Nouveaux réglages', btn_home_menu: 'Menu principal',
-    freeplay_title: 'Partie libre',
+    freeplay_title: 'Match rapide',
     competition_title: 'Compétition', competition_sets_note: "S'applique à tous les matchs de la compétition.", competition_participants_label: 'Participants',
     competition_standing: 'Classement ({played}/{total} joués)', competition_matches_label: 'Matchs', badge_play: 'Jouer', competition_champion: '{name} est champion !',
     competition_champion_sub: '{w} victoires \u2014 compétition terminée', btn_share_small: 'Partager',
@@ -298,7 +300,7 @@ const TRANSLATIONS = {
     report_template: '{opener}, {winner} a battu {loser} {score} en sets ({setsDetail}) lors de {context}.{extra} Le match a duré {duration}.',
   },
   nl: {
-    nav_home: 'Home', nav_freeplay: 'Vrij spel', nav_competition: 'Competitie', nav_tournament: 'Toernooi', nav_stats: 'Stats', nav_settings: 'Instelling',
+    nav_home: 'Home', nav_freeplay: 'Snelle wedstrijd', nav_competition: 'Competitie', nav_tournament: 'Toernooi', nav_stats: 'Stats', nav_settings: 'Instelling',
     home_title: 'Tafeltennis Scorebord', home_subtitle: 'Kies links een spelvorm om te beginnen',
     auth_subtitle: 'Houd je wedstrijden bij, daag vrienden uit', auth_google: 'Inloggen met Google', auth_facebook: 'Inloggen met Facebook', auth_guest: 'Verder als gast',
     settings_logout: 'Uitloggen',
@@ -334,9 +336,10 @@ const TRANSLATIONS = {
     h2h_count: '{n} onderlinge wedstrijd(en)', h2h_sets: 'sets', h2h_points: 'punten', h2h_history: 'Wedstrijdgeschiedenis', h2h_none: 'Nog geen onderlinge duels.', h2h_wins: '{name} wint {a}-{b}',
     mode_label: 'Spelvorm', mode_singles: 'Enkelspel', mode_doubles: 'Dubbelspel', sets_count_label: 'Aantal sets',
     players_label: 'Spelers', teams_label: 'Teams', team_label: 'Team {n}', placeholder_player: 'Speler {n}', placeholder_team: 'Team {n} (bv. Jan & Piet)', count_suffix: 'spelers/teams (max 20)',
+    picker_hint: 'Kies een vriend of zoek een naam om statistieken bij te houden, of typ gewoon een naam voor een snelle wedstrijd zonder account.',
     start_match: 'Start wedstrijd', start_competition: 'Start competitie ({n} wedstrijden)', start_tournament: 'Loot schema & start toernooi',
     result_title: 'Resultaat', result_win: '{name} wint!', result_sets: 'Sets: {a} - {b}', btn_share: 'Deel resultaat', btn_replay: 'Opnieuw spelen', btn_new_settings: 'Nieuwe instellingen', btn_home_menu: 'Hoofdmenu',
-    freeplay_title: 'Vrij spel',
+    freeplay_title: 'Snelle wedstrijd',
     competition_title: 'Competitie', competition_sets_note: 'Geldt voor alle wedstrijden in de competitie.', competition_participants_label: 'Deelnemers',
     competition_standing: 'Stand ({played}/{total} gespeeld)', competition_matches_label: 'Wedstrijden', badge_play: 'Speel', competition_champion: '{name} is kampioen!',
     competition_champion_sub: 'Competitie afgesloten met {w} overwinningen', btn_share_small: 'Deel',
@@ -372,7 +375,7 @@ const TRANSLATIONS = {
     report_template: '{opener} versloeg {winner} {loser} met {score} in sets ({setsDetail}) tijdens {context}.{extra} De partij duurde {duration}.',
   },
   ru: {
-    nav_home: 'Главная', nav_freeplay: 'Свободная игра', nav_competition: 'Лига', nav_tournament: 'Турнир', nav_stats: 'Стат.', nav_settings: 'Настройки',
+    nav_home: 'Главная', nav_freeplay: 'Быстрый матч', nav_competition: 'Лига', nav_tournament: 'Турнир', nav_stats: 'Стат.', nav_settings: 'Настройки',
     home_title: 'Табло настольного тенниса', home_subtitle: 'Выберите режим игры слева, чтобы начать',
     auth_subtitle: 'Отслеживай матчи, соревнуйся с друзьями', auth_google: 'Войти через Google', auth_facebook: 'Войти через Facebook', auth_guest: 'Продолжить как гость',
     settings_logout: 'Выйти из аккаунта',
@@ -408,9 +411,10 @@ const TRANSLATIONS = {
     h2h_count: '{n} личных встреч', h2h_sets: 'сеты', h2h_points: 'очки', h2h_history: 'История встреч', h2h_none: 'Личных встреч пока не было.', h2h_wins: '{name} побеждает {a}-{b}',
     mode_label: 'Тип игры', mode_singles: 'Одиночный разряд', mode_doubles: 'Парный разряд', sets_count_label: 'Количество сетов',
     players_label: 'Игроки', teams_label: 'Команды', team_label: 'Команда {n}', placeholder_player: 'Игрок {n}', placeholder_team: 'Команда {n} (напр. Иван и Пётр)', count_suffix: 'игроков/команд (макс. 20)',
+    picker_hint: 'Выберите друга или найдите имя, чтобы вести статистику, или просто введите имя для быстрой игры без аккаунта.',
     start_match: 'Начать матч', start_competition: 'Начать лигу ({n} матчей)', start_tournament: 'Составить сетку и начать турнир',
     result_title: 'Результат', result_win: '{name} побеждает!', result_sets: 'Сеты: {a} - {b}', btn_share: 'Поделиться результатом', btn_replay: 'Сыграть снова', btn_new_settings: 'Новые настройки', btn_home_menu: 'Главное меню',
-    freeplay_title: 'Свободная игра',
+    freeplay_title: 'Быстрый матч',
     competition_title: 'Лига', competition_sets_note: 'Применяется ко всем матчам лиги.', competition_participants_label: 'Участники',
     competition_standing: 'Таблица ({played}/{total} сыграно)', competition_matches_label: 'Матчи', badge_play: 'Играть', competition_champion: '{name} \u2014 чемпион!',
     competition_champion_sub: 'Лига завершена с {w} победами', btn_share_small: 'Поделиться',
@@ -446,7 +450,7 @@ const TRANSLATIONS = {
     report_template: '{opener} {winner} обыграл {loser} со счётом {score} по сетам ({setsDetail}) в рамках {context}.{extra} Матч длился {duration}.',
   },
   zh: {
-    nav_home: '首页', nav_freeplay: '自由对战', nav_competition: '联赛', nav_tournament: '锦标赛', nav_stats: '统计', nav_settings: '设置',
+    nav_home: '首页', nav_freeplay: '快速比赛', nav_competition: '联赛', nav_tournament: '锦标赛', nav_stats: '统计', nav_settings: '设置',
     home_title: '乒乓球计分板', home_subtitle: '在左侧选择一种玩法开始',
     auth_subtitle: '记录比赛，与好友一较高下', auth_google: '使用 Google 登录', auth_facebook: '使用 Facebook 登录', auth_guest: '以访客身份继续',
     settings_logout: '退出登录',
@@ -482,9 +486,10 @@ const TRANSLATIONS = {
     h2h_count: '共 {n} 场交手记录', h2h_sets: '局', h2h_points: '分', h2h_history: '交手历史', h2h_none: '两人尚无交手记录。', h2h_wins: '{name} 以 {a}-{b} 获胜',
     mode_label: '比赛类型', mode_singles: '单打', mode_doubles: '双打', sets_count_label: '局数',
     players_label: '选手', teams_label: '队伍', team_label: '队伍 {n}', placeholder_player: '选手 {n}', placeholder_team: '队伍 {n}（如：张三 & 李四）', count_suffix: '名选手/队伍（最多20）',
+    picker_hint: '选择好友或搜索用户名以记录数据，或直接输入名字进行一场无需账号的快速比赛。',
     start_match: '开始比赛', start_competition: '开始联赛（{n} 场比赛）', start_tournament: '抽签并开始锦标赛',
     result_title: '结果', result_win: '{name} 获胜！', result_sets: '局比分：{a} - {b}', btn_share: '分享结果', btn_replay: '再来一局', btn_new_settings: '新设置', btn_home_menu: '主菜单',
-    freeplay_title: '自由对战',
+    freeplay_title: '快速比赛',
     competition_title: '联赛', competition_sets_note: '适用于本次联赛的所有比赛。', competition_participants_label: '参赛者',
     competition_standing: '积分榜（已进行 {played}/{total} 场）', competition_matches_label: '比赛', badge_play: '开始', competition_champion: '{name} 夺冠！',
     competition_champion_sub: '联赛结束，共 {w} 场胜利', btn_share_small: '分享',
@@ -520,7 +525,7 @@ const TRANSLATIONS = {
     report_template: '{opener}，{winner} 以 {score} 局比分（{setsDetail}）击败了 {loser}，本场为{context}。{extra}比赛耗时{duration}。',
   },
   es: {
-    nav_home: 'Inicio', nav_freeplay: 'Juego libre', nav_competition: 'Liga', nav_tournament: 'Torneo', nav_stats: 'Stats', nav_settings: 'Ajustes',
+    nav_home: 'Inicio', nav_freeplay: 'Partido rápido', nav_competition: 'Liga', nav_tournament: 'Torneo', nav_stats: 'Stats', nav_settings: 'Ajustes',
     home_title: 'Marcador de Tenis de Mesa', home_subtitle: 'Elige un modo de juego a la izquierda para empezar',
     auth_subtitle: 'Registra tus partidos, compite con amigos', auth_google: 'Iniciar sesión con Google', auth_facebook: 'Iniciar sesión con Facebook', auth_guest: 'Continuar como invitado',
     settings_logout: 'Cerrar sesión',
@@ -556,9 +561,10 @@ const TRANSLATIONS = {
     h2h_count: '{n} partido(s) entre ambos', h2h_sets: 'sets', h2h_points: 'puntos', h2h_history: 'Historial de partidos', h2h_none: 'Aún no hay duelos entre ellos.', h2h_wins: '{name} gana {a}-{b}',
     mode_label: 'Tipo de juego', mode_singles: 'Individual', mode_doubles: 'Dobles', sets_count_label: 'Número de sets',
     players_label: 'Jugadores', teams_label: 'Equipos', team_label: 'Equipo {n}', placeholder_player: 'Jugador {n}', placeholder_team: 'Equipo {n} (ej. Juan & Pedro)', count_suffix: 'jugadores/equipos (máx. 20)',
+    picker_hint: 'Elige un amigo o busca un nombre para llevar estadísticas, o simplemente escribe un nombre para una partida rápida sin cuenta.',
     start_match: 'Iniciar partido', start_competition: 'Iniciar liga ({n} partidos)', start_tournament: 'Sortear cuadro e iniciar torneo',
     result_title: 'Resultado', result_win: '¡{name} gana!', result_sets: 'Sets: {a} - {b}', btn_share: 'Compartir resultado', btn_replay: 'Jugar de nuevo', btn_new_settings: 'Nuevos ajustes', btn_home_menu: 'Menú principal',
-    freeplay_title: 'Juego libre',
+    freeplay_title: 'Partido rápido',
     competition_title: 'Liga', competition_sets_note: 'Se aplica a todos los partidos de la liga.', competition_participants_label: 'Participantes',
     competition_standing: 'Clasificación ({played}/{total} jugados)', competition_matches_label: 'Partidos', badge_play: 'Jugar', competition_champion: '¡{name} es campeón!',
     competition_champion_sub: 'Liga finalizada con {w} victorias', btn_share_small: 'Compartir',
@@ -594,7 +600,7 @@ const TRANSLATIONS = {
     report_template: '{opener}, {winner} venció a {loser} {score} en sets ({setsDetail}) durante {context}.{extra} El partido duró {duration}.',
   },
   pt: {
-    nav_home: 'Início', nav_freeplay: 'Jogo livre', nav_competition: 'Liga', nav_tournament: 'Torneio', nav_stats: 'Stats', nav_settings: 'Definições',
+    nav_home: 'Início', nav_freeplay: 'Partida rápida', nav_competition: 'Liga', nav_tournament: 'Torneio', nav_stats: 'Stats', nav_settings: 'Definições',
     home_title: 'Marcador de Ténis de Mesa', home_subtitle: 'Escolha um modo de jogo à esquerda para começar',
     auth_subtitle: 'Regista as tuas partidas, compete com amigos', auth_google: 'Iniciar sessão com Google', auth_facebook: 'Iniciar sessão com Facebook', auth_guest: 'Continuar como convidado',
     settings_logout: 'Terminar sessão',
@@ -630,9 +636,10 @@ const TRANSLATIONS = {
     h2h_count: '{n} confronto(s) direto(s)', h2h_sets: 'sets', h2h_points: 'pontos', h2h_history: 'Histórico de partidas', h2h_none: 'Ainda não há confrontos entre eles.', h2h_wins: '{name} vence {a}-{b}',
     mode_label: 'Tipo de jogo', mode_singles: 'Individual', mode_doubles: 'Duplas', sets_count_label: 'Número de sets',
     players_label: 'Jogadores', teams_label: 'Equipas', team_label: 'Equipa {n}', placeholder_player: 'Jogador {n}', placeholder_team: 'Equipa {n} (ex. João & Pedro)', count_suffix: 'jogadores/equipas (máx. 20)',
+    picker_hint: 'Escolhe um amigo ou pesquisa um nome para registar estatísticas, ou escreve apenas um nome para uma partida rápida sem conta.',
     start_match: 'Iniciar partida', start_competition: 'Iniciar liga ({n} partidas)', start_tournament: 'Sortear quadro e iniciar torneio',
     result_title: 'Resultado', result_win: '{name} vence!', result_sets: 'Sets: {a} - {b}', btn_share: 'Partilhar resultado', btn_replay: 'Jogar novamente', btn_new_settings: 'Novas definições', btn_home_menu: 'Menu principal',
-    freeplay_title: 'Jogo livre',
+    freeplay_title: 'Partida rápida',
     competition_title: 'Liga', competition_sets_note: 'Aplica-se a todas as partidas da liga.', competition_participants_label: 'Participantes',
     competition_standing: 'Classificação ({played}/{total} jogados)', competition_matches_label: 'Partidas', badge_play: 'Jogar', competition_champion: '{name} é campeão!',
     competition_champion_sub: 'Liga terminada com {w} vitórias', btn_share_small: 'Partilhar',
@@ -668,7 +675,7 @@ const TRANSLATIONS = {
     report_template: '{opener}, {winner} venceu {loser} por {score} nos sets ({setsDetail}) durante {context}.{extra} A partida durou {duration}.',
   },
   ja: {
-    nav_home: 'ホーム', nav_freeplay: 'フリープレイ', nav_competition: 'リーグ戦', nav_tournament: 'トーナメント', nav_stats: '統計', nav_settings: '設定',
+    nav_home: 'ホーム', nav_freeplay: 'クイックマッチ', nav_competition: 'リーグ戦', nav_tournament: 'トーナメント', nav_stats: '統計', nav_settings: '設定',
     home_title: '卓球スコアボード', home_subtitle: '左側からプレイ形式を選んで始めましょう',
     auth_subtitle: '試合を記録し、友達と競おう', auth_google: 'Googleでログイン', auth_facebook: 'Facebookでログイン', auth_guest: 'ゲストとして続ける',
     settings_logout: 'ログアウト',
@@ -704,9 +711,10 @@ const TRANSLATIONS = {
     h2h_count: '対戦成績：{n}試合', h2h_sets: 'セット', h2h_points: 'ポイント', h2h_history: '対戦履歴', h2h_none: 'まだ対戦記録がありません。', h2h_wins: '{name}が{a}-{b}で勝利',
     mode_label: 'プレー形式', mode_singles: 'シングルス', mode_doubles: 'ダブルス', sets_count_label: 'セット数',
     players_label: '選手', teams_label: 'チーム', team_label: 'チーム{n}', placeholder_player: '選手{n}', placeholder_team: 'チーム{n}（例：田中 & 佐藤）', count_suffix: '名の選手/チーム（最大20）',
+    picker_hint: '友達を選ぶか名前を検索すると統計が記録されます。アカウントなしのクイックマッチなら名前を入力するだけでOKです。',
     start_match: '試合開始', start_competition: 'リーグ戦開始（{n}試合）', start_tournament: '組み合わせ抽選してトーナメント開始',
     result_title: '結果', result_win: '{name}の勝利！', result_sets: 'セット：{a} - {b}', btn_share: '結果をシェア', btn_replay: 'もう一度プレイ', btn_new_settings: '新しい設定', btn_home_menu: 'メインメニュー',
-    freeplay_title: 'フリープレイ',
+    freeplay_title: 'クイックマッチ',
     competition_title: 'リーグ戦', competition_sets_note: 'このリーグの全試合に適用されます。', competition_participants_label: '参加者',
     competition_standing: '順位表（{played}/{total}試合終了）', competition_matches_label: '試合', badge_play: 'プレイ', competition_champion: '{name}が優勝！',
     competition_champion_sub: 'リーグ戦終了：{w}勝', btn_share_small: 'シェア',
@@ -742,7 +750,7 @@ const TRANSLATIONS = {
     report_template: '{opener}、{winner}が{loser}を{score}（{setsDetail}）で下した。{context}での一戦。{extra}試合時間は約{duration}。',
   },
   ko: {
-    nav_home: '홈', nav_freeplay: '자유 경기', nav_competition: '리그', nav_tournament: '토너먼트', nav_stats: '통계', nav_settings: '설정',
+    nav_home: '홈', nav_freeplay: '빠른 경기', nav_competition: '리그', nav_tournament: '토너먼트', nav_stats: '통계', nav_settings: '설정',
     home_title: '탁구 스코어보드', home_subtitle: '왼쪽에서 경기 방식을 선택해 시작하세요',
     auth_subtitle: '경기를 기록하고 친구와 경쟁하세요', auth_google: 'Google로 로그인', auth_facebook: 'Facebook으로 로그인', auth_guest: '게스트로 계속하기',
     settings_logout: '로그아웃',
@@ -778,9 +786,10 @@ const TRANSLATIONS = {
     h2h_count: '상대 전적 {n}경기', h2h_sets: '세트', h2h_points: '포인트', h2h_history: '경기 기록', h2h_none: '아직 두 선수 간 경기가 없습니다.', h2h_wins: '{name} {a}-{b}로 승리',
     mode_label: '경기 방식', mode_singles: '단식', mode_doubles: '복식', sets_count_label: '세트 수',
     players_label: '선수', teams_label: '팀', team_label: '팀 {n}', placeholder_player: '선수 {n}', placeholder_team: '팀 {n} (예: 민수 & 철수)', count_suffix: '명의 선수/팀 (최대 20)',
+    picker_hint: '친구를 선택하거나 이름을 검색하면 통계가 기록됩니다. 계정 없이 빠르게 즐기려면 이름만 입력하세요.',
     start_match: '경기 시작', start_competition: '리그 시작 ({n}경기)', start_tournament: '대진표 추첨 후 토너먼트 시작',
     result_title: '결과', result_win: '{name} 승리!', result_sets: '세트: {a} - {b}', btn_share: '결과 공유', btn_replay: '다시 하기', btn_new_settings: '새 설정', btn_home_menu: '메인 메뉴',
-    freeplay_title: '자유 경기',
+    freeplay_title: '빠른 경기',
     competition_title: '리그', competition_sets_note: '이 리그의 모든 경기에 적용됩니다.', competition_participants_label: '참가자',
     competition_standing: '순위표 ({played}/{total}경기 진행)', competition_matches_label: '경기', badge_play: '경기하기', competition_champion: '{name} 우승!',
     competition_champion_sub: '{w}승으로 리그 종료', btn_share_small: '공유',
@@ -3647,7 +3656,7 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
 /* ============================= FREE PLAY ============================= */
 function FreePlaySetup({ setView, state, setState, session }) {
   const { t } = useT();
-  const { mode, bestOf, names } = state;
+  const { mode, bestOf } = state;
   const [participants, setParticipants] = useState([null, null]);
   const [teamParticipants, setTeamParticipants] = useState([[null, null], [null, null]]);
   const [friendsList, setFriendsList] = useState([]);
@@ -3725,6 +3734,7 @@ function FreePlaySetup({ setView, state, setState, session }) {
         </Panel>
         <Panel>
           <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{mode === 'dubbel' ? t('teams_label') : t('players_label')}</div>
+          <div className="tt-body text-xs mb-3" style={{ color: C.dim }}>{t('picker_hint')}</div>
           {mode === 'enkel' ? (
             <div className="flex flex-col gap-3">
               <PlayerPicker value={participants[0]} onChange={p => setParticipants(prev => [p, prev[1]])} placeholder={t('placeholder_player', { n: 1 })} friendsList={friendsList} myProfileId={myProfileId} />
