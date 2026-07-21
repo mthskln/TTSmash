@@ -2804,7 +2804,19 @@ function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, fri
               {stats.map((row, i) => {
                 const rowStreak = computeStreaks(scopedLog, row.name).current;
                 return (
-                <button key={row.name} onClick={() => onSelectPlayer(row.name)} className="w-full flex items-center gap-3 p-2.5 rounded-xl text-left" style={{ background: i === 0 ? C.panel2 : 'transparent', border: `1px solid ${C.line}` }}>
+                <button
+                  key={row.name}
+                  onClick={async () => {
+                    let foundId = null;
+                    try {
+                      const { data } = await supabase.from('profiles').select('id').ilike('username', row.name).limit(1).maybeSingle();
+                      if (data) foundId = data.id;
+                    } catch (e) { /* best effort — falls back to guest-style name match */ }
+                    onSelectPlayer(row.name, foundId);
+                  }}
+                  className="w-full flex items-center gap-3 p-2.5 rounded-xl text-left"
+                  style={{ background: i === 0 ? C.panel2 : 'transparent', border: `1px solid ${C.line}` }}
+                >
                   <span className="tt-display text-lg w-5 text-center flex-shrink-0" style={{ color: C.dim }}>{i + 1}</span>
                   <Avatar name={row.name} photo={resolvePhoto(row.name, photos, profile)} size={36} />
                   <div className="flex-1 min-w-0">
@@ -2868,7 +2880,7 @@ function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, fri
 }
 
 /* ============================= PLAYER DETAIL ============================= */
-function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friends, toggleFriend, onChallenge, profile }) {
+function PlayerDetail({ setView, playerName, playerProfileId, matchLog, photos, setPhotos, friends, toggleFriend, onChallenge, profile }) {
   const { t, lang } = useT();
   const stats = aggregateStats(matchLog);
   const me = stats.find(s => s.name === playerName);
@@ -2893,7 +2905,7 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
       <BackBar title={playerName} onBack={() => setView('leaderboard')} />
       <Panel style={{ marginBottom: 16 }}>
         <div className="tt-body text-sm mb-3" style={{ color: C.dim }}>{t('player_not_found')}</div>
-        <PrimaryButton onClick={() => onChallenge(playerName)} style={{ width: '100%' }}>
+        <PrimaryButton onClick={() => onChallenge(playerName, playerProfileId)} style={{ width: '100%' }}>
           <span className="flex items-center justify-center gap-2"><Swords size={15} /> {t('btn_challenge')}</span>
         </PrimaryButton>
       </Panel>
@@ -2929,7 +2941,7 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
             <Star size={18} color={friends.includes(playerName) ? '#241503' : C.dim} fill={friends.includes(playerName) ? '#241503' : 'none'} />
           </button>
         </div>
-        <PrimaryButton onClick={() => onChallenge(playerName)} style={{ width: '100%', marginBottom: 8 }}>
+        <PrimaryButton onClick={() => onChallenge(playerName, playerProfileId)} style={{ width: '100%', marginBottom: 8 }}>
           <span className="flex items-center justify-center gap-2"><Swords size={15} /> {t('btn_challenge')}</span>
         </PrimaryButton>
         <input ref={fileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFile} />
@@ -3288,7 +3300,7 @@ function FriendsScreen({ setView, session, onSelectPlayer }) {
                 const rel = relationshipWith(p.id);
                 return (
                   <div key={p.id} className="flex items-center gap-3">
-                    <button onClick={() => onSelectPlayer(p.username)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
+                    <button onClick={() => onSelectPlayer(p.username, p.id)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
                       <Avatar name={p.username} photo={p.avatar_url} size={40} />
                       <div className="tt-body text-sm font-semibold truncate" style={{ color: C.text }}>{p.username}</div>
                     </button>
@@ -3351,7 +3363,7 @@ function FriendsScreen({ setView, session, onSelectPlayer }) {
             if (!p) return null;
             return (
               <div key={rel.id} className="rounded-xl p-2.5 flex items-center gap-3" style={{ background: C.panel, border: `1px solid ${C.line}` }}>
-                <button onClick={() => onSelectPlayer(p.username)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
+                <button onClick={() => onSelectPlayer(p.username, p.id)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
                   <Avatar name={p.username} photo={p.avatar_url} size={40} />
                   <div className="min-w-0">
                     <div className="tt-body text-sm font-semibold truncate" style={{ color: C.text }}>{p.username}</div>
@@ -3672,7 +3684,14 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
 function FreePlaySetup({ setView, state, setState, session, settings }) {
   const { t } = useT();
   const { mode, bestOf } = state;
-  const [participants, setParticipants] = useState([null, null]);
+  const [participants, setParticipants] = useState(() => (state.presetParticipants ? state.presetParticipants : [null, null]));
+
+  useEffect(() => {
+    if (state.presetParticipants) {
+      setState(s => { const { presetParticipants, ...rest } = s; return rest; });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [teamParticipants, setTeamParticipants] = useState([[null, null], [null, null]]);
   const [friendsList, setFriendsList] = useState([]);
   const myProfileId = session && session.user ? session.user.id : null;
@@ -4392,6 +4411,7 @@ export default function App() {
   const [matchLog, setMatchLog] = useState([]);
   const [photos, setPhotos] = useState({});
   const [selectedPlayer, setSelectedPlayer] = useState(null);
+  const [selectedPlayerProfileId, setSelectedPlayerProfileId] = useState(null);
   const [lang, setLangState] = useState('nl');
   const [competition, setCompetitionState] = useState(null);
   const [friends, setFriendsState] = useState([]);
@@ -4561,13 +4581,16 @@ export default function App() {
     setView('competition-play');
   }
 
-  function selectPlayer(name) {
+  function selectPlayer(name, profileId) {
     setSelectedPlayer(name);
+    setSelectedPlayerProfileId(profileId || null);
     setView('player-detail');
   }
 
-  function challengePlayer(opponentName) {
-    setFpState(s => ({ ...s, mode: 'enkel', names: [profile && profile.username ? profile.username : '', opponentName] }));
+  function challengePlayer(opponentName, opponentProfileId) {
+    const me = profile ? { profileId: profile.id, name: profile.username || '' } : null;
+    const opponent = { profileId: opponentProfileId || null, name: opponentName };
+    setFpState(s => ({ ...s, mode: 'enkel', presetParticipants: [me, opponent] }));
     setView('freeplay-setup');
   }
 
@@ -4617,7 +4640,7 @@ export default function App() {
   else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={combinedMatchLog} session={session} profile={profile} setProfile={setProfile} />;
   else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} />;
   else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} profile={profile} />;
-  else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
+  else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} playerProfileId={selectedPlayerProfileId} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} profile={profile} />;
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} settings={settings} />;
