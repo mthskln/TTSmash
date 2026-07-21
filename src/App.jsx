@@ -150,7 +150,7 @@ const AVATAR_CHARACTERS = [
 
 const TRANSLATIONS = {
   en: {
-    nav_home: 'Home', nav_freeplay: 'Quick match', nav_competition: 'Competition', nav_tournament: 'Tournament', nav_stats: 'Stats', nav_settings: 'Settings',
+    nav_home: 'Home', nav_freeplay: 'Quick match', nav_competition: 'League', nav_tournament: 'Tournament', nav_stats: 'Stats', nav_settings: 'Settings',
     home_title: 'Table Tennis Scoreboard', home_subtitle: 'Pick a game mode on the left to get started',
     auth_subtitle: 'Track your matches, compete with friends', auth_google: 'Sign in with Google', auth_facebook: 'Sign in with Facebook', auth_guest: 'Continue as guest',
     settings_logout: 'Log out',
@@ -191,20 +191,21 @@ const TRANSLATIONS = {
     mode_label: 'Game type', mode_singles: 'Singles', mode_doubles: 'Doubles', sets_count_label: 'Number of sets',
     players_label: 'Players', teams_label: 'Teams', team_label: 'Team {n}', placeholder_player: 'Player {n}', placeholder_team: 'Team {n} (e.g. John & Pete)', count_suffix: 'players/teams (max 20)',
     picker_hint: 'Pick a friend or search a name to track stats, or just type a name for a quick game without an account.',
-    start_match: 'Start match', start_competition: 'Start competition ({n} matches)', start_tournament: 'Draw bracket & start tournament',
+    start_match: 'Start match', start_competition: 'Start league ({n} matches)', start_tournament: 'Draw bracket & start tournament',
     result_title: 'Result', result_win: '{name} wins!', result_sets: 'Sets: {a} - {b}', btn_share: 'Share result', btn_replay: 'Play again', btn_new_settings: 'New settings', btn_home_menu: 'Main menu',
     freeplay_title: 'Quick match',
-    competition_title: 'Competition', competition_sets_note: 'Applies to all matches in the competition.', competition_participants_label: 'Participants',
+    competition_title: 'League', competition_sets_note: 'Applies to all matches in the league.', competition_participants_label: 'Participants',
     competition_standing: 'Standing ({played}/{total} played)', competition_matches_label: 'Matches', badge_play: 'Play', competition_champion: '{name} is champion!',
-    competition_champion_sub: 'Competition finished with {w} wins', btn_share_small: 'Share',
-    cadence_label: 'Competition type', cadence_weekly: 'Weekly', cadence_monthly: 'Monthly',
+    competition_champion_sub: 'League finished with {w} wins', btn_share_small: 'Share',
+    cadence_label: 'League type', cadence_weekly: 'Weekly', cadence_monthly: 'Monthly',
     period_week: 'Week {n}', period_month: 'Month {n}', period_done_note: 'All matches of {period} have been played.',
-    btn_next_period: 'Start {period}', season_standing: 'Season standing (cumulative)', btn_new_competition: 'Start new competition',
-    label_competition_period: 'Competition \u2013 {period}', context_competition_period: 'a {period} competition match',
+    btn_next_period: 'Start {period}', season_standing: 'Season standing (cumulative)', btn_new_competition: 'Start new league',
+    label_competition_period: 'League \u2013 {period}', context_competition_period: 'a {period} league match',
     match_detail_title: 'Match details', match_detail_no_data: 'No point-by-point data available for this match.',
     serve_stats_title: 'Serve statistics', own_serve_label: 'On own serve', return_label: 'On return', set_label: 'Set {n}',
     tournament_title: 'Tournament', tournament_info1: 'Earlier rounds: best of 5.', tournament_info2: 'Quarterfinal, semifinal & final: best of 7 (4 winning sets).',
     tournament_participants_label: 'Participants', tournament_champion: '{name} is champion!', tournament_play_match: 'Play match', tournament_bye: 'bye',
+    tournament_walkover: 'walkover', event_forfeit_button: 'Forfeit', event_manage_participants_title: 'Manage participants',
     round_final: 'Final', round_semifinal: 'Semifinal', round_quarterfinal: 'Quarterfinal', round_of: 'Round of {n}',
     sb_bestof: 'Best of {bestOf} \u2022 need: {need} sets', toss_title: 'Coin toss for first serve', toss_btn: 'Flip the coin', toss_flipping: 'Flipping...',
     toss_winner: '{name} wins the toss!', btn_start_match: 'Start match', btn_cancel: 'Cancel', sets_prefix: 'sets', swap_serve: 'Swap serve', btn_undo: 'Undo',
@@ -215,8 +216,8 @@ const TRANSLATIONS = {
     share_title: 'Share result', share_native: 'Share (WhatsApp, Instagram, ...)', share_busy: 'Working...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: 'Download image (for Instagram)', share_copy: 'Copy text', share_copied: 'Copied!',
     share_ig_note: "Instagram has no direct share link \u2014 download the image and share it from the Instagram app.",
-    context_freeplay_singles: 'a friendly singles match', context_freeplay_doubles: 'a friendly doubles match', context_competition: 'a competition match', context_tournament: 'the {round} of the tournament',
-    label_freeplay: 'Free play', label_competition: 'Competition', label_tournament: 'Tournament \u2013 {round}',
+    context_freeplay_singles: 'a friendly singles match', context_freeplay_doubles: 'a friendly doubles match', context_competition: 'a league match', context_tournament: 'the {round} of the tournament',
+    label_freeplay: 'Free play', label_competition: 'League', label_tournament: 'Tournament \u2013 {round}',
     extra_distance: 'The match went the distance.', extra_close: 'The {score} set in particular was thrilling.', duration_fmt: 'about {mins} min',
     card_header: 'TABLE TENNIS SCOREBOARD', card_champion_label: '\uD83C\uDFC6 CHAMPION \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} defeated {loser} {score} in sets ({sub})! #tabletennis #scoreboard',
@@ -229,7 +230,7 @@ const TRANSLATIONS = {
     report_template: '{opener}, {winner} defeated {loser} {score} in sets ({setsDetail}) during {context}.{extra} The match lasted {duration}.',
   },
   fr: {
-    nav_home: 'Accueil', nav_freeplay: 'Match rapide', nav_competition: 'Compétition', nav_tournament: 'Tournoi', nav_stats: 'Stats', nav_settings: 'Réglages',
+    nav_home: 'Accueil', nav_freeplay: 'Match rapide', nav_competition: 'Ligue', nav_tournament: 'Tournoi', nav_stats: 'Stats', nav_settings: 'Réglages',
     home_title: 'Tableau de score tennis de table', home_subtitle: 'Choisissez un mode de jeu à gauche pour commencer',
     auth_subtitle: 'Suis tes matchs, défie tes amis', auth_google: 'Se connecter avec Google', auth_facebook: 'Se connecter avec Facebook', auth_guest: 'Continuer en tant qu\'invité',
     settings_logout: 'Se déconnecter',
@@ -270,20 +271,21 @@ const TRANSLATIONS = {
     mode_label: 'Type de jeu', mode_singles: 'Simple', mode_doubles: 'Double', sets_count_label: 'Nombre de sets',
     players_label: 'Joueurs', teams_label: 'Équipes', team_label: 'Équipe {n}', placeholder_player: 'Joueur {n}', placeholder_team: 'Équipe {n} (ex. Jean & Pierre)', count_suffix: 'joueurs/équipes (max 20)',
     picker_hint: "Choisissez un ami ou recherchez un nom pour suivre les statistiques, ou tapez simplement un nom pour une partie rapide sans compte.",
-    start_match: 'Démarrer le match', start_competition: 'Démarrer la compétition ({n} matchs)', start_tournament: 'Tirer le tableau et démarrer le tournoi',
+    start_match: 'Démarrer le match', start_competition: 'Démarrer la ligue ({n} matchs)', start_tournament: 'Tirer le tableau et démarrer le tournoi',
     result_title: 'Résultat', result_win: '{name} gagne !', result_sets: 'Sets : {a} - {b}', btn_share: 'Partager le résultat', btn_replay: 'Rejouer', btn_new_settings: 'Nouveaux réglages', btn_home_menu: 'Menu principal',
     freeplay_title: 'Match rapide',
-    competition_title: 'Compétition', competition_sets_note: "S'applique à tous les matchs de la compétition.", competition_participants_label: 'Participants',
+    competition_title: 'Ligue', competition_sets_note: "S'applique à tous les matchs de la ligue.", competition_participants_label: 'Participants',
     competition_standing: 'Classement ({played}/{total} joués)', competition_matches_label: 'Matchs', badge_play: 'Jouer', competition_champion: '{name} est champion !',
-    competition_champion_sub: '{w} victoires \u2014 compétition terminée', btn_share_small: 'Partager',
-    cadence_label: 'Type de compétition', cadence_weekly: 'Hebdomadaire', cadence_monthly: 'Mensuelle',
+    competition_champion_sub: '{w} victoires \u2014 ligue terminée', btn_share_small: 'Partager',
+    cadence_label: 'Type de ligue', cadence_weekly: 'Hebdomadaire', cadence_monthly: 'Mensuelle',
     period_week: 'Semaine {n}', period_month: 'Mois {n}', period_done_note: 'Tous les matchs de {period} ont été joués.',
-    btn_next_period: 'Démarrer {period}', season_standing: 'Classement de la saison (cumulé)', btn_new_competition: 'Démarrer une nouvelle compétition',
-    label_competition_period: 'Compétition \u2013 {period}', context_competition_period: 'un match de compétition ({period})',
+    btn_next_period: 'Démarrer {period}', season_standing: 'Classement de la saison (cumulé)', btn_new_competition: 'Démarrer une nouvelle ligue',
+    label_competition_period: 'Ligue \u2013 {period}', context_competition_period: 'un match de ligue ({period})',
     match_detail_title: 'Détails du match', match_detail_no_data: 'Aucune donnée point par point disponible pour ce match.',
     serve_stats_title: 'Statistiques de service', own_serve_label: 'Sur son service', return_label: 'Au retour', set_label: 'Set {n}',
     tournament_title: 'Tournoi', tournament_info1: 'Tours précédents : best of 5.', tournament_info2: 'Quart, demi-finale et finale : best of 7 (4 sets gagnants).',
     tournament_participants_label: 'Participants', tournament_champion: '{name} est champion !', tournament_play_match: 'Jouer le match', tournament_bye: 'exempt',
+    tournament_walkover: 'forfait', event_forfeit_button: 'Déclarer forfait', event_manage_participants_title: 'Gérer les participants',
     round_final: 'Finale', round_semifinal: 'Demi-finale', round_quarterfinal: 'Quart de finale', round_of: 'Seizièmes ({n})',
     sb_bestof: 'Best of {bestOf} \u2022 requis : {need} sets', toss_title: 'Tirage au sort pour le service', toss_btn: 'Lancer la pièce', toss_flipping: 'Tirage en cours...',
     toss_winner: '{name} remporte le tirage !', btn_start_match: 'Démarrer le match', btn_cancel: 'Annuler', sets_prefix: 'sets', swap_serve: 'Changer le service', btn_undo: 'Annuler le point',
@@ -294,8 +296,8 @@ const TRANSLATIONS = {
     share_title: 'Partager le résultat', share_native: 'Partager (WhatsApp, Instagram, ...)', share_busy: 'En cours...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: "Télécharger l'image (pour Instagram)", share_copy: 'Copier le texte', share_copied: 'Copié !',
     share_ig_note: "Instagram n'a pas de lien de partage direct \u2014 téléchargez l'image et partagez-la depuis l'application Instagram.",
-    context_freeplay_singles: 'un match amical en simple', context_freeplay_doubles: 'un match amical en double', context_competition: 'un match de compétition', context_tournament: 'la {round} du tournoi',
-    label_freeplay: 'Partie libre', label_competition: 'Compétition', label_tournament: 'Tournoi \u2013 {round}',
+    context_freeplay_singles: 'un match amical en simple', context_freeplay_doubles: 'un match amical en double', context_competition: 'un match de ligue', context_tournament: 'la {round} du tournoi',
+    label_freeplay: 'Partie libre', label_competition: 'Ligue', label_tournament: 'Tournoi \u2013 {round}',
     extra_distance: 'Le match est allé jusqu\u2019au bout.', extra_close: 'Le set à {score} en particulier était haletant.', duration_fmt: 'environ {mins} min',
     card_header: 'TABLEAU DE SCORE TENNIS DE TABLE', card_champion_label: '\uD83C\uDFC6 CHAMPION \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} a battu {loser} {score} en sets ({sub}) !\u00A0#tennisdetable #scoreboard',
@@ -308,7 +310,7 @@ const TRANSLATIONS = {
     report_template: '{opener}, {winner} a battu {loser} {score} en sets ({setsDetail}) lors de {context}.{extra} Le match a duré {duration}.',
   },
   nl: {
-    nav_home: 'Home', nav_freeplay: 'Snelle wedstrijd', nav_competition: 'Competitie', nav_tournament: 'Toernooi', nav_stats: 'Stats', nav_settings: 'Instelling',
+    nav_home: 'Home', nav_freeplay: 'Snelle wedstrijd', nav_competition: 'Liga', nav_tournament: 'Toernooi', nav_stats: 'Stats', nav_settings: 'Instelling',
     home_title: 'Tafeltennis Scorebord', home_subtitle: 'Kies links een spelvorm om te beginnen',
     auth_subtitle: 'Houd je wedstrijden bij, daag vrienden uit', auth_google: 'Inloggen met Google', auth_facebook: 'Inloggen met Facebook', auth_guest: 'Verder als gast',
     settings_logout: 'Uitloggen',
@@ -349,20 +351,21 @@ const TRANSLATIONS = {
     mode_label: 'Spelvorm', mode_singles: 'Enkelspel', mode_doubles: 'Dubbelspel', sets_count_label: 'Aantal sets',
     players_label: 'Spelers', teams_label: 'Teams', team_label: 'Team {n}', placeholder_player: 'Speler {n}', placeholder_team: 'Team {n} (bv. Jan & Piet)', count_suffix: 'spelers/teams (max 20)',
     picker_hint: 'Kies een vriend of zoek een naam om statistieken bij te houden, of typ gewoon een naam voor een snelle wedstrijd zonder account.',
-    start_match: 'Start wedstrijd', start_competition: 'Start competitie ({n} wedstrijden)', start_tournament: 'Loot schema & start toernooi',
+    start_match: 'Start wedstrijd', start_competition: 'Start liga ({n} wedstrijden)', start_tournament: 'Loot schema & start toernooi',
     result_title: 'Resultaat', result_win: '{name} wint!', result_sets: 'Sets: {a} - {b}', btn_share: 'Deel resultaat', btn_replay: 'Opnieuw spelen', btn_new_settings: 'Nieuwe instellingen', btn_home_menu: 'Hoofdmenu',
     freeplay_title: 'Snelle wedstrijd',
-    competition_title: 'Competitie', competition_sets_note: 'Geldt voor alle wedstrijden in de competitie.', competition_participants_label: 'Deelnemers',
+    competition_title: 'Liga', competition_sets_note: 'Geldt voor alle wedstrijden in de liga.', competition_participants_label: 'Deelnemers',
     competition_standing: 'Stand ({played}/{total} gespeeld)', competition_matches_label: 'Wedstrijden', badge_play: 'Speel', competition_champion: '{name} is kampioen!',
-    competition_champion_sub: 'Competitie afgesloten met {w} overwinningen', btn_share_small: 'Deel',
-    cadence_label: 'Type competitie', cadence_weekly: 'Wekelijks', cadence_monthly: 'Maandelijks',
+    competition_champion_sub: 'Liga afgesloten met {w} overwinningen', btn_share_small: 'Deel',
+    cadence_label: 'Type liga', cadence_weekly: 'Wekelijks', cadence_monthly: 'Maandelijks',
     period_week: 'Week {n}', period_month: 'Maand {n}', period_done_note: 'Alle wedstrijden van {period} zijn gespeeld.',
-    btn_next_period: 'Start {period}', season_standing: 'Seizoensstand (cumulatief)', btn_new_competition: 'Nieuwe competitie starten',
-    label_competition_period: 'Competitie \u2013 {period}', context_competition_period: 'een competitiewedstrijd van {period}',
+    btn_next_period: 'Start {period}', season_standing: 'Seizoensstand (cumulatief)', btn_new_competition: 'Nieuwe liga starten',
+    label_competition_period: 'Liga \u2013 {period}', context_competition_period: 'een ligawedstrijd van {period}',
     match_detail_title: 'Wedstrijddetails', match_detail_no_data: 'Geen puntdetails beschikbaar voor deze wedstrijd.',
     serve_stats_title: 'Opslagstatistieken', own_serve_label: 'Eigen opslag', return_label: 'Return', set_label: 'Set {n}',
     tournament_title: 'Toernooi', tournament_info1: 'Eerdere rondes: best of 5.', tournament_info2: 'Kwartfinale, halve finale & finale: best of 7 (4 winnende sets).',
     tournament_participants_label: 'Deelnemers', tournament_champion: '{name} is kampioen!', tournament_play_match: 'Speel wedstrijd', tournament_bye: 'vrijloting',
+    tournament_walkover: 'opgave', event_forfeit_button: 'Opgeven', event_manage_participants_title: 'Deelnemers beheren',
     round_final: 'Finale', round_semifinal: 'Halve finale', round_quarterfinal: 'Kwartfinale', round_of: 'Ronde van {n}',
     sb_bestof: 'Best of {bestOf} \u2022 nodig: {need} sets', toss_title: 'Muntworp voor eerste opslag', toss_btn: 'Gooi de munt', toss_flipping: 'Muntje draait...',
     toss_winner: '{name} wint de toss!', btn_start_match: 'Start wedstrijd', btn_cancel: 'Annuleren', sets_prefix: 'sets', swap_serve: 'Wissel opslag', btn_undo: 'Ongedaan maken',
@@ -373,8 +376,8 @@ const TRANSLATIONS = {
     share_title: 'Deel resultaat', share_native: 'Deel (WhatsApp, Instagram, ...)', share_busy: 'Bezig...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: 'Download afbeelding (voor Instagram)', share_copy: 'Kopieer tekst', share_copied: 'Gekopieerd!',
     share_ig_note: 'Instagram heeft geen directe deel-link \u2014 download de afbeelding en deel ze vanuit de Instagram-app.',
-    context_freeplay_singles: 'een vriendschappelijke partij enkelspel', context_freeplay_doubles: 'een vriendschappelijke partij dubbelspel', context_competition: 'een competitiewedstrijd', context_tournament: 'de {round} van het toernooi',
-    label_freeplay: 'Vrij spel', label_competition: 'Competitie', label_tournament: 'Toernooi \u2013 {round}',
+    context_freeplay_singles: 'een vriendschappelijke partij enkelspel', context_freeplay_doubles: 'een vriendschappelijke partij dubbelspel', context_competition: 'een ligawedstrijd', context_tournament: 'de {round} van het toernooi',
+    label_freeplay: 'Vrij spel', label_competition: 'Liga', label_tournament: 'Toernooi \u2013 {round}',
     extra_distance: 'De partij ging tot het bittere einde.', extra_close: 'Vooral de set van {score} was bloedstollend.', duration_fmt: 'ongeveer {mins} minuten',
     card_header: 'TAFELTENNIS SCOREBORD', card_champion_label: '\uD83C\uDFC6 KAMPIOEN \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} versloeg {loser} met {score} in sets ({sub})! #tafeltennis #scorebord',
@@ -442,6 +445,7 @@ const TRANSLATIONS = {
     serve_stats_title: 'Статистика подач', own_serve_label: 'На своей подаче', return_label: 'На приёме', set_label: 'Сет {n}',
     tournament_title: 'Турнир', tournament_info1: 'Ранние раунды: до 5 сетов.', tournament_info2: 'Четвертьфинал, полуфинал и финал: до 7 сетов (4 победных).',
     tournament_participants_label: 'Участники', tournament_champion: '{name} \u2014 чемпион!', tournament_play_match: 'Играть матч', tournament_bye: 'пропуск раунда',
+    tournament_walkover: 'неявка', event_forfeit_button: 'Снять с турнира', event_manage_participants_title: 'Управление участниками',
     round_final: 'Финал', round_semifinal: 'Полуфинал', round_quarterfinal: 'Четвертьфинал', round_of: 'Раунд на {n}',
     sb_bestof: 'До {bestOf} сетов \u2022 нужно: {need}', toss_title: 'Жребий на первую подачу', toss_btn: 'Подбросить монету', toss_flipping: 'Подбрасываем...',
     toss_winner: '{name} выигрывает жребий!', btn_start_match: 'Начать матч', btn_cancel: 'Отмена', sets_prefix: 'сеты', swap_serve: 'Сменить подачу', btn_undo: 'Отменить',
@@ -521,6 +525,7 @@ const TRANSLATIONS = {
     serve_stats_title: '发球统计', own_serve_label: '自己发球时', return_label: '接发球时', set_label: '第{n}局',
     tournament_title: '锦标赛', tournament_info1: '前几轮：五局三胜。', tournament_info2: '四强赛、半决赛、决赛：七局四胜。',
     tournament_participants_label: '参赛者', tournament_champion: '{name} 夺冠！', tournament_play_match: '开始比赛', tournament_bye: '轮空',
+    tournament_walkover: '弃权', event_forfeit_button: '判负', event_manage_participants_title: '管理参与者',
     round_final: '决赛', round_semifinal: '半决赛', round_quarterfinal: '四强赛', round_of: '{n} 强赛',
     sb_bestof: '{bestOf} 局制 \u2022 需胜 {need} 局', toss_title: '掷硬币决定首发', toss_btn: '掷硬币', toss_flipping: '硬币旋转中...',
     toss_winner: '{name} 赢得掷硬币！', btn_start_match: '开始比赛', btn_cancel: '取消', sets_prefix: '局数', swap_serve: '更换发球方', btn_undo: '撤销',
@@ -600,6 +605,7 @@ const TRANSLATIONS = {
     serve_stats_title: 'Estadísticas de saque', own_serve_label: 'En su propio saque', return_label: 'En la resta', set_label: 'Set {n}',
     tournament_title: 'Torneo', tournament_info1: 'Rondas anteriores: al mejor de 5.', tournament_info2: 'Cuartos, semifinal y final: al mejor de 7 (4 sets ganadores).',
     tournament_participants_label: 'Participantes', tournament_champion: '¡{name} es campeón!', tournament_play_match: 'Jugar partido', tournament_bye: 'exento',
+    tournament_walkover: 'retirado', event_forfeit_button: 'Retirar', event_manage_participants_title: 'Gestionar participantes',
     round_final: 'Final', round_semifinal: 'Semifinal', round_quarterfinal: 'Cuartos de final', round_of: 'Ronda de {n}',
     sb_bestof: 'Al mejor de {bestOf} \u2022 necesita: {need} sets', toss_title: 'Sorteo para el primer saque', toss_btn: 'Lanzar la moneda', toss_flipping: 'Lanzando...',
     toss_winner: '¡{name} gana el sorteo!', btn_start_match: 'Iniciar partido', btn_cancel: 'Cancelar', sets_prefix: 'sets', swap_serve: 'Cambiar saque', btn_undo: 'Deshacer',
@@ -679,6 +685,7 @@ const TRANSLATIONS = {
     serve_stats_title: 'Estatísticas de serviço', own_serve_label: 'No próprio serviço', return_label: 'Na receção', set_label: 'Set {n}',
     tournament_title: 'Torneio', tournament_info1: 'Rondas anteriores: melhor de 5.', tournament_info2: 'Quartos, meias-finais e final: melhor de 7 (4 sets vencedores).',
     tournament_participants_label: 'Participantes', tournament_champion: '{name} é campeão!', tournament_play_match: 'Jogar partida', tournament_bye: 'isento',
+    tournament_walkover: 'desistência', event_forfeit_button: 'Retirar', event_manage_participants_title: 'Gerir participantes',
     round_final: 'Final', round_semifinal: 'Meia-final', round_quarterfinal: 'Quartos de final', round_of: 'Ronda de {n}',
     sb_bestof: 'Melhor de {bestOf} \u2022 necessário: {need} sets', toss_title: 'Sorteio para o primeiro serviço', toss_btn: 'Lançar a moeda', toss_flipping: 'A lançar...',
     toss_winner: '{name} vence o sorteio!', btn_start_match: 'Iniciar partida', btn_cancel: 'Cancelar', sets_prefix: 'sets', swap_serve: 'Trocar serviço', btn_undo: 'Desfazer',
@@ -758,6 +765,7 @@ const TRANSLATIONS = {
     serve_stats_title: 'サーブ統計', own_serve_label: '自分のサーブ時', return_label: 'レシーブ時', set_label: '第{n}セット',
     tournament_title: 'トーナメント', tournament_info1: '序盤のラウンド：5セットマッチ。', tournament_info2: '準々決勝・準決勝・決勝：7セットマッチ（4セット先取）。',
     tournament_participants_label: '参加者', tournament_champion: '{name}が優勝！', tournament_play_match: '試合を行う', tournament_bye: '不戦勝',
+    tournament_walkover: '不戦敗', event_forfeit_button: '棄権させる', event_manage_participants_title: '参加者を管理',
     round_final: '決勝', round_semifinal: '準決勝', round_quarterfinal: '準々決勝', round_of: 'ベスト{n}',
     sb_bestof: '{bestOf}セットマッチ \u2022 必要：{need}セット', toss_title: '先発サーブのコイントス', toss_btn: 'コインを投げる', toss_flipping: '回転中...',
     toss_winner: '{name}がトスに勝利！', btn_start_match: '試合開始', btn_cancel: 'キャンセル', sets_prefix: 'セット', swap_serve: 'サーブ交代', btn_undo: '取り消す',
@@ -837,6 +845,7 @@ const TRANSLATIONS = {
     serve_stats_title: '서브 통계', own_serve_label: '자신의 서브 시', return_label: '리시브 시', set_label: '{n}세트',
     tournament_title: '토너먼트', tournament_info1: '이전 라운드: 5세트제.', tournament_info2: '8강, 준결승, 결승: 7세트제 (4세트 선취).',
     tournament_participants_label: '참가자', tournament_champion: '{name} 우승!', tournament_play_match: '경기하기', tournament_bye: '부전승',
+    tournament_walkover: '기권', event_forfeit_button: '기권 처리', event_manage_participants_title: '참가자 관리',
     round_final: '결승', round_semifinal: '준결승', round_quarterfinal: '8강', round_of: '{n}강',
     sb_bestof: '{bestOf}세트제 \u2022 필요 세트: {need}', toss_title: '첫 서브 동전 던지기', toss_btn: '동전 던지기', toss_flipping: '동전이 돌아가는 중...',
     toss_winner: '{name}이(가) 토스에서 승리!', btn_start_match: '경기 시작', btn_cancel: '취소', sets_prefix: '세트', swap_serve: '서브 교대', btn_undo: '되돌리기',
@@ -3338,16 +3347,14 @@ function EventHubScreen({ setView, session, initialKind, onOpenEvent, presetClub
 
       {tab === 'create' ? (
         <div className="flex flex-col gap-4">
-          <Panel>
-            <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('mode_label')}</div>
-            <SegButton options={[{ value: 'competition', label: t('nav_competition') }, { value: 'tournament', label: t('nav_tournament') }]} value={kind} onChange={setKind} />
-          </Panel>
+          {presetClubId && (
+            <Panel>
+              <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('mode_label')}</div>
+              <SegButton options={[{ value: 'competition', label: t('nav_competition') }, { value: 'tournament', label: t('nav_tournament') }]} value={kind} onChange={setKind} />
+            </Panel>
+          )}
           <Panel>
             <input value={name} onChange={e => setName(e.target.value)} placeholder={t('event_name_placeholder')} className="tt-body w-full px-3 py-2 rounded-lg outline-none" style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }} />
-          </Panel>
-          <Panel>
-            <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('mode_label')}</div>
-            <SegButton options={[{ value: 'enkel', label: t('mode_singles') }, { value: 'dubbel', label: t('mode_doubles') }]} value={mode} onChange={setMode} />
           </Panel>
           {kind === 'competition' && (
             <Panel>
@@ -3400,7 +3407,146 @@ function EventHubScreen({ setView, session, initialKind, onOpenEvent, presetClub
   );
 }
 
-function EventLobbyScreen({ setView, eventId, session }) {
+function EventPlayScreen({ setView, eventId, session, settings, recordMatch }) {
+  const { t } = useT();
+  const myId = session && session.user ? session.user.id : null;
+  const [event, setEvent] = useState(null);
+  const [bracket, setBracket] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [showManage, setShowManage] = useState(false);
+
+  useEffect(() => {
+    if (!eventId) return;
+    (async () => {
+      try {
+        const { data } = await supabase.from('events').select('*').eq('id', eventId).maybeSingle();
+        setEvent(data || null);
+        setBracket(data ? data.bracket : null);
+      } catch (e) { /* best effort */ }
+      setLoading(false);
+    })();
+  }, [eventId]);
+
+  async function persist(updater) {
+    setBracket(prev => {
+      const updated = typeof updater === 'function' ? updater(prev) : updater;
+      supabase.from('events').update({ bracket: updated }).eq('id', eventId).then(() => {}).catch(() => {});
+      return updated;
+    });
+  }
+
+  function forfeitParticipant(playerName) {
+    setBracket(prev => {
+      let updated;
+      if (event.kind === 'competition') {
+        const need = Math.ceil(event.best_of / 2);
+        updated = {
+          ...prev,
+          matches: prev.matches.map(m => {
+            if (m.winner) return m;
+            if (m.p1 === playerName) return { ...m, winner: m.p2, score: { setsA: 0, setsB: need, sets: [] } };
+            if (m.p2 === playerName) return { ...m, winner: m.p1, score: { setsA: need, setsB: 0, sets: [] } };
+            return m;
+          }),
+        };
+      } else {
+        let rounds = prev.rounds;
+        outer:
+        for (let ri = 0; ri < rounds.length; ri++) {
+          const round = rounds[ri];
+          for (let mi = 0; mi < round.matches.length; mi++) {
+            const m = round.matches[mi];
+            if (!m.winner && m.p1 && m.p2 && (m.p1 === playerName || m.p2 === playerName)) {
+              const winnerName = m.p1 === playerName ? m.p2 : m.p1;
+              rounds = recordBracketResult(rounds, ri, mi, winnerName, 'walkover');
+              break outer;
+            }
+          }
+        }
+        updated = { ...prev, rounds };
+      }
+      supabase.from('events').update({ bracket: updated }).eq('id', eventId).then(() => {}).catch(() => {});
+      return updated;
+    });
+  }
+
+  if (loading || !event || !bracket) {
+    return <div><BackBar title="" onBack={() => setView('home')} /></div>;
+  }
+
+  const isCreator = event.created_by === myId;
+
+  if (showManage) {
+    return (
+      <div>
+        <BackBar title={t('event_manage_participants_title')} onBack={() => setShowManage(false)} />
+        <Panel>
+          <div className="flex flex-col gap-2">
+            {bracket.names.map(name => (
+              <div key={name} className="flex items-center gap-3">
+                <div className="tt-body text-sm font-semibold flex-1" style={{ color: C.text }}>{name}</div>
+                <button onClick={() => forfeitParticipant(name)} className="tt-body text-xs px-3 py-2 rounded-lg flex-shrink-0" style={{ background: C.panel2, color: C.red }}>
+                  {t('event_forfeit_button')}
+                </button>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      </div>
+    );
+  }
+
+  const playScreen = event.kind === 'competition' ? (
+    <CompetitionPlay
+      setView={setView}
+      competition={{
+        names: bracket.names,
+        matches: bracket.matches,
+        bestOf: event.best_of,
+        cadence: event.cadence,
+        periodNumber: bracket.periodNumber || 1,
+        history: bracket.history || [],
+        mode: event.mode,
+        pairMap: bracket.pairMap,
+        participantIdsList: bracket.participantIdsList,
+      }}
+      setCompetition={persist}
+      settings={settings}
+      recordMatch={recordMatch}
+      session={session}
+    />
+  ) : (
+    <TournamentPlay
+      setView={setView}
+      state={{
+        names: bracket.names,
+        rounds: bracket.rounds,
+        mode: event.mode,
+        pairMap: bracket.pairMap,
+        participantIdsList: bracket.participantIdsList,
+      }}
+      setState={persist}
+      settings={settings}
+      recordMatch={recordMatch}
+      session={session}
+    />
+  );
+
+  if (!isCreator) return playScreen;
+
+  return (
+    <div>
+      <div className="flex justify-end px-1 pt-1">
+        <button onClick={() => setShowManage(true)} className="tt-body text-xs px-3 py-1.5 rounded-lg" style={{ background: C.panel2, color: C.dim }}>
+          {t('event_manage_participants_title')}
+        </button>
+      </div>
+      {playScreen}
+    </div>
+  );
+}
+
+function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
   const { t } = useT();
   const myId = session && session.user ? session.user.id : null;
   const [event, setEvent] = useState(null);
@@ -3442,7 +3588,21 @@ function EventLobbyScreen({ setView, eventId, session }) {
 
   async function closeRegistration() {
     try {
-      await supabase.from('events').update({ status: 'closed' }).eq('id', eventId);
+      const { data: rows } = await supabase
+        .from('event_participants')
+        .select('user_id, profiles(username)')
+        .eq('event_id', eventId)
+        .eq('status', 'registered');
+      const valid = (rows || []).filter(r => r.profiles);
+      const names = valid.map(r => r.profiles.username);
+      const participantIdsList = valid.map(r => [r.user_id]);
+      let bracket;
+      if (event.kind === 'competition') {
+        bracket = { names, participantIdsList, pairMap: null, matches: generateRoundRobin(names), periodNumber: 1, history: [] };
+      } else {
+        bracket = { names, participantIdsList, pairMap: null, rounds: generateBracket(names) };
+      }
+      await supabase.from('events').update({ status: 'closed', bracket }).eq('id', eventId);
       await loadEvent();
     } catch (e) { /* best effort */ }
   }
@@ -3500,6 +3660,12 @@ function EventLobbyScreen({ setView, eventId, session }) {
 
       {event.status === 'open' && isCreator && (
         <PrimaryButton onClick={closeRegistration} style={{ width: '100%' }}>{t('event_close_registration')}</PrimaryButton>
+      )}
+
+      {event.status === 'closed' && (
+        <PrimaryButton onClick={() => onOpenPlay(eventId)} style={{ width: '100%' }}>
+          {t(event.kind === 'competition' ? 'nav_competition' : 'nav_tournament')}
+        </PrimaryButton>
       )}
     </div>
   );
@@ -5084,6 +5250,7 @@ function TournamentPlay({ setView, state, setState, settings, recordMatch, sessi
                   ))}
                   {!m.winner && m.p1 && m.p2 && <div className="tt-body text-xs mt-1" style={{ color: C.amber }}>{t('tournament_play_match')}</div>}
                   {m.score === 'bye' && <div className="tt-body text-xs mt-1" style={{ color: C.dim }}>{t('tournament_bye')}</div>}
+                  {m.score === 'walkover' && <div className="tt-body text-xs mt-1" style={{ color: C.dim }}>{t('tournament_walkover')}</div>}
                 </button>
               );
             })}
@@ -5393,7 +5560,8 @@ export default function App() {
     : <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
   else if (view === 'tournament-setup') content = <EventHubScreen setView={setView} session={session} initialKind="tournament" onOpenEvent={openEvent} />;
   else if (view === 'tournament-play') content = <TournamentPlay setView={setView} state={tState} setState={setTState} settings={settings} recordMatch={recordMatch} session={session} />;
-  else if (view === 'event-lobby') content = <EventLobbyScreen setView={setView} eventId={selectedEventId} session={session} />;
+  else if (view === 'event-lobby') content = <EventLobbyScreen setView={setView} eventId={selectedEventId} session={session} onOpenPlay={id => { setSelectedEventId(id); setView('event-play'); }} />;
+  else if (view === 'event-play') content = <EventPlayScreen setView={setView} eventId={selectedEventId} session={session} settings={settings} recordMatch={recordMatch} />;
   else if (view === 'group-event-create') content = <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} presetClubId={eventPresetClub && eventPresetClub.id} presetClubName={eventPresetClub && eventPresetClub.name} />;
 
   return (
