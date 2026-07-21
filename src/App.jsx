@@ -898,6 +898,16 @@ function photoKey(name) {
   return `photo_${safe || 'x'}`;
 }
 
+function dataUrlToBlob(dataUrl) {
+  const [header, base64] = dataUrl.split(',');
+  const mimeMatch = header.match(/data:(.*?);base64/);
+  const mime = mimeMatch ? mimeMatch[1] : 'image/jpeg';
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return new Blob([bytes], { type: mime });
+}
+
 function resizeImage(file, maxSize = 240) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -3448,8 +3458,13 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
     if (!file) return;
     try {
       const dataUrl = await resizeImage(file, 240);
-      await saveField({ avatar_url: dataUrl });
-    } catch (err) { /* ignore failed upload */ }
+      const blob = dataUrlToBlob(dataUrl);
+      const path = `${userId}.jpg`;
+      const { error: uploadError } = await supabase.storage.from('avatars').upload(path, blob, { upsert: true, contentType: 'image/jpeg' });
+      if (uploadError) { setSaveError(uploadError.message); return; }
+      const { data } = supabase.storage.from('avatars').getPublicUrl(path);
+      await saveField({ avatar_url: `${data.publicUrl}?t=${Date.now()}` });
+    } catch (err) { setSaveError(err && err.message ? err.message : 'Upload failed'); }
   }
 
   const myUsername = profile ? (profile.username || '') : '';
