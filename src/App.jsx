@@ -2872,7 +2872,18 @@ function Sidebar({ view, setView, hasCompetition }) {
     { key: 'settings', label: t('nav_settings'), icon: SettingsIcon, match: v => v === 'settings' },
   ];
   return (
-    <div className="flex flex-col items-stretch flex-shrink-0" style={{ width: 68, background: C.panel, borderRight: `1px solid ${C.line}`, minHeight: '100vh' }}>
+    <div
+      className="flex flex-col items-stretch flex-shrink-0"
+      style={{
+        width: 68,
+        background: C.panel,
+        borderRight: `1px solid ${C.line}`,
+        height: '100vh',
+        position: 'sticky',
+        top: 0,
+        overflowY: 'auto',
+      }}
+    >
       {items.map(it => {
         const active = it.match(view);
         return (
@@ -3060,7 +3071,7 @@ function Home({ matchLog, playerName, session }) {
   const { t } = useT();
   const [playIntro] = useState(() => shouldPlayHeroIntro());
   return (
-    <div className="relative w-full" style={{ height: '100%', minHeight: '100vh', overflow: 'hidden' }}>
+    <div className="relative w-full" style={{ minHeight: '100vh', overflowX: 'hidden', overflowY: 'auto' }}>
       <img
         src={HERO_IMAGE}
         alt=""
