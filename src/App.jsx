@@ -173,6 +173,7 @@ const TRANSLATIONS = {
     nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.', friend_requests_title: 'Friend requests', friend_request_sent: 'Request sent', friend_request_pending_you: 'Wants to be friends', friends_already: 'Friends', btn_accept: 'Accept', btn_decline: 'Decline', friends_none_yet: 'No friends yet', btn_challenge: 'Challenge',
     nav_groups: 'Groups', groups_create_button: 'Create group', groups_search_placeholder: 'Search for a group...', group_name_placeholder: 'Group name', group_description_placeholder: 'Description (optional)', groups_empty: "You're not in any group yet.", group_join_button: 'Join', group_joined_label: 'Member', group_members_title: 'Members', group_leaderboard_title: 'Group leaderboard', group_leave_button: 'Leave group', group_no_results: 'No groups found.',
     group_request_sent: 'Request sent', group_pending_requests_title: 'Join requests', btn_approve: 'Approve', group_remove_member: 'Remove', groups_nearby_title: 'Nearby groups',
+    group_invite_section_title: 'Invite someone', group_invites_title: 'Group invitations',
     nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar', profile_edit_button: 'Edit profile', profile_save_button: 'Save profile',
     title_newcomer: 'Newcomer', title_rising_star: 'Rising Star',
     profile_no_stats: 'No matches found under this name yet. Play a match as "{name}" to see stats here.',
@@ -250,6 +251,7 @@ const TRANSLATIONS = {
     nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.', friend_requests_title: "Demandes d'amis", friend_request_sent: 'Demande envoyée', friend_request_pending_you: 'Veut être ami(e)', friends_already: 'Amis', btn_accept: 'Accepter', btn_decline: 'Refuser', friends_none_yet: "Pas encore d'amis", btn_challenge: 'Défier',
     nav_groups: 'Groupes', groups_create_button: 'Créer un groupe', groups_search_placeholder: 'Rechercher un groupe...', group_name_placeholder: 'Nom du groupe', group_description_placeholder: 'Description (facultatif)', groups_empty: "Vous ne faites partie d'aucun groupe pour l'instant.", group_join_button: 'Rejoindre', group_joined_label: 'Membre', group_members_title: 'Membres', group_leaderboard_title: 'Classement du groupe', group_leave_button: 'Quitter le groupe', group_no_results: 'Aucun groupe trouvé.',
     group_request_sent: 'Demande envoyée', group_pending_requests_title: "Demandes d'adhésion", btn_approve: 'Approuver', group_remove_member: 'Retirer', groups_nearby_title: 'Groupes à proximité',
+    group_invite_section_title: 'Inviter quelqu\u2019un', group_invites_title: 'Invitations de groupe',
     nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar', profile_edit_button: 'Modifier le profil', profile_save_button: 'Enregistrer le profil',
     title_newcomer: 'Nouveau venu', title_rising_star: 'Étoile montante',
     profile_no_stats: 'Aucun match trouvé sous ce nom pour le moment. Jouez un match en tant que « {name} » pour voir vos statistiques ici.',
@@ -327,6 +329,7 @@ const TRANSLATIONS = {
     nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.', friend_requests_title: 'Vriendverzoeken', friend_request_sent: 'Verzoek verzonden', friend_request_pending_you: 'Wil bevriend worden', friends_already: 'Bevriend', btn_accept: 'Aanvaarden', btn_decline: 'Weigeren', friends_none_yet: 'Nog geen vrienden', btn_challenge: 'Uitdagen',
     nav_groups: 'Groepen', groups_create_button: 'Groep aanmaken', groups_search_placeholder: 'Zoek een groep...', group_name_placeholder: 'Naam van de groep', group_description_placeholder: 'Beschrijving (optioneel)', groups_empty: 'Je zit nog in geen enkele groep.', group_join_button: 'Aansluiten', group_joined_label: 'Lid', group_members_title: 'Leden', group_leaderboard_title: 'Groepsranglijst', group_leave_button: 'Groep verlaten', group_no_results: 'Geen groepen gevonden.',
     group_request_sent: 'Aanvraag verstuurd', group_pending_requests_title: 'Aanvragen', btn_approve: 'Goedkeuren', group_remove_member: 'Verwijderen', groups_nearby_title: 'Groepen in de buurt',
+    group_invite_section_title: 'Nodig iemand uit', group_invites_title: 'Groepsuitnodigingen',
     nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar', profile_edit_button: 'Profiel bewerken', profile_save_button: 'Profiel opslaan',
     title_newcomer: 'Nieuwkomer', title_rising_star: 'Rijzende ster',
     profile_no_stats: 'Nog geen wedstrijden gevonden onder deze naam. Speel een wedstrijd als "{name}" om hier statistieken te zien.',
@@ -404,6 +407,7 @@ const TRANSLATIONS = {
     nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.', friend_requests_title: 'Заявки в друзья', friend_request_sent: 'Заявка отправлена', friend_request_pending_you: 'Хочет дружить', friends_already: 'Друзья', btn_accept: 'Принять', btn_decline: 'Отклонить', friends_none_yet: 'Пока нет друзей', btn_challenge: 'Бросить вызов',
     nav_groups: 'Группы', groups_create_button: 'Создать группу', groups_search_placeholder: 'Поиск группы...', group_name_placeholder: 'Название группы', group_description_placeholder: 'Описание (необязательно)', groups_empty: 'Вы пока не состоите ни в одной группе.', group_join_button: 'Присоединиться', group_joined_label: 'Участник', group_members_title: 'Участники', group_leaderboard_title: 'Рейтинг группы', group_leave_button: 'Покинуть группу', group_no_results: 'Группы не найдены.',
     group_request_sent: 'Заявка отправлена', group_pending_requests_title: 'Заявки на вступление', btn_approve: 'Одобрить', group_remove_member: 'Удалить', groups_nearby_title: 'Группы поблизости',
+    group_invite_section_title: 'Пригласить кого-то', group_invites_title: 'Приглашения в группы',
     nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар', profile_edit_button: 'Редактировать профиль', profile_save_button: 'Сохранить профиль',
     title_newcomer: 'Новичок', title_rising_star: 'Восходящая звезда',
     profile_no_stats: 'Матчи под этим именем пока не найдены. Сыграйте матч под именем «{name}», чтобы увидеть статистику здесь.',
@@ -481,6 +485,7 @@ const TRANSLATIONS = {
     nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。', friend_requests_title: '好友请求', friend_request_sent: '请求已发送', friend_request_pending_you: '想加你为好友', friends_already: '好友', btn_accept: '接受', btn_decline: '拒绝', friends_none_yet: '还没有好友', btn_challenge: '挑战',
     nav_groups: '群组', groups_create_button: '创建群组', groups_search_placeholder: '搜索群组...', group_name_placeholder: '群组名称', group_description_placeholder: '描述（可选）', groups_empty: '你还没有加入任何群组。', group_join_button: '加入', group_joined_label: '成员', group_members_title: '成员', group_leaderboard_title: '群组排行榜', group_leave_button: '退出群组', group_no_results: '未找到群组。',
     group_request_sent: '请求已发送', group_pending_requests_title: '加入请求', btn_approve: '批准', group_remove_member: '移除', groups_nearby_title: '附近的群组',
+    group_invite_section_title: '邀请某人', group_invites_title: '群组邀请',
     nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像', profile_edit_button: '编辑资料', profile_save_button: '保存资料',
     title_newcomer: '新人', title_rising_star: '新星',
     profile_no_stats: '尚未找到该名字下的比赛记录。以"{name}"的身份参加一场比赛即可在此查看统计数据。',
@@ -558,6 +563,7 @@ const TRANSLATIONS = {
     nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.', friend_requests_title: 'Solicitudes de amistad', friend_request_sent: 'Solicitud enviada', friend_request_pending_you: 'Quiere ser tu amigo', friends_already: 'Amigos', btn_accept: 'Aceptar', btn_decline: 'Rechazar', friends_none_yet: 'Aún no tienes amigos', btn_challenge: 'Desafiar',
     nav_groups: 'Grupos', groups_create_button: 'Crear grupo', groups_search_placeholder: 'Buscar un grupo...', group_name_placeholder: 'Nombre del grupo', group_description_placeholder: 'Descripción (opcional)', groups_empty: 'Todavía no perteneces a ningún grupo.', group_join_button: 'Unirse', group_joined_label: 'Miembro', group_members_title: 'Miembros', group_leaderboard_title: 'Clasificación del grupo', group_leave_button: 'Abandonar grupo', group_no_results: 'No se encontraron grupos.',
     group_request_sent: 'Solicitud enviada', group_pending_requests_title: 'Solicitudes de ingreso', btn_approve: 'Aprobar', group_remove_member: 'Eliminar', groups_nearby_title: 'Grupos cercanos',
+    group_invite_section_title: 'Invitar a alguien', group_invites_title: 'Invitaciones a grupos',
     nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
     title_newcomer: 'Recién llegado', title_rising_star: 'Estrella en ascenso',
     profile_no_stats: 'Aún no se han encontrado partidos con este nombre. Juega un partido como "{name}" para ver tus estadísticas aquí.',
@@ -635,6 +641,7 @@ const TRANSLATIONS = {
     nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.', friend_requests_title: 'Pedidos de amizade', friend_request_sent: 'Pedido enviado', friend_request_pending_you: 'Quer ser teu amigo', friends_already: 'Amigos', btn_accept: 'Aceitar', btn_decline: 'Recusar', friends_none_yet: 'Ainda não tens amigos', btn_challenge: 'Desafiar',
     nav_groups: 'Grupos', groups_create_button: 'Criar grupo', groups_search_placeholder: 'Pesquisar um grupo...', group_name_placeholder: 'Nome do grupo', group_description_placeholder: 'Descrição (opcional)', groups_empty: 'Ainda não pertences a nenhum grupo.', group_join_button: 'Aderir', group_joined_label: 'Membro', group_members_title: 'Membros', group_leaderboard_title: 'Classificação do grupo', group_leave_button: 'Sair do grupo', group_no_results: 'Nenhum grupo encontrado.',
     group_request_sent: 'Pedido enviado', group_pending_requests_title: 'Pedidos de adesão', btn_approve: 'Aprovar', group_remove_member: 'Remover', groups_nearby_title: 'Grupos próximos',
+    group_invite_section_title: 'Convidar alguém', group_invites_title: 'Convites de grupo',
     nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
     title_newcomer: 'Recém-chegado', title_rising_star: 'Estrela em ascensão',
     profile_no_stats: 'Ainda não foram encontradas partidas com este nome. Joga uma partida como "{name}" para veres as estatísticas aqui.',
@@ -712,6 +719,7 @@ const TRANSLATIONS = {
     nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。', friend_requests_title: 'フレンド申請', friend_request_sent: '申請を送信しました', friend_request_pending_you: 'フレンドになりたがっています', friends_already: 'フレンド', btn_accept: '承認', btn_decline: '拒否', friends_none_yet: 'まだフレンドがいません', btn_challenge: '対戦を挑む',
     nav_groups: 'グループ', groups_create_button: 'グループを作成', groups_search_placeholder: 'グループを検索...', group_name_placeholder: 'グループ名', group_description_placeholder: '説明（任意）', groups_empty: 'まだどのグループにも参加していません。', group_join_button: '参加する', group_joined_label: 'メンバー', group_members_title: 'メンバー', group_leaderboard_title: 'グループランキング', group_leave_button: 'グループを退出', group_no_results: 'グループが見つかりません。',
     group_request_sent: '申請を送信しました', group_pending_requests_title: '参加リクエスト', btn_approve: '承認', group_remove_member: '削除', groups_nearby_title: '近くのグループ',
+    group_invite_section_title: '誰かを招待', group_invites_title: 'グループ招待',
     nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ', profile_edit_button: 'プロフィールを編集', profile_save_button: 'プロフィールを保存',
     title_newcomer: '新人', title_rising_star: '新星',
     profile_no_stats: 'この名前での試合がまだ見つかりません。「{name}」としてプレーすると、ここに統計が表示されます。',
@@ -789,6 +797,7 @@ const TRANSLATIONS = {
     nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.', friend_requests_title: '친구 요청', friend_request_sent: '요청을 보냈습니다', friend_request_pending_you: '친구가 되고 싶어합니다', friends_already: '친구', btn_accept: '수락', btn_decline: '거절', friends_none_yet: '아직 친구가 없습니다', btn_challenge: '도전하기',
     nav_groups: '그룹', groups_create_button: '그룹 만들기', groups_search_placeholder: '그룹 검색...', group_name_placeholder: '그룹 이름', group_description_placeholder: '설명 (선택 사항)', groups_empty: '아직 가입한 그룹이 없습니다.', group_join_button: '가입하기', group_joined_label: '멤버', group_members_title: '멤버', group_leaderboard_title: '그룹 순위', group_leave_button: '그룹 나가기', group_no_results: '그룹을 찾을 수 없습니다.',
     group_request_sent: '요청을 보냈습니다', group_pending_requests_title: '가입 요청', btn_approve: '승인', group_remove_member: '삭제', groups_nearby_title: '주변 그룹',
+    group_invite_section_title: '누군가 초대하기', group_invites_title: '그룹 초대',
     nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택', profile_edit_button: '프로필 편집', profile_save_button: '프로필 저장',
     title_newcomer: '신입', title_rising_star: '떠오르는 스타',
     profile_no_stats: '이 이름으로 진행된 경기가 아직 없습니다. "{name}"으로 경기를 플레이하면 여기에 통계가 표시됩니다.',
@@ -3240,6 +3249,7 @@ function GroupsScreen({ setView, session, onSelectGroup, profile }) {
   const [searching, setSearching] = useState(false);
   const [pendingRequestIds, setPendingRequestIds] = useState(new Set());
   const [nearbyGroups, setNearbyGroups] = useState([]);
+  const [myInvites, setMyInvites] = useState([]);
 
   async function loadMyGroups() {
     setLoading(true);
@@ -3251,6 +3261,7 @@ function GroupsScreen({ setView, session, onSelectGroup, profile }) {
       const rows = data || [];
       setMyGroups(rows.filter(r => r.clubs && r.status === 'approved').map(r => ({ ...r.clubs, role: r.role })));
       setPendingRequestIds(new Set(rows.filter(r => r.clubs && r.status === 'pending').map(r => r.clubs.id)));
+      setMyInvites(rows.filter(r => r.clubs && r.status === 'invited').map(r => r.clubs));
     } catch (e) { /* best effort */ }
     setLoading(false);
   }
@@ -3307,11 +3318,44 @@ function GroupsScreen({ setView, session, onSelectGroup, profile }) {
     } catch (e) { /* best effort */ }
   }
 
+  async function acceptInvite(clubId) {
+    try {
+      await supabase.from('club_members').update({ status: 'approved' }).eq('club_id', clubId).eq('user_id', myId);
+      await loadMyGroups();
+    } catch (e) { /* best effort */ }
+  }
+
+  async function declineInvite(clubId) {
+    try {
+      await supabase.from('club_members').delete().eq('club_id', clubId).eq('user_id', myId);
+      await loadMyGroups();
+    } catch (e) { /* best effort */ }
+  }
+
   const myGroupIds = new Set(myGroups.map(g => g.id));
 
   return (
     <div>
       <BackBar title={t('nav_groups')} onBack={() => setView('home')} />
+
+      {myInvites.length > 0 && (
+        <Panel style={{ marginBottom: 16 }}>
+          <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('group_invites_title')}</div>
+          <div className="flex flex-col gap-2">
+            {myInvites.map(g => (
+              <div key={g.id} className="flex items-center gap-3">
+                <div className="tt-body text-sm font-semibold flex-1 min-w-0 truncate" style={{ color: C.text }}>{g.name}</div>
+                <button onClick={() => acceptInvite(g.id)} className="p-2 rounded-lg flex-shrink-0" style={{ background: C.greenLight }}>
+                  <Check size={16} color="#04140D" />
+                </button>
+                <button onClick={() => declineInvite(g.id)} className="p-2 rounded-lg flex-shrink-0" style={{ background: C.panel2 }}>
+                  <X size={16} color={C.dim} />
+                </button>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      )}
 
       <Panel style={{ marginBottom: 16 }}>
         <input
@@ -3437,6 +3481,17 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
   const [pendingRequests, setPendingRequests] = useState([]);
   const [myRole, setMyRole] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [invitePick, setInvitePick] = useState(null);
+  const friendsListForInvite = useFriendsList(myId);
+
+  async function sendInvite(target) {
+    if (!target || !target.profileId) return;
+    try {
+      await supabase.from('club_members').insert({ club_id: groupId, user_id: target.profileId, role: 'member', status: 'invited' });
+      await loadGroup();
+    } catch (e) { /* best effort */ }
+    setInvitePick(null);
+  }
 
   async function loadGroup() {
     try {
@@ -3501,6 +3556,19 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
       {group && group.description && (
         <Panel style={{ marginBottom: 16 }}>
           <div className="tt-body text-sm" style={{ color: C.dim }}>{group.description}</div>
+        </Panel>
+      )}
+
+      {isAdmin && (
+        <Panel style={{ marginBottom: 16 }}>
+          <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('group_invite_section_title')}</div>
+          <PlayerPicker
+            value={invitePick}
+            onChange={p => { setInvitePick(p); if (p && p.profileId) sendInvite(p); }}
+            placeholder={t('friends_search_placeholder')}
+            friendsList={friendsListForInvite}
+            myProfileId={myId}
+          />
         </Panel>
       )}
 
