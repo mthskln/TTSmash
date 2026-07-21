@@ -179,6 +179,7 @@ const TRANSLATIONS = {
     group_invite_section_title: 'Invite someone', group_invites_title: 'Group invitations',
     event_name_placeholder: 'Event name', event_link_group_label: 'Link to a group (optional)', event_no_group_option: 'No group', event_create_button: 'Create event', event_code_label: 'Join code', event_share_hint: 'Share this code so others can join', event_participants_title: 'Participants', event_close_registration: 'Close registration', event_status_open: 'Registration open', event_status_closed: 'Registration closed', event_join_button: 'Join event', event_join_code_placeholder: 'Enter join code', event_join_via_code_title: 'Have a code?', event_leave_button: 'Leave event', event_not_found: 'No event found with that code.', event_already_joined: 'Joined',
     nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar', profile_edit_button: 'Edit profile', profile_save_button: 'Save profile',
+    profile_guest_notice: "You're playing as a guest — link an account to keep your data safe.", profile_link_google: 'Link Google account', profile_link_facebook: 'Link Facebook account', profile_link_success: 'Account linked!',
     title_newcomer: 'Newcomer', title_rising_star: 'Rising Star',
     profile_no_stats: 'No matches found under this name yet. Play a match as "{name}" to see stats here.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Coming soon \u2014 earn badges by playing matches!',
@@ -262,6 +263,7 @@ const TRANSLATIONS = {
     group_invite_section_title: 'Inviter quelqu\u2019un', group_invites_title: 'Invitations de groupe',
     event_name_placeholder: "Nom de l'événement", event_link_group_label: 'Lier à un groupe (facultatif)', event_no_group_option: 'Aucun groupe', event_create_button: 'Créer un événement', event_code_label: 'Code de participation', event_share_hint: 'Partagez ce code pour que d\u2019autres puissent rejoindre', event_participants_title: 'Participants', event_close_registration: 'Clôturer les inscriptions', event_status_open: 'Inscriptions ouvertes', event_status_closed: 'Inscriptions clôturées', event_join_button: "Rejoindre l'événement", event_join_code_placeholder: 'Entrez le code', event_join_via_code_title: 'Vous avez un code\u00A0?', event_leave_button: "Quitter l'événement", event_not_found: 'Aucun événement trouvé avec ce code.', event_already_joined: 'Inscrit',
     nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar', profile_edit_button: 'Modifier le profil', profile_save_button: 'Enregistrer le profil',
+    profile_guest_notice: "Vous jouez en tant qu'invité — liez un compte pour sécuriser vos données.", profile_link_google: 'Lier un compte Google', profile_link_facebook: 'Lier un compte Facebook', profile_link_success: 'Compte lié !',
     title_newcomer: 'Nouveau venu', title_rising_star: 'Étoile montante',
     profile_no_stats: 'Aucun match trouvé sous ce nom pour le moment. Jouez un match en tant que « {name} » pour voir vos statistiques ici.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Bientôt disponible \u2014 gagnez des badges en jouant des matchs\u00A0!',
@@ -345,6 +347,7 @@ const TRANSLATIONS = {
     group_invite_section_title: 'Nodig iemand uit', group_invites_title: 'Groepsuitnodigingen',
     event_name_placeholder: 'Naam van het evenement', event_link_group_label: 'Koppel aan een groep (optioneel)', event_no_group_option: 'Geen groep', event_create_button: 'Evenement aanmaken', event_code_label: 'Deelcode', event_share_hint: 'Deel deze code zodat anderen kunnen aansluiten', event_participants_title: 'Deelnemers', event_close_registration: 'Inschrijvingen sluiten', event_status_open: 'Inschrijvingen open', event_status_closed: 'Inschrijvingen gesloten', event_join_button: 'Evenement joinen', event_join_code_placeholder: 'Voer deelcode in', event_join_via_code_title: 'Heb je een code?', event_leave_button: 'Evenement verlaten', event_not_found: 'Geen evenement gevonden met die code.', event_already_joined: 'Aangesloten',
     nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar', profile_edit_button: 'Profiel bewerken', profile_save_button: 'Profiel opslaan',
+    profile_guest_notice: 'Je speelt als gast — koppel een account om je gegevens veilig te stellen.', profile_link_google: 'Koppel Google-account', profile_link_facebook: 'Koppel Facebook-account', profile_link_success: 'Account gekoppeld!',
     title_newcomer: 'Nieuwkomer', title_rising_star: 'Rijzende ster',
     profile_no_stats: 'Nog geen wedstrijden gevonden onder deze naam. Speel een wedstrijd als "{name}" om hier statistieken te zien.',
     profile_badges_title: 'Badges', profile_badges_empty: 'Binnenkort beschikbaar \u2014 verdien badges door wedstrijden te spelen!',
@@ -428,6 +431,7 @@ const TRANSLATIONS = {
     group_invite_section_title: 'Пригласить кого-то', group_invites_title: 'Приглашения в группы',
     event_name_placeholder: 'Название мероприятия', event_link_group_label: 'Привязать к группе (необязательно)', event_no_group_option: 'Без группы', event_create_button: 'Создать мероприятие', event_code_label: 'Код для участия', event_share_hint: 'Поделитесь этим кодом, чтобы другие могли присоединиться', event_participants_title: 'Участники', event_close_registration: 'Закрыть регистрацию', event_status_open: 'Регистрация открыта', event_status_closed: 'Регистрация закрыта', event_join_button: 'Присоединиться', event_join_code_placeholder: 'Введите код', event_join_via_code_title: 'Есть код?', event_leave_button: 'Покинуть мероприятие', event_not_found: 'Мероприятие с таким кодом не найдено.', event_already_joined: 'Участвуете',
     nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар', profile_edit_button: 'Редактировать профиль', profile_save_button: 'Сохранить профиль',
+    profile_guest_notice: 'Вы играете как гость — привяжите аккаунт, чтобы сохранить свои данные.', profile_link_google: 'Привязать Google-аккаунт', profile_link_facebook: 'Привязать Facebook-аккаунт', profile_link_success: 'Аккаунт привязан!',
     title_newcomer: 'Новичок', title_rising_star: 'Восходящая звезда',
     profile_no_stats: 'Матчи под этим именем пока не найдены. Сыграйте матч под именем «{name}», чтобы увидеть статистику здесь.',
     profile_badges_title: 'Значки', profile_badges_empty: 'Скоро появится \u2014 зарабатывайте значки, играя матчи!',
@@ -511,6 +515,7 @@ const TRANSLATIONS = {
     group_invite_section_title: '邀请某人', group_invites_title: '群组邀请',
     event_name_placeholder: '活动名称', event_link_group_label: '关联群组（可选）', event_no_group_option: '无群组', event_create_button: '创建活动', event_code_label: '加入码', event_share_hint: '分享此代码以便他人加入', event_participants_title: '参与者', event_close_registration: '关闭报名', event_status_open: '报名开放中', event_status_closed: '报名已关闭', event_join_button: '加入活动', event_join_code_placeholder: '输入加入码', event_join_via_code_title: '有邀请码吗？', event_leave_button: '退出活动', event_not_found: '未找到该代码对应的活动。', event_already_joined: '已加入',
     nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像', profile_edit_button: '编辑资料', profile_save_button: '保存资料',
+    profile_guest_notice: '你正以访客身份使用——关联一个账号以保护你的数据。', profile_link_google: '关联 Google 账号', profile_link_facebook: '关联 Facebook 账号', profile_link_success: '账号已关联！',
     title_newcomer: '新人', title_rising_star: '新星',
     profile_no_stats: '尚未找到该名字下的比赛记录。以"{name}"的身份参加一场比赛即可在此查看统计数据。',
     profile_badges_title: '徽章', profile_badges_empty: '即将推出 \u2014 通过参加比赛获得徽章！',
@@ -594,6 +599,7 @@ const TRANSLATIONS = {
     group_invite_section_title: 'Invitar a alguien', group_invites_title: 'Invitaciones a grupos',
     event_name_placeholder: 'Nombre del evento', event_link_group_label: 'Vincular a un grupo (opcional)', event_no_group_option: 'Sin grupo', event_create_button: 'Crear evento', event_code_label: 'Código de acceso', event_share_hint: 'Comparte este código para que otros puedan unirse', event_participants_title: 'Participantes', event_close_registration: 'Cerrar inscripciones', event_status_open: 'Inscripciones abiertas', event_status_closed: 'Inscripciones cerradas', event_join_button: 'Unirse al evento', event_join_code_placeholder: 'Introduce el código', event_join_via_code_title: '¿Tienes un código?', event_leave_button: 'Abandonar evento', event_not_found: 'No se encontró ningún evento con ese código.', event_already_joined: 'Inscrito',
     nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
+    profile_guest_notice: 'Estás jugando como invitado — vincula una cuenta para proteger tus datos.', profile_link_google: 'Vincular cuenta de Google', profile_link_facebook: 'Vincular cuenta de Facebook', profile_link_success: '¡Cuenta vinculada!',
     title_newcomer: 'Recién llegado', title_rising_star: 'Estrella en ascenso',
     profile_no_stats: 'Aún no se han encontrado partidos con este nombre. Juega un partido como "{name}" para ver tus estadísticas aquí.',
     profile_badges_title: 'Insignias', profile_badges_empty: '¡Próximamente! Gana insignias jugando partidos.',
@@ -677,6 +683,7 @@ const TRANSLATIONS = {
     group_invite_section_title: 'Convidar alguém', group_invites_title: 'Convites de grupo',
     event_name_placeholder: 'Nome do evento', event_link_group_label: 'Associar a um grupo (opcional)', event_no_group_option: 'Sem grupo', event_create_button: 'Criar evento', event_code_label: 'Código de acesso', event_share_hint: 'Partilha este código para que outros possam aderir', event_participants_title: 'Participantes', event_close_registration: 'Encerrar inscrições', event_status_open: 'Inscrições abertas', event_status_closed: 'Inscrições encerradas', event_join_button: 'Aderir ao evento', event_join_code_placeholder: 'Introduz o código', event_join_via_code_title: 'Tens um código?', event_leave_button: 'Sair do evento', event_not_found: 'Nenhum evento encontrado com esse código.', event_already_joined: 'Inscrito',
     nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
+    profile_guest_notice: 'Estás a jogar como convidado — associa uma conta para proteger os teus dados.', profile_link_google: 'Associar conta Google', profile_link_facebook: 'Associar conta Facebook', profile_link_success: 'Conta associada!',
     title_newcomer: 'Recém-chegado', title_rising_star: 'Estrela em ascensão',
     profile_no_stats: 'Ainda não foram encontradas partidas com este nome. Joga uma partida como "{name}" para veres as estatísticas aqui.',
     profile_badges_title: 'Emblemas', profile_badges_empty: 'Em breve \u2014 ganha emblemas ao jogar partidas!',
@@ -760,6 +767,7 @@ const TRANSLATIONS = {
     group_invite_section_title: '誰かを招待', group_invites_title: 'グループ招待',
     event_name_placeholder: 'イベント名', event_link_group_label: 'グループに紐付け（任意）', event_no_group_option: 'グループなし', event_create_button: 'イベントを作成', event_code_label: '参加コード', event_share_hint: 'このコードを共有すると参加できます', event_participants_title: '参加者', event_close_registration: '参加受付を締め切る', event_status_open: '参加受付中', event_status_closed: '参加受付終了', event_join_button: 'イベントに参加', event_join_code_placeholder: 'コードを入力', event_join_via_code_title: 'コードをお持ちですか？', event_leave_button: 'イベントを退出', event_not_found: 'そのコードのイベントが見つかりません。', event_already_joined: '参加済み',
     nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ', profile_edit_button: 'プロフィールを編集', profile_save_button: 'プロフィールを保存',
+    profile_guest_notice: 'ゲストとしてプレー中です — アカウントを連携してデータを守りましょう。', profile_link_google: 'Googleアカウントを連携', profile_link_facebook: 'Facebookアカウントを連携', profile_link_success: 'アカウントを連携しました！',
     title_newcomer: '新人', title_rising_star: '新星',
     profile_no_stats: 'この名前での試合がまだ見つかりません。「{name}」としてプレーすると、ここに統計が表示されます。',
     profile_badges_title: 'バッジ', profile_badges_empty: '近日公開予定 \u2014 試合をプレーしてバッジを獲得しよう！',
@@ -843,6 +851,7 @@ const TRANSLATIONS = {
     group_invite_section_title: '누군가 초대하기', group_invites_title: '그룹 초대',
     event_name_placeholder: '이벤트 이름', event_link_group_label: '그룹에 연결 (선택 사항)', event_no_group_option: '그룹 없음', event_create_button: '이벤트 만들기', event_code_label: '참가 코드', event_share_hint: '이 코드를 공유하면 다른 사람이 참여할 수 있습니다', event_participants_title: '참가자', event_close_registration: '등록 마감', event_status_open: '등록 진행 중', event_status_closed: '등록 마감됨', event_join_button: '이벤트 참가', event_join_code_placeholder: '코드 입력', event_join_via_code_title: '코드가 있으신가요?', event_leave_button: '이벤트 나가기', event_not_found: '해당 코드로 이벤트를 찾을 수 없습니다.', event_already_joined: '참가함',
     nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택', profile_edit_button: '프로필 편집', profile_save_button: '프로필 저장',
+    profile_guest_notice: '게스트로 플레이중입니다 — 계정을 연결해 데이터를 안전하게 보관하세요.', profile_link_google: 'Google 계정 연결', profile_link_facebook: 'Facebook 계정 연결', profile_link_success: '계정이 연결되었습니다!',
     title_newcomer: '신입', title_rising_star: '떠오르는 스타',
     profile_no_stats: '이 이름으로 진행된 경기가 아직 없습니다. "{name}"으로 경기를 플레이하면 여기에 통계가 표시됩니다.',
     profile_badges_title: '배지', profile_badges_empty: '곧 공개 예정 \u2014 경기를 플레이하고 배지를 획득하세요!',
@@ -4781,6 +4790,24 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
   const [showAvatarPicker, setShowAvatarPicker] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [deletingAccount, setDeletingAccount] = useState(false);
+  const [linking, setLinking] = useState('');
+  const [linkError, setLinkError] = useState('');
+  const isGuest = !!session.user.is_anonymous;
+
+  async function linkAccount(provider) {
+    setLinking(provider);
+    setLinkError('');
+    try {
+      Object.keys(window.localStorage).forEach(k => {
+        if (k.includes('code-verifier') || k.includes('code_verifier')) window.localStorage.removeItem(k);
+      });
+    } catch (e) { /* ignore */ }
+    const { error } = await supabase.auth.linkIdentity({
+      provider,
+      options: { redirectTo: window.location.origin },
+    });
+    if (error) { setLinkError(error.message); setLinking(''); }
+  }
 
   useEffect(() => {
     setUsernameInput(profile ? profile.username || '' : '');
@@ -4855,6 +4882,32 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
   return (
     <div>
       <BackBar title={t('nav_profile')} onBack={() => setView('home')} />
+
+      {isGuest && (
+        <Panel style={{ marginBottom: 16, borderColor: C.amber }}>
+          <div className="tt-body text-xs mb-3" style={{ color: C.text }}>{t('profile_guest_notice')}</div>
+          <div className="flex flex-col gap-2">
+            <button
+              onClick={() => linkAccount('google')}
+              disabled={!!linking}
+              className="tt-body text-sm font-semibold px-4 py-2.5 rounded-lg disabled:opacity-50"
+              style={{ background: '#fff', color: '#111' }}
+            >
+              {t('profile_link_google')}
+            </button>
+            <button
+              onClick={() => linkAccount('facebook')}
+              disabled={!!linking}
+              className="tt-body text-sm font-semibold px-4 py-2.5 rounded-lg disabled:opacity-50"
+              style={{ background: '#1877F2', color: '#fff' }}
+            >
+              {t('profile_link_facebook')}
+            </button>
+          </div>
+          {linkError && <div className="tt-body text-xs mt-2" style={{ color: C.red }}>{linkError}</div>}
+        </Panel>
+      )}
+
       {saveError && (
         <Panel style={{ borderColor: C.red, marginBottom: 16 }}>
           <div className="tt-body text-xs" style={{ color: C.red }}>{saveError}</div>
