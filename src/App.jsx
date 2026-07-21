@@ -2135,6 +2135,17 @@ function ChallengesPanel({ matchLog, scope, playerName, memberNames, session, cl
   );
 }
 
+function CrossedPaddlesIcon({ size = 19, color = 'currentColor' }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="4" y1="20" x2="11" y2="13" />
+      <circle cx="14" cy="10" r="4.5" />
+      <line x1="20" y1="20" x2="13" y2="13" />
+      <circle cx="10" cy="10" r="4.5" />
+    </svg>
+  );
+}
+
 function PaddleIcon({ color = C.red, flip = false, size = 36 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 40 44" style={{ transform: flip ? 'scaleX(-1)' : 'none', filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.35))' }}>
@@ -2872,7 +2883,7 @@ function Sidebar({ view, setView, hasCompetition }) {
   const items = [
     { key: 'home', label: t('nav_home'), icon: HomeIcon, match: v => v === 'home' },
     { key: 'myprofile', label: t('nav_profile'), icon: User, match: v => v === 'myprofile' },
-    { key: 'freeplay-setup', label: t('nav_freeplay'), icon: Swords, match: v => v.startsWith('freeplay') },
+    { key: 'freeplay-setup', label: t('nav_freeplay'), icon: CrossedPaddlesIcon, match: v => v.startsWith('freeplay') },
     { key: hasCompetition ? 'competition-play' : 'competition-setup', label: t('nav_competition'), icon: Users, match: v => v.startsWith('competition') },
     { key: 'tournament-setup', label: t('nav_tournament'), icon: Trophy, match: v => v.startsWith('tournament') },
     { key: 'leaderboard', label: t('nav_stats'), icon: BarChart2, match: v => v === 'leaderboard' || v === 'player-detail' || v === 'h2h' },
