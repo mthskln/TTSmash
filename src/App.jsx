@@ -3951,10 +3951,26 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
   const [pendingRequests, setPendingRequests] = useState([]);
   const [myRole, setMyRole] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [invitePick, setInvitePick] = useState(null);
   const [groupEvents, setGroupEvents] = useState([]);
   const [inviteError, setInviteError] = useState('');
-  const friendsListForInvite = useFriendsList(myId);
+  const [inviteQuery, setInviteQuery] = useState('');
+  const [inviteResults, setInviteResults] = useState([]);
+  const [inviteSearching, setInviteSearching] = useState(false);
+  const [sentInviteIds, setSentInviteIds] = useState(new Set());
+
+  useEffect(() => {
+    const q = inviteQuery.trim();
+    if (!q) { setInviteResults([]); return; }
+    setInviteSearching(true);
+    const timer = setTimeout(async () => {
+      try {
+        const { data } = await supabase.from('profiles').select('id, username, avatar_url').ilike('username', `%${q}%`).neq('id', myId || '').limit(8);
+        setInviteResults(data || []);
+      } catch (e) { setInviteResults([]); }
+      setInviteSearching(false);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [inviteQuery, myId]);
 
   async function sendInvite(target) {
     if (!target || !target.profileId) return;
@@ -3962,11 +3978,13 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
     try {
       const { error } = await supabase.from('club_members').insert({ club_id: groupId, user_id: target.profileId, role: 'member', status: 'invited' });
       if (error) setInviteError(error.message);
-      else await loadGroup();
+      else {
+        setSentInviteIds(prev => new Set(prev).add(target.profileId));
+        await loadGroup();
+      }
     } catch (e) {
       setInviteError(e && e.message ? e.message : 'Failed to send invite');
     }
-    setInvitePick(null);
   }
 
   async function loadGroup() {
@@ -4070,13 +4088,42 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
       {isAdmin && (
         <Panel style={{ marginBottom: 16 }}>
           <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('group_invite_section_title')}</div>
-          <PlayerPicker
-            value={invitePick}
-            onChange={p => { setInvitePick(p); if (p && p.profileId) sendInvite(p); }}
+          <input
+            value={inviteQuery}
+            onChange={e => setInviteQuery(e.target.value)}
             placeholder={t('friends_search_placeholder')}
-            friendsList={friendsListForInvite}
-            myProfileId={myId}
+            className="tt-body w-full px-3 py-2 rounded-lg outline-none mb-3"
+            style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
           />
+          {inviteQuery.trim() && (
+            inviteSearching ? (
+              <div className="tt-body text-sm text-center" style={{ color: C.dim }}>...</div>
+            ) : inviteResults.length === 0 ? (
+              <div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('friends_no_results')}</div>
+            ) : (
+              <div className="flex flex-col gap-2">
+                {inviteResults.map(p => {
+                  const isMember = members.some(m => m.id === p.id);
+                  const isPendingInvite = sentInviteIds.has(p.id);
+                  return (
+                    <div key={p.id} className="flex items-center gap-3">
+                      <Avatar name={p.username} photo={p.avatar_url} size={32} />
+                      <div className="tt-body text-sm font-semibold flex-1 min-w-0 truncate" style={{ color: C.text }}>{p.username}</div>
+                      {isMember ? (
+                        <span className="tt-body text-xs flex-shrink-0" style={{ color: C.dim }}>{t('group_joined_label')}</span>
+                      ) : isPendingInvite ? (
+                        <span className="tt-body text-xs flex-shrink-0" style={{ color: C.amber }}>{t('group_request_sent')}</span>
+                      ) : (
+                        <button onClick={() => sendInvite({ profileId: p.id })} className="tt-body text-xs px-3 py-2 rounded-lg flex-shrink-0" style={{ background: C.greenLight, color: '#04140D' }}>
+                          {t('group_invite_section_title').split(' ')[0]}
+                        </button>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )
+          )}
           {inviteError && <div className="tt-body text-xs mt-2" style={{ color: C.red }}>{inviteError}</div>}
         </Panel>
       )}
