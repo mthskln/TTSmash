@@ -1704,6 +1704,13 @@ function generateJoinCode() {
   return `TT-${code}`;
 }
 
+function generateGroupJoinCode() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code = '';
+  for (let i = 0; i < 4; i++) code += chars[Math.floor(Math.random() * chars.length)];
+  return `GRP-${code}`;
+}
+
 function useFriendsList(myProfileId) {
   const [friendsList, setFriendsList] = useState([]);
   useEffect(() => {
@@ -2581,18 +2588,7 @@ function Sidebar({ view, setView, hasCompetition }) {
     { key: 'settings', label: t('nav_settings'), icon: SettingsIcon, match: v => v === 'settings' },
   ];
   return (
-    <div
-      className="flex flex-col items-stretch flex-shrink-0"
-      style={{
-        width: 68,
-        background: C.panel,
-        borderRight: `1px solid ${C.line}`,
-        height: '100%',
-        overflowY: 'auto',
-        paddingTop: 'env(safe-area-inset-top)',
-        paddingBottom: 'env(safe-area-inset-bottom)',
-      }}
-    >
+    <div className="flex flex-col items-stretch flex-shrink-0" style={{ width: 68, background: C.panel, borderRight: `1px solid ${C.line}`, minHeight: '100vh' }}>
       {items.map(it => {
         const active = it.match(view);
         return (
@@ -3780,15 +3776,23 @@ function GroupsScreen({ setView, session, onSelectGroup, profile }) {
     const name = createName.trim();
     if (!name || creating) return;
     setCreating(true);
-    try {
-      const { error } = await supabase.from('clubs').insert({
-        name, description: createDesc.trim() || null, created_by: myId,
-      }).select().single();
-      if (!error) {
-        setCreateName(''); setCreateDesc(''); setShowCreate(false);
-        await loadMyGroups();
-      }
-    } catch (e) { /* best effort */ }
+    let attempt = 0;
+    while (attempt < 5) {
+      const code = generateGroupJoinCode();
+      try {
+        const { error } = await supabase.from('clubs').insert({
+          name, description: createDesc.trim() || null, created_by: myId, join_code: code,
+        }).select().single();
+        if (!error) {
+          setCreateName(''); setCreateDesc(''); setShowCreate(false);
+          await loadMyGroups();
+          setCreating(false);
+          return;
+        }
+        if (error.code !== '23505') break; // not a unique-code collision, stop retrying
+      } catch (e) { break; }
+      attempt++;
+    }
     setCreating(false);
   }
 
@@ -4023,6 +4027,17 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
 
   useEffect(() => { if (groupId) loadGroup(); }, [groupId]);
 
+  async function shareGroup() {
+    if (!group) return;
+    const shareUrl = `${window.location.origin}/?joingroup=${group.join_code}`;
+    const shareText = `${group.name} \u2014 ${t('event_code_label')}: ${group.join_code}`;
+    if (navigator.share) {
+      try { await navigator.share({ title: group.name, text: shareText, url: shareUrl }); } catch (e) { /* user cancelled */ }
+    } else {
+      try { navigator.clipboard.writeText(`${shareText}\n${shareUrl}`); } catch (e) { /* ignore */ }
+    }
+  }
+
   async function leaveGroup() {
     try {
       await supabase.from('club_members').delete().eq('club_id', groupId).eq('user_id', myId);
@@ -4052,6 +4067,7 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
   }
 
   const isAdmin = myRole === 'admin';
+  const isMember = myRole === 'admin' || myRole === 'member';
   const memberPhotoByName = {};
   members.forEach(m => { memberPhotoByName[(m.username || '').trim().toLowerCase()] = m.avatar_url; });
   const memberNames = new Set(members.map(m => (m.username || '').trim().toLowerCase()));
@@ -4068,6 +4084,12 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
         <Panel style={{ marginBottom: 16 }}>
           <div className="tt-body text-sm" style={{ color: C.dim }}>{group.description}</div>
         </Panel>
+      )}
+
+      {group && group.join_code && (
+        <GhostButton onClick={shareGroup} style={{ width: '100%', textAlign: 'center', marginBottom: 16 }}>
+          <span className="flex items-center justify-center gap-2"><Share2 size={15} /> {t('btn_share_small')}</span>
+        </GhostButton>
       )}
 
       <GhostButton onClick={() => onCreateEvent(groupId, group ? group.name : groupName)} style={{ width: '100%', textAlign: 'center', marginBottom: 16 }}>
@@ -4096,7 +4118,7 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
         </Panel>
       )}
 
-      {isAdmin && (
+      {isMember && (
         <Panel style={{ marginBottom: 16 }}>
           <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('group_invite_section_title')}</div>
           <input
@@ -5551,6 +5573,26 @@ export default function App() {
     })();
   }, [session]);
 
+  useEffect(() => {
+    const uid = session && session.user ? session.user.id : null;
+    if (!uid) return;
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('joingroup');
+    if (!code) return;
+    window.history.replaceState(null, '', window.location.pathname);
+    (async () => {
+      try {
+        const { data: club } = await supabase.from('clubs').select('id, name').eq('join_code', code.toUpperCase()).maybeSingle();
+        if (!club) return;
+        try { await supabase.from('club_members').insert({ club_id: club.id, user_id: uid, role: 'member', status: 'pending' }); }
+        catch (e) { /* already a member or already requested, ignore */ }
+        setSelectedGroupId(club.id);
+        setSelectedGroupName(club.name);
+        setView('group-detail');
+      } catch (e) { /* best effort */ }
+    })();
+  }, [session]);
+
   const [fpState, setFpState] = useState({ mode: 'enkel', bestOf: 5, names: ['', ''] });
   const [tState, setTState] = useState({ mode: 'enkel', count: 8, names: Array(8).fill(''), rounds: null });
 
@@ -5718,25 +5760,22 @@ export default function App() {
         className="tt-body w-full flex"
         style={{
           background: C.bg,
-          height: '100dvh',
-          overflow: 'hidden',
+          minHeight: '100vh',
+          paddingTop: 'env(safe-area-inset-top)',
+          paddingBottom: 'env(safe-area-inset-bottom)',
+          paddingLeft: 'env(safe-area-inset-left)',
+          paddingRight: 'env(safe-area-inset-right)',
         }}
       >
         <style>{fontImport}</style>
         <Sidebar view={view} setView={setView} hasCompetition={!!competition} />
         {view === 'home' ? (
-          <div className="flex-1" style={{ height: '100%', overflowY: 'auto' }}>
+          <div className="flex-1" style={{ minHeight: '100vh' }}>
             {content}
           </div>
         ) : (
-          <div className="flex-1 flex justify-center" style={{ height: '100%', overflowY: 'auto' }}>
-            <div
-              className="w-full max-w-3xl p-4 sm:p-8"
-              style={{
-                paddingTop: 'calc(1rem + env(safe-area-inset-top))',
-                paddingBottom: 'calc(1rem + env(safe-area-inset-bottom))',
-              }}
-            >
+          <div className="flex-1 flex justify-center">
+            <div className="w-full max-w-3xl p-4 sm:p-8">
               {content}
             </div>
           </div>
