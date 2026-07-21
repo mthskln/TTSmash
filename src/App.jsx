@@ -3248,7 +3248,7 @@ function PlayerPicker({ value, onChange, placeholder, friendsList, myProfileId }
       {focused && !query.trim() && shownFriends.length > 0 && (
         <div className="flex gap-2 flex-wrap mt-2">
           {shownFriends.map(f => (
-            <button key={f.id} onMouseDown={() => selectProfile(f)} className="flex items-center gap-1.5 px-2 py-1 rounded-full flex-shrink-0" style={{ background: C.panel2, border: `1px solid ${C.line}` }}>
+            <button key={f.id} onMouseDown={e => e.preventDefault()} onClick={() => selectProfile(f)} className="flex items-center gap-1.5 px-2 py-1 rounded-full flex-shrink-0" style={{ background: C.panel2, border: `1px solid ${C.line}` }}>
               <Avatar name={f.username} photo={f.avatar_url} size={20} />
               <span className="tt-body text-xs" style={{ color: C.text }}>{f.username}</span>
             </button>
@@ -3258,7 +3258,7 @@ function PlayerPicker({ value, onChange, placeholder, friendsList, myProfileId }
       {focused && query.trim() && results.length > 0 && (
         <div className="absolute z-10 w-full mt-1 rounded-lg overflow-hidden" style={{ background: C.panel2, border: `1px solid ${C.line}` }}>
           {results.map(p => (
-            <button key={p.id} onMouseDown={() => selectProfile(p)} className="w-full flex items-center gap-2 px-3 py-2 text-left" style={{ borderBottom: `1px solid ${C.line}` }}>
+            <button key={p.id} onMouseDown={e => e.preventDefault()} onClick={() => selectProfile(p)} className="w-full flex items-center gap-2 px-3 py-2 text-left" style={{ borderBottom: `1px solid ${C.line}` }}>
               <Avatar name={p.username} photo={p.avatar_url} size={24} />
               <span className="tt-body text-sm" style={{ color: C.text }}>{p.username}</span>
             </button>
@@ -3953,14 +3953,19 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
   const [loading, setLoading] = useState(true);
   const [invitePick, setInvitePick] = useState(null);
   const [groupEvents, setGroupEvents] = useState([]);
+  const [inviteError, setInviteError] = useState('');
   const friendsListForInvite = useFriendsList(myId);
 
   async function sendInvite(target) {
     if (!target || !target.profileId) return;
+    setInviteError('');
     try {
-      await supabase.from('club_members').insert({ club_id: groupId, user_id: target.profileId, role: 'member', status: 'invited' });
-      await loadGroup();
-    } catch (e) { /* best effort */ }
+      const { error } = await supabase.from('club_members').insert({ club_id: groupId, user_id: target.profileId, role: 'member', status: 'invited' });
+      if (error) setInviteError(error.message);
+      else await loadGroup();
+    } catch (e) {
+      setInviteError(e && e.message ? e.message : 'Failed to send invite');
+    }
     setInvitePick(null);
   }
 
@@ -4072,6 +4077,7 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
             friendsList={friendsListForInvite}
             myProfileId={myId}
           />
+          {inviteError && <div className="tt-body text-xs mt-2" style={{ color: C.red }}>{inviteError}</div>}
         </Panel>
       )}
 
