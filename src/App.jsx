@@ -1939,7 +1939,7 @@ function ShareModal({ shareText, drawCard, onClose }) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)' }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)', paddingTop: 'calc(0.75rem + env(safe-area-inset-top))', paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))', paddingLeft: 'calc(0.75rem + env(safe-area-inset-left))', paddingRight: 'calc(0.75rem + env(safe-area-inset-right))' }}>
       <div className="w-full max-w-sm rounded-2xl p-5" style={{ background: C.bg, border: `1px solid ${C.line}` }}>
         <div className="flex justify-between items-center mb-3">
           <span className="tt-display text-xl" style={{ color: C.text }}>{t('share_title')}</span>
@@ -1992,7 +1992,7 @@ function MatchDetailModal({ match, onClose }) {
   function pct(won, total) { return total > 0 ? Math.round((won / total) * 100) : 0; }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)' }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)', paddingTop: 'calc(0.75rem + env(safe-area-inset-top))', paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))', paddingLeft: 'calc(0.75rem + env(safe-area-inset-left))', paddingRight: 'calc(0.75rem + env(safe-area-inset-right))' }}>
       <div className="w-full max-w-md rounded-2xl p-5" style={{ background: C.bg, border: `1px solid ${C.line}`, maxHeight: '90vh', overflowY: 'auto' }}>
         <div className="flex justify-between items-center mb-3">
           <span className="tt-display text-xl" style={{ color: C.text }}>{t('match_detail_title')}</span>
@@ -2312,7 +2312,7 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
     }
 
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)' }}>
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)', paddingTop: 'calc(0.75rem + env(safe-area-inset-top))', paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))', paddingLeft: 'calc(0.75rem + env(safe-area-inset-left))', paddingRight: 'calc(0.75rem + env(safe-area-inset-right))' }}>
         <div className="w-full max-w-sm rounded-2xl p-6 text-center" style={{ background: C.bg, border: `1px solid ${C.line}` }}>
           {coinToss && (
             <>
@@ -2358,7 +2358,7 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
   /* ---- render: break phase (1 min between sets) ---- */
   if (phase === 'break') {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)' }}>
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)', paddingTop: 'calc(0.75rem + env(safe-area-inset-top))', paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))', paddingLeft: 'calc(0.75rem + env(safe-area-inset-left))', paddingRight: 'calc(0.75rem + env(safe-area-inset-right))' }}>
         <div className="w-full max-w-sm rounded-2xl p-6 text-center" style={{ background: C.bg, border: `1px solid ${C.line}` }}>
           <div className="tt-body text-xs uppercase tracking-wide mb-4" style={{ color: C.dim }}>{t('match_break_title')}</div>
           <div className="tt-display text-6xl mb-4" style={{ color: C.amber }}>{formatClock(breakSeconds)}</div>
@@ -2377,7 +2377,7 @@ function MatchScoreboard({ nameA, nameB, bestOf, settings = {}, mode = 'enkel', 
   const displayCols = match.endsFlipped ? [cols[1], cols[0]] : cols;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)' }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3" style={{ background: 'rgba(5,10,13,0.85)', paddingTop: 'calc(0.75rem + env(safe-area-inset-top))', paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))', paddingLeft: 'calc(0.75rem + env(safe-area-inset-left))', paddingRight: 'calc(0.75rem + env(safe-area-inset-right))' }}>
       <div
         className="w-full max-w-md landscape:max-w-2xl rounded-2xl p-5"
         style={{ background: C.bg, border: `1px solid ${C.line}`, maxHeight: '95vh', overflowY: 'auto' }}
@@ -2675,7 +2675,7 @@ function AuthScreen() {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-6" style={{ background: C.bg }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-6" style={{ background: C.bg, paddingTop: 'calc(1.5rem + env(safe-area-inset-top))', paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom))', paddingLeft: 'calc(1.5rem + env(safe-area-inset-left))', paddingRight: 'calc(1.5rem + env(safe-area-inset-right))' }}>
       <div className="w-full max-w-sm text-center">
         <div className="tt-display text-5xl mb-2" style={{ color: C.text }}>TT Smash</div>
         <p className="tt-body text-sm mb-10" style={{ color: C.dim }}>{t('auth_subtitle')}</p>
@@ -5703,7 +5703,17 @@ export default function App() {
 
   return (
     <LangContext.Provider value={langCtxValue}>
-      <div className="tt-body w-full flex" style={{ background: C.bg, minHeight: '100vh' }}>
+      <div
+        className="tt-body w-full flex"
+        style={{
+          background: C.bg,
+          minHeight: '100vh',
+          paddingTop: 'env(safe-area-inset-top)',
+          paddingBottom: 'env(safe-area-inset-bottom)',
+          paddingLeft: 'env(safe-area-inset-left)',
+          paddingRight: 'env(safe-area-inset-right)',
+        }}
+      >
         <style>{fontImport}</style>
         <Sidebar view={view} setView={setView} hasCompetition={!!competition} />
         {view === 'home' ? (
