@@ -5843,14 +5843,17 @@ export default function App() {
         } else {
           const meta = user.user_metadata || {};
           const suggestedName = meta.full_name || meta.name || (user.email ? user.email.split('@')[0] : 'Speler');
-          const { data: created } = await supabase.from('profiles').insert({
+          const { data: created, error: createErr } = await supabase.from('profiles').insert({
             id: uid,
             username: suggestedName,
             avatar_url: meta.avatar_url || meta.picture || null,
           }).select().single();
+          if (createErr) console.error('Profile creation failed:', createErr.message, createErr);
           setProfile(created || null);
         }
-      } catch (e) { /* profile creation best-effort */ }
+      } catch (e) {
+        console.error('Profile creation threw:', e);
+      }
     })();
   }, [session]);
 
