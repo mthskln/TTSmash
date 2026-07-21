@@ -2581,7 +2581,18 @@ function Sidebar({ view, setView, hasCompetition }) {
     { key: 'settings', label: t('nav_settings'), icon: SettingsIcon, match: v => v === 'settings' },
   ];
   return (
-    <div className="flex flex-col items-stretch flex-shrink-0" style={{ width: 68, background: C.panel, borderRight: `1px solid ${C.line}`, minHeight: '100vh' }}>
+    <div
+      className="flex flex-col items-stretch flex-shrink-0"
+      style={{
+        width: 68,
+        background: C.panel,
+        borderRight: `1px solid ${C.line}`,
+        height: '100%',
+        overflowY: 'auto',
+        paddingTop: 'env(safe-area-inset-top)',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+      }}
+    >
       {items.map(it => {
         const active = it.match(view);
         return (
@@ -5707,22 +5718,25 @@ export default function App() {
         className="tt-body w-full flex"
         style={{
           background: C.bg,
-          minHeight: '100vh',
-          paddingTop: 'env(safe-area-inset-top)',
-          paddingBottom: 'env(safe-area-inset-bottom)',
-          paddingLeft: 'env(safe-area-inset-left)',
-          paddingRight: 'env(safe-area-inset-right)',
+          height: '100dvh',
+          overflow: 'hidden',
         }}
       >
         <style>{fontImport}</style>
         <Sidebar view={view} setView={setView} hasCompetition={!!competition} />
         {view === 'home' ? (
-          <div className="flex-1" style={{ minHeight: '100vh' }}>
+          <div className="flex-1" style={{ height: '100%', overflowY: 'auto' }}>
             {content}
           </div>
         ) : (
-          <div className="flex-1 flex justify-center">
-            <div className="w-full max-w-3xl p-4 sm:p-8">
+          <div className="flex-1 flex justify-center" style={{ height: '100%', overflowY: 'auto' }}>
+            <div
+              className="w-full max-w-3xl p-4 sm:p-8"
+              style={{
+                paddingTop: 'calc(1rem + env(safe-area-inset-top))',
+                paddingBottom: 'calc(1rem + env(safe-area-inset-bottom))',
+              }}
+            >
               {content}
             </div>
           </div>
