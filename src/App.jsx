@@ -5895,7 +5895,7 @@ export default function App() {
           setProfile(existing);
         } else {
           const meta = user.user_metadata || {};
-          const suggestedName = meta.full_name || meta.name || (user.email ? user.email.split('@')[0] : 'Speler');
+          const suggestedName = meta.full_name || meta.name || (user.email ? user.email.split('@')[0] : `Speler-${uid.slice(0, 4)}`);
           const { data: created, error: createErr } = await supabase.from('profiles').insert({
             id: uid,
             username: suggestedName,
