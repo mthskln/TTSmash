@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext, createContext } from 'react';
+import React, { useState, useEffect, useRef, useContext, createContext, useMemo } from 'react';
 import {
   Plus, Minus, RotateCcw, RotateCw, ArrowLeft, Shuffle, X, Trophy, Users, Swords,
   Check, Settings as SettingsIcon, BarChart2, Mic, ChevronDown,
@@ -4433,6 +4433,65 @@ export default function App() {
     })();
   }, [session]);
 
+  const [onlineMatches, setOnlineMatches] = useState([]);
+
+  async function refreshOnlineMatches() {
+    const uid = session && session.user ? session.user.id : null;
+    if (!uid) { setOnlineMatches([]); return; }
+    try {
+      const { data: rows } = await supabase
+        .from('matches')
+        .select('*')
+        .or(`team_a_ids.cs.{${uid}},team_b_ids.cs.{${uid}}`)
+        .neq('created_by', uid);
+      if (!rows || !rows.length) { setOnlineMatches([]); return; }
+      const idSet = new Set();
+      rows.forEach(m => {
+        (m.team_a_ids || []).forEach(id => idSet.add(id));
+        (m.team_b_ids || []).forEach(id => idSet.add(id));
+      });
+      const { data: profs } = await supabase.from('profiles').select('id, username').in('id', Array.from(idSet));
+      const nameById = {};
+      (profs || []).forEach(p => { nameById[p.id] = p.username; });
+      const converted = rows.map(m => {
+        const nameA = (m.team_a_ids || []).map(id => nameById[id] || '?').join(' & ');
+        const nameB = (m.team_b_ids || []).map(id => nameById[id] || '?').join(' & ');
+        const winner = m.winner_team === 'a' ? nameA : nameB;
+        const [totalPointsA, totalPointsB] = m.total_points_a != null
+          ? [m.total_points_a, m.total_points_b]
+          : sumPoints(m.sets_detail || []);
+        return {
+          id: m.id,
+          timestamp: new Date(m.created_at).getTime(),
+          kind: m.kind,
+          mode: m.mode,
+          nameA, nameB,
+          setsA: m.sets_a, setsB: m.sets_b,
+          totalPointsA, totalPointsB,
+          winner,
+          cadence: m.cadence,
+          periodNumber: m.period_number,
+          roundKey: m.round_key,
+          pointLog: m.point_log || [],
+          ...prepareReportData({ setsA: m.sets_a, setsB: m.sets_b, sets: m.sets_detail || [], bestOf: m.best_of, durationMs: m.duration_ms }),
+          onlineOnly: true,
+        };
+      });
+      setOnlineMatches(converted);
+    } catch (e) { /* best effort */ }
+  }
+
+  useEffect(() => { refreshOnlineMatches(); }, [profile && profile.id]);
+
+  useEffect(() => {
+    if (['home', 'myprofile', 'leaderboard', 'player-detail', 'h2h'].includes(view)) {
+      refreshOnlineMatches();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [view]);
+
+  const combinedMatchLog = useMemo(() => [...matchLog, ...onlineMatches], [matchLog, onlineMatches]);
+
   const [fpState, setFpState] = useState({ mode: 'enkel', bestOf: 5, names: ['', ''] });
   const [tState, setTState] = useState({ mode: 'enkel', count: 8, names: Array(8).fill(''), rounds: null });
 
@@ -4554,12 +4613,12 @@ export default function App() {
   let content;
   if (!loaded) {
     content = <div className="tt-body text-center py-20" style={{ color: C.dim }}>{t('loading_text')}</div>;
-  } else if (view === 'home') content = <Home matchLog={matchLog} />;
-  else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={matchLog} session={session} profile={profile} setProfile={setProfile} />;
+  } else if (view === 'home') content = <Home matchLog={combinedMatchLog} />;
+  else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={combinedMatchLog} session={session} profile={profile} setProfile={setProfile} />;
   else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} />;
-  else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} profile={profile} />;
-  else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
-  else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} profile={profile} />;
+  else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} profile={profile} />;
+  else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
+  else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} profile={profile} />;
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} settings={settings} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} session={session} />;
