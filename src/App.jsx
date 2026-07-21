@@ -1569,6 +1569,83 @@ function NameList({ names, setNames, mode, t }) {
   );
 }
 
+function ParticipantCountStepper({ count, setCount, participants, setParticipants, min = 2, max = 20, suffix, mode }) {
+  function update(newCount) {
+    newCount = Math.max(min, Math.min(max, newCount));
+    setCount(newCount);
+    setParticipants(prev => {
+      const arr = [...prev];
+      while (arr.length < newCount) arr.push(mode === 'dubbel' ? [null, null] : null);
+      return arr.slice(0, newCount);
+    });
+  }
+  return (
+    <div className="flex items-center gap-3 flex-wrap">
+      <button onClick={() => update(count - 1)} className="p-2 rounded-lg" style={{ background: C.panel2 }}>
+        <Minus size={16} color={C.text} />
+      </button>
+      <span className="tt-display text-3xl w-12 text-center" style={{ color: C.text }}>{count}</span>
+      <button onClick={() => update(count + 1)} className="p-2 rounded-lg" style={{ background: C.panel2 }}>
+        <Plus size={16} color={C.text} />
+      </button>
+      <span className="tt-body text-sm" style={{ color: C.dim }}>{suffix}</span>
+    </div>
+  );
+}
+
+function ParticipantList({ participants, setParticipants, mode, friendsList, myProfileId, t }) {
+  function setSlot(idx, subIdx, p) {
+    setParticipants(prev => {
+      const next = prev.slice();
+      if (mode === 'dubbel') {
+        const pair = next[idx] ? next[idx].slice() : [null, null];
+        pair[subIdx] = p;
+        next[idx] = pair;
+      } else {
+        next[idx] = p;
+      }
+      return next;
+    });
+  }
+  return (
+    <div className="flex flex-col gap-3">
+      {participants.map((slot, idx) => (
+        mode === 'dubbel' ? (
+          <div key={idx} className="flex flex-col gap-2">
+            <div className="tt-body text-xs font-semibold" style={{ color: C.dim }}>{t('team_label', { n: idx + 1 })}</div>
+            <PlayerPicker value={slot ? slot[0] : null} onChange={p => setSlot(idx, 0, p)} placeholder={t('placeholder_player', { n: idx * 2 + 1 })} friendsList={friendsList} myProfileId={myProfileId} />
+            <PlayerPicker value={slot ? slot[1] : null} onChange={p => setSlot(idx, 1, p)} placeholder={t('placeholder_player', { n: idx * 2 + 2 })} friendsList={friendsList} myProfileId={myProfileId} />
+          </div>
+        ) : (
+          <PlayerPicker key={idx} value={slot} onChange={p => setSlot(idx, null, p)} placeholder={t('placeholder_player', { n: idx + 1 })} friendsList={friendsList} myProfileId={myProfileId} />
+        )
+      ))}
+    </div>
+  );
+}
+
+function useFriendsList(myProfileId) {
+  const [friendsList, setFriendsList] = useState([]);
+  useEffect(() => {
+    if (!myProfileId) return;
+    (async () => {
+      try {
+        const { data: rels } = await supabase
+          .from('friendships')
+          .select('*')
+          .eq('status', 'accepted')
+          .or(`requester_id.eq.${myProfileId},addressee_id.eq.${myProfileId}`);
+        const otherIds = (rels || []).map(r => (r.requester_id === myProfileId ? r.addressee_id : r.requester_id));
+        if (otherIds.length) {
+          const { data: profs } = await supabase.from('profiles').select('id, username, avatar_url').in('id', otherIds);
+          setFriendsList(profs || []);
+        }
+      } catch (e) { /* best effort */ }
+    })();
+  }, [myProfileId]);
+  return friendsList;
+}
+
 function CountStepper({ count, setCount, names, setNames, min = 2, max = 20, suffix, mode }) {
   function update(newCount) {
     newCount = Math.max(min, Math.min(max, newCount));
@@ -3777,25 +3854,48 @@ function FreePlayPlay({ setView, state, settings, recordMatch, session }) {
 }
 
 /* ============================= COMPETITION ============================= */
-function CompetitionSetup({ setView, onStart }) {
+function CompetitionSetup({ setView, onStart, session }) {
   const { t } = useT();
   const [mode, setModeRaw] = useState('enkel');
   const [cadence, setCadence] = useState('weekly');
   const [bestOf, setBestOf] = useState(5);
   const [count, setCount] = useState(4);
-  const [names, setNames] = useState(['', '', '', '']);
+  const [participants, setParticipants] = useState([null, null, null, null]);
+  const myProfileId = session && session.user ? session.user.id : null;
+  const friendsList = useFriendsList(myProfileId);
 
   function setMode(m) {
     setModeRaw(m);
-    setNames(prev => prev.map(() => m === 'dubbel' ? { p1: '', p2: '' } : ''));
+    setParticipants(prev => prev.map(() => m === 'dubbel' ? [null, null] : null));
   }
 
   function start() {
-    const { finalNames, pairMap } = finalizeNames(names, mode, t);
+    const finalNames = participants.map((slot, i) => {
+      if (mode === 'dubbel') {
+        const p1 = (slot && slot[0] && slot[0].name.trim()) || t('placeholder_player', { n: i * 2 + 1 });
+        const p2 = (slot && slot[1] && slot[1].name.trim()) || t('placeholder_player', { n: i * 2 + 2 });
+        return `${p1} & ${p2}`;
+      }
+      return (slot && slot.name.trim()) || t('placeholder_player', { n: i + 1 });
+    });
+    let pairMap = null;
+    if (mode === 'dubbel') {
+      pairMap = {};
+      participants.forEach((slot, i) => {
+        const p1 = (slot && slot[0] && slot[0].name.trim()) || t('placeholder_player', { n: i * 2 + 1 });
+        const p2 = (slot && slot[1] && slot[1].name.trim()) || t('placeholder_player', { n: i * 2 + 2 });
+        pairMap[`${p1} & ${p2}`] = [p1, p2];
+      });
+    }
+    const participantIdsList = participants.map(slot => {
+      if (mode === 'dubbel') return (slot || [null, null]).map(p => (p ? p.profileId : null));
+      return [slot ? slot.profileId : null];
+    });
     onStart({
       cadence, mode, bestOf,
       names: finalNames,
       pairMap,
+      participantIdsList,
       periodNumber: 1,
       matches: generateRoundRobin(finalNames),
       history: [],
@@ -3821,11 +3921,11 @@ function CompetitionSetup({ setView, onStart }) {
         </Panel>
         <Panel>
           <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('competition_participants_label')}</div>
-          <CountStepper count={count} setCount={setCount} names={names} setNames={setNames} suffix={t('count_suffix')} mode={mode} />
+          <ParticipantCountStepper count={count} setCount={setCount} participants={participants} setParticipants={setParticipants} suffix={t('count_suffix')} mode={mode} />
         </Panel>
         <Panel>
           <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{mode === 'dubbel' ? t('teams_label') : t('players_label')}</div>
-          <NameList names={names} setNames={setNames} mode={mode} t={t} />
+          <ParticipantList participants={participants} setParticipants={setParticipants} mode={mode} friendsList={friendsList} myProfileId={myProfileId} t={t} />
         </Panel>
         <PrimaryButton onClick={start}>{t('start_competition', { n: (count * (count - 1)) / 2 })}</PrimaryButton>
       </div>
@@ -3833,9 +3933,9 @@ function CompetitionSetup({ setView, onStart }) {
   );
 }
 
-function CompetitionPlay({ setView, competition, setCompetition, settings, recordMatch }) {
+function CompetitionPlay({ setView, competition, setCompetition, settings, recordMatch, session }) {
   const { t, lang } = useT();
-  const { names, matches, bestOf, cadence, periodNumber, history, mode, pairMap } = competition;
+  const { names, matches, bestOf, cadence, periodNumber, history, mode, pairMap, participantIdsList } = competition;
   const [active, setActive] = useState(null);
   const [showChampionShare, setShowChampionShare] = useState(false);
   const [detailMatch, setDetailMatch] = useState(null);
@@ -3857,6 +3957,36 @@ function CompetitionPlay({ setView, competition, setCompetition, settings, recor
       ...prepareReportData({ setsA: result.score.setsA, setsB: result.score.setsB, sets: result.score.sets, bestOf, durationMs: result.durationMs }),
       pointLog: result.score.pointLog || [],
     });
+    if (participantIdsList && session && session.user) {
+      const idxA = names.indexOf(m.p1);
+      const idxB = names.indexOf(m.p2);
+      const teamAIds = idxA >= 0 ? participantIdsList[idxA] : [];
+      const teamBIds = idxB >= 0 ? participantIdsList[idxB] : [];
+      const bothLinked = teamAIds.length > 0 && teamBIds.length > 0 && teamAIds.every(Boolean) && teamBIds.every(Boolean);
+      if (bothLinked) {
+        (async () => {
+          try {
+            await supabase.from('matches').insert({
+              kind: 'competition',
+              mode,
+              cadence, period_number: periodNumber,
+              team_a_ids: teamAIds,
+              team_b_ids: teamBIds,
+              sets_a: result.score.setsA,
+              sets_b: result.score.setsB,
+              total_points_a: totalPointsA,
+              total_points_b: totalPointsB,
+              winner_team: result.winner,
+              best_of: bestOf,
+              sets_detail: result.score.sets,
+              point_log: result.score.pointLog || [],
+              duration_ms: result.durationMs,
+              created_by: session.user.id,
+            });
+          } catch (e) { /* best effort — online sync is additive, local record above already saved */ }
+        })();
+      }
+    }
     setCompetition(s => {
       const newMatches = s.matches.map((mm, i) => i === active ? { ...mm, winner: winnerName, score: result.score } : mm);
       return { ...s, matches: newMatches };
@@ -3984,20 +4114,43 @@ function CompetitionPlay({ setView, competition, setCompetition, settings, recor
 }
 
 /* ============================= TOURNAMENT ============================= */
-function TournamentSetup({ setView, state, setState }) {
+function TournamentSetup({ setView, state, setState, session }) {
   const { t } = useT();
-  const { mode, count, names } = state;
-  const setMode = m => setState(s => ({
-    ...s, mode: m,
-    names: s.names.map(() => m === 'dubbel' ? { p1: '', p2: '' } : ''),
-  }));
+  const { mode, count } = state;
+  const [participants, setParticipants] = useState(() => Array.from({ length: count }, () => (mode === 'dubbel' ? [null, null] : null)));
+  const myProfileId = session && session.user ? session.user.id : null;
+  const friendsList = useFriendsList(myProfileId);
+
+  function setMode(m) {
+    setState(s => ({ ...s, mode: m }));
+    setParticipants(prev => prev.map(() => m === 'dubbel' ? [null, null] : null));
+  }
   const setCount = c => setState(s => ({ ...s, count: c }));
-  const setNames = fn => setState(s => ({ ...s, names: typeof fn === 'function' ? fn(s.names) : fn }));
 
   function start() {
-    const { finalNames, pairMap } = finalizeNames(names, mode, t);
+    const finalNames = participants.map((slot, i) => {
+      if (mode === 'dubbel') {
+        const p1 = (slot && slot[0] && slot[0].name.trim()) || t('placeholder_player', { n: i * 2 + 1 });
+        const p2 = (slot && slot[1] && slot[1].name.trim()) || t('placeholder_player', { n: i * 2 + 2 });
+        return `${p1} & ${p2}`;
+      }
+      return (slot && slot.name.trim()) || t('placeholder_player', { n: i + 1 });
+    });
+    let pairMap = null;
+    if (mode === 'dubbel') {
+      pairMap = {};
+      participants.forEach((slot, i) => {
+        const p1 = (slot && slot[0] && slot[0].name.trim()) || t('placeholder_player', { n: i * 2 + 1 });
+        const p2 = (slot && slot[1] && slot[1].name.trim()) || t('placeholder_player', { n: i * 2 + 2 });
+        pairMap[`${p1} & ${p2}`] = [p1, p2];
+      });
+    }
+    const participantIdsList = participants.map(slot => {
+      if (mode === 'dubbel') return (slot || [null, null]).map(p => (p ? p.profileId : null));
+      return [slot ? slot.profileId : null];
+    });
     const rounds = generateBracket(finalNames);
-    setState(s => ({ ...s, names: finalNames, pairMap, rounds }));
+    setState(s => ({ ...s, names: finalNames, pairMap, participantIdsList, rounds }));
     setView('tournament-play');
   }
 
@@ -4016,11 +4169,11 @@ function TournamentSetup({ setView, state, setState }) {
         </Panel>
         <Panel>
           <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('tournament_participants_label')}</div>
-          <CountStepper count={count} setCount={setCount} names={names} setNames={setNames} suffix={t('count_suffix')} mode={mode} />
+          <ParticipantCountStepper count={count} setCount={setCount} participants={participants} setParticipants={setParticipants} suffix={t('count_suffix')} mode={mode} />
         </Panel>
         <Panel>
           <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{mode === 'dubbel' ? t('teams_label') : t('players_label')}</div>
-          <NameList names={names} setNames={setNames} mode={mode} t={t} />
+          <ParticipantList participants={participants} setParticipants={setParticipants} mode={mode} friendsList={friendsList} myProfileId={myProfileId} t={t} />
         </Panel>
         <PrimaryButton onClick={start}>
           <span className="flex items-center gap-2"><Shuffle size={16} /> {t('start_tournament')}</span>
@@ -4030,9 +4183,9 @@ function TournamentSetup({ setView, state, setState }) {
   );
 }
 
-function TournamentPlay({ setView, state, setState, settings, recordMatch }) {
+function TournamentPlay({ setView, state, setState, settings, recordMatch, session }) {
   const { t, lang } = useT();
-  const { rounds, mode, pairMap } = state;
+  const { rounds, mode, pairMap, names, participantIdsList } = state;
   const [active, setActive] = useState(null);
   const [showChampionShare, setShowChampionShare] = useState(false);
   const [detailMatch, setDetailMatch] = useState(null);
@@ -4055,6 +4208,36 @@ function TournamentPlay({ setView, state, setState, settings, recordMatch }) {
       ...prepareReportData({ setsA: result.score.setsA, setsB: result.score.setsB, sets: result.score.sets, bestOf: round.bestOf, durationMs: result.durationMs }),
       pointLog: result.score.pointLog || [],
     });
+    if (participantIdsList && names && session && session.user) {
+      const idxA = names.indexOf(match.p1);
+      const idxB = names.indexOf(match.p2);
+      const teamAIds = idxA >= 0 ? participantIdsList[idxA] : [];
+      const teamBIds = idxB >= 0 ? participantIdsList[idxB] : [];
+      const bothLinked = teamAIds.length > 0 && teamBIds.length > 0 && teamAIds.every(Boolean) && teamBIds.every(Boolean);
+      if (bothLinked) {
+        (async () => {
+          try {
+            await supabase.from('matches').insert({
+              kind: 'tournament',
+              mode,
+              round_key: round.nameKey,
+              team_a_ids: teamAIds,
+              team_b_ids: teamBIds,
+              sets_a: result.score.setsA,
+              sets_b: result.score.setsB,
+              total_points_a: totalPointsA,
+              total_points_b: totalPointsB,
+              winner_team: result.winner,
+              best_of: round.bestOf,
+              sets_detail: result.score.sets,
+              point_log: result.score.pointLog || [],
+              duration_ms: result.durationMs,
+              created_by: session.user.id,
+            });
+          } catch (e) { /* best effort — online sync is additive, local record above already saved */ }
+        })();
+      }
+    }
     setState(s => ({ ...s, rounds: recordBracketResult(s.rounds, roundIdx, matchIdx, winnerName, result.score) }));
     setActive(null);
   }
@@ -4337,12 +4520,12 @@ export default function App() {
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} session={session} />;
-  else if (view === 'competition-setup') content = <CompetitionSetup setView={setView} onStart={startCompetition} />;
+  else if (view === 'competition-setup') content = <CompetitionSetup setView={setView} onStart={startCompetition} session={session} />;
   else if (view === 'competition-play') content = competition
-    ? <CompetitionPlay setView={setView} competition={competition} setCompetition={setCompetition} settings={settings} recordMatch={recordMatch} />
-    : <CompetitionSetup setView={setView} onStart={startCompetition} />;
-  else if (view === 'tournament-setup') content = <TournamentSetup setView={setView} state={tState} setState={setTState} />;
-  else if (view === 'tournament-play') content = <TournamentPlay setView={setView} state={tState} setState={setTState} settings={settings} recordMatch={recordMatch} />;
+    ? <CompetitionPlay setView={setView} competition={competition} setCompetition={setCompetition} settings={settings} recordMatch={recordMatch} session={session} />
+    : <CompetitionSetup setView={setView} onStart={startCompetition} session={session} />;
+  else if (view === 'tournament-setup') content = <TournamentSetup setView={setView} state={tState} setState={setTState} session={session} />;
+  else if (view === 'tournament-play') content = <TournamentPlay setView={setView} state={tState} setState={setTState} settings={settings} recordMatch={recordMatch} session={session} />;
 
   return (
     <LangContext.Provider value={langCtxValue}>
