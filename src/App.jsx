@@ -1700,6 +1700,13 @@ function BestOfPicker({ options, value, onChange }) {
   );
 }
 
+function resolvePhoto(name, photos, profile) {
+  if (profile && profile.username && profile.avatar_url && name && name.trim().toLowerCase() === profile.username.trim().toLowerCase()) {
+    return profile.avatar_url;
+  }
+  return photos[name];
+}
+
 function Avatar({ name, photo, size = 40 }) {
   const isPreset = typeof photo === 'string' && photo.startsWith('preset:');
   const presetParts = isPreset ? photo.split(':') : null; // ['preset', color, emoji?]
@@ -2751,7 +2758,7 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
 }
 
 /* ============================= LEADERBOARD ============================= */
-function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, friends }) {
+function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, friends, profile }) {
   const { t } = useT();
   const [scope, setScope] = useState('all');
   const scopedLog = scope === 'all' ? matchLog : matchLog.filter(m => m.kind === scope);
@@ -2799,7 +2806,7 @@ function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, fri
                 return (
                 <button key={row.name} onClick={() => onSelectPlayer(row.name)} className="w-full flex items-center gap-3 p-2.5 rounded-xl text-left" style={{ background: i === 0 ? C.panel2 : 'transparent', border: `1px solid ${C.line}` }}>
                   <span className="tt-display text-lg w-5 text-center flex-shrink-0" style={{ color: C.dim }}>{i + 1}</span>
-                  <Avatar name={row.name} photo={photos[row.name]} size={36} />
+                  <Avatar name={row.name} photo={resolvePhoto(row.name, photos, profile)} size={36} />
                   <div className="flex-1 min-w-0">
                     <div className="tt-body text-sm font-semibold truncate flex items-center gap-1" style={{ color: C.text }}>
                       {row.name}
@@ -2861,7 +2868,7 @@ function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, fri
 }
 
 /* ============================= PLAYER DETAIL ============================= */
-function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friends, toggleFriend, onChallenge }) {
+function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friends, toggleFriend, onChallenge, profile }) {
   const { t, lang } = useT();
   const stats = aggregateStats(matchLog);
   const me = stats.find(s => s.name === playerName);
@@ -2907,7 +2914,7 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
 
       <Panel style={{ marginBottom: 16 }}>
         <div className="flex items-center gap-4 mb-4">
-          <Avatar name={playerName} photo={photos[playerName]} size={64} />
+          <Avatar name={playerName} photo={resolvePhoto(playerName, photos, profile)} size={64} />
           <div className="flex-1 min-w-0">
             <div className="tt-display text-2xl truncate" style={{ color: C.text }}>{playerName}</div>
             {playerTitle && <div className="tt-body text-xs font-semibold mb-0.5" style={{ color: C.amber }}>{playerTitle}</div>}
@@ -2927,7 +2934,7 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
         </PrimaryButton>
         <input ref={fileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFile} />
         <GhostButton onClick={() => fileRef.current && fileRef.current.click()} style={{ width: '100%', textAlign: 'center' }}>
-          <span className="flex items-center justify-center gap-2"><Camera size={15} /> {photos[playerName] ? t('player_photo_change') : t('player_photo_upload')}</span>
+          <span className="flex items-center justify-center gap-2"><Camera size={15} /> {resolvePhoto(playerName, photos, profile) ? t('player_photo_change') : t('player_photo_upload')}</span>
         </GhostButton>
       </Panel>
 
@@ -3015,7 +3022,7 @@ function PlayerDetail({ setView, playerName, matchLog, photos, setPhotos, friend
 }
 
 /* ============================= HEAD TO HEAD ============================= */
-function HeadToHead({ setView, matchLog, photos, setPhotos }) {
+function HeadToHead({ setView, matchLog, photos, setPhotos, profile }) {
   const { t } = useT();
   const names = aggregateStats(matchLog).map(s => s.name);
   const [playerA, setPlayerA] = useState(names[0] || '');
@@ -3066,12 +3073,12 @@ function HeadToHead({ setView, matchLog, photos, setPhotos }) {
               <Panel style={{ marginBottom: 16 }}>
                 <div className="grid grid-cols-2 gap-4 text-center mb-4">
                   <div>
-                    <Avatar name={playerA} photo={photos[playerA]} size={56} />
+                    <Avatar name={playerA} photo={resolvePhoto(playerA, photos, profile)} size={56} />
                     <div className="tt-body text-sm font-semibold mt-2 truncate" style={{ color: C.text }}>{playerA}</div>
                     <div className="tt-display text-4xl mt-1" style={{ color: C.greenLight }}>{aWins}</div>
                   </div>
                   <div>
-                    <Avatar name={playerB} photo={photos[playerB]} size={56} />
+                    <Avatar name={playerB} photo={resolvePhoto(playerB, photos, profile)} size={56} />
                     <div className="tt-body text-sm font-semibold mt-2 truncate" style={{ color: C.text }}>{playerB}</div>
                     <div className="tt-display text-4xl mt-1" style={{ color: C.greenLight }}>{bWins}</div>
                   </div>
@@ -4550,9 +4557,9 @@ export default function App() {
   } else if (view === 'home') content = <Home matchLog={matchLog} />;
   else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={matchLog} session={session} profile={profile} setProfile={setProfile} />;
   else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} />;
-  else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} />;
-  else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} />;
-  else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} />;
+  else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} profile={profile} />;
+  else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} matchLog={matchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
+  else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={matchLog} photos={photos} setPhotos={setPhotos} profile={profile} />;
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} settings={settings} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} session={session} />;
