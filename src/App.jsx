@@ -3,7 +3,7 @@ import {
   Plus, Minus, RotateCcw, RotateCw, ArrowLeft, Shuffle, X, Trophy, Users, Swords,
   Check, Settings as SettingsIcon, BarChart2, Mic, ChevronDown,
   Camera, Swords as SwordsIcon, Home as HomeIcon, Share2, Globe, Star, UserPlus, User, Award, Flame, Clock,
-  Zap, Target, Shield, Medal, Maximize, Minimize, Building2,
+  Zap, Target, Shield, Medal, Maximize, Minimize, Building2, Pencil,
 } from 'lucide-react';
 import {
   BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -3135,15 +3135,25 @@ function Home({ matchLog, playerName, session }) {
 }
 
 /* ============================= SETTINGS ============================= */
-function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
+function SettingsScreen({ setView, settings, updateSettings, resetAllData, session, profile, setProfile }) {
   const { t } = useT();
   const [confirming, setConfirming] = useState(false);
+  const [confirmingAccount, setConfirmingAccount] = useState(false);
+  const [deletingAccount, setDeletingAccount] = useState(false);
+  const isGuest = !!(session && session.user && session.user.is_anonymous);
+  const userId = session && session.user ? session.user.id : null;
 
   useEffect(() => {
     if (!confirming) return;
     const timer = setTimeout(() => setConfirming(false), 5000);
     return () => clearTimeout(timer);
   }, [confirming]);
+
+  useEffect(() => {
+    if (!confirmingAccount) return;
+    const timer = setTimeout(() => setConfirmingAccount(false), 5000);
+    return () => clearTimeout(timer);
+  }, [confirmingAccount]);
 
   function handleDeleteClick() {
     if (confirming) {
@@ -3152,6 +3162,17 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
     } else {
       setConfirming(true);
     }
+  }
+
+  async function handleDeleteAccountClick() {
+    if (!confirmingAccount) { setConfirmingAccount(true); return; }
+    setConfirmingAccount(false);
+    setDeletingAccount(true);
+    try {
+      await supabase.from('profiles').delete().eq('id', userId);
+    } catch (e) { /* best effort */ }
+    setProfile(null);
+    await supabase.auth.signOut();
   }
 
   return (
@@ -3201,6 +3222,25 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData }) {
         <div className="tt-body text-xs px-1" style={{ color: C.dim }}>
           {t('settings_footer')}
         </div>
+
+        {!isGuest && userId && (
+          <Panel style={{ borderColor: C.red, marginTop: 8 }}>
+            <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.red }}>{t('settings_delete_account_label')}</div>
+            <div className="tt-body text-xs mb-3" style={{ color: C.dim }}>{t('settings_delete_account_desc')}</div>
+            <button
+              onClick={handleDeleteAccountClick}
+              disabled={deletingAccount}
+              className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold transition-colors disabled:opacity-50"
+              style={{
+                background: confirmingAccount ? C.red : 'transparent',
+                color: confirmingAccount ? '#fff' : C.red,
+                border: `1px solid ${C.red}`,
+              }}
+            >
+              {confirmingAccount ? t('settings_delete_account_confirm') : t('settings_delete_account_label')}
+            </button>
+          </Panel>
+        )}
 
         <Panel style={{ borderColor: C.red, marginTop: 8 }}>
           <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.red }}>{t('settings_danger_zone')}</div>
@@ -5062,10 +5102,20 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
       <Panel style={{ marginBottom: 16 }}>
         {!isEditing ? (
           <>
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-center gap-4">
               <Avatar name={myUsername || '?'} photo={profile ? profile.avatar_url : null} size={72} />
               <div className="flex-1 min-w-0">
-                <div className="tt-display text-2xl truncate" style={{ color: C.text }}>{myUsername || t('profile_username_placeholder')}</div>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="tt-display text-2xl truncate" style={{ color: C.text }}>{myUsername || t('profile_username_placeholder')}</div>
+                  <button
+                    onClick={() => setIsEditing(true)}
+                    className="p-2 rounded-lg flex-shrink-0"
+                    style={{ background: C.panel2, border: `1px solid ${C.line}` }}
+                    aria-label={t('profile_edit_button')}
+                  >
+                    <Pencil size={14} color={C.dim} />
+                  </button>
+                </div>
                 {myTitle && <div className="tt-body text-xs font-semibold" style={{ color: C.amber }}>{myTitle}</div>}
                 {(profile && (profile.city || profile.country)) && (
                   <div className="tt-body text-sm truncate" style={{ color: C.dim }}>
@@ -5074,9 +5124,48 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
                 )}
               </div>
             </div>
-            <PrimaryButton onClick={() => setIsEditing(true)} style={{ width: '100%' }}>
-              {t('profile_edit_button')}
-            </PrimaryButton>
+
+            {me ? (
+              <>
+                <div className="tt-body text-xs mt-4 mb-3" style={{ color: C.dim }}>{t('player_stats_line', { played: me.played, pct: winPct })}</div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="text-center">
+                    <div className="tt-display text-3xl" style={{ color: C.greenLight }}>{me.w}</div>
+                    <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_won')}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="tt-display text-3xl" style={{ color: C.red }}>{me.l}</div>
+                    <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_lost')}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="tt-display text-xl" style={{ color: C.text }}>{me.setsFor}-{me.setsAgainst}</div>
+                    <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_sets_label')}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="tt-display text-xl" style={{ color: C.text }}>{me.pointsFor}-{me.pointsAgainst}</div>
+                    <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_points_label')}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="tt-display text-xl flex items-center justify-center gap-1" style={{ color: C.amber }}>
+                      {streaks.current > 0 && <Flame size={16} color={C.amber} fill={C.amber} />}{streaks.current}
+                    </div>
+                    <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_current')}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="tt-display text-xl" style={{ color: C.text }}>{streaks.best}</div>
+                    <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_best')}</div>
+                  </div>
+                  <div className="text-center col-span-2">
+                    <div className="tt-display text-xl" style={{ color: C.greenLight }}>{me.pointsFor}</div>
+                    <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div className="tt-body text-sm text-center mt-4" style={{ color: C.dim }}>
+                {t('profile_no_stats', { name: myUsername || t('profile_username_placeholder') })}
+              </div>
+            )}
           </>
         ) : (
           <>
@@ -5161,75 +5250,23 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
         )}
       </Panel>
 
-      {me ? (
-        <>
-          <Panel style={{ marginBottom: 16 }}>
-            <div className="tt-body text-xs mb-3" style={{ color: C.dim }}>{t('player_stats_line', { played: me.played, pct: winPct })}</div>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="text-center">
-                <div className="tt-display text-3xl" style={{ color: C.greenLight }}>{me.w}</div>
-                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_won')}</div>
-              </div>
-              <div className="text-center">
-                <div className="tt-display text-3xl" style={{ color: C.red }}>{me.l}</div>
-                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_lost')}</div>
-              </div>
-              <div className="text-center">
-                <div className="tt-display text-xl" style={{ color: C.text }}>{me.setsFor}-{me.setsAgainst}</div>
-                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_sets_label')}</div>
-              </div>
-              <div className="text-center">
-                <div className="tt-display text-xl" style={{ color: C.text }}>{me.pointsFor}-{me.pointsAgainst}</div>
-                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_points_label')}</div>
-              </div>
-              <div className="text-center">
-                <div className="tt-display text-xl flex items-center justify-center gap-1" style={{ color: C.amber }}>
-                  {streaks.current > 0 && <Flame size={16} color={C.amber} fill={C.amber} />}{streaks.current}
-                </div>
-                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_current')}</div>
-              </div>
-              <div className="text-center">
-                <div className="tt-display text-xl" style={{ color: C.text }}>{streaks.best}</div>
-                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_best')}</div>
-              </div>
-              <div className="text-center col-span-2">
-                <div className="tt-display text-xl" style={{ color: C.greenLight }}>{me.pointsFor}</div>
-                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
-              </div>
-            </div>
-          </Panel>
-
-          {hasServeData && (
-            <Panel style={{ marginBottom: 16 }}>
-              <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('serve_stats_title')}</div>
-              <div className="grid grid-cols-2 gap-3 text-center">
-                <div>
-                  <div className="tt-display text-2xl" style={{ color: C.amber }}>{pct(serve.serveWon, serve.servePts)}%</div>
-                  <div className="tt-body text-xs" style={{ color: C.dim }}>{t('own_serve_label')} ({serve.serveWon}/{serve.servePts})</div>
-                </div>
-                <div>
-                  <div className="tt-display text-2xl" style={{ color: C.greenLight }}>{pct(serve.returnWon, serve.returnPts)}%</div>
-                  <div className="tt-body text-xs" style={{ color: C.dim }}>{t('return_label')} ({serve.returnWon}/{serve.returnPts})</div>
-                </div>
-              </div>
-            </Panel>
-          )}
-        </>
-      ) : (
+      {hasServeData && (
         <Panel style={{ marginBottom: 16 }}>
-          <div className="tt-body text-sm text-center" style={{ color: C.dim }}>
-            {t('profile_no_stats', { name: myUsername || t('profile_username_placeholder') })}
+          <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('serve_stats_title')}</div>
+          <div className="grid grid-cols-2 gap-3 text-center">
+            <div>
+              <div className="tt-display text-2xl" style={{ color: C.amber }}>{pct(serve.serveWon, serve.servePts)}%</div>
+              <div className="tt-body text-xs" style={{ color: C.dim }}>{t('own_serve_label')} ({serve.serveWon}/{serve.servePts})</div>
+            </div>
+            <div>
+              <div className="tt-display text-2xl" style={{ color: C.greenLight }}>{pct(serve.returnWon, serve.returnPts)}%</div>
+              <div className="tt-body text-xs" style={{ color: C.dim }}>{t('return_label')} ({serve.returnWon}/{serve.returnPts})</div>
+            </div>
           </div>
         </Panel>
       )}
 
-      {myUsername && myUsername.trim() && (
-        <div style={{ marginBottom: 16 }}>
-          <ChallengesPanel matchLog={matchLog} scope="personal" playerName={myUsername.trim()} session={session} t={t} />
-        </div>
-      )}
-
-      <Panel>
+      <Panel style={{ marginBottom: 16 }}>
         <div className="tt-body text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: C.dim }}>
           <Award size={16} color={C.dim} /> {t('profile_badges_title')}
         </div>
@@ -5242,6 +5279,12 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
           </div>
         )}
       </Panel>
+
+      {myUsername && myUsername.trim() && (
+        <div style={{ marginBottom: 16 }}>
+          <ChallengesPanel matchLog={matchLog} scope="personal" playerName={myUsername.trim()} session={session} t={t} />
+        </div>
+      )}
 
       {isGuest && profile && profile.has_paid ? (
         <Panel style={{ marginTop: 16, borderColor: C.amber }}>
@@ -5264,34 +5307,15 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
           </button>
         </Panel>
       ) : (
-        <>
-          <Panel style={{ marginTop: 16 }}>
-            <button
-              onClick={handleLogout}
-              className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold"
-              style={{ background: 'transparent', color: C.text, border: `1px solid ${C.line}` }}
-            >
-              {t('settings_logout')}
-            </button>
-          </Panel>
-
-          <Panel style={{ borderColor: C.red, marginTop: 8 }}>
-            <div className="tt-body text-sm font-semibold mb-1" style={{ color: C.red }}>{t('settings_delete_account_label')}</div>
-            <div className="tt-body text-xs mb-3" style={{ color: C.dim }}>{t('settings_delete_account_desc')}</div>
-            <button
-              onClick={handleDeleteAccountClick}
-              disabled={deletingAccount}
-              className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold transition-colors disabled:opacity-50"
-              style={{
-                background: confirmingAccount ? C.red : 'transparent',
-                color: confirmingAccount ? '#fff' : C.red,
-                border: `1px solid ${C.red}`,
-              }}
-            >
-              {confirmingAccount ? t('settings_delete_account_confirm') : t('settings_delete_account_label')}
-            </button>
-          </Panel>
-        </>
+        <Panel style={{ marginTop: 16 }}>
+          <button
+            onClick={handleLogout}
+            className="tt-body w-full px-4 py-2.5 rounded-xl font-semibold"
+            style={{ background: 'transparent', color: C.text, border: `1px solid ${C.line}` }}
+          >
+            {t('settings_logout')}
+          </button>
+        </Panel>
       )}
     </div>
   );
@@ -6321,7 +6345,7 @@ export default function App() {
     content = <div className="tt-body text-center py-20" style={{ color: C.dim }}>{t('loading_text')}</div>;
   } else if (view === 'home') content = <Home matchLog={combinedMatchLog} playerName={profile ? profile.username : ''} session={session} />;
   else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={combinedMatchLog} session={session} profile={profile} setProfile={setProfile} />;
-  else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} />;
+  else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} session={session} profile={profile} setProfile={setProfile} />;
   else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} profile={profile} />;
   else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} playerProfileId={selectedPlayerProfileId} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} profile={profile} />;
