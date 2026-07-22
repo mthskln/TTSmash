@@ -176,6 +176,7 @@ const TRANSLATIONS = {
     challenges_title: 'Challenges', challenge_weekly_label: 'This week', challenge_monthly_label: 'This month', challenge_points: 'Score {n} points', challenge_matches: 'Play {n} matches', challenge_wins: 'Win {n} matches', challenge_opponents: 'Play against {n} different opponents', challenge_streak: 'Build a {n}-match win streak', challenge_full_distance: 'Win a match that goes the distance', challenge_nailbiter: 'Win a nailbiter (every set decided by 2 points or less)', challenge_comeback: 'Win a set after trailing by 5+ points', challenge_giant_slayer: 'Beat someone with more career wins than you', challenge_first_blood: 'Beat someone you have never beaten before', challenge_group_points: 'Score {n} points together', challenge_group_matches: 'Play {n} matches together', challenge_group_everyone: 'Everyone plays at least one match',
     challenge_play_button: 'Play!', challenge_new_weekly: 'New weekly challenge', challenge_new_monthly: 'New monthly challenge',
     group_request_sent: 'Request sent', group_pending_requests_title: 'Join requests', btn_approve: 'Approve', group_remove_member: 'Remove', groups_nearby_title: 'Nearby groups',
+    group_edit_button: 'Edit group', group_save_button: 'Save', group_delete_button: 'Delete group', group_last_admin_warning: "You're the only admin \u2014 promote another member to admin first, or the group will be left without one.", group_promote_button: 'Make admin',
     group_invite_section_title: 'Invite someone', group_invites_title: 'Group invitations',
     event_name_placeholder: 'Event name', event_link_group_label: 'Link to a group (optional)', event_no_group_option: 'No group', event_create_button: 'Create event', event_code_label: 'Join code', event_share_hint: 'Share this code so others can join', event_participants_title: 'Participants', event_close_registration: 'Close registration', event_status_open: 'Registration open', event_status_closed: 'Registration closed', event_join_button: 'Join event', event_join_code_placeholder: 'Enter join code', event_join_via_code_title: 'Have a code?', event_leave_button: 'Leave event', event_not_found: 'No event found with that code.', event_already_joined: 'Joined',
     nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar', profile_edit_button: 'Edit profile', profile_save_button: 'Save profile',
@@ -261,6 +262,7 @@ const TRANSLATIONS = {
     challenges_title: 'Défis', challenge_weekly_label: 'Cette semaine', challenge_monthly_label: 'Ce mois-ci', challenge_points: 'Marquez {n} points', challenge_matches: 'Jouez {n} matchs', challenge_wins: 'Gagnez {n} matchs', challenge_opponents: 'Jouez contre {n} adversaires différents', challenge_streak: 'Enchâînez {n} victoires', challenge_full_distance: 'Gagnez un match qui va à son terme', challenge_nailbiter: 'Gagnez un match serré (chaque set décidé par 2 points max)', challenge_comeback: 'Gagnez un set après avoir été mené de 5 points ou plus', challenge_giant_slayer: 'Battez quelqu\u2019un ayant plus de victoires en carrière que vous', challenge_first_blood: 'Battez quelqu\u2019un que vous n\u2019avez jamais battu', challenge_group_points: 'Marquez {n} points ensemble', challenge_group_matches: 'Jouez {n} matchs ensemble', challenge_group_everyone: 'Chacun joue au moins un match',
     challenge_play_button: 'Jouer\u00a0!', challenge_new_weekly: 'Nouveau défi hebdomadaire', challenge_new_monthly: 'Nouveau défi mensuel',
     group_request_sent: 'Demande envoyée', group_pending_requests_title: "Demandes d'adhésion", btn_approve: 'Approuver', group_remove_member: 'Retirer', groups_nearby_title: 'Groupes à proximité',
+    group_edit_button: 'Modifier le groupe', group_save_button: 'Enregistrer', group_delete_button: 'Supprimer le groupe', group_last_admin_warning: "Vous êtes le seul admin \u2014 promouvez d'abord un autre membre, sinon le groupe restera sans admin.", group_promote_button: 'Nommer admin',
     group_invite_section_title: 'Inviter quelqu\u2019un', group_invites_title: 'Invitations de groupe',
     event_name_placeholder: "Nom de l'événement", event_link_group_label: 'Lier à un groupe (facultatif)', event_no_group_option: 'Aucun groupe', event_create_button: 'Créer un événement', event_code_label: 'Code de participation', event_share_hint: 'Partagez ce code pour que d\u2019autres puissent rejoindre', event_participants_title: 'Participants', event_close_registration: 'Clôturer les inscriptions', event_status_open: 'Inscriptions ouvertes', event_status_closed: 'Inscriptions clôturées', event_join_button: "Rejoindre l'événement", event_join_code_placeholder: 'Entrez le code', event_join_via_code_title: 'Vous avez un code\u00A0?', event_leave_button: "Quitter l'événement", event_not_found: 'Aucun événement trouvé avec ce code.', event_already_joined: 'Inscrit',
     nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar', profile_edit_button: 'Modifier le profil', profile_save_button: 'Enregistrer le profil',
@@ -346,6 +348,7 @@ const TRANSLATIONS = {
     challenges_title: 'Challenges', challenge_weekly_label: 'Deze week', challenge_monthly_label: 'Deze maand', challenge_points: 'Scoor {n} punten', challenge_matches: 'Speel {n} wedstrijden', challenge_wins: 'Win {n} wedstrijden', challenge_opponents: 'Speel tegen {n} verschillende tegenstanders', challenge_streak: 'Bouw een winreeks van {n} op', challenge_full_distance: 'Win een wedstrijd die de volle afstand gaat', challenge_nailbiter: 'Win een nagelbijter (elk setverschil max 2 punten)', challenge_comeback: 'Win een set na een achterstand van 5+ punten', challenge_giant_slayer: 'Versla iemand met meer carrière-overwinningen dan jij', challenge_first_blood: 'Versla iemand die je nog nooit versloeg', challenge_group_points: 'Scoor samen {n} punten', challenge_group_matches: 'Speel samen {n} wedstrijden', challenge_group_everyone: 'Iedereen speelt minstens 1 wedstrijd',
     challenge_play_button: 'Speel mee!', challenge_new_weekly: 'Nieuwe wekelijkse uitdaging', challenge_new_monthly: 'Nieuwe maandelijkse uitdaging',
     group_request_sent: 'Aanvraag verstuurd', group_pending_requests_title: 'Aanvragen', btn_approve: 'Goedkeuren', group_remove_member: 'Verwijderen', groups_nearby_title: 'Groepen in de buurt',
+    group_edit_button: 'Groep bewerken', group_save_button: 'Opslaan', group_delete_button: 'Groep verwijderen', group_last_admin_warning: 'Je bent de enige admin \u2014 promoot eerst een ander lid tot admin, anders blijft de groep zonder admin achter.', group_promote_button: 'Admin maken',
     group_invite_section_title: 'Nodig iemand uit', group_invites_title: 'Groepsuitnodigingen',
     event_name_placeholder: 'Naam van het evenement', event_link_group_label: 'Koppel aan een groep (optioneel)', event_no_group_option: 'Geen groep', event_create_button: 'Evenement aanmaken', event_code_label: 'Deelcode', event_share_hint: 'Deel deze code zodat anderen kunnen aansluiten', event_participants_title: 'Deelnemers', event_close_registration: 'Inschrijvingen sluiten', event_status_open: 'Inschrijvingen open', event_status_closed: 'Inschrijvingen gesloten', event_join_button: 'Evenement joinen', event_join_code_placeholder: 'Voer deelcode in', event_join_via_code_title: 'Heb je een code?', event_leave_button: 'Evenement verlaten', event_not_found: 'Geen evenement gevonden met die code.', event_already_joined: 'Aangesloten',
     nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar', profile_edit_button: 'Profiel bewerken', profile_save_button: 'Profiel opslaan',
@@ -431,6 +434,7 @@ const TRANSLATIONS = {
     challenges_title: 'Испытания', challenge_weekly_label: 'На этой неделе', challenge_monthly_label: 'В этом месяце', challenge_points: 'Наберите {n} очков', challenge_matches: 'Сыграйте {n} матчей', challenge_wins: 'Выиграйте {n} матчей', challenge_opponents: 'Сыграйте против {n} разных соперников', challenge_streak: 'Наберите серию из {n} побед', challenge_full_distance: 'Выиграйте матч, доигранный до конца', challenge_nailbiter: 'Выиграйте напряжённый матч (разница в каждой партии ≤ 2 очков)', challenge_comeback: 'Выиграйте партию, отыгравшись с отставания в 5+ очков', challenge_giant_slayer: 'Обыграйте того, у кого больше побед за карьеру, чем у вас', challenge_first_blood: 'Обыграйте того, кого вы никогда не побеждали', challenge_group_points: 'Наберите вместе {n} очков', challenge_group_matches: 'Сыграйте вместе {n} матчей', challenge_group_everyone: 'Каждый сыграл хотя бы один матч',
     challenge_play_button: 'Играть!', challenge_new_weekly: 'Новое недельное испытание', challenge_new_monthly: 'Новое месячное испытание',
     group_request_sent: 'Заявка отправлена', group_pending_requests_title: 'Заявки на вступление', btn_approve: 'Одобрить', group_remove_member: 'Удалить', groups_nearby_title: 'Группы поблизости',
+    group_edit_button: 'Редактировать группу', group_save_button: 'Сохранить', group_delete_button: 'Удалить группу', group_last_admin_warning: 'Вы единственный админ \u2014 сначала назначьте другого админа, иначе группа останется без админа.', group_promote_button: 'Назначить админом',
     group_invite_section_title: 'Пригласить кого-то', group_invites_title: 'Приглашения в группы',
     event_name_placeholder: 'Название мероприятия', event_link_group_label: 'Привязать к группе (необязательно)', event_no_group_option: 'Без группы', event_create_button: 'Создать мероприятие', event_code_label: 'Код для участия', event_share_hint: 'Поделитесь этим кодом, чтобы другие могли присоединиться', event_participants_title: 'Участники', event_close_registration: 'Закрыть регистрацию', event_status_open: 'Регистрация открыта', event_status_closed: 'Регистрация закрыта', event_join_button: 'Присоединиться', event_join_code_placeholder: 'Введите код', event_join_via_code_title: 'Есть код?', event_leave_button: 'Покинуть мероприятие', event_not_found: 'Мероприятие с таким кодом не найдено.', event_already_joined: 'Участвуете',
     nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар', profile_edit_button: 'Редактировать профиль', profile_save_button: 'Сохранить профиль',
@@ -516,6 +520,7 @@ const TRANSLATIONS = {
     challenges_title: '挑战', challenge_weekly_label: '本周', challenge_monthly_label: '本月', challenge_points: '得{n}分', challenge_matches: '打{n}场比赛', challenge_wins: '赢{n}场比赛', challenge_opponents: '与{n}位不同的对手比赛', challenge_streak: '连胜{n}场', challenge_full_distance: '赢一场打满全部局数的比赛', challenge_nailbiter: '赢一场每局分差都在2分以内的比赛', challenge_comeback: '在落后5分以上后赢下一局', challenge_giant_slayer: '击败生涯胜场比你多的对手', challenge_first_blood: '击败一位你从未赢过的对手', challenge_group_points: '共同得{n}分', challenge_group_matches: '共同打{n}场比赛', challenge_group_everyone: '每个人至少打一场比赛',
     challenge_play_button: '参与！', challenge_new_weekly: '新的每周挑战', challenge_new_monthly: '新的每月挑战',
     group_request_sent: '请求已发送', group_pending_requests_title: '加入请求', btn_approve: '批准', group_remove_member: '移除', groups_nearby_title: '附近的群组',
+    group_edit_button: '编辑群组', group_save_button: '保存', group_delete_button: '删除群组', group_last_admin_warning: '你是唯一的管理员——请先将另一位成员设为管理员，否则群组将无人管理。', group_promote_button: '设为管理员',
     group_invite_section_title: '邀请某人', group_invites_title: '群组邀请',
     event_name_placeholder: '活动名称', event_link_group_label: '关联群组（可选）', event_no_group_option: '无群组', event_create_button: '创建活动', event_code_label: '加入码', event_share_hint: '分享此代码以便他人加入', event_participants_title: '参与者', event_close_registration: '关闭报名', event_status_open: '报名开放中', event_status_closed: '报名已关闭', event_join_button: '加入活动', event_join_code_placeholder: '输入加入码', event_join_via_code_title: '有邀请码吗？', event_leave_button: '退出活动', event_not_found: '未找到该代码对应的活动。', event_already_joined: '已加入',
     nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像', profile_edit_button: '编辑资料', profile_save_button: '保存资料',
@@ -601,6 +606,7 @@ const TRANSLATIONS = {
     challenges_title: 'Retos', challenge_weekly_label: 'Esta semana', challenge_monthly_label: 'Este mes', challenge_points: 'Anota {n} puntos', challenge_matches: 'Juega {n} partidos', challenge_wins: 'Gana {n} partidos', challenge_opponents: 'Juega contra {n} rivales distintos', challenge_streak: 'Consigue una racha de {n} victorias', challenge_full_distance: 'Gana un partido que llegue al final', challenge_nailbiter: 'Gana un partido reñido (cada set decidido por 2 puntos o menos)', challenge_comeback: 'Gana un set tras ir perdiendo por 5 puntos o más', challenge_giant_slayer: 'Vence a alguien con más victorias en su carrera que tú', challenge_first_blood: 'Vence a alguien a quien nunca hayas ganado', challenge_group_points: 'Anotad juntos {n} puntos', challenge_group_matches: 'Jugad juntos {n} partidos', challenge_group_everyone: 'Todos juegan al menos un partido',
     challenge_play_button: '¡Jugar!', challenge_new_weekly: 'Nuevo reto semanal', challenge_new_monthly: 'Nuevo reto mensual',
     group_request_sent: 'Solicitud enviada', group_pending_requests_title: 'Solicitudes de ingreso', btn_approve: 'Aprobar', group_remove_member: 'Eliminar', groups_nearby_title: 'Grupos cercanos',
+    group_edit_button: 'Editar grupo', group_save_button: 'Guardar', group_delete_button: 'Eliminar grupo', group_last_admin_warning: 'Eres el único administrador \u2014 asciende primero a otro miembro, o el grupo se quedará sin administrador.', group_promote_button: 'Hacer administrador',
     group_invite_section_title: 'Invitar a alguien', group_invites_title: 'Invitaciones a grupos',
     event_name_placeholder: 'Nombre del evento', event_link_group_label: 'Vincular a un grupo (opcional)', event_no_group_option: 'Sin grupo', event_create_button: 'Crear evento', event_code_label: 'Código de acceso', event_share_hint: 'Comparte este código para que otros puedan unirse', event_participants_title: 'Participantes', event_close_registration: 'Cerrar inscripciones', event_status_open: 'Inscripciones abiertas', event_status_closed: 'Inscripciones cerradas', event_join_button: 'Unirse al evento', event_join_code_placeholder: 'Introduce el código', event_join_via_code_title: '¿Tienes un código?', event_leave_button: 'Abandonar evento', event_not_found: 'No se encontró ningún evento con ese código.', event_already_joined: 'Inscrito',
     nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
@@ -686,6 +692,7 @@ const TRANSLATIONS = {
     challenges_title: 'Desafios', challenge_weekly_label: 'Esta semana', challenge_monthly_label: 'Este mês', challenge_points: 'Marca {n} pontos', challenge_matches: 'Joga {n} partidas', challenge_wins: 'Ganha {n} partidas', challenge_opponents: 'Joga contra {n} adversários diferentes', challenge_streak: 'Consegue uma sequência de {n} vitórias', challenge_full_distance: 'Ganha uma partida que vá até ao fim', challenge_nailbiter: 'Ganha uma partida renhida (cada set decidido por 2 pontos ou menos)', challenge_comeback: 'Ganha um set depois de estares a perder por 5+ pontos', challenge_giant_slayer: 'Vence alguém com mais vitórias de carreira do que tu', challenge_first_blood: 'Vence alguém que nunca venceste', challenge_group_points: 'Marquem juntos {n} pontos', challenge_group_matches: 'Joguem juntos {n} partidas', challenge_group_everyone: 'Todos jogam pelo menos uma partida',
     challenge_play_button: 'Jogar!', challenge_new_weekly: 'Novo desafio semanal', challenge_new_monthly: 'Novo desafio mensal',
     group_request_sent: 'Pedido enviado', group_pending_requests_title: 'Pedidos de adesão', btn_approve: 'Aprovar', group_remove_member: 'Remover', groups_nearby_title: 'Grupos próximos',
+    group_edit_button: 'Editar grupo', group_save_button: 'Guardar', group_delete_button: 'Eliminar grupo', group_last_admin_warning: 'És o único administrador \u2014 promove primeiro outro membro, ou o grupo ficará sem administrador.', group_promote_button: 'Tornar administrador',
     group_invite_section_title: 'Convidar alguém', group_invites_title: 'Convites de grupo',
     event_name_placeholder: 'Nome do evento', event_link_group_label: 'Associar a um grupo (opcional)', event_no_group_option: 'Sem grupo', event_create_button: 'Criar evento', event_code_label: 'Código de acesso', event_share_hint: 'Partilha este código para que outros possam aderir', event_participants_title: 'Participantes', event_close_registration: 'Encerrar inscrições', event_status_open: 'Inscrições abertas', event_status_closed: 'Inscrições encerradas', event_join_button: 'Aderir ao evento', event_join_code_placeholder: 'Introduz o código', event_join_via_code_title: 'Tens um código?', event_leave_button: 'Sair do evento', event_not_found: 'Nenhum evento encontrado com esse código.', event_already_joined: 'Inscrito',
     nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
@@ -771,6 +778,7 @@ const TRANSLATIONS = {
     challenges_title: 'チャレンジ', challenge_weekly_label: '今週', challenge_monthly_label: '今月', challenge_points: '{n}点を獲得しよう', challenge_matches: '{n}試合をプレーしよう', challenge_wins: '{n}試合に勝とう', challenge_opponents: '{n}人の異なる相手と対戦しよう', challenge_streak: '{n}連勝を達成しよう', challenge_full_distance: 'フルセットの試合に勝とう', challenge_nailbiter: '接戦（各セット2点差以内）に勝とう', challenge_comeback: '5点以上のビハインドから逆転してセットを取ろう', challenge_giant_slayer: '自分より通算勝利数が多い相手に勝とう', challenge_first_blood: 'これまで勝ったことのない相手に勝とう', challenge_group_points: 'みんなで{n}点を獲得しよう', challenge_group_matches: 'みんなで{n}試合をプレーしよう', challenge_group_everyone: '全員が最低1試合をプレーしよう',
     challenge_play_button: '参加する！', challenge_new_weekly: '新しい週間チャレンジ', challenge_new_monthly: '新しい月間チャレンジ',
     group_request_sent: '申請を送信しました', group_pending_requests_title: '参加リクエスト', btn_approve: '承認', group_remove_member: '削除', groups_nearby_title: '近くのグループ',
+    group_edit_button: 'グループを編集', group_save_button: '保存', group_delete_button: 'グループを削除', group_last_admin_warning: 'あなたは唱一の管理者です — 先に他のメンバーを管理者にしてください。さもないとグループに管理者がいなくなります。', group_promote_button: '管理者にする',
     group_invite_section_title: '誰かを招待', group_invites_title: 'グループ招待',
     event_name_placeholder: 'イベント名', event_link_group_label: 'グループに紐付け（任意）', event_no_group_option: 'グループなし', event_create_button: 'イベントを作成', event_code_label: '参加コード', event_share_hint: 'このコードを共有すると参加できます', event_participants_title: '参加者', event_close_registration: '参加受付を締め切る', event_status_open: '参加受付中', event_status_closed: '参加受付終了', event_join_button: 'イベントに参加', event_join_code_placeholder: 'コードを入力', event_join_via_code_title: 'コードをお持ちですか？', event_leave_button: 'イベントを退出', event_not_found: 'そのコードのイベントが見つかりません。', event_already_joined: '参加済み',
     nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ', profile_edit_button: 'プロフィールを編集', profile_save_button: 'プロフィールを保存',
@@ -856,6 +864,7 @@ const TRANSLATIONS = {
     challenges_title: '챌린지', challenge_weekly_label: '이번 주', challenge_monthly_label: '이번 달', challenge_points: '{n}점 획득하기', challenge_matches: '{n}경기 플레이하기', challenge_wins: '{n}경기 승리하기', challenge_opponents: '서로 다른 {n}명의 상대와 경기하기', challenge_streak: '{n}연승 달성하기', challenge_full_distance: '풀세트까지 가는 경기에서 승리하기', challenge_nailbiter: '접전(각 세트 2점 차 이내) 승리하기', challenge_comeback: '5점 이상 뒤지다가 세트 뒤집기', challenge_giant_slayer: '통산 승수가 나보다 많은 상대 이기기', challenge_first_blood: '한 번도 이겨본 적 없는 상대 이기기', challenge_group_points: '함께 {n}점 획득하기', challenge_group_matches: '함께 {n}경기 플레이하기', challenge_group_everyone: '모두 최소 1경기 플레이하기',
     challenge_play_button: '참여하기!', challenge_new_weekly: '새로운 주간 챗린지', challenge_new_monthly: '새로운 월간 챗린지',
     group_request_sent: '요청을 보냈습니다', group_pending_requests_title: '가입 요청', btn_approve: '승인', group_remove_member: '삭제', groups_nearby_title: '주변 그룹',
+    group_edit_button: '그룹 편집', group_save_button: '저장', group_delete_button: '그룹 삭제', group_last_admin_warning: '당신이 유일한 관리자입니다 — 먼저 다른 멤버를 관리자로 지정하세요. 그렇지 않으면 그룹에 관리자가 없게 됩니다.', group_promote_button: '관리자로 지정',
     group_invite_section_title: '누군가 초대하기', group_invites_title: '그룹 초대',
     event_name_placeholder: '이벤트 이름', event_link_group_label: '그룹에 연결 (선택 사항)', event_no_group_option: '그룹 없음', event_create_button: '이벤트 만들기', event_code_label: '참가 코드', event_share_hint: '이 코드를 공유하면 다른 사람이 참여할 수 있습니다', event_participants_title: '참가자', event_close_registration: '등록 마감', event_status_open: '등록 진행 중', event_status_closed: '등록 마감됨', event_join_button: '이벤트 참가', event_join_code_placeholder: '코드 입력', event_join_via_code_title: '코드가 있으신가요?', event_leave_button: '이벤트 나가기', event_not_found: '해당 코드로 이벤트를 찾을 수 없습니다.', event_already_joined: '참가함',
     nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택', profile_edit_button: '프로필 편집', profile_save_button: '프로필 저장',
@@ -4415,9 +4424,55 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
     }
   }
 
+  const [leaveWarning, setLeaveWarning] = useState('');
+
   async function leaveGroup() {
+    const adminCount = members.filter(m => m.role === 'admin').length;
+    if (myRole === 'admin' && adminCount <= 1 && members.length > 1) {
+      setLeaveWarning(t('group_last_admin_warning'));
+      return;
+    }
     try {
       await supabase.from('club_members').delete().eq('club_id', groupId).eq('user_id', myId);
+    } catch (e) { /* best effort */ }
+    setView('groups');
+  }
+
+  async function promoteToAdmin(userId) {
+    try {
+      await supabase.from('club_members').update({ role: 'admin' }).eq('club_id', groupId).eq('user_id', userId);
+      await loadGroup();
+    } catch (e) { /* best effort */ }
+  }
+
+  const [editingGroup, setEditingGroup] = useState(false);
+  const [editName, setEditName] = useState('');
+  const [editDesc, setEditDesc] = useState('');
+  const [savingGroup, setSavingGroup] = useState(false);
+  const [confirmingDeleteGroup, setConfirmingDeleteGroup] = useState(false);
+
+  function startEditGroup() {
+    setEditName(group ? group.name : '');
+    setEditDesc(group && group.description ? group.description : '');
+    setEditingGroup(true);
+  }
+
+  async function saveGroupEdit() {
+    const name = editName.trim();
+    if (!name || savingGroup) return;
+    setSavingGroup(true);
+    try {
+      await supabase.from('clubs').update({ name, description: editDesc.trim() || null }).eq('id', groupId);
+      await loadGroup();
+      setEditingGroup(false);
+    } catch (e) { /* best effort */ }
+    setSavingGroup(false);
+  }
+
+  async function deleteGroup() {
+    if (!confirmingDeleteGroup) { setConfirmingDeleteGroup(true); return; }
+    try {
+      await supabase.from('clubs').delete().eq('id', groupId);
     } catch (e) { /* best effort */ }
     setView('groups');
   }
@@ -4457,10 +4512,40 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
     <div>
       <BackBar title={group ? group.name : groupName || ''} onBack={() => setView('groups')} />
 
-      {group && group.description && (
+      {editingGroup ? (
         <Panel style={{ marginBottom: 16 }}>
-          <div className="tt-body text-sm" style={{ color: C.dim }}>{group.description}</div>
+          <input
+            value={editName}
+            onChange={e => setEditName(e.target.value)}
+            placeholder={t('group_name_placeholder')}
+            className="tt-body w-full px-3 py-2 rounded-lg outline-none mb-2"
+            style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
+          />
+          <input
+            value={editDesc}
+            onChange={e => setEditDesc(e.target.value)}
+            placeholder={t('group_description_placeholder')}
+            className="tt-body w-full px-3 py-2 rounded-lg outline-none mb-3"
+            style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
+          />
+          <div className="flex gap-2">
+            <PrimaryButton onClick={saveGroupEdit} disabled={savingGroup || !editName.trim()} style={{ flex: 1 }}>{t('group_save_button')}</PrimaryButton>
+            <GhostButton onClick={() => setEditingGroup(false)} style={{ flex: 1, textAlign: 'center' }}>{t('btn_cancel')}</GhostButton>
+          </div>
         </Panel>
+      ) : (
+        <>
+          {group && group.description && (
+            <Panel style={{ marginBottom: 16 }}>
+              <div className="tt-body text-sm" style={{ color: C.dim }}>{group.description}</div>
+            </Panel>
+          )}
+          {isAdmin && (
+            <GhostButton onClick={startEditGroup} style={{ width: '100%', textAlign: 'center', marginBottom: 16 }}>
+              {t('group_edit_button')}
+            </GhostButton>
+          )}
+        </>
       )}
 
       {group && group.join_code && (
@@ -4568,6 +4653,11 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
                 <span className="tt-body text-sm font-semibold truncate" style={{ color: C.text }}>{m.username}</span>
                 {m.role === 'admin' && <Star size={12} color={C.amber} fill={C.amber} />}
               </button>
+              {isAdmin && m.id !== myId && m.role !== 'admin' && (
+                <button onClick={() => promoteToAdmin(m.id)} className="tt-body text-xs px-2 py-1.5 rounded-lg flex-shrink-0" style={{ background: C.panel2, color: C.amber }}>
+                  {t('group_promote_button')}
+                </button>
+              )}
               {isAdmin && m.id !== myId && (
                 <button onClick={() => removeMember(m.id)} className="tt-body text-xs px-2 py-1.5 rounded-lg flex-shrink-0" style={{ background: C.panel2, color: C.red }}>
                   {t('group_remove_member')}
@@ -4602,9 +4692,26 @@ function GroupDetailScreen({ setView, groupId, groupName, session, matchLog, onS
         )}
       </Panel>
 
+      {leaveWarning && (
+        <Panel style={{ borderColor: C.amber, marginBottom: 8 }}>
+          <div className="tt-body text-xs" style={{ color: C.text }}>{leaveWarning}</div>
+        </Panel>
+      )}
+
       <GhostButton onClick={leaveGroup} style={{ width: '100%', textAlign: 'center', color: C.red }}>
         {t('group_leave_button')}
       </GhostButton>
+
+      {isAdmin && (
+        <GhostButton
+          onClick={deleteGroup}
+          style={{ width: '100%', textAlign: 'center', color: C.red, marginTop: 8, background: confirmingDeleteGroup ? C.red : undefined }}
+        >
+          <span style={{ color: confirmingDeleteGroup ? '#fff' : C.red }}>
+            {confirmingDeleteGroup ? t('settings_delete_confirm') : t('group_delete_button')}
+          </span>
+        </GhostButton>
+      )}
     </div>
   );
 }
