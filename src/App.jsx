@@ -3390,20 +3390,9 @@ function PlayerDetail({ setView, playerName, playerProfileId, matchLog, photos, 
   const stats = aggregateStats(matchLog);
   const me = stats.find(s => s.name === playerName);
   const myMatches = matchLog.filter(m => m.nameA === playerName || m.nameB === playerName);
-  const fileRef = useRef(null);
   const [detailMatch, setDetailMatch] = useState(null);
 
   usePhotos([playerName], photos, setPhotos);
-
-  async function handleFile(e) {
-    const file = e.target.files && e.target.files[0];
-    if (!file) return;
-    try {
-      const dataUrl = await resizeImage(file, 240);
-      setPhotos(p => ({ ...p, [playerName]: dataUrl }));
-      await window.storage.set(photoKey(playerName), dataUrl, false);
-    } catch (err) { /* ignore failed upload */ }
-  }
 
   if (!me) return (
     <div>
@@ -3446,63 +3435,59 @@ function PlayerDetail({ setView, playerName, playerProfileId, matchLog, photos, 
             <Star size={18} color={friends.includes(playerName) ? '#241503' : C.dim} fill={friends.includes(playerName) ? '#241503' : 'none'} />
           </button>
         </div>
-        <PrimaryButton onClick={() => onChallenge(playerName, playerProfileId)} style={{ width: '100%', marginBottom: 8 }}>
+        <PrimaryButton onClick={() => onChallenge(playerName, playerProfileId)} style={{ width: '100%', marginBottom: 16 }}>
           <span className="flex items-center justify-center gap-2"><Swords size={15} /> {t('btn_challenge')}</span>
         </PrimaryButton>
-        <input ref={fileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFile} />
-        <GhostButton onClick={() => fileRef.current && fileRef.current.click()} style={{ width: '100%', textAlign: 'center' }}>
-          <span className="flex items-center justify-center gap-2"><Camera size={15} /> {resolvePhoto(playerName, photos, profile) ? t('player_photo_change') : t('player_photo_upload')}</span>
-        </GhostButton>
+
+        <div className="grid grid-cols-2 gap-3">
+          <div className="text-center">
+            <div className="tt-display text-3xl" style={{ color: C.greenLight }}>{me.w}</div>
+            <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_won')}</div>
+          </div>
+          <div className="text-center">
+            <div className="tt-display text-3xl" style={{ color: C.red }}>{me.l}</div>
+            <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_lost')}</div>
+          </div>
+          <div className="text-center">
+            <div className="tt-display text-xl" style={{ color: C.text }}>{me.setsFor}-{me.setsAgainst}</div>
+            <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_sets_label')}</div>
+          </div>
+          <div className="text-center">
+            <div className="tt-display text-xl" style={{ color: C.text }}>{me.pointsFor}-{me.pointsAgainst}</div>
+            <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_points_label')}</div>
+          </div>
+          <div className="text-center">
+            <div className="tt-display text-xl flex items-center justify-center gap-1" style={{ color: C.amber }}>
+              {streaks.current > 0 && <Flame size={16} color={C.amber} fill={C.amber} />}{streaks.current}
+            </div>
+            <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_current')}</div>
+          </div>
+          <div className="text-center">
+            <div className="tt-display text-xl" style={{ color: C.text }}>{streaks.best}</div>
+            <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_best')}</div>
+          </div>
+          <div className="text-center col-span-2">
+            <div className="tt-display text-xl" style={{ color: C.greenLight }}>{me.pointsFor}</div>
+            <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
+          </div>
+        </div>
+
+        {hasServeData && (
+          <>
+            <div className="tt-body text-sm font-semibold mb-3 mt-4" style={{ color: C.dim }}>{t('serve_stats_title')}</div>
+            <div className="grid grid-cols-2 gap-3 text-center">
+              <div>
+                <div className="tt-display text-2xl" style={{ color: C.amber }}>{pct(serve.serveWon, serve.servePts)}%</div>
+                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('own_serve_label')} ({serve.serveWon}/{serve.servePts})</div>
+              </div>
+              <div>
+                <div className="tt-display text-2xl" style={{ color: C.greenLight }}>{pct(serve.returnWon, serve.returnPts)}%</div>
+                <div className="tt-body text-xs" style={{ color: C.dim }}>{t('return_label')} ({serve.returnWon}/{serve.returnPts})</div>
+              </div>
+            </div>
+          </>
+        )}
       </Panel>
-
-      <div className="grid grid-cols-2 gap-3 mb-4">
-        <Panel style={{ textAlign: 'center' }}>
-          <div className="tt-display text-3xl" style={{ color: C.greenLight }}>{me.w}</div>
-          <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_won')}</div>
-        </Panel>
-        <Panel style={{ textAlign: 'center' }}>
-          <div className="tt-display text-3xl" style={{ color: C.red }}>{me.l}</div>
-          <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_lost')}</div>
-        </Panel>
-        <Panel style={{ textAlign: 'center' }}>
-          <div className="tt-display text-2xl" style={{ color: C.text }}>{me.setsFor}-{me.setsAgainst}</div>
-          <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_sets_label')}</div>
-        </Panel>
-        <Panel style={{ textAlign: 'center' }}>
-          <div className="tt-display text-2xl" style={{ color: C.text }}>{me.pointsFor}-{me.pointsAgainst}</div>
-          <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_points_label')}</div>
-        </Panel>
-        <Panel style={{ textAlign: 'center' }}>
-          <div className="tt-display text-3xl flex items-center justify-center gap-1" style={{ color: C.amber }}>
-            {streaks.current > 0 && <Flame size={20} color={C.amber} fill={C.amber} />}{streaks.current}
-          </div>
-          <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_current')}</div>
-        </Panel>
-        <Panel style={{ textAlign: 'center' }}>
-          <div className="tt-display text-3xl" style={{ color: C.text }}>{streaks.best}</div>
-          <div className="tt-body text-xs" style={{ color: C.dim }}>{t('streak_best')}</div>
-        </Panel>
-        <Panel style={{ textAlign: 'center', gridColumn: 'span 2' }}>
-          <div className="tt-display text-3xl" style={{ color: C.greenLight }}>{me.pointsFor}</div>
-          <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
-        </Panel>
-      </div>
-
-      {hasServeData && (
-        <Panel style={{ marginBottom: 16 }}>
-          <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('serve_stats_title')}</div>
-          <div className="grid grid-cols-2 gap-3 text-center">
-            <div>
-              <div className="tt-display text-2xl" style={{ color: C.amber }}>{pct(serve.serveWon, serve.servePts)}%</div>
-              <div className="tt-body text-xs" style={{ color: C.dim }}>{t('own_serve_label')} ({serve.serveWon}/{serve.servePts})</div>
-            </div>
-            <div>
-              <div className="tt-display text-2xl" style={{ color: C.greenLight }}>{pct(serve.returnWon, serve.returnPts)}%</div>
-              <div className="tt-body text-xs" style={{ color: C.dim }}>{t('return_label')} ({serve.returnWon}/{serve.returnPts})</div>
-            </div>
-          </div>
-        </Panel>
-      )}
 
       <Panel style={{ marginBottom: 16 }}>
         <div className="tt-body text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: C.dim }}>
