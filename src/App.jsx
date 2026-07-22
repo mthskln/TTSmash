@@ -5160,6 +5160,21 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
                     <div className="tt-body text-xs" style={{ color: C.dim }}>{t('player_career_points_label')}</div>
                   </div>
                 </div>
+                {hasServeData && (
+                  <>
+                    <div className="tt-body text-sm font-semibold mb-3 mt-4" style={{ color: C.dim }}>{t('serve_stats_title')}</div>
+                    <div className="grid grid-cols-2 gap-3 text-center">
+                      <div>
+                        <div className="tt-display text-2xl" style={{ color: C.amber }}>{pct(serve.serveWon, serve.servePts)}%</div>
+                        <div className="tt-body text-xs" style={{ color: C.dim }}>{t('own_serve_label')} ({serve.serveWon}/{serve.servePts})</div>
+                      </div>
+                      <div>
+                        <div className="tt-display text-2xl" style={{ color: C.greenLight }}>{pct(serve.returnWon, serve.returnPts)}%</div>
+                        <div className="tt-body text-xs" style={{ color: C.dim }}>{t('return_label')} ({serve.returnWon}/{serve.returnPts})</div>
+                      </div>
+                    </div>
+                  </>
+                )}
               </>
             ) : (
               <div className="tt-body text-sm text-center mt-4" style={{ color: C.dim }}>
@@ -5249,22 +5264,6 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
           </>
         )}
       </Panel>
-
-      {hasServeData && (
-        <Panel style={{ marginBottom: 16 }}>
-          <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('serve_stats_title')}</div>
-          <div className="grid grid-cols-2 gap-3 text-center">
-            <div>
-              <div className="tt-display text-2xl" style={{ color: C.amber }}>{pct(serve.serveWon, serve.servePts)}%</div>
-              <div className="tt-body text-xs" style={{ color: C.dim }}>{t('own_serve_label')} ({serve.serveWon}/{serve.servePts})</div>
-            </div>
-            <div>
-              <div className="tt-display text-2xl" style={{ color: C.greenLight }}>{pct(serve.returnWon, serve.returnPts)}%</div>
-              <div className="tt-body text-xs" style={{ color: C.dim }}>{t('return_label')} ({serve.returnWon}/{serve.returnPts})</div>
-            </div>
-          </div>
-        </Panel>
-      )}
 
       <Panel style={{ marginBottom: 16 }}>
         <div className="tt-body text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: C.dim }}>
