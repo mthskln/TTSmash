@@ -182,6 +182,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: 'Player name', event_add_guest_button: 'Add', event_cancel_button: 'Cancel event',
     my_events_title: 'My ongoing events',
     event_create_tab_label: 'Create',
+    match_not_yours: 'Not your match',
     nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar', profile_edit_button: 'Edit profile', profile_save_button: 'Save profile',
     profile_guest_notice: "You're playing as a guest — link an account to keep your data safe.", profile_link_google: 'Link Google account', profile_link_facebook: 'Link Facebook account', profile_link_success: 'Account linked!',
     profile_guest_logout_warning: "Logging out will permanently delete your guest profile \u2014 you won't be able to log back in.", profile_guest_locked_notice: 'Link a Google or Facebook account first to keep your paid profile safe.',
@@ -272,6 +273,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: 'Nom du joueur', event_add_guest_button: 'Ajouter', event_cancel_button: "Annuler l'événement",
     my_events_title: 'Mes événements en cours',
     event_create_tab_label: 'Créer',
+    match_not_yours: "Ce n'est pas votre match",
     nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar', profile_edit_button: 'Modifier le profil', profile_save_button: 'Enregistrer le profil',
     profile_guest_notice: "Vous jouez en tant qu'invité — liez un compte pour sécuriser vos données.", profile_link_google: 'Lier un compte Google', profile_link_facebook: 'Lier un compte Facebook', profile_link_success: 'Compte lié !',
     profile_guest_logout_warning: "La déconnexion supprimera définitivement votre profil d'invité \u2014 vous ne pourrez plus vous reconnecter.", profile_guest_locked_notice: "Liez d'abord un compte Google ou Facebook pour sécuriser votre profil payant.",
@@ -362,6 +364,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: 'Naam van de speler', event_add_guest_button: 'Toevoegen', event_cancel_button: 'Evenement annuleren',
     my_events_title: 'Mijn lopende evenementen',
     event_create_tab_label: 'Aanmaken',
+    match_not_yours: 'Niet jouw wedstrijd',
     nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar', profile_edit_button: 'Profiel bewerken', profile_save_button: 'Profiel opslaan',
     profile_guest_notice: 'Je speelt als gast — koppel een account om je gegevens veilig te stellen.', profile_link_google: 'Koppel Google-account', profile_link_facebook: 'Koppel Facebook-account', profile_link_success: 'Account gekoppeld!',
     profile_guest_logout_warning: 'Uitloggen verwijdert je gastprofiel permanent \u2014 je kan niet opnieuw inloggen op dit account.', profile_guest_locked_notice: 'Koppel eerst een Google- of Facebook-account om je betaalde profiel veilig te stellen.',
@@ -452,6 +455,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: 'Имя игрока', event_add_guest_button: 'Добавить', event_cancel_button: 'Отменить мероприятие',
     my_events_title: 'Мои текущие мероприятия',
     event_create_tab_label: 'Создать',
+    match_not_yours: 'Это не ваш матч',
     nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар', profile_edit_button: 'Редактировать профиль', profile_save_button: 'Сохранить профиль',
     profile_guest_notice: 'Вы играете как гость — привяжите аккаунт, чтобы сохранить свои данные.', profile_link_google: 'Привязать Google-аккаунт', profile_link_facebook: 'Привязать Facebook-аккаунт', profile_link_success: 'Аккаунт привязан!',
     profile_guest_logout_warning: 'Выход из аккаунта безвозвратно удалит ваш гостевой профиль \u2014 вы не сможете снова войти в него.', profile_guest_locked_notice: 'Сначала привяжите аккаунт Google или Facebook, чтобы защитить свой оплаченный профиль.',
@@ -542,6 +546,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: '玩家姓名', event_add_guest_button: '添加', event_cancel_button: '取消活动',
     my_events_title: '我的进行中活动',
     event_create_tab_label: '创建',
+    match_not_yours: '不是你的比赛',
     nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像', profile_edit_button: '编辑资料', profile_save_button: '保存资料',
     profile_guest_notice: '你正以访客身份使用——关联一个账号以保护你的数据。', profile_link_google: '关联 Google 账号', profile_link_facebook: '关联 Facebook 账号', profile_link_success: '账号已关联！',
     profile_guest_logout_warning: '退出登录将永久删除你的访客资料——你将无法再次登录该账户。', profile_guest_locked_notice: '请先关联 Google 或 Facebook 账号，以保护你的付费资料。',
@@ -632,6 +637,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: 'Nombre del jugador', event_add_guest_button: 'Añadir', event_cancel_button: 'Cancelar evento',
     my_events_title: 'Mis eventos en curso',
     event_create_tab_label: 'Crear',
+    match_not_yours: 'No es tu partido',
     nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
     profile_guest_notice: 'Estás jugando como invitado — vincula una cuenta para proteger tus datos.', profile_link_google: 'Vincular cuenta de Google', profile_link_facebook: 'Vincular cuenta de Facebook', profile_link_success: '¡Cuenta vinculada!',
     profile_guest_logout_warning: 'Cerrar sesión eliminará permanentemente tu perfil de invitado \u2014 no podrás volver a iniciar sesión en esta cuenta.', profile_guest_locked_notice: 'Vincula primero una cuenta de Google o Facebook para proteger tu perfil de pago.',
@@ -722,6 +728,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: 'Nome do jogador', event_add_guest_button: 'Adicionar', event_cancel_button: 'Cancelar evento',
     my_events_title: 'Os meus eventos em curso',
     event_create_tab_label: 'Criar',
+    match_not_yours: 'Não é a tua partida',
     nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
     profile_guest_notice: 'Estás a jogar como convidado — associa uma conta para proteger os teus dados.', profile_link_google: 'Associar conta Google', profile_link_facebook: 'Associar conta Facebook', profile_link_success: 'Conta associada!',
     profile_guest_logout_warning: 'Terminar sessão elimina permanentemente o teu perfil de convidado \u2014 não conseguirás voltar a entrar nesta conta.', profile_guest_locked_notice: 'Associa primeiro uma conta Google ou Facebook para proteger o teu perfil pago.',
@@ -812,6 +819,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: 'プレイヤー名', event_add_guest_button: '追加', event_cancel_button: 'イベントをキャンセル',
     my_events_title: '進行中のイベント',
     event_create_tab_label: '作成',
+    match_not_yours: 'あなたの試合ではありません',
     nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ', profile_edit_button: 'プロフィールを編集', profile_save_button: 'プロフィールを保存',
     profile_guest_notice: 'ゲストとしてプレー中です — アカウントを連携してデータを守りましょう。', profile_link_google: 'Googleアカウントを連携', profile_link_facebook: 'Facebookアカウントを連携', profile_link_success: 'アカウントを連携しました！',
     profile_guest_logout_warning: 'ログアウトするとゲストプロフィールが完全に削除され、このアカウントに再度ログインすることはできません。', profile_guest_locked_notice: '有料プロフィールを守るため、先にGoogleまたはFacebookアカウントを連携してください。',
@@ -902,6 +910,7 @@ const TRANSLATIONS = {
     event_add_guest_placeholder: '플레이어 이름', event_add_guest_button: '추가', event_cancel_button: '이벤트 취소',
     my_events_title: '나의 진행 중인 이벤트',
     event_create_tab_label: '만들기',
+    match_not_yours: '당신의 경기가 아닙니다',
     nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택', profile_edit_button: '프로필 편집', profile_save_button: '프로필 저장',
     profile_guest_notice: '게스트로 플레이중입니다 — 계정을 연결해 데이터를 안전하게 보관하세요.', profile_link_google: 'Google 계정 연결', profile_link_facebook: 'Facebook 계정 연결', profile_link_success: '계정이 연결되었습니다!',
     profile_guest_logout_warning: '로그아웃하면 게스트 프로필이 영구적으로 삭제되며, 이 계정으로 다시 로그인할 수 없습니다.', profile_guest_locked_notice: '유료 프로필을 안전하게 보호하려면 먼저 Google 또는 Facebook 계정을 연결하세요.',
@@ -1105,6 +1114,15 @@ function generateBracket(entries) {
     });
   }
   return rounds;
+}
+
+function isMatchParticipant(teamAName, teamBName, names, participantIdsList, myId) {
+  if (!myId || !participantIdsList) return false;
+  const idxA = names.indexOf(teamAName);
+  const idxB = names.indexOf(teamBName);
+  const idsA = idxA >= 0 ? (participantIdsList[idxA] || []) : [];
+  const idsB = idxB >= 0 ? (participantIdsList[idxB] || []) : [];
+  return idsA.includes(myId) || idsB.includes(myId);
 }
 
 function recordBracketResult(rounds, roundIdx, matchIdx, winner, score) {
@@ -4094,6 +4112,7 @@ function EventPlayScreen({ setView, eventId, session, settings, recordMatch, onK
       settings={settings}
       recordMatch={recordMatch}
       session={session}
+      isOrganizer={isCreator}
     />
   ) : (
     <TournamentPlay
@@ -4109,6 +4128,7 @@ function EventPlayScreen({ setView, eventId, session, settings, recordMatch, onK
       settings={settings}
       recordMatch={recordMatch}
       session={session}
+      isOrganizer={isCreator}
     />
   );
 
@@ -5876,9 +5896,10 @@ function CompetitionSetup({ setView, onStart, session }) {
   );
 }
 
-function CompetitionPlay({ setView, competition, setCompetition, settings, recordMatch, session }) {
+function CompetitionPlay({ setView, competition, setCompetition, settings, recordMatch, session, isOrganizer }) {
   const { t, lang } = useT();
   const { names, matches, bestOf, cadence, periodNumber, history, mode, pairMap, participantIdsList } = competition;
+  const myId = session && session.user ? session.user.id : null;
   const [active, setActive] = useState(null);
   const [showChampionShare, setShowChampionShare] = useState(false);
   const [detailMatch, setDetailMatch] = useState(null);
@@ -6006,23 +6027,27 @@ function CompetitionPlay({ setView, competition, setCompetition, settings, recor
 
       <div className="tt-body text-sm font-semibold mb-2" style={{ color: C.dim }}>{t('competition_standing', { played, total: matches.length })}</div>
       <div className="flex flex-col gap-2">
-        {matches.map((m, i) => (
-          <button
-            key={m.id}
-            onClick={() => m.winner ? setDetailMatch(m) : setActive(i)}
-            className="rounded-xl p-3 flex justify-between items-center"
-            style={{ background: C.panel, border: `1px solid ${C.line}` }}
-          >
-            <span className="tt-body text-sm" style={{ color: C.text }}>{m.p1} <span style={{ color: C.dim }}>vs</span> {m.p2}</span>
-            {m.winner ? (
-              <span className="tt-body text-xs px-2 py-1 rounded-md flex items-center gap-1" style={{ background: C.green, color: '#fff' }}>
-                <Check size={12} /> {m.score.setsA}-{m.score.setsB}
-              </span>
-            ) : (
-              <span className="tt-body text-xs px-2 py-1 rounded-md" style={{ background: C.panel2, color: C.amber }}>{t('badge_play')}</span>
-            )}
-          </button>
-        ))}
+        {matches.map((m, i) => {
+          const canPlay = isOrganizer || isMatchParticipant(m.p1, m.p2, names, participantIdsList, myId);
+          return (
+            <button
+              key={m.id}
+              disabled={!m.winner && !canPlay}
+              onClick={() => { if (m.winner) setDetailMatch(m); else if (canPlay) setActive(i); }}
+              className="rounded-xl p-3 flex justify-between items-center disabled:opacity-60"
+              style={{ background: C.panel, border: `1px solid ${C.line}` }}
+            >
+              <span className="tt-body text-sm" style={{ color: C.text }}>{m.p1} <span style={{ color: C.dim }}>vs</span> {m.p2}</span>
+              {m.winner ? (
+                <span className="tt-body text-xs px-2 py-1 rounded-md flex items-center gap-1" style={{ background: C.green, color: '#fff' }}>
+                  <Check size={12} /> {m.score.setsA}-{m.score.setsB}
+                </span>
+              ) : canPlay ? (
+                <span className="tt-body text-xs px-2 py-1 rounded-md" style={{ background: C.panel2, color: C.amber }}>{t('badge_play')}</span>
+              ) : null}
+            </button>
+          );
+        })}
       </div>
 
       {detailMatch && (
@@ -6126,9 +6151,10 @@ function TournamentSetup({ setView, state, setState, session }) {
   );
 }
 
-function TournamentPlay({ setView, state, setState, settings, recordMatch, session }) {
+function TournamentPlay({ setView, state, setState, settings, recordMatch, session, isOrganizer }) {
   const { t, lang } = useT();
   const { rounds, mode, pairMap, names, participantIdsList } = state;
+  const myId = session && session.user ? session.user.id : null;
   const [active, setActive] = useState(null);
   const [showChampionShare, setShowChampionShare] = useState(false);
   const [detailMatch, setDetailMatch] = useState(null);
@@ -6220,7 +6246,8 @@ function TournamentPlay({ setView, state, setState, settings, recordMatch, sessi
               {roundLabel(round.nameKey, t)} <span style={{ color: C.dim }}>&middot; bo{round.bestOf}</span>
             </div>
             {round.matches.map((m, mi) => {
-              const ready = m.p1 && m.p2 && !m.winner;
+              const canPlay = isOrganizer || isMatchParticipant(m.p1, m.p2, names, participantIdsList, myId);
+              const ready = m.p1 && m.p2 && !m.winner && canPlay;
               const finished = m.winner && m.score && m.score !== 'bye';
               return (
                 <button
@@ -6244,7 +6271,7 @@ function TournamentPlay({ setView, state, setState, settings, recordMatch, sessi
                       )}
                     </div>
                   ))}
-                  {!m.winner && m.p1 && m.p2 && <div className="tt-body text-xs mt-1" style={{ color: C.amber }}>{t('tournament_play_match')}</div>}
+                  {ready && <div className="tt-body text-xs mt-1" style={{ color: C.amber }}>{t('tournament_play_match')}</div>}
                   {m.score === 'bye' && <div className="tt-body text-xs mt-1" style={{ color: C.dim }}>{t('tournament_bye')}</div>}
                   {m.score === 'walkover' && <div className="tt-body text-xs mt-1" style={{ color: C.dim }}>{t('tournament_walkover')}</div>}
                 </button>
