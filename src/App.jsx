@@ -4076,6 +4076,7 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
   const [addResults, setAddResults] = useState([]);
   const [addSearching, setAddSearching] = useState(false);
   const [addedIds, setAddedIds] = useState(new Set());
+  const [addError, setAddError] = useState('');
   const [confirmingCancel, setConfirmingCancel] = useState(false);
 
   async function loadEvent() {
@@ -4116,11 +4117,15 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
   const amParticipant = participants.some(p => p.id === myId);
 
   async function addParticipant(targetId) {
+    setAddError('');
     try {
-      await supabase.from('event_participants').insert({ event_id: eventId, user_id: targetId, status: 'registered' });
+      const { error } = await supabase.from('event_participants').insert({ event_id: eventId, user_id: targetId, status: 'registered' });
+      if (error) { setAddError(error.message); return; }
       setAddedIds(prev => new Set(prev).add(targetId));
       await loadEvent();
-    } catch (e) { /* best effort */ }
+    } catch (e) {
+      setAddError(e && e.message ? e.message : 'Failed to add participant');
+    }
   }
 
   async function cancelEvent() {
@@ -4262,6 +4267,7 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
                 </div>
               )
             )}
+            {addError && <div className="tt-body text-xs mt-2" style={{ color: C.red }}>{addError}</div>}
           </>
         )}
       </Panel>
