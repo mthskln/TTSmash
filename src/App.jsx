@@ -4128,6 +4128,7 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
   const [addedIds, setAddedIds] = useState(new Set());
   const [addError, setAddError] = useState('');
   const [confirmingCancel, setConfirmingCancel] = useState(false);
+  const [cancelError, setCancelError] = useState('');
 
   async function loadEvent() {
     try {
@@ -4180,9 +4181,15 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
 
   async function cancelEvent() {
     if (!confirmingCancel) { setConfirmingCancel(true); return; }
+    setCancelError('');
     try {
-      await supabase.from('events').delete().eq('id', eventId);
-    } catch (e) { /* best effort */ }
+      const { error } = await supabase.from('events').delete().eq('id', eventId);
+      if (error) { setCancelError(error.message); setConfirmingCancel(false); return; }
+    } catch (e) {
+      setCancelError(e && e.message ? e.message : 'Failed to cancel event');
+      setConfirmingCancel(false);
+      return;
+    }
     setView('groups');
   }
 
@@ -4341,14 +4348,17 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
       )}
 
       {isCreator && (
-        <GhostButton
-          onClick={cancelEvent}
-          style={{ width: '100%', textAlign: 'center', marginTop: 8, background: confirmingCancel ? C.red : undefined }}
-        >
-          <span style={{ color: confirmingCancel ? '#fff' : C.red }}>
-            {confirmingCancel ? t('settings_delete_confirm') : t('event_cancel_button')}
-          </span>
-        </GhostButton>
+        <>
+          <GhostButton
+            onClick={cancelEvent}
+            style={{ width: '100%', textAlign: 'center', marginTop: 8, background: confirmingCancel ? C.red : undefined }}
+          >
+            <span style={{ color: confirmingCancel ? '#fff' : C.red }}>
+              {confirmingCancel ? t('settings_delete_confirm') : t('event_cancel_button')}
+            </span>
+          </GhostButton>
+          {cancelError && <div className="tt-body text-xs mt-2 text-center" style={{ color: C.red }}>{cancelError}</div>}
+        </>
       )}
     </div>
   );
