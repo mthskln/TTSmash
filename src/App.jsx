@@ -179,6 +179,7 @@ const TRANSLATIONS = {
     group_edit_button: 'Edit group', group_save_button: 'Save', group_delete_button: 'Delete group', group_last_admin_warning: "You're the only admin \u2014 promote another member to admin first, or the group will be left without one.", group_promote_button: 'Make admin',
     group_invite_section_title: 'Invite someone', group_invites_title: 'Group invitations',
     event_name_placeholder: 'Event name', event_link_group_label: 'Link to a group (optional)', event_no_group_option: 'No group', event_create_button: 'Create event', event_code_label: 'Join code', event_share_hint: 'Share this code so others can join', event_participants_title: 'Participants', event_close_registration: 'Close registration', event_status_open: 'Registration open', event_status_closed: 'Registration closed', event_join_button: 'Join event', event_join_code_placeholder: 'Enter join code', event_join_via_code_title: 'Have a code?', event_leave_button: 'Leave event', event_not_found: 'No event found with that code.', event_already_joined: 'Joined',
+    event_add_guest_placeholder: 'Player name', event_add_guest_button: 'Add', event_cancel_button: 'Cancel event',
     nav_profile: 'Profile', profile_username_label: 'Username', profile_username_placeholder: 'Your name', profile_city_label: 'City', profile_city_placeholder: 'Your city', profile_country_label: 'Country', profile_country_placeholder: 'Select a country', profile_avatar_presets_label: 'Or choose an avatar', profile_edit_button: 'Edit profile', profile_save_button: 'Save profile',
     profile_guest_notice: "You're playing as a guest — link an account to keep your data safe.", profile_link_google: 'Link Google account', profile_link_facebook: 'Link Facebook account', profile_link_success: 'Account linked!',
     profile_guest_logout_warning: "Logging out will permanently delete your guest profile \u2014 you won't be able to log back in.", profile_guest_locked_notice: 'Link a Google or Facebook account first to keep your paid profile safe.',
@@ -266,6 +267,7 @@ const TRANSLATIONS = {
     group_edit_button: 'Modifier le groupe', group_save_button: 'Enregistrer', group_delete_button: 'Supprimer le groupe', group_last_admin_warning: "Vous êtes le seul admin \u2014 promouvez d'abord un autre membre, sinon le groupe restera sans admin.", group_promote_button: 'Nommer admin',
     group_invite_section_title: 'Inviter quelqu\u2019un', group_invites_title: 'Invitations de groupe',
     event_name_placeholder: "Nom de l'événement", event_link_group_label: 'Lier à un groupe (facultatif)', event_no_group_option: 'Aucun groupe', event_create_button: 'Créer un événement', event_code_label: 'Code de participation', event_share_hint: 'Partagez ce code pour que d\u2019autres puissent rejoindre', event_participants_title: 'Participants', event_close_registration: 'Clôturer les inscriptions', event_status_open: 'Inscriptions ouvertes', event_status_closed: 'Inscriptions clôturées', event_join_button: "Rejoindre l'événement", event_join_code_placeholder: 'Entrez le code', event_join_via_code_title: 'Vous avez un code\u00A0?', event_leave_button: "Quitter l'événement", event_not_found: 'Aucun événement trouvé avec ce code.', event_already_joined: 'Inscrit',
+    event_add_guest_placeholder: 'Nom du joueur', event_add_guest_button: 'Ajouter', event_cancel_button: "Annuler l'événement",
     nav_profile: 'Profil', profile_username_label: "Nom d'utilisateur", profile_username_placeholder: 'Votre nom', profile_city_label: 'Ville', profile_city_placeholder: 'Votre ville', profile_country_label: 'Pays', profile_country_placeholder: 'Choisissez un pays', profile_avatar_presets_label: 'Ou choisissez un avatar', profile_edit_button: 'Modifier le profil', profile_save_button: 'Enregistrer le profil',
     profile_guest_notice: "Vous jouez en tant qu'invité — liez un compte pour sécuriser vos données.", profile_link_google: 'Lier un compte Google', profile_link_facebook: 'Lier un compte Facebook', profile_link_success: 'Compte lié !',
     profile_guest_logout_warning: "La déconnexion supprimera définitivement votre profil d'invité \u2014 vous ne pourrez plus vous reconnecter.", profile_guest_locked_notice: "Liez d'abord un compte Google ou Facebook pour sécuriser votre profil payant.",
@@ -353,6 +355,7 @@ const TRANSLATIONS = {
     group_edit_button: 'Groep bewerken', group_save_button: 'Opslaan', group_delete_button: 'Groep verwijderen', group_last_admin_warning: 'Je bent de enige admin \u2014 promoot eerst een ander lid tot admin, anders blijft de groep zonder admin achter.', group_promote_button: 'Admin maken',
     group_invite_section_title: 'Nodig iemand uit', group_invites_title: 'Groepsuitnodigingen',
     event_name_placeholder: 'Naam van het evenement', event_link_group_label: 'Koppel aan een groep (optioneel)', event_no_group_option: 'Geen groep', event_create_button: 'Evenement aanmaken', event_code_label: 'Deelcode', event_share_hint: 'Deel deze code zodat anderen kunnen aansluiten', event_participants_title: 'Deelnemers', event_close_registration: 'Inschrijvingen sluiten', event_status_open: 'Inschrijvingen open', event_status_closed: 'Inschrijvingen gesloten', event_join_button: 'Evenement joinen', event_join_code_placeholder: 'Voer deelcode in', event_join_via_code_title: 'Heb je een code?', event_leave_button: 'Evenement verlaten', event_not_found: 'Geen evenement gevonden met die code.', event_already_joined: 'Aangesloten',
+    event_add_guest_placeholder: 'Naam van de speler', event_add_guest_button: 'Toevoegen', event_cancel_button: 'Evenement annuleren',
     nav_profile: 'Profiel', profile_username_label: 'Gebruikersnaam', profile_username_placeholder: 'Jouw naam', profile_city_label: 'Stad', profile_city_placeholder: 'Jouw stad', profile_country_label: 'Land', profile_country_placeholder: 'Kies een land', profile_avatar_presets_label: 'Of kies een avatar', profile_edit_button: 'Profiel bewerken', profile_save_button: 'Profiel opslaan',
     profile_guest_notice: 'Je speelt als gast — koppel een account om je gegevens veilig te stellen.', profile_link_google: 'Koppel Google-account', profile_link_facebook: 'Koppel Facebook-account', profile_link_success: 'Account gekoppeld!',
     profile_guest_logout_warning: 'Uitloggen verwijdert je gastprofiel permanent \u2014 je kan niet opnieuw inloggen op dit account.', profile_guest_locked_notice: 'Koppel eerst een Google- of Facebook-account om je betaalde profiel veilig te stellen.',
@@ -440,6 +443,7 @@ const TRANSLATIONS = {
     group_edit_button: 'Редактировать группу', group_save_button: 'Сохранить', group_delete_button: 'Удалить группу', group_last_admin_warning: 'Вы единственный админ \u2014 сначала назначьте другого админа, иначе группа останется без админа.', group_promote_button: 'Назначить админом',
     group_invite_section_title: 'Пригласить кого-то', group_invites_title: 'Приглашения в группы',
     event_name_placeholder: 'Название мероприятия', event_link_group_label: 'Привязать к группе (необязательно)', event_no_group_option: 'Без группы', event_create_button: 'Создать мероприятие', event_code_label: 'Код для участия', event_share_hint: 'Поделитесь этим кодом, чтобы другие могли присоединиться', event_participants_title: 'Участники', event_close_registration: 'Закрыть регистрацию', event_status_open: 'Регистрация открыта', event_status_closed: 'Регистрация закрыта', event_join_button: 'Присоединиться', event_join_code_placeholder: 'Введите код', event_join_via_code_title: 'Есть код?', event_leave_button: 'Покинуть мероприятие', event_not_found: 'Мероприятие с таким кодом не найдено.', event_already_joined: 'Участвуете',
+    event_add_guest_placeholder: 'Имя игрока', event_add_guest_button: 'Добавить', event_cancel_button: 'Отменить мероприятие',
     nav_profile: 'Профиль', profile_username_label: 'Имя пользователя', profile_username_placeholder: 'Ваше имя', profile_city_label: 'Город', profile_city_placeholder: 'Ваш город', profile_country_label: 'Страна', profile_country_placeholder: 'Выберите страну', profile_avatar_presets_label: 'Или выберите аватар', profile_edit_button: 'Редактировать профиль', profile_save_button: 'Сохранить профиль',
     profile_guest_notice: 'Вы играете как гость — привяжите аккаунт, чтобы сохранить свои данные.', profile_link_google: 'Привязать Google-аккаунт', profile_link_facebook: 'Привязать Facebook-аккаунт', profile_link_success: 'Аккаунт привязан!',
     profile_guest_logout_warning: 'Выход из аккаунта безвозвратно удалит ваш гостевой профиль \u2014 вы не сможете снова войти в него.', profile_guest_locked_notice: 'Сначала привяжите аккаунт Google или Facebook, чтобы защитить свой оплаченный профиль.',
@@ -527,6 +531,7 @@ const TRANSLATIONS = {
     group_edit_button: '编辑群组', group_save_button: '保存', group_delete_button: '删除群组', group_last_admin_warning: '你是唯一的管理员——请先将另一位成员设为管理员，否则群组将无人管理。', group_promote_button: '设为管理员',
     group_invite_section_title: '邀请某人', group_invites_title: '群组邀请',
     event_name_placeholder: '活动名称', event_link_group_label: '关联群组（可选）', event_no_group_option: '无群组', event_create_button: '创建活动', event_code_label: '加入码', event_share_hint: '分享此代码以便他人加入', event_participants_title: '参与者', event_close_registration: '关闭报名', event_status_open: '报名开放中', event_status_closed: '报名已关闭', event_join_button: '加入活动', event_join_code_placeholder: '输入加入码', event_join_via_code_title: '有邀请码吗？', event_leave_button: '退出活动', event_not_found: '未找到该代码对应的活动。', event_already_joined: '已加入',
+    event_add_guest_placeholder: '玩家姓名', event_add_guest_button: '添加', event_cancel_button: '取消活动',
     nav_profile: '个人资料', profile_username_label: '用户名', profile_username_placeholder: '你的名字', profile_city_label: '城市', profile_city_placeholder: '你的城市', profile_country_label: '国家', profile_country_placeholder: '选择国家', profile_avatar_presets_label: '或选择一个头像', profile_edit_button: '编辑资料', profile_save_button: '保存资料',
     profile_guest_notice: '你正以访客身份使用——关联一个账号以保护你的数据。', profile_link_google: '关联 Google 账号', profile_link_facebook: '关联 Facebook 账号', profile_link_success: '账号已关联！',
     profile_guest_logout_warning: '退出登录将永久删除你的访客资料——你将无法再次登录该账户。', profile_guest_locked_notice: '请先关联 Google 或 Facebook 账号，以保护你的付费资料。',
@@ -614,6 +619,7 @@ const TRANSLATIONS = {
     group_edit_button: 'Editar grupo', group_save_button: 'Guardar', group_delete_button: 'Eliminar grupo', group_last_admin_warning: 'Eres el único administrador \u2014 asciende primero a otro miembro, o el grupo se quedará sin administrador.', group_promote_button: 'Hacer administrador',
     group_invite_section_title: 'Invitar a alguien', group_invites_title: 'Invitaciones a grupos',
     event_name_placeholder: 'Nombre del evento', event_link_group_label: 'Vincular a un grupo (opcional)', event_no_group_option: 'Sin grupo', event_create_button: 'Crear evento', event_code_label: 'Código de acceso', event_share_hint: 'Comparte este código para que otros puedan unirse', event_participants_title: 'Participantes', event_close_registration: 'Cerrar inscripciones', event_status_open: 'Inscripciones abiertas', event_status_closed: 'Inscripciones cerradas', event_join_button: 'Unirse al evento', event_join_code_placeholder: 'Introduce el código', event_join_via_code_title: '¿Tienes un código?', event_leave_button: 'Abandonar evento', event_not_found: 'No se encontró ningún evento con ese código.', event_already_joined: 'Inscrito',
+    event_add_guest_placeholder: 'Nombre del jugador', event_add_guest_button: 'Añadir', event_cancel_button: 'Cancelar evento',
     nav_profile: 'Perfil', profile_username_label: 'Nombre de usuario', profile_username_placeholder: 'Tu nombre', profile_city_label: 'Ciudad', profile_city_placeholder: 'Tu ciudad', profile_country_label: 'País', profile_country_placeholder: 'Selecciona un país', profile_avatar_presets_label: 'O elige un avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
     profile_guest_notice: 'Estás jugando como invitado — vincula una cuenta para proteger tus datos.', profile_link_google: 'Vincular cuenta de Google', profile_link_facebook: 'Vincular cuenta de Facebook', profile_link_success: '¡Cuenta vinculada!',
     profile_guest_logout_warning: 'Cerrar sesión eliminará permanentemente tu perfil de invitado \u2014 no podrás volver a iniciar sesión en esta cuenta.', profile_guest_locked_notice: 'Vincula primero una cuenta de Google o Facebook para proteger tu perfil de pago.',
@@ -701,6 +707,7 @@ const TRANSLATIONS = {
     group_edit_button: 'Editar grupo', group_save_button: 'Guardar', group_delete_button: 'Eliminar grupo', group_last_admin_warning: 'És o único administrador \u2014 promove primeiro outro membro, ou o grupo ficará sem administrador.', group_promote_button: 'Tornar administrador',
     group_invite_section_title: 'Convidar alguém', group_invites_title: 'Convites de grupo',
     event_name_placeholder: 'Nome do evento', event_link_group_label: 'Associar a um grupo (opcional)', event_no_group_option: 'Sem grupo', event_create_button: 'Criar evento', event_code_label: 'Código de acesso', event_share_hint: 'Partilha este código para que outros possam aderir', event_participants_title: 'Participantes', event_close_registration: 'Encerrar inscrições', event_status_open: 'Inscrições abertas', event_status_closed: 'Inscrições encerradas', event_join_button: 'Aderir ao evento', event_join_code_placeholder: 'Introduz o código', event_join_via_code_title: 'Tens um código?', event_leave_button: 'Sair do evento', event_not_found: 'Nenhum evento encontrado com esse código.', event_already_joined: 'Inscrito',
+    event_add_guest_placeholder: 'Nome do jogador', event_add_guest_button: 'Adicionar', event_cancel_button: 'Cancelar evento',
     nav_profile: 'Perfil', profile_username_label: 'Nome de utilizador', profile_username_placeholder: 'O teu nome', profile_city_label: 'Cidade', profile_city_placeholder: 'A tua cidade', profile_country_label: 'País', profile_country_placeholder: 'Seleciona um país', profile_avatar_presets_label: 'Ou escolhe um avatar', profile_edit_button: 'Editar perfil', profile_save_button: 'Guardar perfil',
     profile_guest_notice: 'Estás a jogar como convidado — associa uma conta para proteger os teus dados.', profile_link_google: 'Associar conta Google', profile_link_facebook: 'Associar conta Facebook', profile_link_success: 'Conta associada!',
     profile_guest_logout_warning: 'Terminar sessão elimina permanentemente o teu perfil de convidado \u2014 não conseguirás voltar a entrar nesta conta.', profile_guest_locked_notice: 'Associa primeiro uma conta Google ou Facebook para proteger o teu perfil pago.',
@@ -788,6 +795,7 @@ const TRANSLATIONS = {
     group_edit_button: 'グループを編集', group_save_button: '保存', group_delete_button: 'グループを削除', group_last_admin_warning: 'あなたは唱一の管理者です — 先に他のメンバーを管理者にしてください。さもないとグループに管理者がいなくなります。', group_promote_button: '管理者にする',
     group_invite_section_title: '誰かを招待', group_invites_title: 'グループ招待',
     event_name_placeholder: 'イベント名', event_link_group_label: 'グループに紐付け（任意）', event_no_group_option: 'グループなし', event_create_button: 'イベントを作成', event_code_label: '参加コード', event_share_hint: 'このコードを共有すると参加できます', event_participants_title: '参加者', event_close_registration: '参加受付を締め切る', event_status_open: '参加受付中', event_status_closed: '参加受付終了', event_join_button: 'イベントに参加', event_join_code_placeholder: 'コードを入力', event_join_via_code_title: 'コードをお持ちですか？', event_leave_button: 'イベントを退出', event_not_found: 'そのコードのイベントが見つかりません。', event_already_joined: '参加済み',
+    event_add_guest_placeholder: 'プレイヤー名', event_add_guest_button: '追加', event_cancel_button: 'イベントをキャンセル',
     nav_profile: 'プロフィール', profile_username_label: 'ユーザー名', profile_username_placeholder: 'あなたの名前', profile_city_label: '市区町村', profile_city_placeholder: 'あなたの市区町村', profile_country_label: '国', profile_country_placeholder: '国を選択', profile_avatar_presets_label: 'またはアバターを選ぶ', profile_edit_button: 'プロフィールを編集', profile_save_button: 'プロフィールを保存',
     profile_guest_notice: 'ゲストとしてプレー中です — アカウントを連携してデータを守りましょう。', profile_link_google: 'Googleアカウントを連携', profile_link_facebook: 'Facebookアカウントを連携', profile_link_success: 'アカウントを連携しました！',
     profile_guest_logout_warning: 'ログアウトするとゲストプロフィールが完全に削除され、このアカウントに再度ログインすることはできません。', profile_guest_locked_notice: '有料プロフィールを守るため、先にGoogleまたはFacebookアカウントを連携してください。',
@@ -875,6 +883,7 @@ const TRANSLATIONS = {
     group_edit_button: '그룹 편집', group_save_button: '저장', group_delete_button: '그룹 삭제', group_last_admin_warning: '당신이 유일한 관리자입니다 — 먼저 다른 멤버를 관리자로 지정하세요. 그렇지 않으면 그룹에 관리자가 없게 됩니다.', group_promote_button: '관리자로 지정',
     group_invite_section_title: '누군가 초대하기', group_invites_title: '그룹 초대',
     event_name_placeholder: '이벤트 이름', event_link_group_label: '그룹에 연결 (선택 사항)', event_no_group_option: '그룹 없음', event_create_button: '이벤트 만들기', event_code_label: '참가 코드', event_share_hint: '이 코드를 공유하면 다른 사람이 참여할 수 있습니다', event_participants_title: '참가자', event_close_registration: '등록 마감', event_status_open: '등록 진행 중', event_status_closed: '등록 마감됨', event_join_button: '이벤트 참가', event_join_code_placeholder: '코드 입력', event_join_via_code_title: '코드가 있으신가요?', event_leave_button: '이벤트 나가기', event_not_found: '해당 코드로 이벤트를 찾을 수 없습니다.', event_already_joined: '참가함',
+    event_add_guest_placeholder: '플레이어 이름', event_add_guest_button: '추가', event_cancel_button: '이벤트 취소',
     nav_profile: '프로필', profile_username_label: '사용자 이름', profile_username_placeholder: '당신의 이름', profile_city_label: '도시', profile_city_placeholder: '당신의 도시', profile_country_label: '국가', profile_country_placeholder: '국가 선택', profile_avatar_presets_label: '또는 아바타 선택', profile_edit_button: '프로필 편집', profile_save_button: '프로필 저장',
     profile_guest_notice: '게스트로 플레이중입니다 — 계정을 연결해 데이터를 안전하게 보관하세요.', profile_link_google: 'Google 계정 연결', profile_link_facebook: 'Facebook 계정 연결', profile_link_success: '계정이 연결되었습니다!',
     profile_guest_logout_warning: '로그아웃하면 게스트 프로필이 영구적으로 삭제되며, 이 계정으로 다시 로그인할 수 없습니다.', profile_guest_locked_notice: '유료 프로필을 안전하게 보호하려면 먼저 Google 또는 Facebook 계정을 연결하세요.',
@@ -4063,6 +4072,11 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
   const [groupName, setGroupName] = useState('');
+  const [addQuery, setAddQuery] = useState('');
+  const [addResults, setAddResults] = useState([]);
+  const [addSearching, setAddSearching] = useState(false);
+  const [addedIds, setAddedIds] = useState(new Set());
+  const [confirmingCancel, setConfirmingCancel] = useState(false);
 
   async function loadEvent() {
     try {
@@ -4076,15 +4090,46 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
         .from('event_participants')
         .select('user_id, status, profiles(id, username, avatar_url)')
         .eq('event_id', eventId);
-      setParticipants((rows || []).filter(r => r.profiles && r.status === 'registered').map(r => r.profiles));
+      const active = (rows || []).filter(r => r.status === 'registered' && r.profiles);
+      setParticipants(active.map(r => r.profiles));
     } catch (e) { /* best effort */ }
     setLoading(false);
   }
 
   useEffect(() => { if (eventId) loadEvent(); }, [eventId]);
 
+  useEffect(() => {
+    const q = addQuery.trim();
+    if (!q) { setAddResults([]); return; }
+    setAddSearching(true);
+    const timer = setTimeout(async () => {
+      try {
+        const { data } = await supabase.from('profiles').select('id, username, avatar_url').ilike('username', `%${q}%`).limit(8);
+        setAddResults(data || []);
+      } catch (e) { setAddResults([]); }
+      setAddSearching(false);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [addQuery]);
+
   const isCreator = event && event.created_by === myId;
   const amParticipant = participants.some(p => p.id === myId);
+
+  async function addParticipant(targetId) {
+    try {
+      await supabase.from('event_participants').insert({ event_id: eventId, user_id: targetId, status: 'registered' });
+      setAddedIds(prev => new Set(prev).add(targetId));
+      await loadEvent();
+    } catch (e) { /* best effort */ }
+  }
+
+  async function cancelEvent() {
+    if (!confirmingCancel) { setConfirmingCancel(true); return; }
+    try {
+      await supabase.from('events').delete().eq('id', eventId);
+    } catch (e) { /* best effort */ }
+    setView('groups');
+  }
 
   async function joinEvent() {
     try {
@@ -4174,14 +4219,51 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
 
       <Panel style={{ marginBottom: 16 }}>
         <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('event_participants_title')} ({participants.length})</div>
-        <div className="flex flex-wrap gap-3">
-          {participants.map(p => (
-            <div key={p.id} className="flex flex-col items-center gap-1" style={{ width: 64 }}>
+        <div className="flex flex-wrap gap-3 mb-3">
+          {participants.map((p, i) => (
+            <div key={p.id || i} className="flex flex-col items-center gap-1" style={{ width: 64 }}>
               <Avatar name={p.username} photo={p.avatar_url} size={48} />
               <span className="tt-body text-xs truncate" style={{ color: C.text, maxWidth: 64 }}>{p.username}</span>
             </div>
           ))}
         </div>
+        {isCreator && event && event.status === 'open' && (
+          <>
+            <input
+              value={addQuery}
+              onChange={e => setAddQuery(e.target.value)}
+              placeholder={t('friends_search_placeholder')}
+              className="tt-body w-full px-3 py-2 rounded-lg outline-none"
+              style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
+            />
+            {addQuery.trim() && (
+              addSearching ? (
+                <div className="tt-body text-sm text-center mt-2" style={{ color: C.dim }}>...</div>
+              ) : addResults.length === 0 ? (
+                <div className="tt-body text-sm text-center mt-2" style={{ color: C.dim }}>{t('friends_no_results')}</div>
+              ) : (
+                <div className="flex flex-col gap-2 mt-2">
+                  {addResults.map(p => {
+                    const already = participants.some(pp => pp.id === p.id) || addedIds.has(p.id);
+                    return (
+                      <div key={p.id} className="flex items-center gap-3">
+                        <Avatar name={p.username} photo={p.avatar_url} size={32} />
+                        <div className="tt-body text-sm font-semibold flex-1 min-w-0 truncate" style={{ color: C.text }}>{p.username}</div>
+                        {already ? (
+                          <span className="tt-body text-xs flex-shrink-0" style={{ color: C.dim }}>{t('event_already_joined')}</span>
+                        ) : (
+                          <button onClick={() => addParticipant(p.id)} className="tt-body text-xs px-3 py-2 rounded-lg flex-shrink-0" style={{ background: C.greenLight, color: '#04140D' }}>
+                            {t('event_add_guest_button')}
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )
+            )}
+          </>
+        )}
       </Panel>
 
       {event.status === 'open' && !isCreator && (
@@ -4200,6 +4282,17 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
         <PrimaryButton onClick={() => onOpenPlay(eventId)} style={{ width: '100%' }}>
           {t(event.kind === 'competition' ? 'nav_competition' : 'nav_tournament')}
         </PrimaryButton>
+      )}
+
+      {isCreator && (
+        <GhostButton
+          onClick={cancelEvent}
+          style={{ width: '100%', textAlign: 'center', marginTop: 8, background: confirmingCancel ? C.red : undefined }}
+        >
+          <span style={{ color: confirmingCancel ? '#fff' : C.red }}>
+            {confirmingCancel ? t('settings_delete_confirm') : t('event_cancel_button')}
+          </span>
+        </GhostButton>
       )}
     </div>
   );
