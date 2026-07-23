@@ -2922,14 +2922,14 @@ function NewsBulletin({ matchLog }) {
 }
 
 /* ============================= SIDEBAR ============================= */
-function Sidebar({ view, setView, hasCompetition }) {
+function Sidebar({ view, setView, hasCompetition, activeEventKind }) {
   const { t } = useT();
   const items = [
     { key: 'home', label: t('nav_home'), icon: HomeIcon, match: v => v === 'home' },
     { key: 'myprofile', label: t('nav_profile'), icon: User, match: v => v === 'myprofile' },
     { key: 'freeplay-setup', label: t('nav_freeplay'), icon: CrossedPaddlesIcon, match: v => v.startsWith('freeplay') },
-    { key: hasCompetition ? 'competition-play' : 'competition-setup', label: t('nav_competition'), icon: Users, match: v => v.startsWith('competition') },
-    { key: 'tournament-setup', label: t('nav_tournament'), icon: Trophy, match: v => v.startsWith('tournament') },
+    { key: hasCompetition ? 'competition-play' : 'competition-setup', label: t('nav_competition'), icon: Users, match: v => v.startsWith('competition') || ((v === 'event-lobby' || v === 'event-play') && activeEventKind === 'competition') },
+    { key: 'tournament-setup', label: t('nav_tournament'), icon: Trophy, match: v => v.startsWith('tournament') || ((v === 'event-lobby' || v === 'event-play') && activeEventKind === 'tournament') },
     { key: 'leaderboard', label: t('nav_stats'), icon: BarChart2, match: v => v === 'leaderboard' || v === 'player-detail' || v === 'h2h' },
     { key: 'friends', label: t('nav_friends'), icon: UserPlus, match: v => v === 'friends' },
     { key: 'groups', label: t('nav_groups'), icon: Building2, match: v => v === 'groups' || v === 'group-detail' },
@@ -3975,7 +3975,7 @@ function EventHubScreen({ setView, session, initialKind, onOpenEvent, presetClub
   );
 }
 
-function EventPlayScreen({ setView, eventId, session, settings, recordMatch }) {
+function EventPlayScreen({ setView, eventId, session, settings, recordMatch, onKindKnown }) {
   const { t } = useT();
   const myId = session && session.user ? session.user.id : null;
   const [event, setEvent] = useState(null);
@@ -3990,6 +3990,7 @@ function EventPlayScreen({ setView, eventId, session, settings, recordMatch }) {
         const { data } = await supabase.from('events').select('*').eq('id', eventId).maybeSingle();
         setEvent(data || null);
         setBracket(data ? data.bracket : null);
+        if (data && onKindKnown) onKindKnown(data.kind);
       } catch (e) { /* best effort */ }
       setLoading(false);
     })();
@@ -4114,7 +4115,7 @@ function EventPlayScreen({ setView, eventId, session, settings, recordMatch }) {
   );
 }
 
-function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
+function EventLobbyScreen({ setView, eventId, session, onOpenPlay, onKindKnown }) {
   const { t } = useT();
   const myId = session && session.user ? session.user.id : null;
   const [event, setEvent] = useState(null);
@@ -4134,6 +4135,7 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
     try {
       const { data: ev } = await supabase.from('events').select('*').eq('id', eventId).maybeSingle();
       setEvent(ev || null);
+      if (ev && onKindKnown) onKindKnown(ev.kind);
       if (ev && ev.club_id) {
         const { data: club } = await supabase.from('clubs').select('name').eq('id', ev.club_id).maybeSingle();
         setGroupName(club ? club.name : '');
@@ -4173,6 +4175,8 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
       const { error } = await supabase.from('event_participants').insert({ event_id: eventId, user_id: targetId, status: 'registered' });
       if (error) { setAddError(error.message); return; }
       setAddedIds(prev => new Set(prev).add(targetId));
+      setAddQuery('');
+      setAddResults([]);
       await loadEvent();
     } catch (e) {
       setAddError(e && e.message ? e.message : 'Failed to add participant');
@@ -4190,7 +4194,7 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay }) {
       setConfirmingCancel(false);
       return;
     }
-    setView('groups');
+    setView(event && event.kind === 'competition' ? 'competition-setup' : 'tournament-setup');
   }
 
   async function joinEvent() {
@@ -6282,6 +6286,7 @@ export default function App() {
   const [selectedGroupId, setSelectedGroupId] = useState(null);
   const [selectedGroupName, setSelectedGroupName] = useState('');
   const [selectedEventId, setSelectedEventId] = useState(null);
+  const [activeEventKind, setActiveEventKind] = useState(null);
   const [eventHubKind, setEventHubKind] = useState('competition');
   const [eventPresetClub, setEventPresetClub] = useState(null);
   const [lang, setLangState] = useState('nl');
@@ -6585,8 +6590,8 @@ export default function App() {
     : <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
   else if (view === 'tournament-setup') content = <EventHubScreen setView={setView} session={session} initialKind="tournament" onOpenEvent={openEvent} />;
   else if (view === 'tournament-play') content = <TournamentPlay setView={setView} state={tState} setState={setTState} settings={settings} recordMatch={recordMatch} session={session} />;
-  else if (view === 'event-lobby') content = <EventLobbyScreen setView={setView} eventId={selectedEventId} session={session} onOpenPlay={id => { setSelectedEventId(id); setView('event-play'); }} />;
-  else if (view === 'event-play') content = <EventPlayScreen setView={setView} eventId={selectedEventId} session={session} settings={settings} recordMatch={recordMatch} />;
+  else if (view === 'event-lobby') content = <EventLobbyScreen setView={setView} eventId={selectedEventId} session={session} onOpenPlay={id => { setSelectedEventId(id); setView('event-play'); }} onKindKnown={setActiveEventKind} />;
+  else if (view === 'event-play') content = <EventPlayScreen setView={setView} eventId={selectedEventId} session={session} settings={settings} recordMatch={recordMatch} onKindKnown={setActiveEventKind} />;
   else if (view === 'group-event-create') content = <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} presetClubId={eventPresetClub && eventPresetClub.id} presetClubName={eventPresetClub && eventPresetClub.name} />;
 
   return (
@@ -6603,7 +6608,7 @@ export default function App() {
         }}
       >
         <style>{fontImport}</style>
-        <Sidebar view={view} setView={setView} hasCompetition={!!competition} />
+        <Sidebar view={view} setView={setView} hasCompetition={!!competition} activeEventKind={activeEventKind} />
         {view === 'home' ? (
           <div className="flex-1" style={{ minHeight: '100vh' }}>
             {content}
