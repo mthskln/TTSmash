@@ -2955,7 +2955,6 @@ function Sidebar({ view, setView, hasCompetition, activeEventKind }) {
     { key: 'home', label: t('nav_home'), icon: HomeIcon, match: v => v === 'home' },
     { key: 'myprofile', label: t('nav_profile'), icon: User, match: v => v === 'myprofile' },
     { key: 'freeplay-setup', label: t('nav_freeplay'), icon: CrossedPaddlesIcon, match: v => v.startsWith('freeplay') },
-    { key: hasCompetition ? 'competition-play' : 'competition-setup', label: t('nav_competition'), icon: Users, match: v => v.startsWith('competition') || ((v === 'event-lobby' || v === 'event-play') && activeEventKind === 'competition') },
     { key: 'tournament-setup', label: t('nav_tournament'), icon: Trophy, match: v => v.startsWith('tournament') || ((v === 'event-lobby' || v === 'event-play') && activeEventKind === 'tournament') },
     { key: 'leaderboard', label: t('nav_stats'), icon: BarChart2, match: v => v === 'leaderboard' || v === 'player-detail' || v === 'h2h' },
     { key: 'friends', label: t('nav_friends'), icon: UserPlus, match: v => v === 'friends' },
@@ -3814,15 +3813,14 @@ function PlayerPicker({ value, onChange, placeholder, friendsList, myProfileId }
   );
 }
 
-function EventHubScreen({ setView, session, initialKind, onOpenEvent, presetClubId, presetClubName }) {
+function EventHubScreen({ setView, session, onOpenEvent, presetClubId, presetClubName }) {
   const { t } = useT();
   const myId = session && session.user ? session.user.id : null;
   const [tab, setTab] = useState('create');
-  const [kind, setKind] = useState(initialKind || 'competition');
+  const kind = 'tournament';
   const [name, setName] = useState('');
   const [mode, setMode] = useState('enkel');
   const [bestOf, setBestOf] = useState(5);
-  const [cadence, setCadence] = useState('weekly');
   const [myGroups, setMyGroups] = useState([]);
   const [clubId, setClubId] = useState(presetClubId || '');
   const [creating, setCreating] = useState(false);
@@ -3873,7 +3871,7 @@ function EventHubScreen({ setView, session, initialKind, onOpenEvent, presetClub
       try {
         const { data, error } = await supabase.from('events').insert({
           kind, name: trimmedName, mode, best_of: bestOf,
-          cadence: kind === 'competition' ? cadence : null,
+          cadence: null,
           club_id: clubId || null,
           created_by: myId,
           join_code: code,
@@ -3910,7 +3908,7 @@ function EventHubScreen({ setView, session, initialKind, onOpenEvent, presetClub
 
   return (
     <div>
-      <BackBar title={kind === 'competition' ? t('nav_competition') : t('nav_tournament')} onBack={() => setView('home')} />
+      <BackBar title={t('nav_tournament')} onBack={() => setView('home')} />
 
       {myEvents.length > 0 && (
         <Panel style={{ marginBottom: 16 }}>
@@ -3942,27 +3940,9 @@ function EventHubScreen({ setView, session, initialKind, onOpenEvent, presetClub
 
       {tab === 'create' ? (
         <div className="flex flex-col gap-4">
-          {presetClubId && (
-            <Panel>
-              <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('mode_label')}</div>
-              <SegButton options={[{ value: 'competition', label: t('nav_competition') }, { value: 'tournament', label: t('nav_tournament') }]} value={kind} onChange={setKind} />
-            </Panel>
-          )}
           <Panel>
             <input value={name} onChange={e => setName(e.target.value)} placeholder={t('event_name_placeholder')} className="tt-body w-full px-3 py-2 rounded-lg outline-none" style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }} />
           </Panel>
-          {kind === 'competition' && (
-            <Panel>
-              <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('cadence_label')}</div>
-              <SegButton options={[{ value: 'weekly', label: t('cadence_weekly') }, { value: 'monthly', label: t('cadence_monthly') }]} value={cadence} onChange={setCadence} />
-            </Panel>
-          )}
-          {kind === 'competition' && (
-            <Panel>
-              <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('sets_count_label')}</div>
-              <BestOfPicker options={[3, 5, 7]} value={bestOf} onChange={setBestOf} />
-            </Panel>
-          )}
           {presetClubId ? (
             <Panel>
               <div className="tt-body text-sm mb-1 font-semibold" style={{ color: C.dim }}>{t('event_link_group_label')}</div>
@@ -4225,7 +4205,7 @@ function EventLobbyScreen({ setView, eventId, session, onOpenPlay, onKindKnown }
       setConfirmingCancel(false);
       return;
     }
-    setView(event && event.kind === 'competition' ? 'competition-setup' : 'tournament-setup');
+    setView('tournament-setup');
   }
 
   async function joinEvent() {
@@ -6622,15 +6602,11 @@ export default function App() {
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} settings={settings} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} session={session} />;
-  else if (view === 'competition-setup') content = <EventHubScreen key="competition-setup" setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
-  else if (view === 'competition-play') content = competition
-    ? <CompetitionPlay setView={setView} competition={competition} setCompetition={setCompetition} settings={settings} recordMatch={recordMatch} session={session} />
-    : <EventHubScreen key="competition-setup" setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
-  else if (view === 'tournament-setup') content = <EventHubScreen key="tournament-setup" setView={setView} session={session} initialKind="tournament" onOpenEvent={openEvent} />;
+  else if (view === 'tournament-setup') content = <EventHubScreen key="tournament-setup" setView={setView} session={session} onOpenEvent={openEvent} />;
   else if (view === 'tournament-play') content = <TournamentPlay setView={setView} state={tState} setState={setTState} settings={settings} recordMatch={recordMatch} session={session} />;
   else if (view === 'event-lobby') content = <EventLobbyScreen setView={setView} eventId={selectedEventId} session={session} onOpenPlay={id => { setSelectedEventId(id); setView('event-play'); }} onKindKnown={setActiveEventKind} />;
   else if (view === 'event-play') content = <EventPlayScreen setView={setView} eventId={selectedEventId} session={session} settings={settings} recordMatch={recordMatch} onKindKnown={setActiveEventKind} />;
-  else if (view === 'group-event-create') content = <EventHubScreen key={`group-event-create-${eventPresetClub && eventPresetClub.id}`} setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} presetClubId={eventPresetClub && eventPresetClub.id} presetClubName={eventPresetClub && eventPresetClub.name} />;
+  else if (view === 'group-event-create') content = <EventHubScreen key={`group-event-create-${eventPresetClub && eventPresetClub.id}`} setView={setView} session={session} onOpenEvent={openEvent} presetClubId={eventPresetClub && eventPresetClub.id} presetClubName={eventPresetClub && eventPresetClub.name} />;
 
   return (
     <LangContext.Provider value={langCtxValue}>
