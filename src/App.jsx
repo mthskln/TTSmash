@@ -6,7 +6,7 @@ import {
   Zap, Target, Shield, Medal, Maximize, Minimize, Building2, Pencil,
 } from 'lucide-react';
 import {
-  BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from 'recharts';
 import { supabase } from './supabaseClient';
 
@@ -168,7 +168,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: 'Removes all matches, stats, photos, friends and settings from this device. This cannot be undone.',
     settings_delete_confirm: 'Are you sure? Tap again to confirm', settings_delete_account_label: 'Delete my account', settings_delete_account_desc: 'Permanently removes your online profile (username, photo, city, country) and signs you out. This cannot be undone.', settings_delete_account_confirm: 'Are you sure? Tap again to permanently delete',
     stats_title: 'Leaderboard', stats_h2h: 'Head-to-head comparison', stats_ranking: 'Ranking', stats_empty: 'No matches played yet.',
+    leaderboard_tab_club: 'Club', leaderboard_tab_regional: 'Regional', leaderboard_no_club: "You're not in any club yet.", leaderboard_select_club: 'Select club', leaderboard_regional_empty: 'No players found in your country yet.', leaderboard_set_country_notice: 'Set your country in your profile to see regional rankings.',
     stats_wins_chart: 'Wins per player (top 10)', stats_points_chart: 'Points scored (top 10)', chart_won: 'Won', chart_lost: 'Lost', chart_for: 'For', chart_against: 'Against',
+    chart_wl_title: 'Wins vs losses', chart_sets_title: 'Sets for vs against', chart_points_title: 'Points for vs against',
     stats_scope_all: 'All',
     nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.', friend_requests_title: 'Friend requests', friend_request_sent: 'Request sent', friend_request_pending_you: 'Wants to be friends', friends_already: 'Friends', btn_accept: 'Accept', btn_decline: 'Decline', friends_none_yet: 'No friends yet', btn_challenge: 'Challenge',
     nav_groups: 'Clubs', groups_create_button: 'Create club', groups_search_placeholder: 'Search for a club...', group_name_placeholder: 'Club name', group_description_placeholder: 'Description (optional)', groups_empty: "You're not in any club yet.", group_join_button: 'Join', group_joined_label: 'Member', group_members_title: 'Members', group_leaderboard_title: 'Club leaderboard', group_leave_button: 'Leave club', group_no_results: 'No clubs found.',
@@ -258,7 +260,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: 'Supprime tous les matchs, statistiques, photos, amis et réglages de cet appareil. Cette action est irréversible.',
     settings_delete_confirm: 'Êtes-vous sûr\u00A0? Touchez à nouveau pour confirmer', settings_delete_account_label: 'Supprimer mon compte', settings_delete_account_desc: 'Supprime définitivement votre profil en ligne (nom, photo, ville, pays) et vous déconnecte. Action irréversible.', settings_delete_account_confirm: 'Êtes-vous sûr\u00A0? Touchez à nouveau pour supprimer définitivement',
     stats_title: 'Classement', stats_h2h: 'Comparaison face-à-face', stats_ranking: 'Classement', stats_empty: 'Aucun match joué pour le moment.',
+    leaderboard_tab_club: 'Club', leaderboard_tab_regional: 'Régional', leaderboard_no_club: "Vous ne faites partie d'aucun club pour l'instant.", leaderboard_select_club: 'Choisir un club', leaderboard_regional_empty: "Aucun joueur trouvé dans votre pays pour l'instant.", leaderboard_set_country_notice: 'Renseignez votre pays dans votre profil pour voir le classement régional.',
     stats_wins_chart: 'Victoires par joueur (top 10)', stats_points_chart: 'Points marqués (top 10)', chart_won: 'Gagnés', chart_lost: 'Perdus', chart_for: 'Pour', chart_against: 'Contre',
+    chart_wl_title: 'Victoires vs défaites', chart_sets_title: 'Sets pour vs contre', chart_points_title: 'Points pour vs contre',
     stats_scope_all: 'Tout',
     nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.', friend_requests_title: "Demandes d'amis", friend_request_sent: 'Demande envoyée', friend_request_pending_you: 'Veut être ami(e)', friends_already: 'Amis', btn_accept: 'Accepter', btn_decline: 'Refuser', friends_none_yet: "Pas encore d'amis", btn_challenge: 'Défier',
     nav_groups: 'Clubs', groups_create_button: 'Créer un club', groups_search_placeholder: 'Rechercher un club...', group_name_placeholder: 'Nom du club', group_description_placeholder: 'Description (facultatif)', groups_empty: "Vous ne faites partie d'aucun club pour l'instant.", group_join_button: 'Rejoindre', group_joined_label: 'Membre', group_members_title: 'Membres', group_leaderboard_title: 'Classement du club', group_leave_button: 'Quitter le club', group_no_results: 'Aucun club trouvé.',
@@ -348,7 +352,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: "Verwijdert alle wedstrijden, statistieken, foto's, vrienden en instellingen van dit toestel. Dit kan niet ongedaan gemaakt worden.",
     settings_delete_confirm: 'Weet je het zeker? Tik opnieuw om te bevestigen', settings_delete_account_label: 'Verwijder mijn account', settings_delete_account_desc: 'Verwijdert je online profiel (gebruikersnaam, foto, stad, land) definitief en logt je uit. Dit kan niet ongedaan gemaakt worden.', settings_delete_account_confirm: 'Weet je het zeker? Tik opnieuw om definitief te verwijderen',
     stats_title: 'Ranglijst', stats_h2h: 'Head-to-head vergelijking', stats_ranking: 'Ranglijst', stats_empty: 'Nog geen wedstrijden gespeeld.',
+    leaderboard_tab_club: 'Club', leaderboard_tab_regional: 'Regionaal', leaderboard_no_club: 'Je zit nog in geen enkele club.', leaderboard_select_club: 'Kies een club', leaderboard_regional_empty: 'Nog geen spelers gevonden in jouw land.', leaderboard_set_country_notice: 'Stel je land in op je profiel om de regionale ranglijst te zien.',
     stats_wins_chart: 'Overwinningen per speler (top 10)', stats_points_chart: 'Gescoorde punten (top 10)', chart_won: 'Gewonnen', chart_lost: 'Verloren', chart_for: 'Voor', chart_against: 'Tegen',
+    chart_wl_title: 'Winst vs verlies', chart_sets_title: 'Sets voor vs tegen', chart_points_title: 'Punten voor vs tegen',
     stats_scope_all: 'Totaal',
     nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.', friend_requests_title: 'Vriendverzoeken', friend_request_sent: 'Verzoek verzonden', friend_request_pending_you: 'Wil bevriend worden', friends_already: 'Bevriend', btn_accept: 'Aanvaarden', btn_decline: 'Weigeren', friends_none_yet: 'Nog geen vrienden', btn_challenge: 'Uitdagen',
     nav_groups: 'Clubs', groups_create_button: 'Club aanmaken', groups_search_placeholder: 'Zoek een club...', group_name_placeholder: 'Naam van de club', group_description_placeholder: 'Beschrijving (optioneel)', groups_empty: 'Je zit nog in geen enkele club.', group_join_button: 'Aansluiten', group_joined_label: 'Lid', group_members_title: 'Leden', group_leaderboard_title: 'Clubranglijst', group_leave_button: 'Club verlaten', group_no_results: 'Geen clubs gevonden.',
@@ -438,7 +444,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: 'Удаляет все матчи, статистику, фото, друзей и настройки с этого устройства. Это действие необратимо.',
     settings_delete_confirm: 'Вы уверены? Нажмите ещё раз для подтверждения', settings_delete_account_label: 'Удалить мой аккаунт', settings_delete_account_desc: 'Безвозвратно удаляет ваш онлайн-профиль (имя, фото, город, страна) и выполняет выход. Это действие необратимо.', settings_delete_account_confirm: 'Вы уверены? Нажмите ещё раз, чтобы удалить безвозвратно',
     stats_title: 'Рейтинг', stats_h2h: 'Сравнение один на один', stats_ranking: 'Рейтинг', stats_empty: 'Матчей пока нет.',
+    leaderboard_tab_club: 'Клуб', leaderboard_tab_regional: 'Регион', leaderboard_no_club: 'Вы пока не состоите ни в одном клубе.', leaderboard_select_club: 'Выбрать клуб', leaderboard_regional_empty: 'Игроки в вашей стране пока не найдены.', leaderboard_set_country_notice: 'Укажите свою страну в профиле, чтобы видеть региональный рейтинг.',
     stats_wins_chart: 'Победы по игрокам (топ-10)', stats_points_chart: 'Набранные очки (топ-10)', chart_won: 'Победы', chart_lost: 'Поражения', chart_for: 'За', chart_against: 'Против',
+    chart_wl_title: 'Победы против поражений', chart_sets_title: 'Сеты за и против', chart_points_title: 'Очки за и против',
     stats_scope_all: 'Все',
     nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.', friend_requests_title: 'Заявки в друзья', friend_request_sent: 'Заявка отправлена', friend_request_pending_you: 'Хочет дружить', friends_already: 'Друзья', btn_accept: 'Принять', btn_decline: 'Отклонить', friends_none_yet: 'Пока нет друзей', btn_challenge: 'Бросить вызов',
     nav_groups: 'Клубы', groups_create_button: 'Создать клуб', groups_search_placeholder: 'Поиск клуба...', group_name_placeholder: 'Название клуба', group_description_placeholder: 'Описание (необязательно)', groups_empty: 'Вы пока не состоите ни в одном клубе.', group_join_button: 'Присоединиться', group_joined_label: 'Участник', group_members_title: 'Участники', group_leaderboard_title: 'Рейтинг клуба', group_leave_button: 'Покинуть клуб', group_no_results: 'Клубы не найдены.',
@@ -528,7 +536,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: '将删除此设备上的所有比赛、统计数据、照片、好友和设置。此操作无法撤销。',
     settings_delete_confirm: '确定吗？再次点击以确认', settings_delete_account_label: '删除我的账户', settings_delete_account_desc: '将永久删除你的在线个人资料（用户名、照片、城市、国家）并退出登录。此操作无法撤销。', settings_delete_account_confirm: '确定吗？再次点击以永久删除',
     stats_title: '排行榜', stats_h2h: '对战对比', stats_ranking: '排行榜', stats_empty: '暂无比赛记录。',
+    leaderboard_tab_club: '俱乐部', leaderboard_tab_regional: '地区', leaderboard_no_club: '你还没有加入任何俱乐部。', leaderboard_select_club: '选择俱乐部', leaderboard_regional_empty: '尚未找到你所在国家的玩家。', leaderboard_set_country_notice: '请在个人资料中设置国家以查看地区排行榜。',
     stats_wins_chart: '各选手胜场（前10）', stats_points_chart: '得分统计（前10）', chart_won: '胜', chart_lost: '负', chart_for: '得分', chart_against: '失分',
+    chart_wl_title: '胜负对比', chart_sets_title: '局分对比', chart_points_title: '得分对比',
     stats_scope_all: '全部',
     nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。', friend_requests_title: '好友请求', friend_request_sent: '请求已发送', friend_request_pending_you: '想加你为好友', friends_already: '好友', btn_accept: '接受', btn_decline: '拒绝', friends_none_yet: '还没有好友', btn_challenge: '挑战',
     nav_groups: '俱乐部', groups_create_button: '创建俱乐部', groups_search_placeholder: '搜索俱乐部...', group_name_placeholder: '俱乐部名称', group_description_placeholder: '描述（可选）', groups_empty: '你还没有加入任何俱乐部。', group_join_button: '加入', group_joined_label: '成员', group_members_title: '成员', group_leaderboard_title: '俱乐部排行榜', group_leave_button: '退出俱乐部', group_no_results: '未找到俱乐部。',
@@ -618,7 +628,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: 'Elimina todos los partidos, estadísticas, fotos, amigos y ajustes de este dispositivo. Esta acción no se puede deshacer.',
     settings_delete_confirm: '¿Estás seguro? Toca de nuevo para confirmar', settings_delete_account_label: 'Eliminar mi cuenta', settings_delete_account_desc: 'Elimina permanentemente tu perfil en línea (nombre de usuario, foto, ciudad, país) y cierra tu sesión. Esta acción no se puede deshacer.', settings_delete_account_confirm: '¿Estás seguro? Toca de nuevo para eliminar permanentemente',
     stats_title: 'Clasificación', stats_h2h: 'Comparación cara a cara', stats_ranking: 'Clasificación', stats_empty: 'Aún no se han jugado partidos.',
+    leaderboard_tab_club: 'Club', leaderboard_tab_regional: 'Regional', leaderboard_no_club: 'Todavía no perteneces a ningún club.', leaderboard_select_club: 'Elegir club', leaderboard_regional_empty: 'Aún no se han encontrado jugadores en tu país.', leaderboard_set_country_notice: 'Indica tu país en tu perfil para ver la clasificación regional.',
     stats_wins_chart: 'Victorias por jugador (top 10)', stats_points_chart: 'Puntos anotados (top 10)', chart_won: 'Ganados', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'En contra',
+    chart_wl_title: 'Ganados vs perdidos', chart_sets_title: 'Sets a favor vs en contra', chart_points_title: 'Puntos a favor vs en contra',
     stats_scope_all: 'Todo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.', friend_requests_title: 'Solicitudes de amistad', friend_request_sent: 'Solicitud enviada', friend_request_pending_you: 'Quiere ser tu amigo', friends_already: 'Amigos', btn_accept: 'Aceptar', btn_decline: 'Rechazar', friends_none_yet: 'Aún no tienes amigos', btn_challenge: 'Desafiar',
     nav_groups: 'Clubes', groups_create_button: 'Crear club', groups_search_placeholder: 'Buscar un club...', group_name_placeholder: 'Nombre del club', group_description_placeholder: 'Descripción (opcional)', groups_empty: 'Todavía no perteneces a ningún club.', group_join_button: 'Unirse', group_joined_label: 'Miembro', group_members_title: 'Miembros', group_leaderboard_title: 'Clasificación del club', group_leave_button: 'Abandonar club', group_no_results: 'No se encontraron clubes.',
@@ -708,7 +720,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: 'Remove todas as partidas, estatísticas, fotos, amigos e definições deste dispositivo. Esta ação não pode ser desfeita.',
     settings_delete_confirm: 'Tens a certeza? Toca novamente para confirmar', settings_delete_account_label: 'Eliminar a minha conta', settings_delete_account_desc: 'Remove permanentemente o teu perfil online (nome de utilizador, foto, cidade, país) e termina a tua sessão. Esta ação não pode ser desfeita.', settings_delete_account_confirm: 'Tens a certeza? Toca novamente para eliminar permanentemente',
     stats_title: 'Classificação', stats_h2h: 'Comparação direta', stats_ranking: 'Classificação', stats_empty: 'Ainda não há partidas jogadas.',
+    leaderboard_tab_club: 'Clube', leaderboard_tab_regional: 'Regional', leaderboard_no_club: 'Ainda não pertences a nenhum clube.', leaderboard_select_club: 'Escolher clube', leaderboard_regional_empty: 'Ainda não foram encontrados jogadores no teu país.', leaderboard_set_country_notice: 'Define o teu país no perfil para veres a classificação regional.',
     stats_wins_chart: 'Vitórias por jogador (top 10)', stats_points_chart: 'Pontos marcados (top 10)', chart_won: 'Vencidos', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'Contra',
+    chart_wl_title: 'Vitórias vs derrotas', chart_sets_title: 'Sets a favor vs contra', chart_points_title: 'Pontos a favor vs contra',
     stats_scope_all: 'Tudo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.', friend_requests_title: 'Pedidos de amizade', friend_request_sent: 'Pedido enviado', friend_request_pending_you: 'Quer ser teu amigo', friends_already: 'Amigos', btn_accept: 'Aceitar', btn_decline: 'Recusar', friends_none_yet: 'Ainda não tens amigos', btn_challenge: 'Desafiar',
     nav_groups: 'Clubes', groups_create_button: 'Criar clube', groups_search_placeholder: 'Pesquisar um clube...', group_name_placeholder: 'Nome do clube', group_description_placeholder: 'Descrição (opcional)', groups_empty: 'Ainda não pertences a nenhum clube.', group_join_button: 'Aderir', group_joined_label: 'Membro', group_members_title: 'Membros', group_leaderboard_title: 'Classificação do clube', group_leave_button: 'Sair do clube', group_no_results: 'Nenhum clube encontrado.',
@@ -798,7 +812,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: 'この端末のすべての試合、統計、写真、フレンド、設定を削除します。この操作は元に戻せません。',
     settings_delete_confirm: '本当によろしいですか？もう一度タップして確定', settings_delete_account_label: 'アカウントを削除', settings_delete_account_desc: 'オンラインプロフィール（ユーザー名、写真、市区町村、国）を完全に削除し、ログアウトします。この操作は元に戻せません。', settings_delete_account_confirm: '本当によろしいですか？もう一度タップして完全に削除',
     stats_title: 'ランキング', stats_h2h: '対戦成績比較', stats_ranking: 'ランキング', stats_empty: 'まだ試合がありません。',
+    leaderboard_tab_club: 'クラブ', leaderboard_tab_regional: '地域', leaderboard_no_club: 'まだどのクラブにも参加していません。', leaderboard_select_club: 'クラブを選択', leaderboard_regional_empty: 'あなたの国ではまだプレイヤーが見つかっていません。', leaderboard_set_country_notice: '地域ランキングを表示するには、プロフィールで国を設定してください。',
     stats_wins_chart: '選手別勝利数（上位10名）', stats_points_chart: '獲得ポイント（上位10名）', chart_won: '勝ち', chart_lost: '負け', chart_for: '得点', chart_against: '失点',
+    chart_wl_title: '勝敗', chart_sets_title: 'セット数（獲得/失った）', chart_points_title: '得点（獲得/失った）',
     stats_scope_all: 'すべて',
     nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。', friend_requests_title: 'フレンド申請', friend_request_sent: '申請を送信しました', friend_request_pending_you: 'フレンドになりたがっています', friends_already: 'フレンド', btn_accept: '承認', btn_decline: '拒否', friends_none_yet: 'まだフレンドがいません', btn_challenge: '対戦を挑む',
     nav_groups: 'クラブ', groups_create_button: 'クラブを作成', groups_search_placeholder: 'クラブを検索...', group_name_placeholder: 'クラブ名', group_description_placeholder: '説明（任意）', groups_empty: 'まだどのクラブにも参加していません。', group_join_button: '参加する', group_joined_label: 'メンバー', group_members_title: 'メンバー', group_leaderboard_title: 'クラブランキング', group_leave_button: 'クラブを退出', group_no_results: 'クラブが見つかりません。',
@@ -888,7 +904,9 @@ const TRANSLATIONS = {
     settings_delete_all_desc: '이 기기의 모든 경기, 통계, 사진, 친구, 설정을 삭제합니다. 이 작업은 되돌릴 수 없습니다.',
     settings_delete_confirm: '정말 삭제하시겠습니까? 다시 탭하여 확인', settings_delete_account_label: '계정 삭제', settings_delete_account_desc: '온라인 프로필(사용자 이름, 사진, 도시, 국가)을 영구적으로 삭제하고 로그아웃합니다. 이 작업은 되돌릴 수 없습니다.', settings_delete_account_confirm: '정말 삭제하시겠습니까? 다시 탭하여 영구 삭제',
     stats_title: '순위', stats_h2h: '상대 전적 비교', stats_ranking: '순위', stats_empty: '아직 진행된 경기가 없습니다.',
+    leaderboard_tab_club: '클럽', leaderboard_tab_regional: '지역', leaderboard_no_club: '아직 가입한 클럽이 없습니다.', leaderboard_select_club: '클럽 선택', leaderboard_regional_empty: '아직 귀하의 국가에서 플레이어를 찾을 수 없습니다.', leaderboard_set_country_notice: '지역 순위를 보려면 프로필에서 국가를 설정하세요.',
     stats_wins_chart: '선수별 승수 (상위 10명)', stats_points_chart: '득점 현황 (상위 10명)', chart_won: '승', chart_lost: '패', chart_for: '득점', chart_against: '실점',
+    chart_wl_title: '승/패', chart_sets_title: '세트 뒹실', chart_points_title: '포인트 뒹실',
     stats_scope_all: '전체',
     nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.', friend_requests_title: '친구 요청', friend_request_sent: '요청을 보냈습니다', friend_request_pending_you: '친구가 되고 싶어합니다', friends_already: '친구', btn_accept: '수락', btn_decline: '거절', friends_none_yet: '아직 친구가 없습니다', btn_challenge: '도전하기',
     nav_groups: '클럽', groups_create_button: '클럽 만들기', groups_search_placeholder: '클럽 검색...', group_name_placeholder: '클럽 이름', group_description_placeholder: '설명 (선택 사항)', groups_empty: '아직 가입한 클럽이 없습니다.', group_join_button: '가입하기', group_joined_label: '멤버', group_members_title: '멤버', group_leaderboard_title: '클럽 순위', group_leave_button: '클럽 나가기', group_no_results: '클럽을 찾을 수 없습니다.',
@@ -2062,6 +2080,54 @@ function Avatar({ name, photo, size = 40 }) {
         <span className="tt-display" style={{ color: isPreset ? '#fff' : C.dim, fontSize: size * 0.42 }}>{(name || '?').charAt(0).toUpperCase()}</span>
       )}
     </div>
+  );
+}
+
+function PlayerStatsCharts({ me, serve, hasServeData, t }) {
+  function miniChart(title, data) {
+    return (
+      <Panel style={{ marginBottom: 16 }}>
+        <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{title}</div>
+        <div style={{ width: '100%', height: 140 }}>
+          <ResponsiveContainer>
+            <BarChart data={data} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
+              <XAxis dataKey="label" tick={{ fill: C.dim, fontSize: 12 }} />
+              <YAxis tick={{ fill: C.dim, fontSize: 11 }} allowDecimals={false} />
+              <Tooltip contentStyle={{ background: C.panel2, border: `1px solid ${C.line}`, borderRadius: 8, color: C.text }} />
+              <Bar dataKey="value" radius={[6, 6, 0, 0]}>
+                {data.map((d, i) => <Cell key={i} fill={d.fill} />)}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Panel>
+    );
+  }
+
+  const wlData = [
+    { label: t('chart_won'), value: me.w, fill: C.greenLight },
+    { label: t('chart_lost'), value: me.l, fill: C.red },
+  ];
+  const setsData = [
+    { label: t('chart_for'), value: me.setsFor, fill: C.amber },
+    { label: t('chart_against'), value: me.setsAgainst, fill: C.panel2 },
+  ];
+  const pointsData = [
+    { label: t('chart_for'), value: me.pointsFor, fill: C.amber },
+    { label: t('chart_against'), value: me.pointsAgainst, fill: C.panel2 },
+  ];
+  const serveData = hasServeData ? [
+    { label: t('own_serve_label'), value: pct(serve.serveWon, serve.servePts), fill: C.amber },
+    { label: t('return_label'), value: pct(serve.returnWon, serve.returnPts), fill: C.greenLight },
+  ] : null;
+
+  return (
+    <>
+      {miniChart(t('chart_wl_title'), wlData)}
+      {miniChart(t('chart_sets_title'), setsData)}
+      {miniChart(t('chart_points_title'), pointsData)}
+      {hasServeData && miniChart(t('serve_stats_title'), serveData)}
+    </>
   );
 }
 
@@ -3307,21 +3373,110 @@ function SettingsScreen({ setView, settings, updateSettings, resetAllData, sessi
 }
 
 /* ============================= LEADERBOARD ============================= */
-function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, friends, profile }) {
+function matchRowToLogEntry(m, idToName) {
+  const nameA = (m.team_a_ids || []).map(id => idToName[id] || '?').join(' & ');
+  const nameB = (m.team_b_ids || []).map(id => idToName[id] || '?').join(' & ');
+  const winner = m.winner_team === 'a' ? nameA : nameB;
+  return { nameA, nameB, winner, setsA: m.sets_a, setsB: m.sets_b, totalPointsA: m.total_points_a || 0, totalPointsB: m.total_points_b || 0 };
+}
+
+function Leaderboard({ setView, photos, setPhotos, onSelectPlayer, friends, profile, session }) {
   const { t } = useT();
-  const [scope, setScope] = useState('all');
-  const scopedLog = scope === 'all' ? matchLog : matchLog.filter(m => m.kind === scope);
-  const stats = aggregateStats(scopedLog);
-  const names = stats.map(s => s.name);
-  usePhotos(names, photos, setPhotos);
+  const myId = session && session.user ? session.user.id : null;
+  const [tab, setTab] = useState('club');
 
-  const wonLabel = t('chart_won');
-  const lostLabel = t('chart_lost');
-  const forLabel = t('chart_for');
-  const againstLabel = t('chart_against');
+  const [myClubs, setMyClubs] = useState([]);
+  const [selectedClubId, setSelectedClubId] = useState('');
+  const [clubStats, setClubStats] = useState([]);
+  const [clubLoading, setClubLoading] = useState(true);
 
-  const chartData = stats.slice(0, 10).map(s => ({ name: s.name.length > 8 ? s.name.slice(0, 7) + '…' : s.name, [wonLabel]: s.w, [lostLabel]: s.l }));
-  const pointsData = stats.slice(0, 10).map(s => ({ name: s.name.length > 8 ? s.name.slice(0, 7) + '…' : s.name, [forLabel]: s.pointsFor, [againstLabel]: s.pointsAgainst }));
+  useEffect(() => {
+    if (!myId) return;
+    (async () => {
+      try {
+        const { data } = await supabase.from('club_members').select('clubs(id, name)').eq('user_id', myId).eq('status', 'approved');
+        const clubs = (data || []).filter(r => r.clubs).map(r => r.clubs);
+        setMyClubs(clubs);
+        setSelectedClubId(prev => prev || (clubs[0] ? clubs[0].id : ''));
+      } catch (e) { /* best effort */ }
+    })();
+  }, [myId]);
+
+  useEffect(() => {
+    if (!selectedClubId) { setClubStats([]); setClubLoading(false); return; }
+    setClubLoading(true);
+    (async () => {
+      try {
+        const { data: memberRows } = await supabase.from('club_members').select('profiles(id, username, avatar_url)').eq('club_id', selectedClubId).eq('status', 'approved');
+        const members = (memberRows || []).filter(r => r.profiles).map(r => r.profiles);
+        const memberNames = new Set(members.map(m => m.username));
+        const ids = members.map(m => m.id);
+        if (ids.length === 0) { setClubStats([]); setClubLoading(false); return; }
+        const idToName = {}; members.forEach(m => { idToName[m.id] = m.username; });
+        const { data: matches } = await supabase.from('matches').select('*').or(`team_a_ids.ov.{${ids.join(',')}},team_b_ids.ov.{${ids.join(',')}}`);
+        const converted = (matches || []).map(m => matchRowToLogEntry(m, idToName));
+        const ranked = aggregateStats(converted).filter(s => memberNames.has(s.name));
+        setClubStats(ranked.map(s => ({ ...s, avatar_url: (members.find(mm => mm.username === s.name) || {}).avatar_url })));
+      } catch (e) { setClubStats([]); }
+      setClubLoading(false);
+    })();
+  }, [selectedClubId]);
+
+  const [regionalCount, setRegionalCount] = useState(10);
+  const [regionalStats, setRegionalStats] = useState([]);
+  const [regionalLoading, setRegionalLoading] = useState(true);
+  const myCountry = profile && profile.country;
+
+  useEffect(() => {
+    if (tab !== 'regional' || !myCountry) { setRegionalLoading(false); return; }
+    setRegionalLoading(true);
+    (async () => {
+      try {
+        const { data: countryProfiles } = await supabase.from('profiles').select('id, username, avatar_url').eq('country', myCountry).limit(300);
+        const ids = (countryProfiles || []).map(p => p.id);
+        if (ids.length === 0) { setRegionalStats([]); setRegionalLoading(false); return; }
+        const validNames = new Set(countryProfiles.map(p => p.username));
+        const idToName = {}; countryProfiles.forEach(p => { idToName[p.id] = p.username; });
+        const { data: matches } = await supabase.from('matches').select('*').or(`team_a_ids.ov.{${ids.join(',')}},team_b_ids.ov.{${ids.join(',')}}`);
+        const converted = (matches || []).map(m => matchRowToLogEntry(m, idToName));
+        const ranked = aggregateStats(converted).filter(s => validNames.has(s.name));
+        setRegionalStats(ranked.map(s => ({ ...s, avatar_url: (countryProfiles.find(p => p.username === s.name) || {}).avatar_url })));
+      } catch (e) { setRegionalStats([]); }
+      setRegionalLoading(false);
+    })();
+  }, [tab, myCountry]);
+
+  function renderRow(row, i, list) {
+    return (
+      <button
+        key={row.name}
+        onClick={async () => {
+          let foundId = null;
+          try {
+            const { data } = await supabase.from('profiles').select('id').ilike('username', row.name).limit(1).maybeSingle();
+            if (data) foundId = data.id;
+          } catch (e) { /* best effort */ }
+          onSelectPlayer(row.name, foundId);
+        }}
+        className="w-full flex items-center gap-3 p-2.5 rounded-xl text-left"
+        style={{ background: i === 0 ? C.panel2 : 'transparent', border: `1px solid ${C.line}` }}
+      >
+        <span className="tt-display text-lg w-5 text-center flex-shrink-0" style={{ color: C.dim }}>{i + 1}</span>
+        <Avatar name={row.name} photo={row.avatar_url || resolvePhoto(row.name, photos, profile)} size={36} />
+        <div className="flex-1 min-w-0">
+          <div className="tt-body text-sm font-semibold truncate flex items-center gap-1" style={{ color: C.text }}>
+            {row.name}
+            {friends.includes(row.name) && <Star size={11} color={C.amber} fill={C.amber} />}
+          </div>
+          <div className="tt-body text-xs truncate" style={{ color: C.dim }}>{row.setsFor}-{row.setsAgainst} {t('h2h_sets')} &bull; {row.pointsFor}-{row.pointsAgainst} {t('h2h_points')}</div>
+        </div>
+        <div className="text-right flex-shrink-0">
+          <div className="tt-display text-xl" style={{ color: C.greenLight }}>{row.w}{t('chart_won').charAt(0)}</div>
+          <div className="tt-body text-xs" style={{ color: C.dim }}>{row.l}{t('chart_lost').charAt(0)}</div>
+        </div>
+      </button>
+    );
+  }
 
   return (
     <div>
@@ -3330,98 +3485,67 @@ function Leaderboard({ setView, matchLog, photos, setPhotos, onSelectPlayer, fri
       <Panel style={{ marginBottom: 16 }}>
         <SegButton
           options={[
-            { value: 'all', label: t('stats_scope_all') },
-            { value: 'tournament', label: t('nav_tournament') },
+            { value: 'club', label: t('leaderboard_tab_club') },
+            { value: 'regional', label: t('leaderboard_tab_regional') },
           ]}
-          value={scope}
-          onChange={setScope}
+          value={tab}
+          onChange={setTab}
         />
       </Panel>
 
-      {stats.length === 0 ? (
-        <Panel><div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('stats_empty')}</div></Panel>
-      ) : (
-        <>
-          <GhostButton onClick={() => setView('h2h')} style={{ width: '100%', marginBottom: 16, textAlign: 'center' }}>
-            <span className="flex items-center justify-center gap-2"><SwordsIcon size={15} /> {t('stats_h2h')}</span>
-          </GhostButton>
+      <GhostButton onClick={() => setView('h2h')} style={{ width: '100%', marginBottom: 16, textAlign: 'center' }}>
+        <span className="flex items-center justify-center gap-2"><SwordsIcon size={15} /> {t('stats_h2h')}</span>
+      </GhostButton>
 
-          <Panel style={{ marginBottom: 16 }}>
-            <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('stats_ranking')}</div>
-            <div className="flex flex-col gap-2">
-              {stats.map((row, i) => {
-                const rowStreak = computeStreaks(scopedLog, row.name).current;
-                return (
-                <button
-                  key={row.name}
-                  onClick={async () => {
-                    let foundId = null;
-                    try {
-                      const { data } = await supabase.from('profiles').select('id').ilike('username', row.name).limit(1).maybeSingle();
-                      if (data) foundId = data.id;
-                    } catch (e) { /* best effort — falls back to guest-style name match */ }
-                    onSelectPlayer(row.name, foundId);
-                  }}
-                  className="w-full flex items-center gap-3 p-2.5 rounded-xl text-left"
-                  style={{ background: i === 0 ? C.panel2 : 'transparent', border: `1px solid ${C.line}` }}
+      {tab === 'club' ? (
+        myClubs.length === 0 ? (
+          <Panel><div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('leaderboard_no_club')}</div></Panel>
+        ) : (
+          <>
+            {myClubs.length > 1 && (
+              <Panel style={{ marginBottom: 16 }}>
+                <select
+                  value={selectedClubId}
+                  onChange={e => setSelectedClubId(e.target.value)}
+                  className="tt-body w-full px-3 py-2 rounded-lg outline-none"
+                  style={{ background: C.panel2, border: `1px solid ${C.line}`, color: C.text }}
                 >
-                  <span className="tt-display text-lg w-5 text-center flex-shrink-0" style={{ color: C.dim }}>{i + 1}</span>
-                  <Avatar name={row.name} photo={resolvePhoto(row.name, photos, profile)} size={36} />
-                  <div className="flex-1 min-w-0">
-                    <div className="tt-body text-sm font-semibold truncate flex items-center gap-1" style={{ color: C.text }}>
-                      {row.name}
-                      {friends.includes(row.name) && <Star size={11} color={C.amber} fill={C.amber} />}
-                      {rowStreak >= 2 && (
-                        <span className="flex items-center gap-0.5 flex-shrink-0" style={{ color: C.amber }}>
-                          <Flame size={11} color={C.amber} fill={C.amber} />
-                          <span className="tt-body text-xs">{rowStreak}</span>
-                        </span>
-                      )}
-                    </div>
-                    <div className="tt-body text-xs truncate" style={{ color: C.dim }}>{row.setsFor}-{row.setsAgainst} {t('h2h_sets')} &bull; {row.pointsFor}-{row.pointsAgainst} {t('h2h_points')}</div>
-                  </div>
-                  <div className="text-right flex-shrink-0">
-                    <div className="tt-display text-xl" style={{ color: C.greenLight }}>{row.w}{wonLabel.charAt(0)}</div>
-                    <div className="tt-body text-xs" style={{ color: C.dim }}>{row.l}{lostLabel.charAt(0)}</div>
-                  </div>
-                </button>
-                );
-              })}
-            </div>
-          </Panel>
-
-          <Panel style={{ marginBottom: 16 }}>
-            <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('stats_wins_chart')}</div>
-            <div style={{ width: '100%', height: 220 }}>
-              <ResponsiveContainer>
-                <BarChart data={chartData} margin={{ top: 5, right: 5, left: -20, bottom: 25 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke={C.line} />
-                  <XAxis dataKey="name" tick={{ fill: C.dim, fontSize: 10 }} interval={0} angle={-25} textAnchor="end" height={45} />
-                  <YAxis tick={{ fill: C.dim, fontSize: 11 }} allowDecimals={false} />
-                  <Tooltip contentStyle={{ background: C.panel2, border: `1px solid ${C.line}`, borderRadius: 8, color: C.text }} />
-                  <Bar dataKey={wonLabel} fill={C.greenLight} radius={[4, 4, 0, 0]} />
-                  <Bar dataKey={lostLabel} fill={C.red} radius={[4, 4, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </Panel>
-
-          <Panel>
-            <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('stats_points_chart')}</div>
-            <div style={{ width: '100%', height: 220 }}>
-              <ResponsiveContainer>
-                <BarChart data={pointsData} margin={{ top: 5, right: 5, left: -20, bottom: 25 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke={C.line} />
-                  <XAxis dataKey="name" tick={{ fill: C.dim, fontSize: 10 }} interval={0} angle={-25} textAnchor="end" height={45} />
-                  <YAxis tick={{ fill: C.dim, fontSize: 11 }} allowDecimals={false} />
-                  <Tooltip contentStyle={{ background: C.panel2, border: `1px solid ${C.line}`, borderRadius: 8, color: C.text }} />
-                  <Bar dataKey={forLabel} fill={C.amber} radius={[4, 4, 0, 0]} />
-                  <Bar dataKey={againstLabel} fill={C.panel2} stroke={C.line} radius={[4, 4, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </Panel>
-        </>
+                  {myClubs.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                </select>
+              </Panel>
+            )}
+            <Panel>
+              <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('stats_ranking')}</div>
+              {!clubLoading && clubStats.length === 0 ? (
+                <div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('stats_empty')}</div>
+              ) : (
+                <div className="flex flex-col gap-2">{clubStats.map((row, i) => renderRow(row, i))}</div>
+              )}
+            </Panel>
+          </>
+        )
+      ) : (
+        !myCountry ? (
+          <Panel><div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('leaderboard_set_country_notice')}</div></Panel>
+        ) : (
+          <>
+            <Panel style={{ marginBottom: 16 }}>
+              <SegButton
+                options={[10, 15, 20].map(n => ({ value: n, label: `Top ${n}` }))}
+                value={regionalCount}
+                onChange={setRegionalCount}
+              />
+            </Panel>
+            <Panel>
+              <div className="tt-body text-sm font-semibold mb-3" style={{ color: C.dim }}>{t('stats_ranking')}</div>
+              {!regionalLoading && regionalStats.length === 0 ? (
+                <div className="tt-body text-sm text-center" style={{ color: C.dim }}>{t('leaderboard_regional_empty')}</div>
+              ) : (
+                <div className="flex flex-col gap-2">{regionalStats.slice(0, regionalCount).map((row, i) => renderRow(row, i))}</div>
+              )}
+            </Panel>
+          </>
+        )
       )}
     </div>
   );
@@ -6505,7 +6629,7 @@ export default function App() {
   } else if (view === 'home') content = <Home matchLog={combinedMatchLog} playerName={profile ? profile.username : ''} session={session} />;
   else if (view === 'myprofile') content = <MyProfile setView={setView} matchLog={combinedMatchLog} session={session} profile={profile} setProfile={setProfile} />;
   else if (view === 'settings') content = <SettingsScreen setView={setView} settings={settings} updateSettings={updateSettings} resetAllData={resetAllData} session={session} profile={profile} setProfile={setProfile} />;
-  else if (view === 'leaderboard') content = <Leaderboard setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} profile={profile} />;
+  else if (view === 'leaderboard') content = <Leaderboard setView={setView} photos={photos} setPhotos={setPhotos} onSelectPlayer={selectPlayer} friends={friends} profile={profile} session={session} />;
   else if (view === 'player-detail') content = <PlayerDetail setView={setView} playerName={selectedPlayer} playerProfileId={selectedPlayerProfileId} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} friends={friends} toggleFriend={toggleFriend} onChallenge={challengePlayer} profile={profile} />;
   else if (view === 'h2h') content = <HeadToHead setView={setView} matchLog={combinedMatchLog} photos={photos} setPhotos={setPhotos} profile={profile} />;
   else if (view === 'groups') content = <GroupsScreen setView={setView} session={session} onSelectGroup={selectGroup} profile={profile} />;
