@@ -2094,6 +2094,7 @@ function Avatar({ name, photo, size = 40 }) {
 
 function PlayerStatsCharts({ me, serve, hasServeData, t }) {
   const [expanded, setExpanded] = useState(false);
+  function pct(won, total) { return total > 0 ? Math.round((won / total) * 100) : 0; }
 
   function miniChart(title, data) {
     return (
