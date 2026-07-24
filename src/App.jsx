@@ -206,8 +206,7 @@ const TRANSLATIONS = {
     result_title: 'Result', result_win: '{name} wins!', result_sets: 'Sets: {a} - {b}', btn_share: 'Share result', btn_replay: 'Play again', btn_new_settings: 'New settings', btn_home_menu: 'Main menu',
     freeplay_title: 'Quick match',
     competition_title: 'League', competition_sets_note: 'Applies to all matches in the league.', competition_participants_label: 'Participants',
-    competition_standing: 'Standing ({played}/{total} played)', competition_matches_label: 'Matches', badge_play: 'Play', competition_champion: '{name} is champion!',
-    competition_champion_sub: 'League finished with {w} wins', btn_share_small: 'Share',
+    competition_standing: 'Standing ({played}/{total} played)', badge_play: 'Play', competition_champion: '{name} is champion!', btn_share_small: 'Share',
     cadence_label: 'League type', cadence_weekly: 'Weekly', cadence_monthly: 'Monthly',
     period_week: 'Week {n}', period_month: 'Month {n}', period_done_note: 'All matches of {period} have been played.',
     btn_next_period: 'Start {period}', season_standing: 'Season standing (cumulative)', btn_new_competition: 'Start new league',
@@ -227,8 +226,8 @@ const TRANSLATIONS = {
     share_title: 'Share result', share_native: 'Share (WhatsApp, Instagram, ...)', share_busy: 'Working...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: 'Download image (for Instagram)', share_copy: 'Copy text', share_copied: 'Copied!',
     share_ig_note: "Instagram has no direct share link \u2014 download the image and share it from the Instagram app.",
-    context_freeplay_singles: 'a friendly singles match', context_freeplay_doubles: 'a friendly doubles match', context_competition: 'a league match', context_tournament: 'the {round} of the tournament',
-    label_freeplay: 'Free play', label_competition: 'League', label_tournament: 'Tournament \u2013 {round}',
+    context_freeplay_singles: 'a friendly singles match', context_freeplay_doubles: 'a friendly doubles match', context_tournament: 'the {round} of the tournament',
+    label_freeplay: 'Free play', label_tournament: 'Tournament \u2013 {round}',
     extra_distance: 'The match went the distance.', extra_close: 'The {score} set in particular was thrilling.', duration_fmt: 'about {mins} min',
     card_header: 'TABLE TENNIS SCOREBOARD', card_champion_label: '\uD83C\uDFC6 CHAMPION \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} defeated {loser} {score} in sets ({sub})! #tabletennis #scoreboard',
@@ -297,8 +296,7 @@ const TRANSLATIONS = {
     result_title: 'Résultat', result_win: '{name} gagne !', result_sets: 'Sets : {a} - {b}', btn_share: 'Partager le résultat', btn_replay: 'Rejouer', btn_new_settings: 'Nouveaux réglages', btn_home_menu: 'Menu principal',
     freeplay_title: 'Match rapide',
     competition_title: 'Ligue', competition_sets_note: "S'applique à tous les matchs de la ligue.", competition_participants_label: 'Participants',
-    competition_standing: 'Classement ({played}/{total} joués)', competition_matches_label: 'Matchs', badge_play: 'Jouer', competition_champion: '{name} est champion !',
-    competition_champion_sub: '{w} victoires \u2014 ligue terminée', btn_share_small: 'Partager',
+    competition_standing: 'Classement ({played}/{total} joués)', badge_play: 'Jouer', competition_champion: '{name} est champion !', btn_share_small: 'Partager',
     cadence_label: 'Type de ligue', cadence_weekly: 'Hebdomadaire', cadence_monthly: 'Mensuelle',
     period_week: 'Semaine {n}', period_month: 'Mois {n}', period_done_note: 'Tous les matchs de {period} ont été joués.',
     btn_next_period: 'Démarrer {period}', season_standing: 'Classement de la saison (cumulé)', btn_new_competition: 'Démarrer une nouvelle ligue',
@@ -318,8 +316,8 @@ const TRANSLATIONS = {
     share_title: 'Partager le résultat', share_native: 'Partager (WhatsApp, Instagram, ...)', share_busy: 'En cours...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: "Télécharger l'image (pour Instagram)", share_copy: 'Copier le texte', share_copied: 'Copié !',
     share_ig_note: "Instagram n'a pas de lien de partage direct \u2014 téléchargez l'image et partagez-la depuis l'application Instagram.",
-    context_freeplay_singles: 'un match amical en simple', context_freeplay_doubles: 'un match amical en double', context_competition: 'un match de ligue', context_tournament: 'la {round} du tournoi',
-    label_freeplay: 'Partie libre', label_competition: 'Ligue', label_tournament: 'Tournoi \u2013 {round}',
+    context_freeplay_singles: 'un match amical en simple', context_freeplay_doubles: 'un match amical en double', context_tournament: 'la {round} du tournoi',
+    label_freeplay: 'Partie libre', label_tournament: 'Tournoi \u2013 {round}',
     extra_distance: 'Le match est allé jusqu\u2019au bout.', extra_close: 'Le set à {score} en particulier était haletant.', duration_fmt: 'environ {mins} min',
     card_header: 'TABLEAU DE SCORE TENNIS DE TABLE', card_champion_label: '\uD83C\uDFC6 CHAMPION \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} a battu {loser} {score} en sets ({sub}) !\u00A0#tennisdetable #scoreboard',
@@ -388,8 +386,7 @@ const TRANSLATIONS = {
     result_title: 'Resultaat', result_win: '{name} wint!', result_sets: 'Sets: {a} - {b}', btn_share: 'Deel resultaat', btn_replay: 'Opnieuw spelen', btn_new_settings: 'Nieuwe instellingen', btn_home_menu: 'Hoofdmenu',
     freeplay_title: 'Snelle wedstrijd',
     competition_title: 'Liga', competition_sets_note: 'Geldt voor alle wedstrijden in de liga.', competition_participants_label: 'Deelnemers',
-    competition_standing: 'Stand ({played}/{total} gespeeld)', competition_matches_label: 'Wedstrijden', badge_play: 'Speel', competition_champion: '{name} is kampioen!',
-    competition_champion_sub: 'Liga afgesloten met {w} overwinningen', btn_share_small: 'Deel',
+    competition_standing: 'Stand ({played}/{total} gespeeld)', badge_play: 'Speel', competition_champion: '{name} is kampioen!', btn_share_small: 'Deel',
     cadence_label: 'Type liga', cadence_weekly: 'Wekelijks', cadence_monthly: 'Maandelijks',
     period_week: 'Week {n}', period_month: 'Maand {n}', period_done_note: 'Alle wedstrijden van {period} zijn gespeeld.',
     btn_next_period: 'Start {period}', season_standing: 'Seizoensstand (cumulatief)', btn_new_competition: 'Nieuwe liga starten',
@@ -409,8 +406,8 @@ const TRANSLATIONS = {
     share_title: 'Deel resultaat', share_native: 'Deel (WhatsApp, Instagram, ...)', share_busy: 'Bezig...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: 'Download afbeelding (voor Instagram)', share_copy: 'Kopieer tekst', share_copied: 'Gekopieerd!',
     share_ig_note: 'Instagram heeft geen directe deel-link \u2014 download de afbeelding en deel ze vanuit de Instagram-app.',
-    context_freeplay_singles: 'een vriendschappelijke partij enkelspel', context_freeplay_doubles: 'een vriendschappelijke partij dubbelspel', context_competition: 'een ligawedstrijd', context_tournament: 'de {round} van het toernooi',
-    label_freeplay: 'Vrij spel', label_competition: 'Liga', label_tournament: 'Toernooi \u2013 {round}',
+    context_freeplay_singles: 'een vriendschappelijke partij enkelspel', context_freeplay_doubles: 'een vriendschappelijke partij dubbelspel', context_tournament: 'de {round} van het toernooi',
+    label_freeplay: 'Vrij spel', label_tournament: 'Toernooi \u2013 {round}',
     extra_distance: 'De partij ging tot het bittere einde.', extra_close: 'Vooral de set van {score} was bloedstollend.', duration_fmt: 'ongeveer {mins} minuten',
     card_header: 'TAFELTENNIS SCOREBORD', card_champion_label: '\uD83C\uDFC6 KAMPIOEN \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} versloeg {loser} met {score} in sets ({sub})! #tafeltennis #scorebord',
@@ -479,8 +476,7 @@ const TRANSLATIONS = {
     result_title: 'Результат', result_win: '{name} побеждает!', result_sets: 'Сеты: {a} - {b}', btn_share: 'Поделиться результатом', btn_replay: 'Сыграть снова', btn_new_settings: 'Новые настройки', btn_home_menu: 'Главное меню',
     freeplay_title: 'Быстрый матч',
     competition_title: 'Лига', competition_sets_note: 'Применяется ко всем матчам лиги.', competition_participants_label: 'Участники',
-    competition_standing: 'Таблица ({played}/{total} сыграно)', competition_matches_label: 'Матчи', badge_play: 'Играть', competition_champion: '{name} \u2014 чемпион!',
-    competition_champion_sub: 'Лига завершена с {w} победами', btn_share_small: 'Поделиться',
+    competition_standing: 'Таблица ({played}/{total} сыграно)', badge_play: 'Играть', competition_champion: '{name} \u2014 чемпион!', btn_share_small: 'Поделиться',
     cadence_label: 'Тип лиги', cadence_weekly: 'Еженедельная', cadence_monthly: 'Ежемесячная',
     period_week: 'Неделя {n}', period_month: 'Месяц {n}', period_done_note: 'Все матчи {period} сыграны.',
     btn_next_period: 'Начать {period}', season_standing: 'Итоговая таблица сезона', btn_new_competition: 'Начать новую лигу',
@@ -500,8 +496,8 @@ const TRANSLATIONS = {
     share_title: 'Поделиться результатом', share_native: 'Поделиться (WhatsApp, Instagram, ...)', share_busy: 'Обработка...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: 'Скачать изображение (для Instagram)', share_copy: 'Скопировать текст', share_copied: 'Скопировано!',
     share_ig_note: 'У Instagram нет прямой ссылки для публикации \u2014 скачайте изображение и опубликуйте его через приложение Instagram.',
-    context_freeplay_singles: 'товарищеский матч в одиночном разряде', context_freeplay_doubles: 'товарищеский матч в парном разряде', context_competition: 'матч лиги', context_tournament: '{round} турнира',
-    label_freeplay: 'Свободная игра', label_competition: 'Лига', label_tournament: 'Турнир \u2013 {round}',
+    context_freeplay_singles: 'товарищеский матч в одиночном разряде', context_freeplay_doubles: 'товарищеский матч в парном разряде', context_tournament: '{round} турнира',
+    label_freeplay: 'Свободная игра', label_tournament: 'Турнир \u2013 {round}',
     extra_distance: 'Матч продлился до последнего сета.', extra_close: 'Особенно напряжённой была партия со счётом {score}.', duration_fmt: '\u043E\u043A\u043E\u043B\u043E {mins} мин',
     card_header: 'ТАБЛО НАСТОЛЬНОГО ТЕННИСА', card_champion_label: '\uD83C\uDFC6 ЧЕМПИОН \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} обыграл {loser} со счётом {score} по сетам ({sub})! #настольныйтеннис #табло',
@@ -570,8 +566,7 @@ const TRANSLATIONS = {
     result_title: '结果', result_win: '{name} 获胜！', result_sets: '局比分：{a} - {b}', btn_share: '分享结果', btn_replay: '再来一局', btn_new_settings: '新设置', btn_home_menu: '主菜单',
     freeplay_title: '快速比赛',
     competition_title: '联赛', competition_sets_note: '适用于本次联赛的所有比赛。', competition_participants_label: '参赛者',
-    competition_standing: '积分榜（已进行 {played}/{total} 场）', competition_matches_label: '比赛', badge_play: '开始', competition_champion: '{name} 夺冠！',
-    competition_champion_sub: '联赛结束，共 {w} 场胜利', btn_share_small: '分享',
+    competition_standing: '积分榜（已进行 {played}/{total} 场）', badge_play: '开始', competition_champion: '{name} 夺冠！', btn_share_small: '分享',
     cadence_label: '联赛类型', cadence_weekly: '每周', cadence_monthly: '每月',
     period_week: '第{n}周', period_month: '第{n}月', period_done_note: '{period}的所有比赛已完成。',
     btn_next_period: '开始{period}', season_standing: '赛季积分榜（累计）', btn_new_competition: '开始新联赛',
@@ -591,8 +586,8 @@ const TRANSLATIONS = {
     share_title: '分享结果', share_native: '分享（WhatsApp、Instagram……）', share_busy: '处理中...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: '下载图片（用于 Instagram）', share_copy: '复制文字', share_copied: '已复制！',
     share_ig_note: 'Instagram 没有直接分享链接 \u2014 请下载图片后在 Instagram 应用中手动分享。',
-    context_freeplay_singles: '一场单打友谊赛', context_freeplay_doubles: '一场双打友谊赛', context_competition: '一场联赛比赛', context_tournament: '锦标赛{round}',
-    label_freeplay: '自由对战', label_competition: '联赛', label_tournament: '锦标赛 \u2013 {round}',
+    context_freeplay_singles: '一场单打友谊赛', context_freeplay_doubles: '一场双打友谊赛', context_tournament: '锦标赛{round}',
+    label_freeplay: '自由对战', label_tournament: '锦标赛 \u2013 {round}',
     extra_distance: '比赛一直战至最后一局。', extra_close: '尤其是比分为{score}的那一局格外惊心动魄。', duration_fmt: '约{mins}分钟',
     card_header: '乒乓球计分板', card_champion_label: '\uD83C\uDFC6 冠军 \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} 以 {score} 战胜 {loser}（{sub}）！#乒乓球 #计分板',
@@ -661,8 +656,7 @@ const TRANSLATIONS = {
     result_title: 'Resultado', result_win: '¡{name} gana!', result_sets: 'Sets: {a} - {b}', btn_share: 'Compartir resultado', btn_replay: 'Jugar de nuevo', btn_new_settings: 'Nuevos ajustes', btn_home_menu: 'Menú principal',
     freeplay_title: 'Partido rápido',
     competition_title: 'Liga', competition_sets_note: 'Se aplica a todos los partidos de la liga.', competition_participants_label: 'Participantes',
-    competition_standing: 'Clasificación ({played}/{total} jugados)', competition_matches_label: 'Partidos', badge_play: 'Jugar', competition_champion: '¡{name} es campeón!',
-    competition_champion_sub: 'Liga finalizada con {w} victorias', btn_share_small: 'Compartir',
+    competition_standing: 'Clasificación ({played}/{total} jugados)', badge_play: 'Jugar', competition_champion: '¡{name} es campeón!', btn_share_small: 'Compartir',
     cadence_label: 'Tipo de liga', cadence_weekly: 'Semanal', cadence_monthly: 'Mensual',
     period_week: 'Semana {n}', period_month: 'Mes {n}', period_done_note: 'Se han jugado todos los partidos de {period}.',
     btn_next_period: 'Iniciar {period}', season_standing: 'Clasificación de la temporada (acumulada)', btn_new_competition: 'Iniciar nueva liga',
@@ -682,8 +676,8 @@ const TRANSLATIONS = {
     share_title: 'Compartir resultado', share_native: 'Compartir (WhatsApp, Instagram, ...)', share_busy: 'Procesando...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: 'Descargar imagen (para Instagram)', share_copy: 'Copiar texto', share_copied: '¡Copiado!',
     share_ig_note: 'Instagram no tiene un enlace de compartir directo \u2014 descarga la imagen y compártela desde la app de Instagram.',
-    context_freeplay_singles: 'un partido amistoso individual', context_freeplay_doubles: 'un partido amistoso de dobles', context_competition: 'un partido de liga', context_tournament: 'la {round} del torneo',
-    label_freeplay: 'Juego libre', label_competition: 'Liga', label_tournament: 'Torneo \u2013 {round}',
+    context_freeplay_singles: 'un partido amistoso individual', context_freeplay_doubles: 'un partido amistoso de dobles', context_tournament: 'la {round} del torneo',
+    label_freeplay: 'Juego libre', label_tournament: 'Torneo \u2013 {round}',
     extra_distance: 'El partido llegó hasta el final.', extra_close: 'El set de {score} fue especialmente emocionante.', duration_fmt: 'unos {mins} min',
     card_header: 'MARCADOR DE TENIS DE MESA', card_champion_label: '\uD83C\uDFC6 CAMPEÓN \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 ¡{winner} venció a {loser} {score} en sets ({sub})! #tenisdemesa #marcador',
@@ -752,8 +746,7 @@ const TRANSLATIONS = {
     result_title: 'Resultado', result_win: '{name} vence!', result_sets: 'Sets: {a} - {b}', btn_share: 'Partilhar resultado', btn_replay: 'Jogar novamente', btn_new_settings: 'Novas definições', btn_home_menu: 'Menu principal',
     freeplay_title: 'Partida rápida',
     competition_title: 'Liga', competition_sets_note: 'Aplica-se a todas as partidas da liga.', competition_participants_label: 'Participantes',
-    competition_standing: 'Classificação ({played}/{total} jogados)', competition_matches_label: 'Partidas', badge_play: 'Jogar', competition_champion: '{name} é campeão!',
-    competition_champion_sub: 'Liga terminada com {w} vitórias', btn_share_small: 'Partilhar',
+    competition_standing: 'Classificação ({played}/{total} jogados)', badge_play: 'Jogar', competition_champion: '{name} é campeão!', btn_share_small: 'Partilhar',
     cadence_label: 'Tipo de liga', cadence_weekly: 'Semanal', cadence_monthly: 'Mensal',
     period_week: 'Semana {n}', period_month: 'Mês {n}', period_done_note: 'Todas as partidas de {period} foram jogadas.',
     btn_next_period: 'Iniciar {period}', season_standing: 'Classificação da temporada (acumulada)', btn_new_competition: 'Iniciar nova liga',
@@ -773,8 +766,8 @@ const TRANSLATIONS = {
     share_title: 'Partilhar resultado', share_native: 'Partilhar (WhatsApp, Instagram, ...)', share_busy: 'A processar...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: 'Descarregar imagem (para Instagram)', share_copy: 'Copiar texto', share_copied: 'Copiado!',
     share_ig_note: 'O Instagram não tem uma ligação de partilha direta \u2014 descarregue a imagem e partilhe-a a partir da app do Instagram.',
-    context_freeplay_singles: 'uma partida amigável a singulares', context_freeplay_doubles: 'uma partida amigável a pares', context_competition: 'uma partida de liga', context_tournament: 'a {round} do torneio',
-    label_freeplay: 'Jogo livre', label_competition: 'Liga', label_tournament: 'Torneio \u2013 {round}',
+    context_freeplay_singles: 'uma partida amigável a singulares', context_freeplay_doubles: 'uma partida amigável a pares', context_tournament: 'a {round} do torneio',
+    label_freeplay: 'Jogo livre', label_tournament: 'Torneio \u2013 {round}',
     extra_distance: 'A partida foi até ao fim.', extra_close: 'O set de {score} foi particularmente emocionante.', duration_fmt: 'cerca de {mins} min',
     card_header: 'MARCADOR DE TÉNIS DE MESA', card_champion_label: '\uD83C\uDFC6 CAMPEÃO \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner} venceu {loser} por {score} nos sets ({sub})! #tenisdemesa #marcador',
@@ -843,8 +836,7 @@ const TRANSLATIONS = {
     result_title: '結果', result_win: '{name}の勝利！', result_sets: 'セット：{a} - {b}', btn_share: '結果をシェア', btn_replay: 'もう一度プレイ', btn_new_settings: '新しい設定', btn_home_menu: 'メインメニュー',
     freeplay_title: 'クイックマッチ',
     competition_title: 'リーグ戦', competition_sets_note: 'このリーグの全試合に適用されます。', competition_participants_label: '参加者',
-    competition_standing: '順位表（{played}/{total}試合終了）', competition_matches_label: '試合', badge_play: 'プレイ', competition_champion: '{name}が優勝！',
-    competition_champion_sub: 'リーグ戦終了：{w}勝', btn_share_small: 'シェア',
+    competition_standing: '順位表（{played}/{total}試合終了）', badge_play: 'プレイ', competition_champion: '{name}が優勝！', btn_share_small: 'シェア',
     cadence_label: 'リーグの種類', cadence_weekly: '週間', cadence_monthly: '月間',
     period_week: '第{n}週', period_month: '第{n}ヶ月', period_done_note: '{period}の全試合が終了しました。',
     btn_next_period: '{period}を開始', season_standing: 'シーズン通算成績', btn_new_competition: '新しいリーグ戦を開始',
@@ -864,8 +856,8 @@ const TRANSLATIONS = {
     share_title: '結果をシェア', share_native: 'シェア（WhatsApp、Instagramなど）', share_busy: '処理中...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: '画像をダウンロード（Instagram用）', share_copy: 'テキストをコピー', share_copied: 'コピーしました！',
     share_ig_note: 'Instagramには直接共有するリンクがありません \u2014 画像をダウンロードし、Instagramアプリから共有してください。',
-    context_freeplay_singles: 'シングルスの練習試合', context_freeplay_doubles: 'ダブルスの練習試合', context_competition: 'リーグ戦の一戦', context_tournament: 'トーナメントの{round}',
-    label_freeplay: 'フリープレイ', label_competition: 'リーグ戦', label_tournament: 'トーナメント \u2013 {round}',
+    context_freeplay_singles: 'シングルスの練習試合', context_freeplay_doubles: 'ダブルスの練習試合', context_tournament: 'トーナメントの{round}',
+    label_freeplay: 'フリープレイ', label_tournament: 'トーナメント \u2013 {round}',
     extra_distance: '試合は最終セットまでもつれた。', extra_close: '特に{score}のセットは手に汗握る展開だった。', duration_fmt: '約{mins}分',
     card_header: '卓球スコアボード', card_champion_label: '\uD83C\uDFC6 チャンピオン \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner}が{loser}を{score}（{sub}）で下した！ #卓球 #スコアボード',
@@ -934,8 +926,7 @@ const TRANSLATIONS = {
     result_title: '결과', result_win: '{name} 승리!', result_sets: '세트: {a} - {b}', btn_share: '결과 공유', btn_replay: '다시 하기', btn_new_settings: '새 설정', btn_home_menu: '메인 메뉴',
     freeplay_title: '빠른 경기',
     competition_title: '리그', competition_sets_note: '이 리그의 모든 경기에 적용됩니다.', competition_participants_label: '참가자',
-    competition_standing: '순위표 ({played}/{total}경기 진행)', competition_matches_label: '경기', badge_play: '경기하기', competition_champion: '{name} 우승!',
-    competition_champion_sub: '{w}승으로 리그 종료', btn_share_small: '공유',
+    competition_standing: '순위표 ({played}/{total}경기 진행)', badge_play: '경기하기', competition_champion: '{name} 우승!', btn_share_small: '공유',
     cadence_label: '리그 유형', cadence_weekly: '주간', cadence_monthly: '월간',
     period_week: '{n}주차', period_month: '{n}개월차', period_done_note: '{period}의 모든 경기가 끝났습니다.',
     btn_next_period: '{period} 시작', season_standing: '시즌 누적 순위', btn_new_competition: '새 리그 시작',
@@ -955,8 +946,8 @@ const TRANSLATIONS = {
     share_title: '결과 공유', share_native: '공유 (WhatsApp, Instagram 등)', share_busy: '처리 중...', share_whatsapp: 'WhatsApp', share_facebook: 'Facebook',
     share_download: '이미지 다운로드 (Instagram용)', share_copy: '텍스트 복사', share_copied: '복사됨!',
     share_ig_note: 'Instagram은 직접 공유 링크를 지원하지 않습니다 \u2014 이미지를 다운로드한 후 Instagram 앱에서 직접 공유하세요.',
-    context_freeplay_singles: '단식 친선 경기', context_freeplay_doubles: '복식 친선 경기', context_competition: '리그 경기', context_tournament: '토너먼트 {round}',
-    label_freeplay: '자유 경기', label_competition: '리그', label_tournament: '토너먼트 \u2013 {round}',
+    context_freeplay_singles: '단식 친선 경기', context_freeplay_doubles: '복식 친선 경기', context_tournament: '토너먼트 {round}',
+    label_freeplay: '자유 경기', label_tournament: '토너먼트 \u2013 {round}',
     extra_distance: '경기는 마지막 세트까지 이어졌다.', extra_close: '특히 {score} 세트는 손에 땀을 쥐게 했다.', duration_fmt: '약 {mins}분',
     card_header: '탁구 스코어보드', card_champion_label: '\uD83C\uDFC6 챔피언 \uD83C\uDFC6',
     share_result_text: '\uD83C\uDFD3 {winner}가 {loser}를 세트 스코어 {score}({sub})로 꺾었다! #탁구 #스코어보드',
@@ -5796,85 +5787,6 @@ function FreePlayPlay({ setView, state, settings, recordMatch, session }) {
 }
 
 /* ============================= COMPETITION ============================= */
-function CompetitionSetup({ setView, onStart, session }) {
-  const { t } = useT();
-  const [mode, setModeRaw] = useState('enkel');
-  const [cadence, setCadence] = useState('weekly');
-  const [bestOf, setBestOf] = useState(5);
-  const [count, setCount] = useState(4);
-  const [participants, setParticipants] = useState([null, null, null, null]);
-  const myProfileId = session && session.user ? session.user.id : null;
-  const friendsList = useFriendsList(myProfileId);
-
-  function setMode(m) {
-    setModeRaw(m);
-    setParticipants(prev => prev.map(() => m === 'dubbel' ? [null, null] : null));
-  }
-
-  function start() {
-    const finalNames = participants.map((slot, i) => {
-      if (mode === 'dubbel') {
-        const p1 = (slot && slot[0] && slot[0].name.trim()) || t('placeholder_player', { n: i * 2 + 1 });
-        const p2 = (slot && slot[1] && slot[1].name.trim()) || t('placeholder_player', { n: i * 2 + 2 });
-        return `${p1} & ${p2}`;
-      }
-      return (slot && slot.name.trim()) || t('placeholder_player', { n: i + 1 });
-    });
-    let pairMap = null;
-    if (mode === 'dubbel') {
-      pairMap = {};
-      participants.forEach((slot, i) => {
-        const p1 = (slot && slot[0] && slot[0].name.trim()) || t('placeholder_player', { n: i * 2 + 1 });
-        const p2 = (slot && slot[1] && slot[1].name.trim()) || t('placeholder_player', { n: i * 2 + 2 });
-        pairMap[`${p1} & ${p2}`] = [p1, p2];
-      });
-    }
-    const participantIdsList = participants.map(slot => {
-      if (mode === 'dubbel') return (slot || [null, null]).map(p => (p ? p.profileId : null));
-      return [slot ? slot.profileId : null];
-    });
-    onStart({
-      cadence, mode, bestOf,
-      names: finalNames,
-      pairMap,
-      participantIdsList,
-      periodNumber: 1,
-      matches: generateRoundRobin(finalNames),
-      history: [],
-    });
-  }
-
-  return (
-    <div>
-      <BackBar title={t('competition_title')} onBack={() => setView('home')} />
-      <div className="flex flex-col gap-4">
-        <Panel>
-          <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('cadence_label')}</div>
-          <SegButton options={[{ value: 'weekly', label: t('cadence_weekly') }, { value: 'monthly', label: t('cadence_monthly') }]} value={cadence} onChange={setCadence} />
-        </Panel>
-        <Panel>
-          <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('mode_label')}</div>
-          <SegButton options={[{ value: 'enkel', label: t('mode_singles') }, { value: 'dubbel', label: t('mode_doubles') }]} value={mode} onChange={setMode} />
-        </Panel>
-        <Panel>
-          <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('sets_count_label')}</div>
-          <BestOfPicker options={[5, 7]} value={bestOf} onChange={setBestOf} />
-          <div className="tt-body text-xs mt-2" style={{ color: C.dim }}>{t('competition_sets_note')}</div>
-        </Panel>
-        <Panel>
-          <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{t('competition_participants_label')}</div>
-          <ParticipantCountStepper count={count} setCount={setCount} participants={participants} setParticipants={setParticipants} suffix={t('count_suffix')} mode={mode} />
-        </Panel>
-        <Panel>
-          <div className="tt-body text-sm mb-2 font-semibold" style={{ color: C.dim }}>{mode === 'dubbel' ? t('teams_label') : t('players_label')}</div>
-          <ParticipantList participants={participants} setParticipants={setParticipants} mode={mode} friendsList={friendsList} myProfileId={myProfileId} t={t} />
-        </Panel>
-        <PrimaryButton onClick={start}>{t('start_competition', { n: (count * (count - 1)) / 2 })}</PrimaryButton>
-      </div>
-    </div>
-  );
-}
-
 function CompetitionPlay({ setView, competition, setCompetition, settings, recordMatch, session, isOrganizer }) {
   const { t, lang } = useT();
   const { names, matches, bestOf, cadence, periodNumber, history, mode, pairMap, participantIdsList } = competition;
