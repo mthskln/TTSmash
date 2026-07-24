@@ -6622,15 +6622,15 @@ export default function App() {
   else if (view === 'friends') content = <FriendsScreen setView={setView} session={session} onSelectPlayer={selectPlayer} />;
   else if (view === 'freeplay-setup') content = <FreePlaySetup setView={setView} state={fpState} setState={setFpState} session={session} settings={settings} />;
   else if (view === 'freeplay-play') content = <FreePlayPlay setView={setView} state={fpState} settings={settings} recordMatch={recordMatch} session={session} />;
-  else if (view === 'competition-setup') content = <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
+  else if (view === 'competition-setup') content = <EventHubScreen key="competition-setup" setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
   else if (view === 'competition-play') content = competition
     ? <CompetitionPlay setView={setView} competition={competition} setCompetition={setCompetition} settings={settings} recordMatch={recordMatch} session={session} />
-    : <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
-  else if (view === 'tournament-setup') content = <EventHubScreen setView={setView} session={session} initialKind="tournament" onOpenEvent={openEvent} />;
+    : <EventHubScreen key="competition-setup" setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} />;
+  else if (view === 'tournament-setup') content = <EventHubScreen key="tournament-setup" setView={setView} session={session} initialKind="tournament" onOpenEvent={openEvent} />;
   else if (view === 'tournament-play') content = <TournamentPlay setView={setView} state={tState} setState={setTState} settings={settings} recordMatch={recordMatch} session={session} />;
   else if (view === 'event-lobby') content = <EventLobbyScreen setView={setView} eventId={selectedEventId} session={session} onOpenPlay={id => { setSelectedEventId(id); setView('event-play'); }} onKindKnown={setActiveEventKind} />;
   else if (view === 'event-play') content = <EventPlayScreen setView={setView} eventId={selectedEventId} session={session} settings={settings} recordMatch={recordMatch} onKindKnown={setActiveEventKind} />;
-  else if (view === 'group-event-create') content = <EventHubScreen setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} presetClubId={eventPresetClub && eventPresetClub.id} presetClubName={eventPresetClub && eventPresetClub.name} />;
+  else if (view === 'group-event-create') content = <EventHubScreen key={`group-event-create-${eventPresetClub && eventPresetClub.id}`} setView={setView} session={session} initialKind="competition" onOpenEvent={openEvent} presetClubId={eventPresetClub && eventPresetClub.id} presetClubName={eventPresetClub && eventPresetClub.name} />;
 
   return (
     <LangContext.Provider value={langCtxValue}>
