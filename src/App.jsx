@@ -171,6 +171,7 @@ const TRANSLATIONS = {
     leaderboard_tab_club: 'Club', leaderboard_tab_regional: 'Regional', leaderboard_no_club: "You're not in any club yet.", leaderboard_select_club: 'Select club', leaderboard_regional_empty: 'No players found in your country yet.', leaderboard_set_country_notice: 'Set your country in your profile to see regional rankings.',
     stats_wins_chart: 'Wins per player (top 10)', stats_points_chart: 'Points scored (top 10)', chart_won: 'Won', chart_lost: 'Lost', chart_for: 'For', chart_against: 'Against',
     chart_wl_title: 'Wins vs losses', chart_sets_title: 'Sets for vs against', chart_points_title: 'Points for vs against',
+    chart_toggle_label: 'Show charts',
     stats_scope_all: 'All',
     nav_friends: 'Friends', friends_search_placeholder: 'Search for a player...', btn_add_friend: 'Add friend', btn_remove_friend: 'Remove friend', friends_no_results: 'No players found.', friend_requests_title: 'Friend requests', friend_request_sent: 'Request sent', friend_request_pending_you: 'Wants to be friends', friends_already: 'Friends', btn_accept: 'Accept', btn_decline: 'Decline', friends_none_yet: 'No friends yet', btn_challenge: 'Challenge',
     nav_groups: 'Clubs', groups_create_button: 'Create club', groups_search_placeholder: 'Search for a club...', group_name_placeholder: 'Club name', group_description_placeholder: 'Description (optional)', groups_empty: "You're not in any club yet.", group_join_button: 'Join', group_joined_label: 'Member', group_members_title: 'Members', group_leaderboard_title: 'Club leaderboard', group_leave_button: 'Leave club', group_no_results: 'No clubs found.',
@@ -263,6 +264,7 @@ const TRANSLATIONS = {
     leaderboard_tab_club: 'Club', leaderboard_tab_regional: 'Régional', leaderboard_no_club: "Vous ne faites partie d'aucun club pour l'instant.", leaderboard_select_club: 'Choisir un club', leaderboard_regional_empty: "Aucun joueur trouvé dans votre pays pour l'instant.", leaderboard_set_country_notice: 'Renseignez votre pays dans votre profil pour voir le classement régional.',
     stats_wins_chart: 'Victoires par joueur (top 10)', stats_points_chart: 'Points marqués (top 10)', chart_won: 'Gagnés', chart_lost: 'Perdus', chart_for: 'Pour', chart_against: 'Contre',
     chart_wl_title: 'Victoires vs défaites', chart_sets_title: 'Sets pour vs contre', chart_points_title: 'Points pour vs contre',
+    chart_toggle_label: 'Afficher les graphiques',
     stats_scope_all: 'Tout',
     nav_friends: 'Amis', friends_search_placeholder: 'Rechercher un joueur...', btn_add_friend: 'Ajouter en ami', btn_remove_friend: 'Retirer des amis', friends_no_results: 'Aucun joueur trouvé.', friend_requests_title: "Demandes d'amis", friend_request_sent: 'Demande envoyée', friend_request_pending_you: 'Veut être ami(e)', friends_already: 'Amis', btn_accept: 'Accepter', btn_decline: 'Refuser', friends_none_yet: "Pas encore d'amis", btn_challenge: 'Défier',
     nav_groups: 'Clubs', groups_create_button: 'Créer un club', groups_search_placeholder: 'Rechercher un club...', group_name_placeholder: 'Nom du club', group_description_placeholder: 'Description (facultatif)', groups_empty: "Vous ne faites partie d'aucun club pour l'instant.", group_join_button: 'Rejoindre', group_joined_label: 'Membre', group_members_title: 'Membres', group_leaderboard_title: 'Classement du club', group_leave_button: 'Quitter le club', group_no_results: 'Aucun club trouvé.',
@@ -355,6 +357,7 @@ const TRANSLATIONS = {
     leaderboard_tab_club: 'Club', leaderboard_tab_regional: 'Regionaal', leaderboard_no_club: 'Je zit nog in geen enkele club.', leaderboard_select_club: 'Kies een club', leaderboard_regional_empty: 'Nog geen spelers gevonden in jouw land.', leaderboard_set_country_notice: 'Stel je land in op je profiel om de regionale ranglijst te zien.',
     stats_wins_chart: 'Overwinningen per speler (top 10)', stats_points_chart: 'Gescoorde punten (top 10)', chart_won: 'Gewonnen', chart_lost: 'Verloren', chart_for: 'Voor', chart_against: 'Tegen',
     chart_wl_title: 'Winst vs verlies', chart_sets_title: 'Sets voor vs tegen', chart_points_title: 'Punten voor vs tegen',
+    chart_toggle_label: 'Toon grafieken',
     stats_scope_all: 'Totaal',
     nav_friends: 'Vrienden', friends_search_placeholder: 'Zoek een speler...', btn_add_friend: 'Vriend toevoegen', btn_remove_friend: 'Vriend verwijderen', friends_no_results: 'Geen spelers gevonden.', friend_requests_title: 'Vriendverzoeken', friend_request_sent: 'Verzoek verzonden', friend_request_pending_you: 'Wil bevriend worden', friends_already: 'Bevriend', btn_accept: 'Aanvaarden', btn_decline: 'Weigeren', friends_none_yet: 'Nog geen vrienden', btn_challenge: 'Uitdagen',
     nav_groups: 'Clubs', groups_create_button: 'Club aanmaken', groups_search_placeholder: 'Zoek een club...', group_name_placeholder: 'Naam van de club', group_description_placeholder: 'Beschrijving (optioneel)', groups_empty: 'Je zit nog in geen enkele club.', group_join_button: 'Aansluiten', group_joined_label: 'Lid', group_members_title: 'Leden', group_leaderboard_title: 'Clubranglijst', group_leave_button: 'Club verlaten', group_no_results: 'Geen clubs gevonden.',
@@ -447,6 +450,7 @@ const TRANSLATIONS = {
     leaderboard_tab_club: 'Клуб', leaderboard_tab_regional: 'Регион', leaderboard_no_club: 'Вы пока не состоите ни в одном клубе.', leaderboard_select_club: 'Выбрать клуб', leaderboard_regional_empty: 'Игроки в вашей стране пока не найдены.', leaderboard_set_country_notice: 'Укажите свою страну в профиле, чтобы видеть региональный рейтинг.',
     stats_wins_chart: 'Победы по игрокам (топ-10)', stats_points_chart: 'Набранные очки (топ-10)', chart_won: 'Победы', chart_lost: 'Поражения', chart_for: 'За', chart_against: 'Против',
     chart_wl_title: 'Победы против поражений', chart_sets_title: 'Сеты за и против', chart_points_title: 'Очки за и против',
+    chart_toggle_label: 'Показать графики',
     stats_scope_all: 'Все',
     nav_friends: 'Друзья', friends_search_placeholder: 'Поиск игрока...', btn_add_friend: 'Добавить в друзья', btn_remove_friend: 'Удалить из друзей', friends_no_results: 'Игроки не найдены.', friend_requests_title: 'Заявки в друзья', friend_request_sent: 'Заявка отправлена', friend_request_pending_you: 'Хочет дружить', friends_already: 'Друзья', btn_accept: 'Принять', btn_decline: 'Отклонить', friends_none_yet: 'Пока нет друзей', btn_challenge: 'Бросить вызов',
     nav_groups: 'Клубы', groups_create_button: 'Создать клуб', groups_search_placeholder: 'Поиск клуба...', group_name_placeholder: 'Название клуба', group_description_placeholder: 'Описание (необязательно)', groups_empty: 'Вы пока не состоите ни в одном клубе.', group_join_button: 'Присоединиться', group_joined_label: 'Участник', group_members_title: 'Участники', group_leaderboard_title: 'Рейтинг клуба', group_leave_button: 'Покинуть клуб', group_no_results: 'Клубы не найдены.',
@@ -539,6 +543,7 @@ const TRANSLATIONS = {
     leaderboard_tab_club: '俱乐部', leaderboard_tab_regional: '地区', leaderboard_no_club: '你还没有加入任何俱乐部。', leaderboard_select_club: '选择俱乐部', leaderboard_regional_empty: '尚未找到你所在国家的玩家。', leaderboard_set_country_notice: '请在个人资料中设置国家以查看地区排行榜。',
     stats_wins_chart: '各选手胜场（前10）', stats_points_chart: '得分统计（前10）', chart_won: '胜', chart_lost: '负', chart_for: '得分', chart_against: '失分',
     chart_wl_title: '胜负对比', chart_sets_title: '局分对比', chart_points_title: '得分对比',
+    chart_toggle_label: '显示图表',
     stats_scope_all: '全部',
     nav_friends: '好友', friends_search_placeholder: '搜索选手...', btn_add_friend: '添加好友', btn_remove_friend: '移除好友', friends_no_results: '未找到选手。', friend_requests_title: '好友请求', friend_request_sent: '请求已发送', friend_request_pending_you: '想加你为好友', friends_already: '好友', btn_accept: '接受', btn_decline: '拒绝', friends_none_yet: '还没有好友', btn_challenge: '挑战',
     nav_groups: '俱乐部', groups_create_button: '创建俱乐部', groups_search_placeholder: '搜索俱乐部...', group_name_placeholder: '俱乐部名称', group_description_placeholder: '描述（可选）', groups_empty: '你还没有加入任何俱乐部。', group_join_button: '加入', group_joined_label: '成员', group_members_title: '成员', group_leaderboard_title: '俱乐部排行榜', group_leave_button: '退出俱乐部', group_no_results: '未找到俱乐部。',
@@ -631,6 +636,7 @@ const TRANSLATIONS = {
     leaderboard_tab_club: 'Club', leaderboard_tab_regional: 'Regional', leaderboard_no_club: 'Todavía no perteneces a ningún club.', leaderboard_select_club: 'Elegir club', leaderboard_regional_empty: 'Aún no se han encontrado jugadores en tu país.', leaderboard_set_country_notice: 'Indica tu país en tu perfil para ver la clasificación regional.',
     stats_wins_chart: 'Victorias por jugador (top 10)', stats_points_chart: 'Puntos anotados (top 10)', chart_won: 'Ganados', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'En contra',
     chart_wl_title: 'Ganados vs perdidos', chart_sets_title: 'Sets a favor vs en contra', chart_points_title: 'Puntos a favor vs en contra',
+    chart_toggle_label: 'Mostrar gráficos',
     stats_scope_all: 'Todo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Buscar jugador...', btn_add_friend: 'Añadir amigo', btn_remove_friend: 'Eliminar amigo', friends_no_results: 'No se encontraron jugadores.', friend_requests_title: 'Solicitudes de amistad', friend_request_sent: 'Solicitud enviada', friend_request_pending_you: 'Quiere ser tu amigo', friends_already: 'Amigos', btn_accept: 'Aceptar', btn_decline: 'Rechazar', friends_none_yet: 'Aún no tienes amigos', btn_challenge: 'Desafiar',
     nav_groups: 'Clubes', groups_create_button: 'Crear club', groups_search_placeholder: 'Buscar un club...', group_name_placeholder: 'Nombre del club', group_description_placeholder: 'Descripción (opcional)', groups_empty: 'Todavía no perteneces a ningún club.', group_join_button: 'Unirse', group_joined_label: 'Miembro', group_members_title: 'Miembros', group_leaderboard_title: 'Clasificación del club', group_leave_button: 'Abandonar club', group_no_results: 'No se encontraron clubes.',
@@ -723,6 +729,7 @@ const TRANSLATIONS = {
     leaderboard_tab_club: 'Clube', leaderboard_tab_regional: 'Regional', leaderboard_no_club: 'Ainda não pertences a nenhum clube.', leaderboard_select_club: 'Escolher clube', leaderboard_regional_empty: 'Ainda não foram encontrados jogadores no teu país.', leaderboard_set_country_notice: 'Define o teu país no perfil para veres a classificação regional.',
     stats_wins_chart: 'Vitórias por jogador (top 10)', stats_points_chart: 'Pontos marcados (top 10)', chart_won: 'Vencidos', chart_lost: 'Perdidos', chart_for: 'A favor', chart_against: 'Contra',
     chart_wl_title: 'Vitórias vs derrotas', chart_sets_title: 'Sets a favor vs contra', chart_points_title: 'Pontos a favor vs contra',
+    chart_toggle_label: 'Mostrar gráficos',
     stats_scope_all: 'Tudo',
     nav_friends: 'Amigos', friends_search_placeholder: 'Pesquisar jogador...', btn_add_friend: 'Adicionar amigo', btn_remove_friend: 'Remover amigo', friends_no_results: 'Nenhum jogador encontrado.', friend_requests_title: 'Pedidos de amizade', friend_request_sent: 'Pedido enviado', friend_request_pending_you: 'Quer ser teu amigo', friends_already: 'Amigos', btn_accept: 'Aceitar', btn_decline: 'Recusar', friends_none_yet: 'Ainda não tens amigos', btn_challenge: 'Desafiar',
     nav_groups: 'Clubes', groups_create_button: 'Criar clube', groups_search_placeholder: 'Pesquisar um clube...', group_name_placeholder: 'Nome do clube', group_description_placeholder: 'Descrição (opcional)', groups_empty: 'Ainda não pertences a nenhum clube.', group_join_button: 'Aderir', group_joined_label: 'Membro', group_members_title: 'Membros', group_leaderboard_title: 'Classificação do clube', group_leave_button: 'Sair do clube', group_no_results: 'Nenhum clube encontrado.',
@@ -815,6 +822,7 @@ const TRANSLATIONS = {
     leaderboard_tab_club: 'クラブ', leaderboard_tab_regional: '地域', leaderboard_no_club: 'まだどのクラブにも参加していません。', leaderboard_select_club: 'クラブを選択', leaderboard_regional_empty: 'あなたの国ではまだプレイヤーが見つかっていません。', leaderboard_set_country_notice: '地域ランキングを表示するには、プロフィールで国を設定してください。',
     stats_wins_chart: '選手別勝利数（上位10名）', stats_points_chart: '獲得ポイント（上位10名）', chart_won: '勝ち', chart_lost: '負け', chart_for: '得点', chart_against: '失点',
     chart_wl_title: '勝敗', chart_sets_title: 'セット数（獲得/失った）', chart_points_title: '得点（獲得/失った）',
+    chart_toggle_label: 'グラフを表示',
     stats_scope_all: 'すべて',
     nav_friends: 'フレンド', friends_search_placeholder: '選手を検索...', btn_add_friend: 'フレンドに追加', btn_remove_friend: 'フレンド解除', friends_no_results: '選手が見つかりません。', friend_requests_title: 'フレンド申請', friend_request_sent: '申請を送信しました', friend_request_pending_you: 'フレンドになりたがっています', friends_already: 'フレンド', btn_accept: '承認', btn_decline: '拒否', friends_none_yet: 'まだフレンドがいません', btn_challenge: '対戦を挑む',
     nav_groups: 'クラブ', groups_create_button: 'クラブを作成', groups_search_placeholder: 'クラブを検索...', group_name_placeholder: 'クラブ名', group_description_placeholder: '説明（任意）', groups_empty: 'まだどのクラブにも参加していません。', group_join_button: '参加する', group_joined_label: 'メンバー', group_members_title: 'メンバー', group_leaderboard_title: 'クラブランキング', group_leave_button: 'クラブを退出', group_no_results: 'クラブが見つかりません。',
@@ -906,7 +914,8 @@ const TRANSLATIONS = {
     stats_title: '순위', stats_h2h: '상대 전적 비교', stats_ranking: '순위', stats_empty: '아직 진행된 경기가 없습니다.',
     leaderboard_tab_club: '클럽', leaderboard_tab_regional: '지역', leaderboard_no_club: '아직 가입한 클럽이 없습니다.', leaderboard_select_club: '클럽 선택', leaderboard_regional_empty: '아직 귀하의 국가에서 플레이어를 찾을 수 없습니다.', leaderboard_set_country_notice: '지역 순위를 보려면 프로필에서 국가를 설정하세요.',
     stats_wins_chart: '선수별 승수 (상위 10명)', stats_points_chart: '득점 현황 (상위 10명)', chart_won: '승', chart_lost: '패', chart_for: '득점', chart_against: '실점',
-    chart_wl_title: '승/패', chart_sets_title: '세트 뒹실', chart_points_title: '포인트 뒹실',
+    chart_wl_title: '승/패', chart_sets_title: '세트 득실', chart_points_title: '포인트 득실',
+    chart_toggle_label: '그래프 보기',
     stats_scope_all: '전체',
     nav_friends: '친구', friends_search_placeholder: '선수 검색...', btn_add_friend: '친구 추가', btn_remove_friend: '친구 삭제', friends_no_results: '선수를 찾을 수 없습니다.', friend_requests_title: '친구 요청', friend_request_sent: '요청을 보냈습니다', friend_request_pending_you: '친구가 되고 싶어합니다', friends_already: '친구', btn_accept: '수락', btn_decline: '거절', friends_none_yet: '아직 친구가 없습니다', btn_challenge: '도전하기',
     nav_groups: '클럽', groups_create_button: '클럽 만들기', groups_search_placeholder: '클럽 검색...', group_name_placeholder: '클럽 이름', group_description_placeholder: '설명 (선택 사항)', groups_empty: '아직 가입한 클럽이 없습니다.', group_join_button: '가입하기', group_joined_label: '멤버', group_members_title: '멤버', group_leaderboard_title: '클럽 순위', group_leave_button: '클럽 나가기', group_no_results: '클럽을 찾을 수 없습니다.',
@@ -2084,6 +2093,8 @@ function Avatar({ name, photo, size = 40 }) {
 }
 
 function PlayerStatsCharts({ me, serve, hasServeData, t }) {
+  const [expanded, setExpanded] = useState(false);
+
   function miniChart(title, data) {
     return (
       <Panel style={{ marginBottom: 16 }}>
@@ -2123,10 +2134,20 @@ function PlayerStatsCharts({ me, serve, hasServeData, t }) {
 
   return (
     <>
-      {miniChart(t('chart_wl_title'), wlData)}
-      {miniChart(t('chart_sets_title'), setsData)}
-      {miniChart(t('chart_points_title'), pointsData)}
-      {hasServeData && miniChart(t('serve_stats_title'), serveData)}
+      <GhostButton onClick={() => setExpanded(e => !e)} style={{ width: '100%', textAlign: 'center', marginBottom: 16 }}>
+        <span className="flex items-center justify-center gap-2">
+          <BarChart2 size={15} /> {t('chart_toggle_label')}
+          <ChevronDown size={14} style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+        </span>
+      </GhostButton>
+      {expanded && (
+        <>
+          {miniChart(t('chart_wl_title'), wlData)}
+          {miniChart(t('chart_sets_title'), setsData)}
+          {miniChart(t('chart_points_title'), pointsData)}
+          {hasServeData && miniChart(t('serve_stats_title'), serveData)}
+        </>
+      )}
     </>
   );
 }
@@ -3728,6 +3749,8 @@ function PlayerDetail({ setView, playerName, playerProfileId, matchLog, photos, 
           </div>
         </Panel>
       )}
+
+      <PlayerStatsCharts me={me} serve={serve} hasServeData={hasServeData} t={t} />
 
       <Panel style={{ marginBottom: 16 }}>
         <div className="tt-body text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: C.dim }}>
@@ -5619,6 +5642,8 @@ function MyProfile({ setView, matchLog, session, profile, setProfile }) {
           </>
         )}
       </Panel>
+
+      {me && <PlayerStatsCharts me={me} serve={serve} hasServeData={hasServeData} t={t} />}
 
       <Panel style={{ marginBottom: 16 }}>
         <div className="tt-body text-sm font-semibold mb-3 flex items-center gap-2" style={{ color: C.dim }}>
